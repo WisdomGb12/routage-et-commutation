@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 6 : Technologies Avancées - Routage et Commutation</title>
+    <meta name="description"
+        content="Technologies avancées Cisco : EtherChannel, HSRP, OSPF Multi-Areas, IPv6, NAT/PAT.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">🌐</div>
+                <span>Routage & Commutation</span>
+            </a>
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">Accueil</a>
+                <a href="phase1-fondamentaux.html" class="nav-link">Fondamentaux</a>
+                <a href="phase2-commutation.html" class="nav-link">Commutation</a>
+                <a href="phase3-routage.html" class="nav-link">Routage</a>
+                <a href="phase4-inter-vlan.html" class="nav-link">Inter-VLAN</a>
+                <a href="phase5-securite.html" class="nav-link">Sécurité</a>
+                <a href="phase6-avance.html" class="nav-link active">Avancé</a>
+                <a href="ressources.html" class="nav-link">Ressources</a>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Changer le thème">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                    </svg>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container container-narrow">
+            <nav class="breadcrumb">
+                <a href="../index.html">Accueil</a>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Phase 6 : Technologies Avancées</span>
+            </nav>
+
+            <div class="section-header">
+                <div class="section-icon">🚀</div>
+                <div>
+                    <span class="phase-badge" style="background: rgba(0, 212, 255, 0.15); color: #00d4ff;">Phase
+                        6</span>
+                    <h1 style="margin-top: 0.5rem;">Technologies Avancées</h1>
+                </div>
+
+            </div>
+
+            <div class="alert alert-info">
+                <div class="alert-icon">⏱️</div>
+                <div class="alert-content">
+                    <div class="alert-title">Durée : 4-5 semaines</div>
+                    <p style="margin: 0;">Cette phase avancée couvre EtherChannel, la redondance de passerelle (HSRP),
+                        OSPF multi-areas, IPv6 et NAT. Ces technologies sont essentielles pour le CCNA et les réseaux
+                        d'entreprise.</p>
+                </div>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="toc">
+                <div class="toc-title">📑 Sommaire</div>
+                <ul class="toc-list">
+                    <li><a href="#etherchannel">EtherChannel (Agrégation de liens)</a></li>
+                    <li><a href="#hsrp">HSRP (Redondance de gateway)</a></li>
+                    <li><a href="#ospf-multiarea">OSPF Multi-Areas</a></li>
+                    <li><a href="#ipv6">IPv6 : Fondamentaux</a></li>
+                    <li><a href="#ipv6-config">IPv6 : Configuration</a></li>
+                    <li><a href="#nat">NAT et PAT</a></li>
+                    <li><a href="#labs">Labs Pratiques</a></li>
+                    <li><a href="#quiz">Quiz de vérification</a></li>
+                </ul>
+            </div>
+
+            <!-- Section 1: EtherChannel -->
+            <section class="section" id="etherchannel">
+                <h2>EtherChannel (Agrégation de liens)</h2>
+
+                <p><strong>EtherChannel</strong> permet de combiner plusieurs liens physiques en un seul lien logique.
+                    Cela augmente la bande passante et fournit de la redondance sans que STP bloque les liens.</p>
+
+                <h3>Avantages</h3>
+                <ul>
+                    <li><strong>Bande passante agrégée</strong> : 2 liens Gigabit = 2 Gbps logiques</li>
+                    <li><strong>Redondance</strong> : Si un lien tombe, les autres prennent le relais</li>
+                    <li><strong>STP voit un seul lien</strong> : Pas de blocage</li>
+                    <li><strong>Load balancing</strong> : Répartition du trafic entre les liens</li>
+                </ul>
+
+                <h3>Protocoles de négociation</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px; text-align: left;">Protocole</th>
+                            <th style="padding: 12px; text-align: left;">Standard</th>
+                            <th style="padding: 12px; text-align: left;">Modes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>PAgP</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Cisco propriétaire
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>desirable</strong> (actif) / <strong>auto</strong> (passif)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>LACP</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">IEEE 802.3ad
+                                (standard)</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>active</strong> (actif) / <strong>passive</strong> (passif)
+                            </td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px;"><strong>Static (On)</strong></td>
+                            <td style="padding: 12px;">Aucun</td>
+                            <td style="padding: 12px;"><strong>on</strong> (force, pas de négociation)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-warning">
+                    <div class="alert-icon">⚠️</div>
+                    <div class="alert-content">
+                        <div class="alert-title">Combinaisons possibles</div>
+                        <ul style="margin: 0; padding-left: 1.5rem;">
+                            <li><strong>PAgP</strong> : desirable-desirable ✅, desirable-auto ✅, auto-auto ❌</li>
+                            <li><strong>LACP</strong> : active-active ✅, active-passive ✅, passive-passive ❌</li>
+                            <li><strong>on-on</strong> : Fonctionne mais pas de négociation (déconseillé)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Prérequis pour EtherChannel</h3>
+                <p>Tous les ports du channel doivent avoir la <strong>même configuration</strong> :</p>
+                <ul>
+                    <li>Même vitesse et duplex</li>
+                    <li>Même mode (access ou trunk)</li>
+                    <li>Même VLAN ou VLANs autorisés (si trunk)</li>
+                    <li>Même VLAN natif (si trunk)</li>
+                </ul>
+
+                <h3>Configuration LACP (recommandé)</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - EtherChannel LACP</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! === Configuration sur Switch 1 ===
+! Créer le port-channel et configurer en trunk
+interface port-channel 1
+  description EtherChannel vers S2
+  switchport mode trunk
+  switchport trunk native vlan 99
+  switchport trunk allowed vlan 10,20,30,99
+
+! Associer les interfaces physiques au port-channel
+interface range g0/1-2
+  description Membres EtherChannel vers S2
+  switchport mode trunk
+  switchport trunk native vlan 99
+  switchport trunk allowed vlan 10,20,30,99
+  channel-group 1 mode active
+
+! === Configuration sur Switch 2 (identique mais passive possible) ===
+interface port-channel 1
+  description EtherChannel vers S1
+  switchport mode trunk
+  switchport trunk native vlan 99
+  switchport trunk allowed vlan 10,20,30,99
+
+interface range g0/1-2
+  description Membres EtherChannel vers S1
+  switchport mode trunk
+  switchport trunk native vlan 99
+  switchport trunk allowed vlan 10,20,30,99
+  channel-group 1 mode passive</code></pre>
+                </div>
+
+                <h3>EtherChannel Layer 3</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - EtherChannel L3</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Sur un routeur ou switch L3
+interface port-channel 1
+  no switchport
+  ip address 10.0.0.1 255.255.255.252
+
+interface range g0/0/0-1
+  no switchport
+  no ip address
+  channel-group 1 mode active</code></pre>
+                </div>
+
+                <h3>Vérification EtherChannel</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Vérification</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Résumé des EtherChannels
+show etherchannel summary
+
+! Exemple de sortie:
+! Group  Port-channel  Protocol    Ports
+! ------+-------------+-----------+-------------------------------
+! 1      Po1(SU)       LACP        Gi0/1(P)    Gi0/2(P)
+! 
+! Flags:  D - down        P - bundled in port-channel
+!         I - stand-alone s - suspended
+!         H - Hot-standby (LACP only)
+!         R - Layer3      S - Layer2
+!         U - in use      N - not in use
+
+! Détails d'un port-channel
+show etherchannel port-channel
+
+! Load balancing method
+show etherchannel load-balance</code></pre>
+                </div>
+
+                <h3>Configurer le Load Balancing</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Load Balancing</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Définir la méthode de répartition
+port-channel load-balance src-dst-mac      ! Par MAC source et destination
+port-channel load-balance src-dst-ip       ! Par IP source et destination (recommandé)
+port-channel load-balance src-dst-port     ! Par port source et destination</code></pre>
+                </div>
+            </section>
+
+            <!-- Section 2: HSRP -->
+            <section class="section" id="hsrp">
+                <h2>HSRP (Hot Standby Router Protocol)</h2>
+
+                <p><strong>HSRP</strong> est un protocole Cisco de redondance de passerelle. Plusieurs routeurs
+                    partagent une <strong>IP virtuelle</strong> comme gateway. Si le routeur actif tombe, un routeur
+                    standby prend le relais automatiquement.</p>
+
+                <h3>Pourquoi HSRP ?</h3>
+                <p>Les PC configurent une seule gateway. Si ce routeur tombe, plus d'accès réseau. HSRP résout ce
+                    problème avec une IP virtuelle qui "bascule" entre routeurs.</p>
+
+                <h3>Terminologie HSRP</h3>
+                <ul>
+                    <li><strong>Virtual IP</strong> : Adresse IP partagée, configurée comme gateway sur les clients</li>
+                    <li><strong>Virtual MAC</strong> : 0000.0c07.acXX (XX = numéro de groupe en hex)</li>
+                    <li><strong>Active Router</strong> : Routeur qui répond actuellement pour la VIP</li>
+                    <li><strong>Standby Router</strong> : Routeur de backup prêt à prendre le relais</li>
+                    <li><strong>Priority</strong> : Détermine qui devient Active (plus haute = meilleur)</li>
+                    <li><strong>Preempt</strong> : Permet à un routeur de reprendre le rôle Active</li>
+                </ul>
+
+                <h3>Configuration HSRP</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Configuration HSRP</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! === Routeur R1 (Active préféré) ===
+interface g0/0/0
+  ip address 192.168.1.2 255.255.255.0
+  
+  ! Configurer HSRP groupe 1
+  standby 1 ip 192.168.1.1              ! IP virtuelle (gateway)
+  standby 1 priority 110                 ! Plus haute = Active (défaut: 100)
+  standby 1 preempt                      ! Reprendre le rôle si meilleure priorité
+  standby 1 timers 1 3                   ! Hello 1s, Dead 3s (défaut: 3s, 10s)
+  
+  ! Tracking d'interface (optionnel)
+  standby 1 track g0/0/1 20              ! Réduire priorité de 20 si g0/0/1 down
+
+! === Routeur R2 (Standby) ===
+interface g0/0/0
+  ip address 192.168.1.3 255.255.255.0
+  
+  standby 1 ip 192.168.1.1               ! Même IP virtuelle
+  standby 1 priority 90                   ! Plus basse = Standby
+  standby 1 preempt</code></pre>
+                </div>
+
+                <h3>HSRPv2</h3>
+                <p>HSRP version 2 apporte des améliorations :</p>
+                <ul>
+                    <li>Numéros de groupe : 0-4095 (vs 0-255 en v1)</li>
+                    <li>Timers plus précis (millisecondes)</li>
+                    <li>MAC virtuelle différente : 0000.0c9f.fXXX</li>
+                </ul>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - HSRPv2</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>interface g0/0/0
+  standby version 2
+  standby 1 ip 192.168.1.1
+  standby 1 priority 110
+  standby 1 preempt</code></pre>
+                </div>
+
+                <h3>Vérification HSRP</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Vérification HSRP</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Afficher l'état HSRP
+show standby
+show standby brief
+
+! Exemple de sortie:
+!                      P indicates configured to preempt.
+! Interface   Grp  Pri P State   Active          Standby         Virtual IP
+! Gi0/0/0     1    110 P Active  local           192.168.1.3     192.168.1.1</code></pre>
+                </div>
+
+                <div class="alert alert-info">
+                    <div class="alert-icon">💡</div>
+                    <div class="alert-content">
+                        <div class="alert-title">Alternatives à HSRP</div>
+                        <ul style="margin: 0; padding-left: 1.5rem;">
+                            <li><strong>VRRP</strong> (Virtual Router Redundancy Protocol) : Standard IEEE, similaire à
+                                HSRP</li>
+                            <li><strong>GLBP</strong> (Gateway Load Balancing Protocol) : Cisco, load balancing entre
+                                routeurs</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: OSPF Multi-Area -->
+            <section class="section" id="ospf-multiarea">
+                <h2>OSPF Multi-Areas</h2>
+
+                <p>Dans les grands réseaux, un OSPF single-area devient inefficace (LSDB trop grande, recalculs SPF
+                    fréquents). <strong>OSPF Multi-Area</strong> divise le réseau en areas pour réduire la charge.</p>
+
+                <h3>Avantages Multi-Area</h3>
+                <ul>
+                    <li><strong>LSDB plus petite</strong> par area</li>
+                    <li><strong>Recalculs SPF localisés</strong> (un changement dans area 1 n'affecte pas area 2)</li>
+                    <li><strong>Résumation de routes</strong> possible aux frontières</li>
+                    <li><strong>Scalabilité</strong> améliorée</li>
+                </ul>
+
+                <h3>Types de routeurs OSPF</h3>
+                <ul>
+                    <li><strong>Internal Router</strong> : Toutes les interfaces dans une seule area</li>
+                    <li><strong>Backbone Router</strong> : Au moins une interface dans Area 0</li>
+                    <li><strong>ABR (Area Border Router)</strong> : Interfaces dans plusieurs areas (dont Area 0)</li>
+                    <li><strong>ASBR (Autonomous System BR)</strong> : Redistribue des routes externes dans OSPF</li>
+                </ul>
+
+                <h3>Règle fondamentale</h3>
+                <div class="alert alert-danger">
+                    <div class="alert-icon">🚨</div>
+                    <div class="alert-content">
+                        <div class="alert-title">Toutes les areas doivent toucher Area 0 !</div>
+                        <p style="margin: 0;">Area 0 (backbone) est obligatoire. Toutes les autres areas doivent être
+                            directement connectées à Area 0, sinon via un Virtual-Link.</p>
+                    </div>
+                </div>
+
+                <h3>Configuration Multi-Area</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - OSPF Multi-Area</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! === Routeur ABR (connecte Area 0 et Area 1) ===
+router ospf 1
+  router-id 1.1.1.1
+  
+  ! Interfaces dans le backbone
+  network 10.0.0.0 0.0.0.3 area 0
+  network 10.0.0.4 0.0.0.3 area 0
+  
+  ! Interfaces dans Area 1
+  network 192.168.1.0 0.0.0.255 area 1
+  network 192.168.2.0 0.0.0.255 area 1
+
+! OU configuration par interface (plus claire)
+interface g0/0/0
+  ip ospf 1 area 0
+interface g0/0/1
+  ip ospf 1 area 0
+interface g0/0/2
+  ip ospf 1 area 1
+interface g0/0/3
+  ip ospf 1 area 1</code></pre>
+                </div>
+
+                <h3>Résumation Inter-Area</h3>
+                <p>Les ABR peuvent résumer les routes d'une area vers le backbone.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Route Summarization</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Sur l'ABR, résumer les routes de l'Area 1
+router ospf 1
+  ! Résumer 192.168.0.0/22 vers Area 0
+  area 1 range 192.168.0.0 255.255.252.0</code></pre>
+                </div>
+
+                <h3>Types de LSA</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px; text-align: left;">Type</th>
+                            <th style="padding: 12px; text-align: left;">Nom</th>
+                            <th style="padding: 12px; text-align: left;">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">1</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Router LSA</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Liens du routeur,
+                                intra-area</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">2</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Network LSA</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Généré par le DR,
+                                réseaux multi-accès</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">3</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Summary LSA</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Routes inter-area
+                                (générées par ABR)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">4</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">ASBR Summary</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Annonce la
+                                localisation de l'ASBR</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px;">5</td>
+                            <td style="padding: 12px;">External LSA</td>
+                            <td style="padding: 12px;">Routes externes (redistribuées)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Vérification Multi-Area</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Vérification</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>show ip ospf
+show ip ospf border-routers
+show ip ospf database
+show ip route ospf
+
+! Identifier les types de routes:
+! O     = intra-area
+! O IA  = inter-area (via ABR)
+! O E1  = external type 1
+! O E2  = external type 2</code></pre>
+                </div>
+            </section>
+
+            <!-- Section 4: IPv6 Fundamentals -->
+            <section class="section" id="ipv6">
+                <h2>IPv6 : Fondamentaux</h2>
+
+                <p><strong>IPv6</strong> est le successeur d'IPv4, avec des adresses de <strong>128 bits</strong> (vs 32
+                    bits). Il résout la pénurie d'adresses et apporte des améliorations.</p>
+
+                <h3>Format des adresses IPv6</h3>
+                <ul>
+                    <li><strong>128 bits</strong> écrits en hexadécimal</li>
+                    <li><strong>8 groupes de 16 bits</strong> séparés par ":"</li>
+                    <li>Exemple : <code>2001:0db8:0000:0000:0000:0000:0000:0001</code></li>
+                </ul>
+
+                <h3>Règles de simplification</h3>
+                <ol>
+                    <li>Supprimer les zéros de tête dans chaque groupe : <code>0db8</code> → <code>db8</code></li>
+                    <li>Remplacer un groupe de zéros consécutifs par <code>::</code> (une seule fois)</li>
+                </ol>
+                <p>Exemple simplifié : <code>2001:db8::1</code></p>
+
+                <h3>Types d'adresses IPv6</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px; text-align: left;">Type</th>
+                            <th style="padding: 12px; text-align: left;">Préfixe</th>
+                            <th style="padding: 12px; text-align: left;">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><strong>Global
+                                    Unicast</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">2000::/3</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Équivalent d'une IP
+                                publique (routable)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Link-Local</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">fe80::/10</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Communication
+                                locale uniquement (obligatoire)</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><strong>Unique
+                                    Local</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">fc00::/7</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Équivalent d'une IP
+                                privée</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Multicast</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">ff00::/8</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Communication vers
+                                un groupe</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px;"><strong>Loopback</strong></td>
+                            <td style="padding: 12px;">::1/128</td>
+                            <td style="padding: 12px;">Équivalent de 127.0.0.1</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>EUI-64</h3>
+                <p>Méthode pour générer automatiquement la partie hôte (64 bits) d'une adresse IPv6 à partir de
+                    l'adresse MAC (48 bits) :</p>
+                <ol>
+                    <li>Prendre la MAC : <code>00:1A:2B:3C:4D:5E</code></li>
+                    <li>Insérer FFFE au milieu : <code>00:1A:2B:FF:FE:3C:4D:5E</code></li>
+                    <li>Inverser le 7ème bit : <code>02:1A:2B:FF:FE:3C:4D:5E</code></li>
+                    <li>Résultat : <code>::021A:2BFF:FE3C:4D5E</code></li>
+                </ol>
+            </section>
+
+            <!-- Section 5: IPv6 Configuration -->
+            <section class="section" id="ipv6-config">
+                <h2>IPv6 : Configuration</h2>
+
+                <h3>Configuration IPv6 sur routeur</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Configuration IPv6</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Activer le routage IPv6 (obligatoire!)
+ipv6 unicast-routing
+
+! Configurer une interface avec IPv6
+interface g0/0/0
+  description LAN
+  ipv6 address 2001:db8:acad:1::1/64
+  ipv6 address fe80::1 link-local
+  no shutdown
+
+! Ou utiliser EUI-64 pour générer l'ID hôte
+interface g0/0/1
+  ipv6 address 2001:db8:acad:2::/64 eui-64
+  no shutdown
+
+! Vérification
+show ipv6 interface brief
+show ipv6 interface g0/0/0
+show ipv6 route</code></pre>
+                </div>
+
+                <h3>OSPFv3 (OSPF pour IPv6)</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - OSPFv3</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Activer OSPFv3
+ipv6 router ospf 1
+  router-id 1.1.1.1
+  passive-interface g0/0/0
+
+! Activer sur les interfaces (différent d'OSPFv2!)
+interface g0/0/0
+  ipv6 ospf 1 area 0
+
+interface g0/0/1
+  ipv6 ospf 1 area 0
+
+! Vérification
+show ipv6 ospf neighbor
+show ipv6 ospf interface
+show ipv6 route ospf</code></pre>
+                </div>
+
+                <h3>Route statique IPv6</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Routes statiques IPv6</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Route statique via next-hop
+ipv6 route 2001:db8:acad:3::/64 2001:db8:feed::2
+
+! Route par défaut
+ipv6 route ::/0 2001:db8:feed::2</code></pre>
+                </div>
+            </section>
+
+            <!-- Section 6: NAT -->
+            <section class="section" id="nat">
+                <h2>NAT et PAT</h2>
+
+                <p><strong>NAT</strong> (Network Address Translation) traduit les adresses IP privées en IP publiques
+                    pour accéder à Internet. <strong>PAT</strong> (Port Address Translation) permet à plusieurs hôtes de
+                    partager une seule IP publique.</p>
+
+                <h3>Types de NAT</h3>
+                <ul>
+                    <li><strong>Static NAT</strong> : 1 IP privée ↔ 1 IP publique (serveurs)</li>
+                    <li><strong>Dynamic NAT</strong> : Pool d'IPs publiques partagées</li>
+                    <li><strong>PAT (NAT Overload)</strong> : Plusieurs IPs privées → 1 IP publique (via ports)</li>
+                </ul>
+
+                <h3>Terminologie NAT</h3>
+                <ul>
+                    <li><strong>Inside Local</strong> : IP privée (192.168.1.10)</li>
+                    <li><strong>Inside Global</strong> : IP publique vue depuis Internet (203.0.113.5)</li>
+                    <li><strong>Outside Local</strong> : IP de la destination vue depuis l'intérieur</li>
+                    <li><strong>Outside Global</strong> : IP réelle de la destination</li>
+                </ul>
+
+                <h3>Configuration PAT (le plus courant)</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - PAT Configuration</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Définir les interfaces inside et outside
+interface g0/0/0
+  description LAN
+  ip address 192.168.1.1 255.255.255.0
+  ip nat inside
+  no shutdown
+
+interface g0/0/1
+  description WAN vers ISP
+  ip address 203.0.113.1 255.255.255.252
+  ip nat outside
+  no shutdown
+
+! Créer une ACL pour identifier le trafic à NATer
+access-list 1 permit 192.168.1.0 0.0.0.255
+
+! Configurer PAT (overload) avec l'IP de l'interface outside
+ip nat inside source list 1 interface g0/0/1 overload
+
+! Vérification
+show ip nat translations
+show ip nat statistics
+
+! Effacer les traductions
+clear ip nat translation *</code></pre>
+                </div>
+
+                <h3>Static NAT (pour serveurs)</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Static NAT</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Mapper une IP privée à une IP publique
+ip nat inside source static 192.168.1.100 203.0.113.10
+
+! Port Forwarding (Static PAT)
+ip nat inside source static tcp 192.168.1.100 80 203.0.113.1 80
+ip nat inside source static tcp 192.168.1.100 443 203.0.113.1 443</code></pre>
+                </div>
+            </section>
+
+            <!-- Section 7: Labs -->
+            <section class="section" id="labs">
+                <h2>Labs Pratiques</h2>
+
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>🔬 Lab 1 : EtherChannel LACP</h3>
+                    <p><strong>Objectif :</strong> Configurer un EtherChannel entre deux switches</p>
+                    <ol>
+                        <li>Connecter 2 câbles entre S1 et S2</li>
+                        <li>Configurer les interfaces en trunk</li>
+                        <li>Créer un port-channel LACP</li>
+                        <li>Vérifier avec <code>show etherchannel summary</code></li>
+                        <li>Débrancher un câble et vérifier que le trafic passe toujours</li>
+                    </ol>
+                </div>
+
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>🔬 Lab 2 : HSRP</h3>
+                    <p><strong>Objectif :</strong> Configurer la redondance de passerelle</p>
+                    <ol>
+                        <li>2 routeurs, 1 switch, plusieurs PCs</li>
+                        <li>Configurer HSRP avec R1 comme Active</li>
+                        <li>Configurer les PCs avec la VIP comme gateway</li>
+                        <li>Éteindre R1 et vérifier le basculement vers R2</li>
+                        <li>Rallumer R1 et observer le preempt</li>
+                    </ol>
+                </div>
+
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>🔬 Lab 3 : OSPF Multi-Area</h3>
+                    <p><strong>Objectif :</strong> Configurer OSPF avec plusieurs areas</p>
+                    <ol>
+                        <li>3 routeurs : R1 (Area 0), R2 (ABR Area 0/1), R3 (Area 1)</li>
+                        <li>Configurer les réseaux dans les bonnes areas</li>
+                        <li>Vérifier les types de routes (O vs O IA)</li>
+                        <li>Configurer la résumation sur l'ABR</li>
+                    </ol>
+                </div>
+
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>🔬 Lab 4 : IPv6 et OSPFv3</h3>
+                    <p><strong>Objectif :</strong> Configurer un réseau IPv6 avec OSPFv3</p>
+                    <ol>
+                        <li>Activer le routage IPv6</li>
+                        <li>Configurer des adresses IPv6 sur les interfaces</li>
+                        <li>Activer OSPFv3</li>
+                        <li>Vérifier la connectivité IPv6</li>
+                    </ol>
+                </div>
+
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>🔬 Lab 5 : NAT/PAT</h3>
+                    <p><strong>Objectif :</strong> Configurer l'accès Internet pour un LAN</p>
+                    <ol>
+                        <li>Configurer les interfaces inside/outside</li>
+                        <li>Créer l'ACL et configurer PAT</li>
+                        <li>Tester l'accès Internet depuis les PCs</li>
+                        <li>Vérifier les traductions avec <code>show ip nat translations</code></li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Section 8: Quiz -->
+            <section class="section" id="quiz">
+                <h2>🧪 Quiz de vérification</h2>
+
+                <div class="card" style="margin-bottom: 1rem;">
+                    <h4>Question 1</h4>
+                    <p>Quelle combinaison LACP ne formera PAS un EtherChannel ?</p>
+                    <details>
+                        <summary style="cursor: pointer; color: var(--primary); font-weight: 500;">Voir la réponse
+                        </summary>
+                        <p
+                            style="margin-top: 0.5rem; padding: 1rem; background: var(--bg-primary); border-radius: 8px;">
+                            <strong>passive-passive</strong>. Au moins un côté doit être en mode <strong>active</strong>
+                        <div id="quiz-container" data-phase="phase6">
+                            <div style="text-align: center; padding: 2rem;">
+                                <p>Chargement du quiz...</p>
+                            </div>
+                        </div>
+            </section>
+
+            <!-- Planning -->
+            <section class="section">
+                <h2>Planning Suggéré</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 1 : EtherChannel</div>
+                        <div class="timeline-content">PAgP, LACP, Load Balancing + Labs</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 2 : HSRP et OSPF Multi-Area</div>
+                        <div class="timeline-content">Redondance gateway + Design multi-area + ABR</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 3 : IPv6</div>
+                        <div class="timeline-content">Adressage IPv6 + OSPFv3 + Labs</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 4 : NAT/PAT</div>
+                        <div class="timeline-content">Static NAT, PAT, Port Forwarding + Labs</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 5 : Projet Final</div>
+                        <div class="timeline-content">Lab intégré combinant toutes les technologies</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Page Navigation -->
+
+            <!-- Completion Section -->
+            <div class="completion-section"
+                style="margin: 4rem 0; padding: 2rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color); text-align: center;">
+                <h3 style="margin-bottom: 1rem;">La phase est terminée ?</h3>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Marquez cette phase comme terminée pour
+                    suivre votre progression globale.</p>
+                <button class="mark-complete-btn" data-phase="phase6"
+                    style="margin: 0 auto; width: auto; font-size: 1.1rem; padding: 0.75rem 2rem;">Marquer la phase
+                    comme terminée</button>
+            </div>
+
+            <nav class="page-nav">
+                <a href="phase5-securite.html" class="page-nav-link prev">
+                    <span>←</span>
+                    <div>
+                        <div class="page-nav-label">Précédent</div>
+                        <div class="page-nav-title">Phase 5 : Sécurité</div>
+                    </div>
+                </a>
+                <a href="projets.html" class="page-nav-link">
+                    <div>
+                        <div class="page-nav-label">Suivant</div>
+                        <div class="page-nav-title">Projets Pratiques</div>
+                    </div>
+                    <span>→</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Programme de Formation en Routage et Commutation • Préparation CCNA 200-301</p>
+        </div>
+    </footer>
+    <script src="../js/quiz_data.js"></script>
+    <script src="../js/quiz.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

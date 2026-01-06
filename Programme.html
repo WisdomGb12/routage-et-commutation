@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme de Formation - Routage et Commutation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+        }
+        p {
+            line-height: 1.8;
+            color: #34495e;
+            text-align: justify;
+        }
+        ul, ol {
+            line-height: 1.8;
+            color: #34495e;
+        }
+        .phase {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 5px solid #667eea;
+        }
+        .important {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .timeline {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #2196f3;
+        }
+        .btn-download {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn-download:hover {
+            background: #764ba2;
+        }
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+            .btn-download {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Programme de Formation Complète en Routage et Commutation</h1>
+        
+        <div class="important">
+            <strong>👋 Bienvenue !</strong><br>
+            Ce programme est conçu pour ta transition du développement web/mobile vers les réseaux informatiques. 
+            Durée totale estimée : 20-24 semaines avec pratique régulière.
+        </div>
+
+        <div class="phase">
+            <h2>Phase 1 : Fondamentaux Réseaux (2-3 semaines)</h2>
+            
+            <h3>Concepts de base à maîtriser :</h3>
+            <ul>
+                <li><strong>Modèle OSI et TCP/IP</strong> : Comprendre les 7 couches et comment les données circulent</li>
+                <li><strong>Adressage IP</strong> : IPv4, classes d'adresses (A, B, C), notation CIDR</li>
+                <li><strong>Subnetting</strong> : Calcul de sous-réseaux, masques de sous-réseau</li>
+                <li><strong>Protocoles de base</strong> : TCP, UDP, ICMP, ARP, DNS, DHCP</li>
+            </ul>
+
+            <h3>Exercices pratiques :</h3>
+            <ol>
+                <li>Calcul de sous-réseaux sur papier (au moins 50 exercices)</li>
+                <li>Utilisation de calculateurs de sous-réseaux pour vérification</li>
+                <li>Installation et utilisation de Wireshark pour analyser le trafic</li>
+                <li>Configuration d'adresses IP statiques sous Windows</li>
+            </ol>
+
+            <div class="timeline">
+                <strong>⏱️ Planning suggéré :</strong><br>
+                Semaine 1 : Théorie OSI/TCP-IP + Adressage IP (2h/jour)<br>
+                Semaine 2 : Subnetting intensif (2h théorie + 1h exercices/jour)<br>
+                Semaine 3 : Protocoles et Wireshark (1h théorie + 2h pratique/jour)
+            </div>
+        </div>
+
+        <div class="phase">
+            <h2>Phase 2 : Introduction à la Commutation (3-4 semaines)</h2>
+            
+            <h3>Technologies de commutation :</h3>
+            <ul>
+                <li><strong>VLANs</strong> : Segmentation logique du réseau, isolation du trafic</li>
+                <li><strong>Trunking 802.1Q</strong> : Transport de plusieurs VLANs sur un lien</li>
+                <li><strong>VTP</strong> : Protocole de propagation des VLANs</li>
+                <li><strong>STP</strong> : Spanning Tree Protocol, prévention des boucles</li>
+                <li><strong>Port Security</strong> : Sécurisation des ports d'accès</li>
+            </ul>
+
+            <h3>Commandes Cisco essentielles :</h3>
+            <div class="code-block">
+show vlan brief
+show interfaces trunk
+show mac address-table
+show spanning-tree
+show interfaces status
+            </div>
+
+            <h3>Configuration de base d'un switch :</h3>
+            <div class="code-block">
+enable
+configure terminal
+hostname S1
+no ip domain-lookup
+enable secret class
+line console 0
+  password cisco
+  login
+  exit
+line vty 0 4
+  password cisco
+  login
+  exit
+service password-encryption
+banner motd #Acces non autorise interdit#
+            </div>
+
+            <h3>Projet pratique :</h3>
+            <p>Configure un réseau avec 2 switches, 3 VLANs (Management, Users, Servers), un trunk entre les switches, et vérifie l'isolation du trafic.</p>
+        </div>
+
+        <div class="phase">
+            <h2>Phase 3 : Routage Statique et Dynamique (4-5 semaines)</h2>
+            
+            <h3>Routage statique :</h3>
+            <ul>
+                <li>Concept de table de routage</li>
+                <li>Routes par défaut vs routes spécifiques</li>
+                <li>Distance administrative</li>
+                <li>Configuration et vérification</li>
+            </ul>
+
+            <div class="code-block">
+! Route statique de base
+ip route 192.168.2.0 255.255.255.0 10.0.0.2
+
+! Route par défaut
+ip route 0.0.0.0 0.0.0.0 10.0.0.1
+            </div>
+
+            <h3>OSPF (Open Shortest Path First) :</h3>
+            <p><strong>Concepts clés :</strong></p>
+            <ul>
+                <li><strong>Areas</strong> : Segmentation logique (Area 0 = backbone)</li>
+                <li><strong>Router ID</strong> : Identifiant unique du routeur</li>
+                <li><strong>DR/BDR</strong> : Designated Router et Backup (réduction des adjacences)</li>
+                <li><strong>LSA</strong> : Link State Advertisements (échange d'informations)</li>
+                <li><strong>Metric</strong> : Coût basé sur la bande passante</li>
+                <li><strong>Hello/Dead timers</strong> : 10s/40s par défaut</li>
+            </ul>
+
+            <h3>Configuration OSPF de base :</h3>
+            <div class="code-block">
+router ospf 1
+  router-id 1.1.1.1
+  network 10.0.0.0 0.0.0.255 area 0
+  network 192.168.1.0 0.0.0.255 area 0
+  passive-interface loopback0
+            </div>
+
+            <h3>Commandes de vérification OSPF :</h3>
+            <div class="code-block">
+show ip ospf neighbor
+show ip ospf interface
+show ip ospf database
+show ip route ospf
+show ip protocols
+            </div>
+
+            <h3>Autres protocoles à connaître :</h3>
+            <ul>
+                <li><strong>RIP</strong> : Distance vector, métrique en nombre de sauts (obsolète mais bon pour apprendre)</li>
+                <li><strong>EIGRP</strong> : Protocole propriétaire Cisco, hybrid</li>
+            </ul>
+
+            <div class="timeline">
+                <strong>⏱️ Planning suggéré :</strong><br>
+                Semaines 1-2 : Routage statique et théorie OSPF<br>
+                Semaines 3-4 : Configuration OSPF et troubleshooting<br>
+                Semaine 5 : Optimisation OSPF et projets
+            </div>
+        </div>
+
+        <div class="phase">
+            <h2>Phase 4 : Routage Inter-VLAN (2-3 semaines)</h2>
+            
+            <h3>Méthode 1 : Router-on-a-Stick</h3>
+            <p>Une seule interface physique avec plusieurs sous-interfaces logiques (une par VLAN). Économique mais peut créer un goulot d'étranglement.</p>
+
+            <div class="code-block">
+! Configuration sur le routeur
+interface g0/0/1
+  no shutdown
+  exit
+
+interface g0/0/1.10
+  description VLAN 10 - Management
+  encapsulation dot1q 10
+  ip address 192.168.10.1 255.255.255.0
+  exit
+
+interface g0/0/1.20
+  description VLAN 20 - Users
+  encapsulation dot1q 20
+  ip address 192.168.20.1 255.255.255.0
+  exit
+
+interface g0/0/1.99
+  description VLAN 99 - Native
+  encapsulation dot1q 99 native
+  exit
+            </div>
+
+            <h3>Configuration du trunk sur le switch :</h3>
+            <div class="code-block">
+interface f0/5
+  description Trunk vers routeur
+  switchport mode trunk
+  switchport trunk native vlan 99
+  switchport trunk allowed vlan 10,20,99
+  no shutdown
+            </div>
+
+            <h3>Méthode 2 : Switch Layer 3</h3>
+            <p>Le switch lui-même route entre VLANs. Plus performant mais nécessite un switch L3.</p>
+
+            <div class="code-block">
+! Activation du routage IP
+ip routing
+
+! Configuration des SVI (Switch Virtual Interface)
+interface vlan 10
+  ip address 192.168.10.1 255.255.255.0
+  no shutdown
+
+interface vlan 20
+  ip address 192.168.20.1 255.255.255.0
+  no shutdown
+            </div>
+
+            <h3>Projet pratique :</h3>
+            <p>Reproduis le lab 4.2.8 en comprenant chaque étape : configuration des VLANs, trunk, sous-interfaces, et vérification de la connectivité entre VLANs.</p>
+        </div>
+
+        <div class="phase">
+            <h2>Phase 5 : Sécurité et Optimisation (3-4 semaines)</h2>
+            
+            <h3>Sécurité de base des switches :</h3>
+            <ul>
+                <li><strong>Port Security</strong> : Limite le nombre d'adresses MAC par port</li>
+                <li><strong>DHCP Snooping</strong> : Protection contre les serveurs DHCP rogue</li>
+                <li><strong>DAI</strong> : Dynamic ARP Inspection (anti-ARP spoofing)</li>
+                <li><strong>Désactivation des ports inutilisés</strong></li>
+            </ul>
+
+            <div class="code-block">
+! Port Security
+interface f0/1
+  switchport mode access
+  switchport port-security
+  switchport port-security maximum 2
+  switchport port-security violation restrict
+  switchport port-security mac-address sticky
+            </div>
+
+            <h3>ACLs (Access Control Lists) :</h3>
+            <p>Les ACLs filtrent le trafic basé sur des critères IP, protocole, port...</p>
+
+            <div class="code-block">
+! ACL Standard (filtre sur IP source uniquement)
+access-list 10 permit 192.168.1.0 0.0.0.255
+access-list 10 deny any
+
+! ACL Étendue (filtre sur source, destination, protocole, port)
+access-list 100 permit tcp 192.168.1.0 0.0.0.255 any eq 80
+access-list 100 permit tcp 192.168.1.0 0.0.0.255 any eq 443
+access-list 100 deny ip any any
+
+! Application sur une interface
+interface g0/0/1
+  ip access-group 100 in
+            </div>
+
+            <h3>Optimisation OSPF :</h3>
+            <ul>
+                <li>Ajustement des timers (hello, dead)</li>
+                <li>Modification des priorités pour contrôler DR/BDR</li>
+                <li>Configuration de la bande passante de référence</li>
+                <li>Interfaces passives pour réduire le trafic</li>
+            </ul>
+
+            <div class="code-block">
+! Modification des timers OSPF
+interface g0/0/1
+  ip ospf hello-interval 30
+  ip ospf dead-interval 120
+
+! Priorité OSPF (plus élevé = plus de chance d'être DR)
+interface g0/0/1
+  ip ospf priority 100
+
+! Bande passante de référence (pour réseaux 10Gbps)
+router ospf 1
+  auto-cost reference-bandwidth 10000
+
+! Interface passive
+router ospf 1
+  passive-interface loopback0
+            </div>
+
+            <h3>SSH au lieu de Telnet :</h3>
+            <div class="code-block">
+! Configuration SSH
+ip domain-name mondomaine.local
+crypto key generate rsa modulus 2048
+username admin privilege 15 secret cisco123
+
+line vty 0 4
+  transport input ssh
+  login local
+  exit
+
+ip ssh version 2
+            </div>
+        </div>
+
+        <div class="phase">
+            <h2>Phase 6 : Technologies Avancées (4-5 semaines)</h2>
+            
+            <h3>EtherChannel (Agrégation de liens) :</h3>
+            <p>Combine plusieurs liens physiques en un lien logique pour augmenter la bande passante et la redondance.</p>
+
+            <div class="code-block">
+! EtherChannel avec LACP (standard)
+interface range f0/1-2
+  channel-group 1 mode active
+  exit
+
+interface port-channel 1
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30
+            </div>
+
+            <h3>HSRP/VRRP (Redondance de passerelle) :</h3>
+            <p>Fournit une passerelle par défaut redondante pour les hôtes.</p>
+
+            <div class="code-block">
+! HSRP sur R1 (actif)
+interface g0/0/1
+  ip address 192.168.1.2 255.255.255.0
+  standby 1 ip 192.168.1.1
+  standby 1 priority 110
+  standby 1 preempt
+
+! HSRP sur R2 (standby)
+interface g0/0/1
+  ip address 192.168.1.3 255.255.255.0
+  standby 1 ip 192.168.1.1
+  standby 1 priority 100
+            </div>
+
+            <h3>OSPF Multi-Areas :</h3>
+            <p>Réduction de la taille des tables de routage et du trafic LSA.</p>
+
+            <div class="code-block">
+! Routeur ABR (Area Border Router)
+router ospf 1
+  router-id 2.2.2.2
+  network 10.0.0.0 0.0.0.255 area 0
+  network 192.168.1.0 0.0.0.255 area 1
+  area 1 range 192.168.0.0 255.255.0.0
+            </div>
+
+            <h3>IPv6 et OSPFv3 :</h3>
+            <p>Le futur de l'adressage IP avec un espace d'adressage quasi-illimité.</p>
+
+            <div class="code-block">
+! Configuration IPv6 de base
+ipv6 unicast-routing
+
+interface g0/0/1
+  ipv6 address 2001:db8:acad:1::1/64
+  ipv6 enable
+  no shutdown
+
+! OSPFv3 pour IPv6
+ipv6 router ospf 1
+  router-id 1.1.1.1
+
+interface g0/0/1
+  ipv6 ospf 1 area 0
+            </div>
+
+            <h3>NAT/PAT :</h3>
+            <p>Translation d'adresses pour permettre l'accès Internet depuis des réseaux privés.</p>
+
+            <div class="code-block">
+! NAT dynamique avec overload (PAT)
+access-list 1 permit 192.168.1.0 0.0.0.255
+
+interface g0/0/0
+  ip nat inside
+
+interface g0/0/1
+  ip nat outside
+
+ip nat inside source list 1 interface g0/0/1 overload
+            </div>
+        </div>
+
+        <div class="phase">
+            <h2>Programme d'Apprentissage Hebdomadaire</h2>
+            
+            <div class="timeline">
+                <strong>📅 Semaines 1-3 : Fondamentaux</strong><br>
+                • 2h/jour de théorie (modèles, protocoles)<br>
+                • 1h/jour de subnetting pratique<br>
+                • Week-end : labs Packet Tracer simples
+            </div>
+
+            <div class="timeline">
+                <strong>📅 Semaines 4-7 : Commutation</strong><br>
+                • 1h/jour de théorie (VLANs, trunking, STP)<br>
+                • 2h/jour de pratique sur Packet Tracer<br>
+                • Reproduire le lab 4.2.8
+            </div>
+
+            <div class="timeline">
+                <strong>📅 Semaines 8-12 : OSPF</strong><br>
+                • 1h/jour de théorie OSPF approfondie<br>
+                • 2-3h/jour de labs<br>
+                • Reproduire le lab 2.7.2 et variations<br>
+                • Troubleshooting de scénarios cassés
+            </div>
+
+            <div class="timeline">
+                <strong>📅 Semaines 13-15 : Inter-VLAN</strong><br>
+                • 3h/jour de labs pratiques<br>
+                • Intégration VLAN + Routage<br>
+                • Projets complets
+            </div>
+
+            <div class="timeline">
+                <strong>📅 Semaines 16-19 : Sécurité</strong><br>
+                • 2h/jour de théorie (ACLs, port security)<br>
+                • 2h/jour de pratique<br>
+                • Labs sécurisés
+            </div>
+
+            <div class="timeline">
+                <strong>📅 Semaines 20-24 : Avancé</strong><br>
+                • Technologies avancées (EtherChannel, HSRP, IPv6)<br>
+                • Projets complets d'infrastructure<br>
+                • Préparation certification CCNA
+            </div>
+        </div>
+
+        <div class="phase">
+            <h2>Ressources Recommandées</h2>
+            
+            <h3>Logiciels de simulation :</h3>
+            <ul>
+                <li><strong>Packet Tracer</strong> : Gratuit, parfait pour débuter (tu l'as déjà !)</li>
+                <li><strong>GNS3</strong> : Plus avancé, utilise des IOS réels</li>
+                <li><strong>EVE-NG</strong> : Pour simuler des réseaux complexes</li>
+            </ul>
+
+            <h3>Documentation et cours :</h3>
+            <ul>
+                <li>Cisco Learning Network (gratuit)</li>
+                <li>Documentation officielle Cisco</li>
+                <li>Livres CCNA : "CCNA 200-301 Official Cert Guide" (Odom)</li>
+                <li>Netacad.com (cours officiels Cisco)</li>
+            </ul>
+
+            <h3>Chaînes YouTube recommandées :</h3>
+            <ul>
+                <li><strong>NetworkChuck</strong> : Pédagogique et divertissant</li>
+                <li><strong>David Bombal</strong> : Labs pratiques détaillés</li>
+                <li><strong>Jeremy's IT Lab</strong> : Cours CCNA complet gratuit</li>
+                <li><strong>Keith Barker</strong> : Troubleshooting avancé</li>
+            </ul>
+
+            <h3>Sites web utiles :</h3>
+            <ul>
+                <li>SubnettingPractice.com : Exercices de subnetting</li>
+                <li>PacketLife.net : Cheat sheets et labs</li>
+                <li>Reddit r/ccna : Communauté d'entraide</li>
+            </ul>
+        </div>
+
+        <div class="phase">
+            <h2>Projets Pratiques Progressifs</h2>
+            
+            <h3>Projet 1 : Réseau Domestique (Semaine 7)</h3>
+            <p><strong>Objectif :</strong> Créer un réseau avec 2 VLANs (Invités et Famille)</p>
+            <ul>
+                <li>1 routeur, 1 switch</li>
+                <li>VLAN 10 : Famille (accès complet)</li>
+                <li>VLAN 20 : Invités (accès Internet uniquement via ACL)</li>
+                <li>Router-on-a-stick pour inter-VLAN</li>
+            </ul>
+
+            <h3>Projet 2 : Petit Bureau (Semaine 12)</h3>
+            <p><strong>Objectif :</strong> 3 sites connectés par OSPF</p>
+            <ul>
+                <li>3 routeurs (un par site)</li>
+                <li>OSPF pour le routage dynamique</li>
+                <li>Une route par défaut vers "Internet" (simulé)</li>
+                <li>Vérification de la convergence et du failover</li>
+            </ul>
+
+            <h3>Projet 3 : Réseau d'Entreprise Moyen (Semaine 19)</h3>
+            <p><strong>Objectif :</strong> Infrastructure complète avec sécurité</p>
+            <ul>
+                <li>5 VLANs : Management, Serveurs, Utilisateurs, Voix, Invités</li>
+                <li>2 switches avec trunk et STP</li>
+                <li>Router-on-a-stick avec ACLs</li>
+                <li>Port security sur les ports d'accès</li>
+                <li>SSH activé, Telnet désactivé</li>
+            </ul>
+
+            <h3>Projet 4 : Entreprise Multi-Sites (Semaine 24)</h3>
+            <p><strong>Objectif :</strong> Simulation complète niveau CCNA</p>
+            <ul>
+                <li>4 sites avec routage OSPF multi-areas</li>
+                <li>Redondance avec HSRP</li>
+                <li>EtherChannel entre switches</li>
+                <li>ACLs complexes pour la sécurité</li>
+                <li>NAT/PAT pour l'accès Internet</li>
+                <li>Documentation complète du réseau</li>
+            </ul>
+        </div>
+
+        <div class="phase">
+            <h2>Conseils pour ta Transition Dev → Réseau</h2>
+            
+            <h3>✅ Les similitudes à exploiter :</h3>
+            <ul>
+                <li><strong>Debugging</strong> : Même méthodologie (isolation, tests, vérification)</li>
+                <li><strong>Algorithmes</strong> : OSPF utilise Dijkstra, RIP utilise Bellman-Ford</li>
+                <li><strong>Architecture</strong> : VLANs = microservices, segmentation logique</li>
+                <li><strong>Logs</strong> : Les commandes "show" = console.log() du réseau</li>
+                <li><strong>Documentation</strong> : Essentielle dans les deux domaines</li>
+            </ul>
+
+            <h3>⚠️ Les différences à anticiper :</h3>
+            <ul>
+                <li><strong>Matériel physique</strong> : Les câbles et équipements physiques comptent</li>
+                <li><strong>Propagation</strong> : Les changements affectent tout le réseau</li>
+                <li><strong>État</strong> : Le réseau a un état global (tables de routage, ARP, etc.)</li>
+                <li><strong>Temps réel</strong> : Les problèmes réseau nécessitent une résolution immédiate</li>
+                <li><strong>Moins de "undo"</strong> : Sois prudent, surtout en production</li>
+            </ul>
+
+            <h3>💡 Astuces d'apprentissage :</h3>
+            <ul>
+                <li>Documente tout ce que tu fais (comme des commentaires dans le code)</li>
+                <li>Crée une bibliothèque de configurations réutilisables</li>
+                <li>Utilise des noms descriptifs (VLANs, interfaces, ACLs)</li>
+                <li>Teste toujours dans un lab avant la production</li>
+                <li>Comprends le "pourquoi" avant le "comment"</li>
+            </ul>
+        </div>
+
+        <div class="phase">
+            <h2>Validation de Compétences</h2>
+            
+            <p>Pour savoir si tu as atteint un bon niveau, tu devrais pouvoir :</p>
+
+            <h3>✅ Niveau Débutant (Semaines 1-8) :</h3>
+            <ol>
+                <li>Calculer des sous-réseaux rapidement sans calculateur</li>
+                <li>Configurer un switch de base avec VLANs</li>
+                <li>Créer un trunk entre deux switches</li>
+                <li>Configurer une route statique</li>
+                <li>Lire et comprendre une table de routage</li>
+            </ol>
+
+            <h3>✅ Niveau Intermédiaire (Semaines 9-16) :</h3>
+            <ol>
+                <li>Configurer OSPF single-area sans documentation</li>
+                <li>Implémenter le routage inter-VLAN (Router-on-a-Stick)</li>
+                <li>Diagnostiquer un problème de connectivité en moins de 15 minutes</li>
+                <li>Créer et appliquer des ACLs standard et étendues</li>
+                <li>Optimiser OSPF (timers, priorités, coûts)</li>
+            </ol>
+
+            <h3>✅ Niveau Avancé (Semaines 17-24) :</h3>
+            <ol>
+                <li>Concevoir une architecture réseau complète pour une PME</li>
+                <li>Configurer OSPF multi-areas avec redistribution</li>
+                <li>Implémenter la redondance (HSRP, EtherChannel)</li>
+                <li>Sécuriser un réseau selon les best practices</li>
+                <li>Documenter et justifier tes choix de configuration</li>
+                <li>Troubleshooter des problèmes complexes méthodiquement</li>
+            </ol>
+        </div>
+
+        <div class="important">
+            <h2>🎯 Préparation Certification CCNA</h2>
+            
+            <p><strong>Cisco Certified Network Associate (CCNA 200-301)</strong></p>
+            
+            <p>C'est le standard de l'industrie pour valider tes compétences. Après ce programme complet :</p>
+            
+            <ul>
+                <li><strong>Durée de préparation supplémentaire</strong> : 3-6 mois (révisions intensives)</li>
+                <li><strong>Coût de l'examen</strong> : ~300 USD</li>
+                <li><strong>Format</strong> : QCM, simulations, drag-and-drop (90-120 minutes)</li>
+                <li><strong>Score requis</strong> : 825/1000</li>
+                <li><strong>Validité</strong> : 3 ans</li>
+            </ul>

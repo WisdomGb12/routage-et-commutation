@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 1 : Fondamentaux Réseaux - Routage et Commutation</title>
+    <meta name="description"
+        content="Apprenez les fondamentaux des réseaux : modèle OSI, TCP/IP, adressage IP, subnetting et protocoles.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">🌐</div>
+                <span>Routage & Commutation</span>
+            </a>
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">Accueil</a>
+                <a href="phase1-fondamentaux.html" class="nav-link active">Fondamentaux</a>
+                <a href="phase2-commutation.html" class="nav-link">Commutation</a>
+                <a href="phase3-routage.html" class="nav-link">Routage</a>
+                <a href="phase4-inter-vlan.html" class="nav-link">Inter-VLAN</a>
+                <a href="phase5-securite.html" class="nav-link">Sécurité</a>
+                <a href="phase6-avance.html" class="nav-link">Avancé</a>
+                <a href="ressources.html" class="nav-link">Ressources</a>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Changer le thème">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                    </svg>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container container-narrow">
+            <nav class="breadcrumb">
+                <a href="../index.html">Accueil</a>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Phase 1 : Fondamentaux Réseaux</span>
+            </nav>
+
+            <div class="section-header">
+                <div class="section-icon">📡</div>
+                <div>
+                    <span class="phase-badge" style="background: rgba(102, 126, 234, 0.15); color: #667eea;">Phase
+                        1</span>
+                    <h1 style="margin-top: 0.5rem;">Fondamentaux Réseaux</h1>
+                </div>
+
+            </div>
+
+            <div class="alert alert-info">
+                <div class="alert-icon">⏱️</div>
+                <div class="alert-content">
+                    <div class="alert-title">Durée estimée : 3-4 semaines</div>
+                    <p style="margin: 0;">Cette phase pose les bases essentielles. Maîtrisez parfaitement ces concepts
+                        avant de continuer.</p>
+                </div>
+            </div>
+
+            <div class="toc">
+                <div class="toc-title">📑 Sommaire</div>
+                <ul class="toc-list">
+                    <li><a href="#introduction">Introduction aux Réseaux</a></li>
+                    <li><a href="#modele-osi">Modèle OSI</a></li>
+                    <li><a href="#modele-tcpip">Modèle TCP/IP</a></li>
+                    <li><a href="#adressage-ip">Adressage IPv4</a></li>
+                    <li><a href="#subnetting">Subnetting</a></li>
+                    <li><a href="#protocoles">Protocoles essentiels</a></li>
+                    <li><a href="#equipements">Équipements réseau</a></li>
+                    <li><a href="#cables">Câblage</a></li>
+                    <li><a href="#labs">Labs Pratiques</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
+                </ul>
+            </div>
+
+            <!-- Introduction -->
+            <section class="section" id="introduction">
+                <h2>Introduction aux Réseaux</h2>
+                <p>Un <strong>réseau informatique</strong> est un ensemble d'équipements interconnectés qui partagent
+                    des ressources et échangent des données.</p>
+
+                <h3>Types de réseaux</h3>
+                <ul>
+                    <li><strong>LAN</strong> (Local Area Network) : Réseau local (bureau, maison)</li>
+                    <li><strong>WAN</strong> (Wide Area Network) : Réseau étendu (Internet, liaisons entre sites)</li>
+                    <li><strong>MAN</strong> (Metropolitan Area Network) : Réseau métropolitain (ville)</li>
+                    <li><strong>WLAN</strong> : Réseau local sans fil (Wi-Fi)</li>
+                </ul>
+
+                <h3>Topologies réseau</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px; text-align: left;">Topologie</th>
+                            <th style="padding: 12px; text-align: left;">Description</th>
+                            <th style="padding: 12px; text-align: left;">Avantages/Inconvénients</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Étoile</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Tous connectés à un
+                                switch central</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Facile à gérer ❌
+                                Point unique de défaillance</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Bus</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Tous sur un même
+                                câble</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Simple ❌
+                                Collisions, obsolète</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px;"><strong>Maillée</strong></td>
+                            <td style="padding: 12px;">Connexions multiples entre équipements</td>
+                            <td style="padding: 12px;">✅ Redondance ❌ Coût élevé</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Modèle OSI -->
+            <section class="section" id="modele-osi">
+                <h2>Modèle OSI (7 couches)</h2>
+                <p>Le modèle <strong>OSI</strong> (Open Systems Interconnection) standardise les communications en 7
+                    couches.</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px;">N°</th>
+                            <th style="padding: 12px; text-align: left;">Couche</th>
+                            <th style="padding: 12px; text-align: left;">PDU</th>
+                            <th style="padding: 12px; text-align: left;">Fonction</th>
+                            <th style="padding: 12px; text-align: left;">Exemples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td
+                                style="padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center;">
+                                7</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Application</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Données</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Interface
+                                utilisateur</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">HTTP, FTP, SMTP,
+                                DNS</td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center;">
+                                6</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Présentation</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Données</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Format, chiffrement
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">SSL/TLS, JPEG,
+                                ASCII</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td
+                                style="padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center;">
+                                5</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Session</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Données</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Gestion des
+                                sessions</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">NetBIOS, RPC</td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center;">
+                                4</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Transport</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Segment</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Fiabilité, ports
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">TCP, UDP</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td
+                                style="padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center;">
+                                3</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Réseau</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Paquet</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Routage, adressage
+                                IP</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">IP, ICMP, OSPF</td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center;">
+                                2</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Liaison</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Trame</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Adresses MAC,
+                                switching</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Ethernet, Wi-Fi,
+                                ARP</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; text-align: center;">1</td>
+                            <td style="padding: 12px;"><strong>Physique</strong></td>
+                            <td style="padding: 12px;">Bits</td>
+                            <td style="padding: 12px;">Signaux électriques</td>
+                            <td style="padding: 12px;">Câbles, hubs, connecteurs</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-warning">
+                    <div class="alert-icon">💡</div>
+                    <div class="alert-content">
+                        <div class="alert-title">Mnémotechnique</div>
+                        <p style="margin: 0;"><strong>"All People Seem To Need Data Processing"</strong> (7→1)<br>
+                            <strong>"Please Do Not Throw Sausage Pizza Away"</strong> (1→7)
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Encapsulation</h3>
+                <p>À chaque couche, des informations (headers) sont ajoutées aux données :</p>
+                <ul>
+                    <li>Couche 4 : Données → <strong>Segment</strong> (+ port source/destination)</li>
+                    <li>Couche 3 : Segment → <strong>Paquet</strong> (+ IP source/destination)</li>
+                    <li>Couche 2 : Paquet → <strong>Trame</strong> (+ MAC source/destination)</li>
+                    <li>Couche 1 : Trame → <strong>Bits</strong> (signaux)</li>
+                </ul>
+            </section>
+
+            <!-- TCP/IP -->
+            <section class="section" id="modele-tcpip">
+                <h2>Modèle TCP/IP (4 couches)</h2>
+                <p>Le modèle <strong>TCP/IP</strong> est le modèle pratique utilisé sur Internet.</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px; text-align: left;">TCP/IP</th>
+                            <th style="padding: 12px; text-align: left;">Équivalent OSI</th>
+                            <th style="padding: 12px; text-align: left;">Protocoles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Application</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">7, 6, 5</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">HTTP, FTP, DNS,
+                                DHCP, SSH</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Transport</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">4</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">TCP, UDP</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Internet</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">3</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">IP, ICMP, ARP</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;"><strong>Accès Réseau</strong></td>
+                            <td style="padding: 12px;">2, 1</td>
+                            <td style="padding: 12px;">Ethernet, Wi-Fi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Adressage IP -->
+            <section class="section" id="adressage-ip">
+                <h2>Adressage IPv4</h2>
+                <p>Une adresse IPv4 = <strong>32 bits</strong> = 4 octets en notation décimale pointée.</p>
+
+                <h3>Structure d'une adresse IP</h3>
+                <p>Une adresse IP se compose de deux parties :</p>
+                <ul>
+                    <li><strong>Partie réseau</strong> : Identifie le réseau</li>
+                    <li><strong>Partie hôte</strong> : Identifie l'équipement dans ce réseau</li>
+                </ul>
+                <p>Le <strong>masque de sous-réseau</strong> détermine la séparation.</p>
+
+                <h3>Classes d'adresses (historique)</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px;">Classe</th>
+                            <th style="padding: 12px; text-align: left;">Plage</th>
+                            <th style="padding: 12px;">Masque</th>
+                            <th style="padding: 12px; text-align: left;">Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td
+                                style="padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center;">
+                                <strong>A</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">1.0.0.0 -
+                                126.255.255.255</td>
+                            <td
+                                style="padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center;">
+                                /8</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Très grands réseaux
+                            </td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center;">
+                                <strong>B</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">128.0.0.0 -
+                                191.255.255.255</td>
+                            <td
+                                style="padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center;">
+                                /16</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Moyens réseaux</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; text-align: center;"><strong>C</strong></td>
+                            <td style="padding: 12px;">192.0.0.0 - 223.255.255.255</td>
+                            <td style="padding: 12px; text-align: center;">/24</td>
+                            <td style="padding: 12px;">Petits réseaux</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Adresses privées (RFC 1918)</h3>
+                <p>Non routables sur Internet, utilisées en interne :</p>
+                <ul>
+                    <li><code>10.0.0.0/8</code> - 16 millions d'adresses</li>
+                    <li><code>172.16.0.0/12</code> - 1 million d'adresses</li>
+                    <li><code>192.168.0.0/16</code> - 65 536 adresses</li>
+                </ul>
+
+                <h3>Adresses spéciales</h3>
+                <ul>
+                    <li><code>127.0.0.0/8</code> - Loopback (localhost)</li>
+                    <li><code>169.254.0.0/16</code> - APIPA (auto-configuration)</li>
+                    <li><code>0.0.0.0</code> - Route par défaut</li>
+                    <li><code>255.255.255.255</code> - Broadcast limité</li>
+                </ul>
+
+                <h3>Notation binaire</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Conversion décimal ↔ binaire</span>
+                    </div>
+                    <pre><code>192.168.1.10
+= 11000000.10101000.00000001.00001010
+
+Masque /24 (255.255.255.0)
+= 11111111.11111111.11111111.00000000
+  ←─── Réseau ───→←─ Hôte ─→</code></pre>
+                </div>
+            </section>
+
+            <!-- Subnetting -->
+            <section class="section" id="subnetting">
+                <h2>Subnetting (Sous-réseaux)</h2>
+                <p>Le <strong>subnetting</strong> divise un réseau en sous-réseaux plus petits.</p>
+
+                <h3>Formules essentielles</h3>
+                <ul>
+                    <li><strong>Nombre de sous-réseaux</strong> = 2<sup>n</sup> (n = bits empruntés)</li>
+                    <li><strong>Nombre d'hôtes</strong> = 2<sup>h</sup> - 2 (h = bits hôtes)</li>
+                    <li><strong>Taille du bloc</strong> = 256 - valeur du masque</li>
+                </ul>
+
+                <h3>Tableau des masques</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Référence rapide</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>CIDR   Masque            Bloc   Hôtes
+/24    255.255.255.0     256    254
+/25    255.255.255.128   128    126
+/26    255.255.255.192   64     62
+/27    255.255.255.224   32     30
+/28    255.255.255.240   16     14
+/29    255.255.255.248   8      6
+/30    255.255.255.252   4      2
+/31    255.255.255.254   2      2 (point-to-point)
+/32    255.255.255.255   1      1 (hôte unique)</code></pre>
+                </div>
+
+                <h3>Exemple de calcul</h3>
+                <div class="alert alert-success">
+                    <div class="alert-icon">✅</div>
+                    <div class="alert-content">
+                        <div class="alert-title">Exercice : Diviser 192.168.1.0/24 en 4 sous-réseaux</div>
+                        <p style="margin: 0;">
+                            4 sous-réseaux = 2² → emprunter 2 bits → nouveau masque <strong>/26</strong><br>
+                            Taille bloc = 256 - 192 = 64 adresses par sous-réseau<br><br>
+                            <strong>Sous-réseau 1:</strong> 192.168.1.0/26 (hôtes: .1 à .62, broadcast: .63)<br>
+                            <strong>Sous-réseau 2:</strong> 192.168.1.64/26 (hôtes: .65 à .126, broadcast: .127)<br>
+                            <strong>Sous-réseau 3:</strong> 192.168.1.128/26 (hôtes: .129 à .190, broadcast: .191)<br>
+                            <strong>Sous-réseau 4:</strong> 192.168.1.192/26 (hôtes: .193 à .254, broadcast: .255)
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Méthode rapide</h3>
+                <ol>
+                    <li>Déterminer combien de sous-réseaux ou d'hôtes nécessaires</li>
+                    <li>Calculer les bits à emprunter</li>
+                    <li>Trouver le nouveau masque</li>
+                    <li>Calculer la taille du bloc (256 - dernier octet du masque)</li>
+                    <li>Lister les sous-réseaux (0, bloc, bloc×2, bloc×3...)</li>
+                </ol>
+            </section>
+
+            <!-- Protocoles -->
+            <section class="section" id="protocoles">
+                <h2>Protocoles essentiels</h2>
+
+                <h3>TCP vs UDP</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px; text-align: left;">Caractéristique</th>
+                            <th style="padding: 12px; text-align: left;">TCP</th>
+                            <th style="padding: 12px; text-align: left;">UDP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Connexion</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Orienté connexion
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Sans connexion</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Fiabilité</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Fiable (ACK)</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Non fiable</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Vitesse</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Plus lent</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Plus rapide</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;">Exemples</td>
+                            <td style="padding: 12px;">HTTP, FTP, SSH, SMTP</td>
+                            <td style="padding: 12px;">DNS, DHCP, VoIP, streaming</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>3-Way Handshake (TCP)</h3>
+                <ol>
+                    <li><strong>SYN</strong> : Client → Serveur (demande de connexion)</li>
+                    <li><strong>SYN-ACK</strong> : Serveur → Client (acceptation)</li>
+                    <li><strong>ACK</strong> : Client → Serveur (confirmation)</li>
+                </ol>
+
+                <h3>Ports importants</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Ports à connaître</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>20, 21  - FTP (données, contrôle)
+22      - SSH
+23      - Telnet
+25      - SMTP
+53      - DNS (UDP/TCP)
+67, 68  - DHCP (serveur, client)
+80      - HTTP
+110     - POP3
+143     - IMAP
+443     - HTTPS
+3389    - RDP</code></pre>
+                </div>
+
+                <h3>Protocoles clés</h3>
+                <ul>
+                    <li><strong>DHCP</strong> : Attribution automatique d'IP (DORA: Discover, Offer, Request,
+                        Acknowledge)</li>
+                    <li><strong>DNS</strong> : Résolution nom → IP (port 53)</li>
+                    <li><strong>ARP</strong> : Résolution IP → MAC (couche 2)</li>
+                    <li><strong>ICMP</strong> : Diagnostics (ping, traceroute)</li>
+                </ul>
+            </section>
+
+            <!-- Équipements -->
+            <section class="section" id="equipements">
+                <h2>Équipements réseau</h2>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px; text-align: left;">Équipement</th>
+                            <th style="padding: 12px;">Couche</th>
+                            <th style="padding: 12px; text-align: left;">Fonction</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Hub</strong>
+                            </td>
+                            <td
+                                style="padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center;">
+                                1</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Répète sur tous les
+                                ports (obsolète)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Switch</strong>
+                            </td>
+                            <td
+                                style="padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center;">
+                                2</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Commute par adresse
+                                MAC, table CAM</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Routeur</strong>
+                            </td>
+                            <td
+                                style="padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center;">
+                                3</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Route par adresse
+                                IP, interconnecte réseaux</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;"><strong>Firewall</strong></td>
+                            <td style="padding: 12px; text-align: center;">3-7</td>
+                            <td style="padding: 12px;">Filtre le trafic selon des règles de sécurité</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Câblage -->
+            <section class="section" id="cables">
+                <h2>Câblage</h2>
+
+                <h3>Types de câbles Ethernet</h3>
+                <ul>
+                    <li><strong>Droit (straight-through)</strong> : PC ↔ Switch, Switch ↔ Routeur</li>
+                    <li><strong>Croisé (crossover)</strong> : PC ↔ PC, Switch ↔ Switch, Routeur ↔ Routeur</li>
+                    <li><strong>Auto-MDIX</strong> : Détection automatique (équipements modernes)</li>
+                </ul>
+
+                <h3>Catégories de câbles</h3>
+                <ul>
+                    <li><strong>Cat5e</strong> : 1 Gbps, 100m max</li>
+                    <li><strong>Cat6</strong> : 1 Gbps (10 Gbps sur 55m)</li>
+                    <li><strong>Cat6a</strong> : 10 Gbps, 100m</li>
+                    <li><strong>Fibre optique</strong> : Longues distances, hauts débits</li>
+                </ul>
+            </section>
+
+            <!-- Labs -->
+            <section class="section" id="labs">
+                <h2>Labs Pratiques</h2>
+
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>🔬 Lab 1 : Configuration IP</h3>
+                    <p><strong>Objectif :</strong> Configurer des adresses IP statiques</p>
+                    <ol>
+                        <li>Configurer une IP statique sur votre PC</li>
+                        <li>Vérifier avec <code>ipconfig</code> (Windows) ou <code>ip a</code> (Linux)</li>
+                        <li>Pinguer votre passerelle par défaut</li>
+                    </ol>
+                </div>
+
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>🔬 Lab 2 : Analyse Wireshark</h3>
+                    <p><strong>Objectif :</strong> Observer l'encapsulation</p>
+                    <ol>
+                        <li>Installer Wireshark</li>
+                        <li>Capturer un ping vers google.com</li>
+                        <li>Identifier les en-têtes Ethernet, IP, ICMP</li>
+                    </ol>
+                </div>
+
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>🔬 Lab 3 : Subnetting</h3>
+                    <p><strong>Objectif :</strong> Pratiquer le calcul de sous-réseaux</p>
+                    <ol>
+                        <li>Diviser 10.0.0.0/8 en 16 sous-réseaux</li>
+                        <li>Trouver le sous-réseau, le broadcast et la plage d'hôtes pour 172.16.45.100/20</li>
+                        <li>Quel masque pour 500 hôtes par sous-réseau ?</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- TP Pratique -->
+            <section class="section" id="tp">
+                <h2>🛠️ TP Pratique : Fondamentaux & Packet Tracer</h2>
+                <div class="tp-card"
+                    style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; margin-top: 2rem;">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Scénario 1 : Votre Premier Réseau Local</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Objectif :</strong> Connecter 2 PC via un Switch et analyser
+                        le trafic ARP/ICMP.</p>
+
+                    <div
+                        style="background: var(--bg-primary); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem;">Topologie</h4>
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li>🖥️ <strong>PC1</strong> : 192.168.1.10 / 255.255.255.0</li>
+                            <li>🖥️ <strong>PC2</strong> : 192.168.1.20 / 255.255.255.0</li>
+                            <li>🔌 <strong>Switch</strong> : 2960 (Ports FastEthernet 0/1 et 0/2)</li>
+                            <li>📏 <strong>Câbles</strong> : Droits (Copper Straight-Through)</li>
+                        </ul>
+                    </div>
+
+                    <h4 style="margin-bottom: 0.5rem;">Étapes à réaliser :</h4>
+                    <ol style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">Ouvrez <strong>Cisco Packet Tracer</strong>.</li>
+                        <li style="margin-bottom: 0.5rem;">Ajoutez un Switch 2960 et deux PC génériques.</li>
+                        <li style="margin-bottom: 0.5rem;">Reliez PC1 (FastEthernet0) au port F0/1 du Switch.</li>
+                        <li style="margin-bottom: 0.5rem;">Reliez PC2 (FastEthernet0) au port F0/2 du Switch.</li>
+                        <li style="margin-bottom: 0.5rem;">Attendez que les voyants passent au vert (Convergence STP).
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">Configurez les IP statiques sur les bureaux des PC.</li>
+                        <li style="margin-bottom: 0.5rem;">Ouvrez l'invite de commande (Command Prompt) sur PC1.</li>
+                        <li style="margin-bottom: 0.5rem;">Lancez la commande : <code>ping 192.168.1.20</code></li>
+                    </ol>
+
+                    <div class="alert alert-info" style="margin-top: 1rem;">
+                        <strong>Challenge Analyse :</strong> Passez en mode <strong>Simulation</strong> (Shift+S).
+                        Relancez le Ping.
+                        Observez le premier paquet généré. Est-ce un Ping (ICMP) ? Non ! C'est <strong>ARP</strong>.
+                        Pourquoi ? PC1 connaît l'IP de PC2 mais pas son adresse MAC. Il doit demander "Qui a
+                        192.168.1.20 ?".
+                    </div>
+                </div>
+
+                <div class="tp-card"
+                    style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; margin-top: 2rem;">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Scénario 2 : Premières Commandes IOS</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Objectif :</strong> Prendre la main sur le Switch et
+                        sécuriser l'accès de base.</p>
+
+                    <h4 style="margin-bottom: 0.5rem;">Commandes à maîtriser :</h4>
+                    <div class="code-block">
+                        <pre><code>Switch> enable
+Switch# configure terminal
+Switch(config)# hostname S1-Etage1
+S1-Etage1(config)# banner motd "ACCES RESERVE AU PERSONNEL AUTORISE"
+S1-Etage1(config)# line console 0
+S1-Etage1(config-line)# password cisco
+S1-Etage1(config-line)# login
+S1-Etage1(config-line)# exit
+S1-Etage1(config)# enable secret class
+S1-Etage1(config)# exit
+S1-Etage1# copy running-config startup-config</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz -->
+            <section class="section" id="quiz">
+                <h2>🧪 Quiz de vérification</h2>
+
+                <div id="quiz-container" data-phase="phase1">
+                    <div style="text-align: center; padding: 2rem;">
+                        <p>Chargement du quiz...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Planning -->
+            <section class="section">
+                <h2>Planning Suggéré</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 1 : OSI/TCP-IP</div>
+                        <div class="timeline-content">Théorie des modèles, encapsulation, PDUs</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 2 : Adressage IP</div>
+                        <div class="timeline-content">Binaire, masques, adresses privées/publiques</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 3 : Subnetting intensif</div>
+                        <div class="timeline-content">50+ exercices de sous-réseaux</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 4 : Protocoles et Wireshark</div>
+                        <div class="timeline-content">TCP/UDP, DHCP, DNS, analyse de trafic</div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Completion Section -->
+            <div class="completion-section"
+                style="margin: 4rem 0; padding: 2rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color); text-align: center;">
+                <h3 style="margin-bottom: 1rem;">La phase est terminée ?</h3>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Marquez cette phase comme terminée pour
+                    suivre votre progression globale.</p>
+                <button class="mark-complete-btn" data-phase="phase1"
+                    style="margin: 0 auto; width: auto; font-size: 1.1rem; padding: 0.75rem 2rem;">Marquer la phase
+                    comme terminée</button>
+            </div>
+
+            <nav class="page-nav">
+                <a href="../index.html" class="page-nav-link prev">
+                    <span>←</span>
+                    <div>
+                        <div class="page-nav-label">Précédent</div>
+                        <div class="page-nav-title">Accueil</div>
+                    </div>
+                </a>
+                <a href="phase2-commutation.html" class="page-nav-link">
+                    <div>
+                        <div class="page-nav-label">Suivant</div>
+                        <div class="page-nav-title">Phase 2 : Commutation</div>
+                    </div>
+                    <span>→</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Programme de Formation en Routage et Commutation • Préparation CCNA 200-301</p>
+        </div>
+    </footer>
+    <script src="../js/quiz_data.js"></script>
+    <script src="../js/quiz.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

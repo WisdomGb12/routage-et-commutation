@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 2 : Commutation - Routage et Commutation</title>
+    <meta name="description"
+        content="Apprenez la commutation Cisco : VLANs, Trunking 802.1Q, VTP, STP et Port Security. Labs pratiques inclus.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">🌐</div>
+                <span>Routage & Commutation</span>
+            </a>
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">Accueil</a>
+                <a href="phase1-fondamentaux.html" class="nav-link">Fondamentaux</a>
+                <a href="phase2-commutation.html" class="nav-link active">Commutation</a>
+                <a href="phase3-routage.html" class="nav-link">Routage</a>
+                <a href="phase4-inter-vlan.html" class="nav-link">Inter-VLAN</a>
+                <a href="phase5-securite.html" class="nav-link">Sécurité</a>
+                <a href="phase6-avance.html" class="nav-link">Avancé</a>
+                <a href="ressources.html" class="nav-link">Ressources</a>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Changer le thème">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                    </svg>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container container-narrow">
+            <nav class="breadcrumb">
+                <a href="../index.html">Accueil</a>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Phase 2 : Commutation</span>
+            </nav>
+
+            <div class="section-header">
+                <div class="section-icon">🔀</div>
+                <div>
+                    <span class="phase-badge" style="background: rgba(118, 75, 162, 0.15); color: #764ba2;">Phase
+                        2</span>
+                    <h1 style="margin-top: 0.5rem;">Introduction à la Commutation</h1>
+                </div>
+
+            </div>
+
+            <div class="alert alert-info">
+                <div class="alert-icon">⏱️</div>
+                <div class="alert-content">
+                    <div class="alert-title">Durée : 3-4 semaines</div>
+                    <p style="margin: 0;">Maîtrisez les VLANs, le trunking 802.1Q, VTP, STP et la sécurité des ports.
+                        Pratiquez avec Packet Tracer quotidiennement.</p>
+                </div>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="toc">
+                <div class="toc-title">📑 Sommaire</div>
+                <ul class="toc-list">
+                    <li><a href="#introduction-switch">Introduction au Switch</a></li>
+                    <li><a href="#vlans">VLANs (Virtual LANs)</a></li>
+                    <li><a href="#trunking">Trunking 802.1Q</a></li>
+                    <li><a href="#vtp">VTP (VLAN Trunking Protocol)</a></li>
+                    <li><a href="#stp">STP (Spanning Tree Protocol)</a></li>
+                    <li><a href="#port-security">Port Security</a></li>
+                    <li><a href="#labs">Labs Pratiques</a></li>
+                    <li><a href="#quiz">Quiz de vérification</a></li>
+                </ul>
+            </div>
+
+            <!-- Section 1: Introduction au Switch -->
+            <section class="section" id="introduction-switch">
+                <h2>Introduction au Switch</h2>
+
+                <p>Un <strong>switch</strong> (commutateur) est un équipement réseau de couche 2 qui transmet les trames
+                    Ethernet en se basant sur les <strong>adresses MAC</strong>. Contrairement à un hub qui diffuse sur
+                    tous les ports, le switch apprend les adresses MAC et envoie les trames uniquement vers le port de
+                    destination.</p>
+
+                <h3>Fonctionnement d'un Switch</h3>
+                <ol>
+                    <li><strong>Apprentissage (Learning)</strong> : Le switch lit l'adresse MAC source et l'associe au
+                        port d'entrée dans sa table MAC</li>
+                    <li><strong>Forwarding</strong> : Si l'adresse MAC destination est connue, la trame est envoyée
+                        uniquement vers ce port</li>
+                    <li><strong>Flooding</strong> : Si l'adresse MAC destination est inconnue, la trame est envoyée sur
+                        tous les ports (sauf le port source)</li>
+                    <li><strong>Filtering</strong> : Les trames ne sont jamais renvoyées vers le port source</li>
+                </ol>
+
+                <h3>Table d'adresses MAC (CAM Table)</h3>
+                <p>La table CAM (Content Addressable Memory) stocke les associations MAC ↔ Port. Elle a une durée de vie
+                    de <strong>300 secondes</strong> par défaut.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Commandes de diagnostic</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Afficher la table MAC
+show mac address-table
+
+! Afficher la table MAC pour un VLAN spécifique
+show mac address-table vlan 10
+
+! Effacer la table MAC (pour tests)
+clear mac address-table dynamic
+
+! Voir les informations d'une interface
+show interfaces f0/1
+
+! Voir le statut de tous les ports
+show interfaces status</code></pre>
+                </div>
+
+                <h3>Types de Mémoire du Switch</h3>
+                <ul>
+                    <li><strong>RAM</strong> : Table MAC, configuration running, tampons de paquets</li>
+                    <li><strong>NVRAM</strong> : Configuration startup (startup-config)</li>
+                    <li><strong>Flash</strong> : Système d'exploitation IOS</li>
+                    <li><strong>ROM</strong> : Bootstrap, POST, ROMMON</li>
+                </ul>
+
+                <h3>Configuration de Base d'un Switch</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Configuration initiale</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Entrer en mode privilégié
+enable
+
+! Entrer en mode configuration
+configure terminal
+
+! Définir le nom du switch
+hostname S1
+
+! Désactiver la résolution DNS (évite les délais)
+no ip domain-lookup
+
+! Créer un mot de passe enable chiffré
+enable secret class
+
+! Configurer la console
+line console 0
+  password cisco
+  login
+  logging synchronous
+  exec-timeout 5 0
+
+! Configurer les lignes VTY (accès distant)
+line vty 0 15
+  password cisco
+  login
+  transport input ssh telnet
+
+! Chiffrer tous les mots de passe en clair
+service password-encryption
+
+! Créer une bannière d'avertissement
+banner motd #
+=========================================
+Accès réservé au personnel autorisé
+Toute intrusion sera poursuivie
+=========================================
+#
+
+! Configurer l'interface de management
+interface vlan 1
+  ip address 192.168.1.2 255.255.255.0
+  no shutdown
+
+! Définir la passerelle par défaut
+ip default-gateway 192.168.1.1
+
+! Sauvegarder la configuration
+end
+copy running-config startup-config</code></pre>
+                </div>
+
+                <div class="alert alert-warning">
+                    <div class="alert-icon">⚠️</div>
+                    <div class="alert-content">
+                        <div class="alert-title">Rappel important</div>
+                        <p style="margin: 0;">N'oubliez jamais de sauvegarder avec <code>copy run start</code> ou
+                            <code>wr</code> ! Sinon, votre configuration sera perdue au redémarrage.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: VLANs -->
+            <section class="section" id="vlans">
+                <h2>VLANs (Virtual LANs)</h2>
+
+                <p>Un <strong>VLAN</strong> est une segmentation logique du réseau qui permet de créer des domaines de
+                    broadcast séparés sur un même switch physique. C'est comme avoir plusieurs switches virtuels dans un
+                    seul équipement.</p>
+
+                <h3>Pourquoi utiliser des VLANs ?</h3>
+                <ul>
+                    <li><strong>Sécurité</strong> : Les utilisateurs d'un VLAN ne peuvent pas voir le trafic des autres
+                        VLANs</li>
+                    <li><strong>Performance</strong> : Réduction des domaines de broadcast = moins de trafic inutile
+                    </li>
+                    <li><strong>Flexibilité</strong> : Regroupement logique par fonction (Comptabilité, IT, Direction)
+                        plutôt que par localisation</li>
+                    <li><strong>Réduction des coûts</strong> : Pas besoin d'un switch physique par département</li>
+                    <li><strong>Gestion simplifiée</strong> : Modification centralisée des groupes utilisateurs</li>
+                </ul>
+
+                <h3>Types de VLANs</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px; text-align: left;">Type</th>
+                            <th style="padding: 12px; text-align: left;">Description</th>
+                            <th style="padding: 12px; text-align: left;">Exemple</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><strong>VLAN de
+                                    données</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Trafic utilisateur
+                                standard</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">VLAN 10 -
+                                Comptabilité</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><strong>VLAN
+                                    voix</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">VoIP avec priorité
+                                QoS</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">VLAN 150 -
+                                Téléphonie</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><strong>VLAN de
+                                    management</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Accès SSH/Telnet
+                                aux équipements</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">VLAN 99 - Admin
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><strong>VLAN
+                                    natif</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Trafic non tagué
+                                sur les trunks</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">VLAN 99 (par
+                                défaut: 1)</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px;"><strong>VLAN blackhole</strong></td>
+                            <td style="padding: 12px;">Ports non utilisés (sécurité)</td>
+                            <td style="padding: 12px;">VLAN 999 - Unused</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Plages de VLANs</h3>
+                <ul>
+                    <li><strong>1</strong> : VLAN par défaut (ne peut pas être supprimé)</li>
+                    <li><strong>2-1001</strong> : Plage normale (stockée dans vlan.dat)</li>
+                    <li><strong>1002-1005</strong> : Réservés pour FDDI et Token Ring</li>
+                    <li><strong>1006-4094</strong> : Plage étendue (VTP transparent uniquement)</li>
+                </ul>
+
+                <h3>Configuration des VLANs</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Création et configuration VLANs</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Créer les VLANs
+vlan 10
+  name COMPTABILITE
+vlan 20
+  name INFORMATIQUE
+vlan 30
+  name DIRECTION
+vlan 99
+  name MANAGEMENT
+vlan 999
+  name BLACKHOLE
+
+! Assigner un port à un VLAN (mode access)
+interface f0/1
+  description PC-Compta-01
+  switchport mode access
+  switchport access vlan 10
+
+! Assigner une plage de ports
+interface range f0/2-10
+  description Postes Comptabilité
+  switchport mode access
+  switchport access vlan 10
+
+! Configurer un port voix + données
+interface f0/11
+  description Phone-IT-01
+  switchport mode access
+  switchport access vlan 20
+  switchport voice vlan 150
+
+! Désactiver les ports non utilisés
+interface range f0/20-24
+  description Ports inutilisés
+  switchport mode access
+  switchport access vlan 999
+  shutdown</code></pre>
+                </div>
+
+                <h3>Commandes de vérification</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Vérification VLANs</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Afficher tous les VLANs
+show vlan brief
+
+! Afficher les détails d'un VLAN
+show vlan id 10
+
+! Afficher la configuration d'un port
+show interfaces f0/1 switchport
+
+! Afficher les ports assignés à un VLAN
+show vlan name COMPTABILITE</code></pre>
+                </div>
+
+                <div class="alert alert-success">
+                    <div class="alert-icon">✅</div>
+                    <div class="alert-content">
+                        <div class="alert-title">Bonnes pratiques VLANs</div>
+                        <ul style="margin: 0; padding-left: 1.5rem;">
+                            <li>Ne jamais utiliser le VLAN 1 pour le trafic production</li>
+                            <li>Toujours nommer les VLANs de façon descriptive</li>
+                            <li>Désactiver et assigner les ports non utilisés à un VLAN blackhole</li>
+                            <li>Documenter la cartographie des VLANs</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Trunking -->
+            <section class="section" id="trunking">
+                <h2>Trunking 802.1Q</h2>
+
+                <p>Un <strong>trunk</strong> est un lien point-à-point entre deux équipements réseau qui transporte le
+                    trafic de <strong>plusieurs VLANs</strong>. Le protocole <strong>802.1Q</strong> ajoute un tag de 4
+                    octets à chaque trame pour identifier le VLAN d'origine.</p>
+
+                <h3>Structure du Tag 802.1Q</h3>
+                <p>Le tag 802.1Q est inséré entre l'adresse MAC source et le champ Type/Longueur :</p>
+                <ul>
+                    <li><strong>TPID (2 octets)</strong> : Tag Protocol Identifier = 0x8100</li>
+                    <li><strong>PCP (3 bits)</strong> : Priority Code Point (QoS, 0-7)</li>
+                    <li><strong>DEI (1 bit)</strong> : Drop Eligible Indicator</li>
+                    <li><strong>VID (12 bits)</strong> : VLAN Identifier (0-4095)</li>
+                </ul>
+
+                <h3>VLAN Natif</h3>
+                <p>Le <strong>VLAN natif</strong> est le VLAN dont les trames ne sont <strong>pas taguées</strong> sur
+                    un trunk. Par défaut c'est le VLAN 1, mais il est recommandé de le changer pour des raisons de
+                    sécurité.</p>
+
+                <div class="alert alert-danger">
+                    <div class="alert-icon">🚨</div>
+                    <div class="alert-content">
+                        <div class="alert-title">Attention : VLAN Hopping</div>
+                        <p style="margin: 0;">Si les VLANs natifs ne correspondent pas des deux côtés d'un trunk, cela
+                            peut créer des failles de sécurité. Vérifiez toujours que le VLAN natif est identique sur
+                            les deux extrémités !</p>
+                    </div>
+                </div>
+
+                <h3>Configuration d'un Trunk</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Configuration Trunk</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Configurer un port en mode trunk
+interface g0/1
+  description Trunk vers S2
+  switchport mode trunk
+  
+  ! Définir le VLAN natif (recommandé: pas VLAN 1)
+  switchport trunk native vlan 99
+  
+  ! Limiter les VLANs autorisés sur le trunk (sécurité)
+  switchport trunk allowed vlan 10,20,30,99
+  
+  ! Ajouter un VLAN à la liste autorisée
+  switchport trunk allowed vlan add 40
+  
+  ! Supprimer un VLAN de la liste
+  switchport trunk allowed vlan remove 40
+
+! Forcer l'encapsulation 802.1Q (si ISL disponible)
+switchport trunk encapsulation dot1q</code></pre>
+                </div>
+
+                <h3>DTP (Dynamic Trunking Protocol)</h3>
+                <p>DTP permet la négociation automatique des trunks. Modes disponibles :</p>
+                <ul>
+                    <li><strong>access</strong> : Force le port en mode access (jamais trunk)</li>
+                    <li><strong>trunk</strong> : Force le port en mode trunk</li>
+                    <li><strong>dynamic auto</strong> : Attend une demande de trunk (passif)</li>
+                    <li><strong>dynamic desirable</strong> : Initie une négociation trunk (actif)</li>
+                    <li><strong>nonegotiate</strong> : Désactive DTP (recommandé en production)</li>
+                </ul>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Désactiver DTP (recommandé)</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>interface g0/1
+  switchport mode trunk
+  switchport nonegotiate</code></pre>
+                </div>
+
+                <h3>Vérification des Trunks</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Commandes de vérification</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Afficher les interfaces trunk
+show interfaces trunk
+
+! Exemple de sortie:
+! Port        Mode         Encapsulation  Status        Native vlan
+! Gi0/1       on           802.1q         trunking      99
+
+! Afficher le mode DTP
+show dtp interface g0/1
+
+! Afficher les détails d'une interface
+show interfaces g0/1 switchport</code></pre>
+                </div>
+            </section>
+
+            <!-- Section 4: VTP -->
+            <section class="section" id="vtp">
+                <h2>VTP (VLAN Trunking Protocol)</h2>
+
+                <p><strong>VTP</strong> est un protocole Cisco propriétaire qui synchronise les informations VLAN entre
+                    switches d'un même domaine. Cela évite de configurer manuellement les VLANs sur chaque switch.</p>
+
+                <h3>Modes VTP</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px; text-align: left;">Mode</th>
+                            <th style="padding: 12px; text-align: left;">Peut créer/modifier VLANs</th>
+                            <th style="padding: 12px; text-align: left;">Propage les changements</th>
+                            <th style="padding: 12px; text-align: left;">Synchronise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Server</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Oui</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Oui</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Oui</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Client</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">❌ Non</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Oui</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Oui</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px;"><strong>Transparent</strong></td>
+                            <td style="padding: 12px;">✅ Oui (local)</td>
+                            <td style="padding: 12px;">✅ Transfère seulement</td>
+                            <td style="padding: 12px;">❌ Non</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-danger">
+                    <div class="alert-icon">🚨</div>
+                    <div class="alert-content">
+                        <div class="alert-title">DANGER : VTP peut supprimer tous vos VLANs !</div>
+                        <p style="margin: 0;">Si vous connectez un switch avec un numéro de révision VTP plus élevé, il
+                            écrasera la configuration VLAN de tout le domaine. <strong>Toujours mettre un nouveau switch
+                                en mode Transparent ou réinitialiser son numéro de révision</strong> avant de le
+                            connecter au réseau.</p>
+                    </div>
+                </div>
+
+                <h3>Réinitialiser le numéro de révision VTP</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Reset VTP revision</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Méthode 1 : Changer le nom de domaine puis revenir
+vtp domain TEMP
+vtp domain PRODUCTION
+
+! Méthode 2 : Passer en mode transparent
+vtp mode transparent
+
+! Méthode 3 : Supprimer vlan.dat et redémarrer
+delete flash:vlan.dat
+reload</code></pre>
+                </div>
+
+                <h3>Configuration VTP</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Configuration VTP</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Configurer le domaine VTP
+vtp domain ENTREPRISE
+
+! Définir le mode (server, client, transparent)
+vtp mode server
+
+! Configurer un mot de passe VTP (optionnel mais recommandé)
+vtp password CiscoVTP123
+
+! Définir la version VTP (1, 2 ou 3)
+vtp version 2
+
+! Vérification
+show vtp status
+show vtp password</code></pre>
+                </div>
+
+                <div class="alert alert-warning">
+                    <div class="alert-icon">💡</div>
+                    <div class="alert-content">
+                        <div class="alert-title">Recommandation production</div>
+                        <p style="margin: 0;">En environnement de production, beaucoup d'administrateurs préfèrent
+                            désactiver VTP (mode transparent) et configurer les VLANs manuellement sur chaque switch
+                            pour éviter les accidents.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: STP -->
+            <section class="section" id="stp">
+                <h2>STP (Spanning Tree Protocol)</h2>
+
+                <p><strong>STP</strong> (IEEE 802.1D) est un protocole qui empêche les <strong>boucles de
+                        commutation</strong> dans les réseaux avec des liens redondants. Il bloque logiquement certains
+                    ports pour créer une topologie sans boucle.</p>
+
+                <h3>Pourquoi les boucles sont-elles dangereuses ?</h3>
+                <ul>
+                    <li><strong>Broadcast storm</strong> : Les trames de broadcast circulent à l'infini, saturant le
+                        réseau</li>
+                    <li><strong>Instabilité de la table MAC</strong> : La même adresse MAC apparaît sur plusieurs ports
+                    </li>
+                    <li><strong>Duplication de trames</strong> : Les hôtes reçoivent plusieurs copies de chaque trame
+                    </li>
+                    <li><strong>Crash du réseau</strong> : Saturation CPU des switches → réseau inutilisable</li>
+                </ul>
+
+                <h3>Fonctionnement de STP</h3>
+                <ol>
+                    <li><strong>Élection du Root Bridge</strong> : Le switch avec le Bridge ID le plus bas devient la
+                        racine</li>
+                    <li><strong>Calcul des Root Ports</strong> : Chaque switch non-root détermine son meilleur chemin
+                        vers le root</li>
+                    <li><strong>Élection des Designated Ports</strong> : Un port désigné par segment</li>
+                    <li><strong>Blocage des autres ports</strong> : Les ports restants sont bloqués</li>
+                </ol>
+
+                <h3>Bridge ID</h3>
+                <p>Le Bridge ID est composé de :</p>
+                <ul>
+                    <li><strong>Priorité</strong> (2 octets) : Par défaut 32768, configurable par incréments de 4096
+                    </li>
+                    <li><strong>Adresse MAC</strong> (6 octets) : Adresse MAC du switch</li>
+                </ul>
+                <p>Le switch avec le <strong>Bridge ID le plus bas</strong> devient Root Bridge.</p>
+
+                <h3>États des ports STP</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px; text-align: left;">État</th>
+                            <th style="padding: 12px; text-align: left;">Durée</th>
+                            <th style="padding: 12px; text-align: left;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Blocking</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">20 secondes</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Reçoit BPDUs
+                                uniquement</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Listening</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">15 secondes</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Envoie et reçoit
+                                BPDUs</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Learning</strong>
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">15 secondes</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Apprend les
+                                adresses MAC</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;"><strong>Forwarding</strong></td>
+                            <td style="padding: 12px;">-</td>
+                            <td style="padding: 12px;">Transmet les trames</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Total : 50 secondes</strong> avant qu'un port ne commence à transmettre après un changement
+                    de topologie !</p>
+
+                <h3>Versions de STP</h3>
+                <ul>
+                    <li><strong>STP (802.1D)</strong> : Original, convergence lente (30-50s)</li>
+                    <li><strong>RSTP (802.1w)</strong> : Rapid STP, convergence < 10 secondes</li>
+                    <li><strong>MSTP (802.1s)</strong> : Multiple STP, plusieurs instances par groupes de VLANs</li>
+                    <li><strong>PVST+ (Cisco)</strong> : Une instance STP par VLAN</li>
+                    <li><strong>Rapid PVST+ (Cisco)</strong> : RSTP par VLAN (recommandé)</li>
+                </ul>
+
+                <h3>Configuration STP</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Configuration STP</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Activer Rapid PVST+
+spanning-tree mode rapid-pvst
+
+! Définir ce switch comme Root Bridge pour VLAN 10
+! (réduit automatiquement la priorité)
+spanning-tree vlan 10 root primary
+
+! Définir comme Root secondaire (backup)
+spanning-tree vlan 10 root secondary
+
+! Configurer manuellement la priorité (par incréments de 4096)
+spanning-tree vlan 10 priority 24576
+
+! Configurer le coût d'un port
+interface g0/1
+  spanning-tree cost 19
+
+! Configurer la priorité d'un port (pour désempater)
+interface g0/1
+  spanning-tree port-priority 64</code></pre>
+                </div>
+
+                <h3>PortFast et BPDU Guard</h3>
+                <p><strong>PortFast</strong> permet à un port de passer directement en Forwarding (sans les 50s
+                    d'attente). À utiliser UNIQUEMENT sur les ports connectés à des terminaux (PC, serveurs), jamais sur
+                    des liens inter-switches !</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - PortFast et BPDU Guard</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Activer PortFast sur un port spécifique
+interface f0/1
+  spanning-tree portfast
+
+! Activer PortFast globalement sur tous les ports access
+spanning-tree portfast default
+
+! Activer BPDU Guard (désactive le port si BPDU reçu)
+interface f0/1
+  spanning-tree bpduguard enable
+
+! Activer BPDU Guard globalement
+spanning-tree portfast bpduguard default</code></pre>
+                </div>
+
+                <h3>Commandes de vérification STP</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Vérification STP</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Afficher l'état STP pour tous les VLANs
+show spanning-tree
+
+! Afficher STP pour un VLAN spécifique
+show spanning-tree vlan 10
+
+! Afficher un résumé
+show spanning-tree summary
+
+! Identifier le Root Bridge
+show spanning-tree root
+
+! Voir les détails d'une interface
+show spanning-tree interface g0/1 detail</code></pre>
+                </div>
+            </section>
+
+            <!-- Section 6: Port Security -->
+            <section class="section" id="port-security">
+                <h2>Port Security</h2>
+
+                <p><strong>Port Security</strong> limite le nombre d'adresses MAC autorisées sur un port et définit
+                    l'action à prendre en cas de violation. C'est une protection de base contre les attaques MAC
+                    flooding.</p>
+
+                <h3>Modes de violation</h3>
+                <ul>
+                    <li><strong>Protect</strong> : Ignore silencieusement les trames non autorisées</li>
+                    <li><strong>Restrict</strong> : Ignore les trames + incrémente le compteur de violations + génère un
+                        syslog</li>
+                    <li><strong>Shutdown</strong> (défaut) : Met le port en err-disabled (doit être réactivé
+                        manuellement)</li>
+                </ul>
+
+                <h3>Configuration Port Security</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Port Security</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>interface f0/1
+  ! Le port doit être en mode access
+  switchport mode access
+  
+  ! Activer port security
+  switchport port-security
+  
+  ! Définir le nombre max d'adresses MAC (défaut: 1)
+  switchport port-security maximum 2
+  
+  ! Définir le mode de violation
+  switchport port-security violation restrict
+  
+  ! Apprentissage sticky (enregistre les MAC dynamiquement)
+  switchport port-security mac-address sticky
+  
+  ! Définir une adresse MAC statique autorisée
+  switchport port-security mac-address 0011.2233.4455
+
+! Réactiver un port en err-disabled
+interface f0/1
+  shutdown
+  no shutdown
+
+! Ou automatiquement après un délai
+errdisable recovery cause psecure-violation
+errdisable recovery interval 300</code></pre>
+                </div>
+
+                <h3>Vérification Port Security</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Vérification</span>
+                        <button class="code-copy-btn">📋 Copier</button>
+                    </div>
+                    <pre><code>! Afficher le résumé de tous les ports sécurisés
+show port-security
+
+! Détails pour une interface spécifique
+show port-security interface f0/1
+
+! Afficher les adresses MAC apprises
+show port-security address</code></pre>
+                </div>
+            </section>
+
+            <!-- Section 7: Labs -->
+            <section class="section" id="labs">
+                <h2>Labs Pratiques</h2>
+
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>🔬 Lab 1 : Configuration VLANs de base</h3>
+                    <p><strong>Objectif :</strong> Créer et configurer des VLANs sur un switch</p>
+                    <p><strong>Topologie :</strong> 1 switch, 4 PCs</p>
+                    <ol>
+                        <li>Créer les VLANs 10 (Comptabilité), 20 (IT), 30 (Direction)</li>
+                        <li>Assigner les ports F0/1-5 au VLAN 10, F0/6-10 au VLAN 20, F0/11-15 au VLAN 30</li>
+                        <li>Configurer une interface de management dans le VLAN 99</li>
+                        <li>Vérifier avec <code>show vlan brief</code></li>
+                        <li>Tester : les PCs du même VLAN peuvent se pinguer, pas ceux de VLANs différents</li>
+                    </ol>
+                </div>
+
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>🔬 Lab 2 : Configuration Trunking</h3>
+                    <p><strong>Objectif :</strong> Configurer un trunk entre deux switches</p>
+                    <p><strong>Topologie :</strong> 2 switches, 4 PCs (2 par switch, 1 par VLAN)</p>
+                    <ol>
+                        <li>Configurer les mêmes VLANs sur les deux switches</li>
+                        <li>Configurer un trunk sur les ports G0/1 des deux switches</li>
+                        <li>Définir le VLAN natif à 99</li>
+                        <li>Limiter les VLANs autorisés sur le trunk</li>
+                        <li>Vérifier avec <code>show interfaces trunk</code></li>
+                        <li>Tester : les PCs du même VLAN sur des switches différents peuvent se pinguer</li>
+                    </ol>
+                </div>
+
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>🔬 Lab 3 : STP Root Bridge</h3>
+                    <p><strong>Objectif :</strong> Influencer l'élection du Root Bridge</p>
+                    <p><strong>Topologie :</strong> 3 switches en triangle (redondance)</p>
+                    <ol>
+                        <li>Observer quel switch est élu Root Bridge par défaut</li>
+                        <li>Identifier les ports bloqués avec <code>show spanning-tree</code></li>
+                        <li>Configurer S1 comme Root Bridge primaire</li>
+                        <li>Configurer S2 comme Root Bridge secondaire</li>
+                        <li>Vérifier la nouvelle topologie STP</li>
+                        <li>Déconnecter un câble et observer la reconvergence</li>
+                    </ol>
+                </div>
+
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>🔬 Lab 4 : Port Security</h3>
+                    <p><strong>Objectif :</strong> Sécuriser les ports d'accès</p>
+                    <ol>
+                        <li>Configurer port security sur le port F0/1</li>
+                        <li>Activer l'apprentissage sticky</li>
+                        <li>Limiter à 1 adresse MAC</li>
+                        <li>Configurer le mode violation en shutdown</li>
+                        <li>Tester en changeant le PC connecté</li>
+                        <li>Vérifier l'état err-disabled et réactiver le port</li>
+                    </ol>
+                </div>
+                <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--danger);">
+                    <h3>🚫 Challenge Dépannage : Le Trunk Impossible</h3>
+                    <p><strong>Scénario :</strong> Vous connectez deux switches via G0/1. Le lien monte (Link OK) mais
+                        aucune trame VLAN 10 ne passe.</p>
+                    <p><strong>Indices de commande <code>show interfaces trunk</code> :</strong></p>
+                    <pre><code>Switch A: Native VLAN: 1
+Switch B: Native VLAN: 99</code></pre>
+                    <p><strong>Question :</strong> Pourquoi le trunk pose problème et vous voyez des logs "Native VLAN
+                        Mismatch" ?</p>
+                    <p><strong>Solution attendue :</strong> Configurez le même VLAN natif des deux côtés ! (Ex:
+                        <code>switchport trunk native vlan 99</code> sur Switch A).</p>
+                </div>
+            </section>
+
+            <!-- Section 8: Quiz -->
+            <section class="section" id="quiz">
+                <h2>🧪 Quiz de vérification</h2>
+                <div id="quiz-container" data-phase="phase2">
+                    <div style="text-align: center; padding: 2rem;">
+                        <p>Chargement du quiz...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Planning -->
+            <section class="section">
+                <h2>Planning Suggéré</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 1 : VLANs</div>
+                        <div class="timeline-content">Théorie VLANs + Labs création et assignation de VLANs</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 2 : Trunking & VTP</div>
+                        <div class="timeline-content">Configuration trunks 802.1Q + Compréhension VTP et ses dangers
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 3 : STP</div>
+                        <div class="timeline-content">Théorie STP/RSTP + Labs Root Bridge + PortFast + BPDU Guard</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 4 : Sécurité & Révision</div>
+                        <div class="timeline-content">Port Security + Labs intégrés combinant tous les concepts</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Page Navigation -->
+
+            <!-- Completion Section -->
+            <div class="completion-section"
+                style="margin: 4rem 0; padding: 2rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color); text-align: center;">
+                <h3 style="margin-bottom: 1rem;">La phase est terminée ?</h3>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Marquez cette phase comme terminée pour
+                    suivre votre progression globale.</p>
+                <button class="mark-complete-btn" data-phase="phase2"
+                    style="margin: 0 auto; width: auto; font-size: 1.1rem; padding: 0.75rem 2rem;">Marquer la phase
+                    comme terminée</button>
+            </div>
+
+            <nav class="page-nav">
+                <a href="phase1-fondamentaux.html" class="page-nav-link prev">
+                    <span>←</span>
+                    <div>
+                        <div class="page-nav-label">Précédent</div>
+                        <div class="page-nav-title">Phase 1 : Fondamentaux</div>
+                    </div>
+                </a>
+                <a href="phase3-routage.html" class="page-nav-link">
+                    <div>
+                        <div class="page-nav-label">Suivant</div>
+                        <div class="page-nav-title">Phase 3 : Routage</div>
+                    </div>
+                    <span>→</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Programme de Formation en Routage et Commutation • Préparation CCNA 200-301</p>
+        </div>
+    </footer>
+    <script src="../js/quiz_data.js"></script>
+    <script src="../js/quiz.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
