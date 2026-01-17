@@ -77,9 +77,12 @@ function initMobileMenu() {
 
     if (!menuBtn || !nav) return;
 
+    // Toggle menu
     menuBtn.addEventListener('click', function () {
+        const isOpen = nav.classList.contains('open');
         nav.classList.toggle('open');
         menuBtn.classList.toggle('active');
+        document.body.style.overflow = isOpen ? '' : 'hidden'; // Prevent scrolling when menu is open
         document.body.classList.toggle('nav-open');
     });
 
@@ -88,15 +91,30 @@ function initMobileMenu() {
         link.addEventListener('click', () => {
             nav.classList.remove('open');
             menuBtn.classList.remove('active');
+            document.body.style.overflow = '';
             document.body.classList.remove('nav-open');
         });
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function (e) {
-        if (!nav.contains(e.target) && !menuBtn.contains(e.target) && nav.classList.contains('open')) {
+    // Close menu when resizing beyond mobile breakpoint
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024 && nav.classList.contains('open')) {
             nav.classList.remove('open');
             menuBtn.classList.remove('active');
+            document.body.style.overflow = '';
+            document.body.classList.remove('nav-open');
+        }
+    });
+
+    // Close menu when clicking outside (on the overlay mostly)
+    document.addEventListener('click', function (e) {
+        if (nav.classList.contains('open') && !nav.contains(e.target) && !menuBtn.contains(e.target)) {
+            // Check if click is actually outside (on the header backdrop for example) or barely outside
+            // With fullscreen nav, "outside" is only possible if nav padding allows, or header.
+            // Since nav covers screen, this is less critical but good safety.
+            nav.classList.remove('open');
+            menuBtn.classList.remove('active');
+            document.body.style.overflow = '';
             document.body.classList.remove('nav-open');
         }
     });
