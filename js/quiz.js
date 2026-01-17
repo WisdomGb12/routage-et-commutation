@@ -19,18 +19,56 @@ function initQuiz() {
         return;
     }
 
+    // State Variables
     let userAnswers = {}; // { questionId: [selectedOptionIndex] }
     let isSubmitted = false;
     let score = 0;
+    let isExpanded = false; // Track locally if quiz is open
+
+    // Load from LocalStorage
+    const storageKey = `quiz_state_${phaseId}`;
+    const savedState = localStorage.getItem(storageKey);
+
+    if (savedState) {
+        try {
+            const parsed = JSON.parse(savedState);
+            userAnswers = parsed.userAnswers || {};
+            isSubmitted = parsed.isSubmitted || false;
+            score = parsed.score || 0;
+            // We do NOT load isExpanded, user wants it closed by default unless interacting
+        } catch (e) {
+            console.error("Error loading quiz state", e);
+        }
+    }
+
+    // Save to LocalStorage
+    function saveState() {
+        const state = {
+            userAnswers,
+            isSubmitted,
+            score
+        };
+        localStorage.setItem(storageKey, JSON.stringify(state));
+    }
 
     // Render Quiz Form
     function renderQuiz() {
+        // Calculate class based on state
+        const expandedClass = isExpanded ? '' : 'collapsed';
+        const chevronClass = isExpanded ? 'fa-chevron-up' : 'fa-chevron-down';
+
         let html = `
             <div class="quiz-header">
-                <h3>${data.title}</h3>
-                <p>Testez vos connaissances ! Sélectionnez la ou les bonnes réponses.</p>
+                <div class="quiz-title-row">
+                    <h3>${data.title}</h3>
+                    <button class="quiz-toggle-btn" onclick="toggleQuizContent(this)" aria-label="Réduire/Agrandir le quiz">
+                        <i class="fas ${chevronClass}"></i>
+                    </button>
+                </div>
+                <p class="quiz-subtitle">Testez vos connaissances ! Sélectionnez la ou les bonnes réponses.</p>
             </div>
-            <div class="quiz-questions">
+            <div class="quiz-content-wrapper ${expandedClass}">
+                <div class="quiz-questions">
         `;
 
         data.questions.forEach((q, index) => {
@@ -90,20 +128,43 @@ function initQuiz() {
 
         // Action Buttons
         html += `
-            <div class="quiz-actions">
-                ${!isSubmitted ?
+                <div class="quiz-actions">
+                    ${!isSubmitted ?
                 `<button class="btn-primary" onclick="submitQuiz()">Valider mes réponses</button>` :
                 `<div class="result-summary">
-                        <span class="score-display">Score : ${score}%</span>
-                        <p>${getFeedbackMessage(score)}</p>
-                        <button class="btn-secondary" onclick="resetQuiz()">Recommencer le Quiz</button>
-                     </div>`
+                            <span class="score-display">Score : ${score}%</span>
+                            <p>${getFeedbackMessage(score)}</p>
+                            <button class="btn-secondary" onclick="resetQuiz()">Recommencer le Quiz</button>
+                         </div>`
             }
-            </div>
+                </div>
+            </div> <!-- Close quiz-content-wrapper -->
         `;
 
         quizContainer.innerHTML = html;
+
+        // Restore scroll position if needed (optional)
     }
+
+    // Toggle Quiz Content Visibility
+    window.toggleQuizContent = (btn) => {
+        // Toggle Local State
+        isExpanded = !isExpanded;
+
+        // Update DOM without full re-render for smooth animation
+        const wrapper = btn.closest('.quiz-header').nextElementSibling;
+        const icon = btn.querySelector('i');
+
+        if (isExpanded) {
+            wrapper.classList.remove('collapsed');
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        } else {
+            wrapper.classList.add('collapsed');
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        }
+    };
 
     // Handle Option Selection
     window.handleOptionChange = (questionId, optionIndex, type) => {
@@ -121,9 +182,8 @@ function initQuiz() {
                 userAnswers[questionId].push(optionIndex);
             }
         }
-        // Re-render to update classes (optional, simpler to just let CSS handle :checked but for custom styles we might want JS)
-        // With current render logic, re-rendering might lose focus or feel jumpy. 
-        // Optimization: Don't re-render whole quiz, just toggle classes on labels.
+
+        saveState(); // Save to local storage
         updateSelectionClasses(questionId, optionIndex, type);
     };
 
@@ -142,15 +202,6 @@ function initQuiz() {
 
     // Calculate Score
     window.submitQuiz = () => {
-        // Validation: Check if all questions are answered
-        /* 
-        // Optional: Force answer all
-        if (Object.keys(userAnswers).length < data.questions.length) {
-            alert("Veuillez répondre à toutes les questions avant de valider.");
-            return;
-        }
-        */
-
         let correctCount = 0;
         data.questions.forEach(q => {
             const userAns = userAnswers[q.id] || [];
@@ -165,17 +216,28 @@ function initQuiz() {
 
         score = Math.round((correctCount / data.questions.length) * 100);
         isSubmitted = true;
-        renderQuiz(); // Re-render to show results
+        saveState(); // Save submitted state
+
+        // Ensure expanded when showing results
+        isExpanded = true;
+        renderQuiz();
 
         // Scroll to results
-        document.querySelector('.quiz-actions').scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+            document.querySelector('.quiz-actions').scrollIntoView({ behavior: 'smooth' });
+        }, 100);
     };
 
     window.resetQuiz = () => {
-        userAnswers = {};
-        isSubmitted = false;
-        score = 0;
-        renderQuiz();
+        if (confirm("Voulez-vous vraiment effacer vos réponses et recommencer ?")) {
+            userAnswers = {};
+            isSubmitted = false;
+            score = 0;
+            saveState(); // Clear state in storage
+            renderQuiz();
+            // Scroll back to top of quiz
+            document.querySelector('.quiz-header').scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     function getFeedbackMessage(score) {

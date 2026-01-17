@@ -29,9 +29,23 @@
                 <a href="phase4-inter-vlan.html" class="nav-link">Inter-VLAN</a>
                 <a href="phase5-securite.html" class="nav-link">Sécurité</a>
                 <a href="phase6-avance.html" class="nav-link">Avancé</a>
-                <a href="ressources.html" class="nav-link">Ressources</a>
+                <div class="nav-item">
+                    <a href="ressources.html" class="nav-link active">
+                        Ressources <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="projets.html" class="dropdown-item">
+                            <i class="fas fa-project-diagram"></i> Projets
+                        </a>
+                        <a href="ccna.html" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i> CCNA
+                        </a>
+                        <a href="ressources.html" class="dropdown-item">
+                            <i class="fas fa-book"></i> Voir tout
+                        </a>
+                    </div>
+                </div>
             </nav>
-            <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
             <div class="header-actions">
                 <button class="theme-toggle" aria-label="Changer le thème">
                     <svg class="sun-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -111,6 +125,26 @@
                     <li>Sécuriser un réseau selon les best practices</li>
                     <li>Troubleshooter des problèmes complexes</li>
                 </ol>
+            </section>
+
+            <section class="section">
+                <h2>Conseils Stratégiques pour l'Examen</h2>
+                <div class="card" style="border-left: 4px solid var(--warning);">
+                    <h3><i class="fas fa-lightbulb"></i> Tips du Jour J</h3>
+                    <ul style="margin: 0;">
+                        <li><strong>Pas de retour arrière</strong> : Une fois que vous cliquez sur "Suivant", c'est
+                            fini. Validez bien avant d'avancer.</li>
+                        <li><strong>Gérez votre temps</strong> : Ne passez pas plus de 10 min sur un lab. Si vous
+                            bloquez, configurez ce que vous savez et avancez.</li>
+                        <li><strong>Lisez la question À FOND</strong> : Cisco aime les pièges (ex: "choose TWO" ou
+                            "except").</li>
+                        <li><strong>Subnetting mental</strong> : Vous devez pouvoir faire du subnetting /24 à /30 de
+                            tête rapidement.</li>
+                        <li><strong>Commandes vitales</strong> : Connaissez par cœur
+                            <code>show ip interface brief</code>, <code>show ip route</code>, et <code>show run</code>.
+                        </li>
+                    </ul>
+                </div>
             </section>
 
             <section class="section">

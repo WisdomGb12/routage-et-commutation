@@ -31,7 +31,22 @@
                 <a href="phase4-inter-vlan.html" class="nav-link">Inter-VLAN</a>
                 <a href="phase5-securite.html" class="nav-link">Sécurité</a>
                 <a href="phase6-avance.html" class="nav-link">Avancé</a>
-                <a href="ressources.html" class="nav-link">Ressources</a>
+                <div class="nav-item">
+                    <a href="ressources.html" class="nav-link">
+                        Ressources <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="projets.html" class="dropdown-item">
+                            <i class="fas fa-project-diagram"></i> Projets
+                        </a>
+                        <a href="ccna.html" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i> CCNA
+                        </a>
+                        <a href="ressources.html" class="dropdown-item">
+                            <i class="fas fa-book"></i> Voir tout
+                        </a>
+                    </div>
+                </div>
             </nav>
             <div class="header-actions">
                 <button class="theme-toggle" aria-label="Changer le thème">
@@ -375,34 +390,41 @@
                     </tbody>
                 </table>
 
-                <h3>Adresses privées (RFC 1918)</h3>
-                <p>Non routables sur Internet, utilisées en interne :</p>
-                <ul>
-                    <li><code>10.0.0.0/8</code> - 16 millions d'adresses</li>
-                    <li><code>172.16.0.0/12</code> - 1 million d'adresses</li>
-                    <li><code>192.168.0.0/16</code> - 65 536 adresses</li>
-                </ul>
+                <h3>En-tête IPv4 (Champs Clés)</h3>
+                <div class="card" style="margin-top: 1rem; border-left: 4px solid var(--secondary);">
+                    <p>Au-delà de l'adresse, l'en-tête IP contient des champs cruciaux pour le routage :</p>
+                    <ul>
+                        <li><strong>TTL (Time To Live)</strong> : Compteur (max 255) décrémenté par chaque routeur. Si
+                            TTL=0, le paquet est jeté (évite les boucles infinies).</li>
+                        <li><strong>Protocol</strong> : Indique le contenu (ex: 6 pour TCP, 17 pour UDP, 1 pour ICMP).
+                        </li>
+                        <li><strong>Flags & Fragment Offset</strong> : Utilisés pour diviser un paquet trop grand pour
+                            le MTU du lien suivant (Fragmentation).</li>
+                        <li><strong>Header Checksum</strong> : Vérifie l'intégrité de l'en-tête uniquement.</li>
+                    </ul>
+                </div>
+            </section>
 
-                <h3>Adresses spéciales</h3>
-                <ul>
-                    <li><code>127.0.0.0/8</code> - Loopback (localhost)</li>
-                    <li><code>169.254.0.0/16</code> - APIPA (auto-configuration)</li>
-                    <li><code>0.0.0.0</code> - Route par défaut</li>
-                    <li><code>255.255.255.255</code> - Broadcast limité</li>
-                </ul>
+            <h3>Adresses spéciales</h3>
+            <ul>
+                <li><code>127.0.0.0/8</code> - Loopback (localhost)</li>
+                <li><code>169.254.0.0/16</code> - APIPA (auto-configuration)</li>
+                <li><code>0.0.0.0</code> - Route par défaut</li>
+                <li><code>255.255.255.255</code> - Broadcast limité</li>
+            </ul>
 
-                <h3>Notation binaire</h3>
-                <div class="code-block">
-                    <div class="code-header">
-                        <span class="code-lang">Conversion décimal ↔ binaire</span>
-                    </div>
-                    <pre><code>192.168.1.10
+            <h3>Notation binaire</h3>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-lang">Conversion décimal ↔ binaire</span>
+                </div>
+                <pre><code>192.168.1.10
 = 11000000.10101000.00000001.00001010
 
 Masque /24 (255.255.255.0)
 = 11111111.11111111.11111111.00000000
   ←─── Réseau ───→←─ Hôte ─→</code></pre>
-                </div>
+            </div>
             </section>
 
             <!-- Subnetting -->
@@ -451,14 +473,67 @@ Masque /24 (255.255.255.0)
                     </div>
                 </div>
 
-                <h3>Méthode rapide</h3>
-                <ol>
-                    <li>Déterminer combien de sous-réseaux ou d'hôtes nécessaires</li>
-                    <li>Calculer les bits à emprunter</li>
-                    <li>Trouver le nouveau masque</li>
-                    <li>Calculer la taille du bloc (256 - dernier octet du masque)</li>
-                    <li>Lister les sous-réseaux (0, bloc, bloc×2, bloc×3...)</li>
+                <li>Lister les sous-réseaux (0, bloc, bloc×2, bloc×3...)</li>
                 </ol>
+
+                <div class="card" style="margin-top: 2rem; border-left: 4px solid var(--primary);">
+                    <h3><i class="fas fa-layer-group"></i> VLSM (Variable Length Subnet Masking)</h3>
+                    <p>Le <strong>VLSM</strong> permet d'utiliser des masques de longueurs différentes pour chaque
+                        sous-réseau, évitant ainsi le gaspillage d'adresses.</p>
+
+                    <div class="alert alert-info">
+                        <div class="alert-title">Exemple VLSM concret</div>
+                        <p>Besoin : Réseau 192.168.10.0/24 à diviser pour :
+                        <ul>
+                            <li><strong>VLAN Ventes</strong> : 100 hôtes</li>
+                            <li><strong>VLAN RH</strong> : 50 hôtes</li>
+                            <li><strong>VLAN IT</strong> : 20 hôtes</li>
+                            <li><strong>Lien WAN</strong> : 2 hôtes</li>
+                        </ul>
+                        </p>
+                    </div>
+
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: var(--bg-secondary);">
+                                <th style="padding: 10px; text-align: left;">Réseau</th>
+                                <th style="padding: 10px; text-align: left;">Masque</th>
+                                <th style="padding: 10px; text-align: left;">Plage IP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">Ventes (100h)
+                                </td>
+                                <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">/25 (128 adr)
+                                </td>
+                                <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">192.168.10.0 -
+                                    .127</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">RH (50h)</td>
+                                <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">/26 (64 adr)
+                                </td>
+                                <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">192.168.10.128
+                                    - .191</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">IT (20h)</td>
+                                <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">/27 (32 adr)
+                                </td>
+                                <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">192.168.10.192
+                                    - .223</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px;">WAN (2h)</td>
+                                <td style="padding: 10px;">/30 (4 adr)</td>
+                                <td style="padding: 10px;">192.168.10.224 - .227</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 1rem; font-style: italic; font-size: 0.9rem;">Astuce : Toujours commencer par
+                        le plus grand besoin d'hôtes.</p>
+                </div>
             </section>
 
             <!-- Protocoles -->
@@ -598,13 +673,43 @@ Masque /24 (255.255.255.0)
                     <li><strong>Auto-MDIX</strong> : Détection automatique (équipements modernes)</li>
                 </ul>
 
-                <h3>Catégories de câbles</h3>
+                <h3>Catégories de câbles Copper</h3>
                 <ul>
-                    <li><strong>Cat5e</strong> : 1 Gbps, 100m max</li>
-                    <li><strong>Cat6</strong> : 1 Gbps (10 Gbps sur 55m)</li>
-                    <li><strong>Cat6a</strong> : 10 Gbps, 100m</li>
-                    <li><strong>Fibre optique</strong> : Longues distances, hauts débits</li>
+                    <li><strong>Cat5e</strong> : Jusqu'à 1 Gbps, 100m.</li>
+                    <li><strong>Cat6</strong> : Jusqu'à 10 Gbps (sur 55m max).</li>
+                    <li><strong>Cat6a</strong> : 10 Gbps stable sur 100m.</li>
                 </ul>
+
+                <div class="card" style="margin-top: 1.5rem; border-left: 4px solid #f6ad55;">
+                    <h3><i class="fas fa-bolt"></i> Fibre Optique</h3>
+                    <p>Utilisée pour les longues distances et les environnements à fortes interférences
+                        électromagnétiques.</p>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: var(--bg-secondary);">
+                                <th style="padding: 10px; text-align: left;">Type</th>
+                                <th style="padding: 10px; text-align: left;">Distance</th>
+                                <th style="padding: 10px; text-align: left;">Utilisation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">
+                                    <strong>Mono-mode (SMF)</strong>
+                                </td>
+                                <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">10km - 100km
+                                </td>
+                                <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">Liaisons WAN,
+                                    backbone opérateur. Utilise un laser.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px;"><strong>Multi-mode (MMF)</strong></td>
+                                <td style="padding: 10px;">500m - 2km</td>
+                                <td style="padding: 10px;">Data Centers, LAN campus. Utilise une LED.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
             <!-- Labs -->

@@ -31,7 +31,22 @@
                 <a href="phase4-inter-vlan.html" class="nav-link">Inter-VLAN</a>
                 <a href="phase5-securite.html" class="nav-link active">Sécurité</a>
                 <a href="phase6-avance.html" class="nav-link">Avancé</a>
-                <a href="ressources.html" class="nav-link">Ressources</a>
+                <div class="nav-item">
+                    <a href="ressources.html" class="nav-link">
+                        Ressources <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="projets.html" class="dropdown-item">
+                            <i class="fas fa-project-diagram"></i> Projets
+                        </a>
+                        <a href="ccna.html" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i> CCNA
+                        </a>
+                        <a href="ressources.html" class="dropdown-item">
+                            <i class="fas fa-book"></i> Voir tout
+                        </a>
+                    </div>
+                </div>
             </nav>
             <div class="header-actions">
                 <button class="theme-toggle" aria-label="Changer le thème">
@@ -88,6 +103,8 @@
                     <li><a href="#acl-standard">ACLs Standard</a></li>
                     <li><a href="#acl-extended">ACLs Étendues</a></li>
                     <li><a href="#ssh">Configuration SSH</a></li>
+                    <li><a href="#nat-pat">NAT et PAT</a></li>
+                    <li><a href="#hardening">Device Hardening</a></li>
                     <li><a href="#ospf-security">Sécurité OSPF</a></li>
                     <li><a href="#best-practices">Best Practices</a></li>
                     <li><a href="#labs">Labs Pratiques</a></li>
@@ -629,9 +646,74 @@ ssh -l admin 192.168.1.1</code></pre>
                 </div>
             </section>
 
-            <!-- Section 7: OSPF Security -->
+            <!-- Section 7: NAT et PAT -->
+            <section class="section" id="nat-pat">
+                <h2>NAT et PAT (Network Address Translation)</h2>
+                <p>Le <strong>NAT</strong> permet de traduire des adresses IP privées en adresses IP publiques,
+                    économisant ainsi les adresses IPv4 et cachant la topologie interne.</p>
+
+                <h3>Types de NAT</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--bg-secondary);">
+                            <th style="padding: 10px; text-align: left;">Type</th>
+                            <th style="padding: 10px; text-align: left;">Mappage</th>
+                            <th style="padding: 10px; text-align: left;">Cas d'usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);"><strong>Static
+                                    NAT</strong></td>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">1:1 permanent</td>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">Serveurs
+                                accessibles de l'extérieur</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);"><strong>Dynamic
+                                    NAT</strong></td>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">1:1 temporaire
+                                (pool)</td>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">Accès Internet
+                                limité par le pool</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px;"><strong>PAT (Overload)</strong></td>
+                            <td style="padding: 10px;">Many:1 (via ports)</td>
+                            <td style="padding: 10px;">Usage domestique et entreprise (standard)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-info">
+                    <div class="alert-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="alert-content">
+                        <div class="alert-title">Terminologie NAT Cisco</div>
+                        <ul style="margin: 0;">
+                            <li><strong>Inside Local</strong> : IP réelle du PC interne (ex: 192.168.1.10)</li>
+                            <li><strong>Inside Global</strong> : IP publique vue par Internet (ex: 200.1.1.1)</li>
+                            <li><strong>Outside Global</strong> : IP réelle de l'hôte distant sur Internet</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 8: Hardening -->
+            <section class="section" id="hardening">
+                <h2>Device Hardening (Sécurisation de l'équipement)</h2>
+                <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--danger);">
+                    <ul style="margin: 0; padding-left: 1.5rem;">
+                        <li><strong>Chiffrer les mots de passe</strong> : <code>service password-encryption</code></li>
+                        <li><strong>Bannières d'avertissement</strong> : <code>banner motd #ACCES INTERDIT#</code></li>
+                        <li><strong>Désactivation des services inutiles</strong> : <code>no ip http server</code></li>
+                        <li><strong>Timeout de session</strong> : <code>exec-timeout 5 0</code> (sur console/VTY)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 9: OSPF Security -->
             <section class="section" id="ospf-security">
-                <h2>Sécurité OSPF</h2>
+                <h2>9. Sécurité OSPF</h2>
 
                 <p>OSPF peut être vulnérable aux attaques si un routeur malveillant injecte de fausses routes.
                     L'authentification OSPF et les interfaces passives protègent le réseau.</p>
@@ -678,9 +760,9 @@ show ip ospf interface g0/0/1 | include authentication</code></pre>
                 </div>
             </section>
 
-            <!-- Section 8: Best Practices -->
+            <!-- Section 10: Best Practices -->
             <section class="section" id="best-practices">
-                <h2>Best Practices Sécurité</h2>
+                <h2>10. Best Practices Sécurité</h2>
 
                 <h3>Checklist sécurité switch</h3>
                 <ul>
@@ -753,9 +835,9 @@ line vty 0 15
                 </div>
             </section>
 
-            <!-- Section 9: Labs -->
+            <!-- Section 11: Labs Pratiques -->
             <section class="section" id="labs">
-                <h2>Labs Pratiques</h2>
+                <h2>11. Labs Pratiques</h2>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
                     <h3><i class="fas fa-microscope"></i> Lab 1 : Protection complète du switch</h3>
@@ -802,21 +884,13 @@ line vty 0 15
                 </div>
             </section>
 
-            <!-- Section 10: Quiz -->
+            <!-- Section 12: Quiz -->
             <section class="section" id="quiz">
-                <h2><i class="fas fa-flask"></i> Quiz de vérification</h2>
-                <div class="card">
-                    <p><strong>Question :</strong> Quel est le masque générique (wildcard mask) pour un masque de
-                        sous-réseau /8 (255.0.0.0) ?</p>
-                    <details>
-                        <summary class="btn btn-primary"
-                            style="display: inline-block; cursor: pointer; margin-bottom: 0.5rem;">Voir la réponse
-                        </summary>
-                        <p
-                            style="margin-top: 0.5rem; padding: 1rem; background: var(--bg-primary); border-radius: 8px;">
-                            <strong>0.255.255.255</strong>. C'est l'inverse du masque 255.0.0.0 (/8).
-                        </p>
-                    </details>
+                <h2>12. Quiz de vérification</h2>
+                <div id="quiz-container" data-phase="phase5">
+                    <div style="text-align: center; padding: 2rem;">
+                        <p><i class="fas fa-spinner fa-spin"></i> Chargement du quiz...</p>
+                    </div>
                 </div>
             </section>
 

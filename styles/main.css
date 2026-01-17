@@ -245,6 +245,12 @@ p {
     gap: var(--space-xs);
 }
 
+.nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .nav-link {
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-md);
@@ -252,12 +258,93 @@ p {
     font-weight: 500;
     font-size: 0.9rem;
     transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: var(--primary);
     background: rgba(0, 102, 204, 0.1);
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-sm) 0;
+    margin-top: var(--space-xs);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all var(--transition-normal);
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-lg);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.dropdown-item:hover {
+    background: rgba(0, 102, 204, 0.05);
+    color: var(--primary);
+    padding-left: calc(var(--space-lg) + 4px);
+}
+
+.dropdown-item i {
+    width: 20px;
+    text-align: center;
+    color: var(--primary);
+}
+
+/* Mobile Submenu Adjustments */
+@media (max-width: 1024px) {
+    .nav-item {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        padding-left: var(--space-xl);
+        min-width: 100%;
+        margin-top: 0;
+        display: block;
+        /* Toujours visible en mobile pour simplifier l'accès */
+        background: transparent;
+    }
+
+    .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid var(--border-light);
+    }
 }
 
 .nav-link.active {
@@ -1415,8 +1502,54 @@ li strong {
 }
 
 .quiz-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 2rem;
+}
+
+.quiz-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.quiz-toggle-btn {
+    background: rgba(102, 126, 234, 0.1);
+    border: none;
+    color: var(--primary);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.quiz-toggle-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.quiz-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.quiz-content-wrapper {
+    transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+    overflow: hidden;
+    max-height: 30000px;
+    /* Increased for 20 questions */
+    opacity: 1;
+}
+
+.quiz-content-wrapper.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
 }
 
 .question-card {

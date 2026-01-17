@@ -31,7 +31,22 @@
                 <a href="phase4-inter-vlan.html" class="nav-link">Inter-VLAN</a>
                 <a href="phase5-securite.html" class="nav-link">Sécurité</a>
                 <a href="phase6-avance.html" class="nav-link">Avancé</a>
-                <a href="ressources.html" class="nav-link">Ressources</a>
+                <div class="nav-item">
+                    <a href="ressources.html" class="nav-link">
+                        Ressources <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="projets.html" class="dropdown-item">
+                            <i class="fas fa-project-diagram"></i> Projets
+                        </a>
+                        <a href="ccna.html" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i> CCNA
+                        </a>
+                        <a href="ressources.html" class="dropdown-item">
+                            <i class="fas fa-book"></i> Voir tout
+                        </a>
+                    </div>
+                </div>
             </nav>
             <div class="header-actions">
                 <button class="theme-toggle" aria-label="Changer le thème">
@@ -586,6 +601,54 @@ show vtp password</code></pre>
                 </div>
             </section>
 
+            <!-- Section EtherChannel -->
+            <section class="section" id="etherchannel">
+                <h2>EtherChannel (Agrégation de liens)</h2>
+                <p><strong>EtherChannel</strong> permet de regrouper plusieurs liens physiques en un seul lien logique
+                    pour augmenter la bande passante et assurer la redondance.</p>
+
+                <h3>Protocoles de Négociation</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--bg-secondary);">
+                            <th style="padding: 10px; text-align: left;">Caractéristique</th>
+                            <th style="padding: 10px; text-align: left;">LACP (802.3ad)</th>
+                            <th style="padding: 10px; text-align: left;">PAgP (Cisco)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">Type</td>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">Standard ouvert
+                            </td>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">Propriétaire Cisco
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">Mode Actif</td>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">Active</td>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">Desirable</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px;">Mode Passif</td>
+                            <td style="padding: 10px;">Passive</td>
+                            <td style="padding: 10px;">Auto</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="code-block" style="margin-top: 1.5rem;">
+                    <div class="code-header">
+                        <span class="code-lang">Cisco IOS - Configuration LACP</span>
+                    </div>
+                    <pre><code>interface range f0/1 - 2
+  channel-group 1 mode active
+!
+interface port-channel 1
+  switchport mode trunk</code></pre>
+                </div>
+            </section>
+
             <!-- Section 5: STP -->
             <section class="section" id="stp">
                 <h2>STP (Spanning Tree Protocol)</h2>
@@ -615,75 +678,86 @@ show vtp password</code></pre>
                     <li><strong>Blocage des autres ports</strong> : Les ports restants sont bloqués</li>
                 </ol>
 
-                <h3>Bridge ID</h3>
-                <p>Le Bridge ID est composé de :</p>
-                <ul>
-                    <li><strong>Priorité</strong> (2 octets) : Par défaut 32768, configurable par incréments de 4096
-                    </li>
-                    <li><strong>Adresse MAC</strong> (6 octets) : Adresse MAC du switch</li>
-                </ul>
                 <p>Le switch avec le <strong>Bridge ID le plus bas</strong> devient Root Bridge.</p>
 
-                <h3>États des ports STP</h3>
-                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
-                    <thead>
-                        <tr style="background: var(--gradient-primary); color: white;">
-                            <th style="padding: 12px; text-align: left;">État</th>
-                            <th style="padding: 12px; text-align: left;">Durée</th>
-                            <th style="padding: 12px; text-align: left;">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="background: var(--bg-card);">
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
-                                <strong>Blocking</strong>
-                            </td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">20 secondes</td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Reçoit BPDUs
-                                uniquement</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
-                                <strong>Listening</strong>
-                            </td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">15 secondes</td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Envoie et reçoit
-                                BPDUs</td>
-                        </tr>
-                        <tr style="background: var(--bg-card);">
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
-                                <strong>Learning</strong>
-                            </td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">15 secondes</td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Apprend les
-                                adresses MAC</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;"><strong>Forwarding</strong></td>
-                            <td style="padding: 12px;">-</td>
-                            <td style="padding: 12px;">Transmet les trames</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p><strong>Total : 50 secondes</strong> avant qu'un port ne commence à transmettre après un changement
-                    de topologie !</p>
-
-                <h3>Versions de STP</h3>
-                <ul>
-                    <li><strong>STP (802.1D)</strong> : Original, convergence lente (30-50s)</li>
-                    <li><strong>RSTP (802.1w)</strong> : Rapid STP, convergence < 10 secondes</li>
-                    <li><strong>MSTP (802.1s)</strong> : Multiple STP, plusieurs instances par groupes de VLANs</li>
-                    <li><strong>PVST+ (Cisco)</strong> : Une instance STP par VLAN</li>
-                    <li><strong>Rapid PVST+ (Cisco)</strong> : RSTP par VLAN (recommandé)</li>
-                </ul>
-
-                <h3>Configuration STP</h3>
-                <div class="code-block">
-                    <div class="code-header">
-                        <span class="code-lang">Cisco IOS - Configuration STP</span>
-                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
+                <div class="card" style="margin-top: 1rem; border-left: 4px solid var(--primary);">
+                    <h3><i class="fas fa-crown"></i> Exemple d'Élection Root Bridge</h3>
+                    <p>Si tous les switches ont la priorité par défaut (32768) :</p>
+                    <ul>
+                        <li>Switch A : 32768 + 00:AA:AA:AA:AA:AA</li>
+                        <li>Switch B : 32768 + 00:BB:BB:BB:BB:BB</li>
+                    </ul>
+                    <p><strong>Switch A gagne</strong> car son adresse MAC est plus basse.</p>
+                    <div class="alert alert-success">
+                        <div class="alert-title">Forcer un Root Bridge</div>
+                        <p>Il est recommandé de choisir manuellement son switch de coeur comme Root :<br>
+                            <code>spanning-tree vlan 1 root primary</code> (priorité à 24576)<br>
+                            <code>spanning-tree vlan 1 priority 4096</code> (plus bas possible)
+                        </p>
                     </div>
-                    <pre><code>! Activer Rapid PVST+
+                </div>
+            </section>
+
+            <h3>États des ports STP</h3>
+            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                <thead>
+                    <tr style="background: var(--gradient-primary); color: white;">
+                        <th style="padding: 12px; text-align: left;">État</th>
+                        <th style="padding: 12px; text-align: left;">Durée</th>
+                        <th style="padding: 12px; text-align: left;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: var(--bg-card);">
+                        <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                            <strong>Blocking</strong>
+                        </td>
+                        <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">20 secondes</td>
+                        <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Reçoit BPDUs
+                            uniquement</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                            <strong>Listening</strong>
+                        </td>
+                        <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">15 secondes</td>
+                        <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Envoie et reçoit
+                            BPDUs</td>
+                    </tr>
+                    <tr style="background: var(--bg-card);">
+                        <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                            <strong>Learning</strong>
+                        </td>
+                        <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">15 secondes</td>
+                        <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Apprend les
+                            adresses MAC</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px;"><strong>Forwarding</strong></td>
+                        <td style="padding: 12px;">-</td>
+                        <td style="padding: 12px;">Transmet les trames</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Total : 50 secondes</strong> avant qu'un port ne commence à transmettre après un changement
+                de topologie !</p>
+
+            <h3>Versions de STP</h3>
+            <ul>
+                <li><strong>STP (802.1D)</strong> : Original, convergence lente (30-50s)</li>
+                <li><strong>RSTP (802.1w)</strong> : Rapid STP, convergence < 10 secondes</li>
+                <li><strong>MSTP (802.1s)</strong> : Multiple STP, plusieurs instances par groupes de VLANs</li>
+                <li><strong>PVST+ (Cisco)</strong> : Une instance STP par VLAN</li>
+                <li><strong>Rapid PVST+ (Cisco)</strong> : RSTP par VLAN (recommandé)</li>
+            </ul>
+
+            <h3>Configuration STP</h3>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-lang">Cisco IOS - Configuration STP</span>
+                    <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
+                </div>
+                <pre><code>! Activer Rapid PVST+
 spanning-tree mode rapid-pvst
 
 ! Définir ce switch comme Root Bridge pour VLAN 10
@@ -703,19 +777,19 @@ interface g0/1
 ! Configurer la priorité d'un port (pour désempater)
 interface g0/1
   spanning-tree port-priority 64</code></pre>
+            </div>
+
+            <h3>PortFast et BPDU Guard</h3>
+            <p><strong>PortFast</strong> permet à un port de passer directement en Forwarding (sans les 50s
+                d'attente). À utiliser UNIQUEMENT sur les ports connectés à des terminaux (PC, serveurs), jamais sur
+                des liens inter-switches !</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-lang">Cisco IOS - PortFast et BPDU Guard</span>
+                    <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                 </div>
-
-                <h3>PortFast et BPDU Guard</h3>
-                <p><strong>PortFast</strong> permet à un port de passer directement en Forwarding (sans les 50s
-                    d'attente). À utiliser UNIQUEMENT sur les ports connectés à des terminaux (PC, serveurs), jamais sur
-                    des liens inter-switches !</p>
-
-                <div class="code-block">
-                    <div class="code-header">
-                        <span class="code-lang">Cisco IOS - PortFast et BPDU Guard</span>
-                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
-                    </div>
-                    <pre><code>! Activer PortFast sur un port spécifique
+                <pre><code>! Activer PortFast sur un port spécifique
 interface f0/1
   spanning-tree portfast
 
@@ -728,15 +802,15 @@ interface f0/1
 
 ! Activer BPDU Guard globalement
 spanning-tree portfast bpduguard default</code></pre>
-                </div>
+            </div>
 
-                <h3>Commandes de vérification STP</h3>
-                <div class="code-block">
-                    <div class="code-header">
-                        <span class="code-lang">Cisco IOS - Vérification STP</span>
-                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
-                    </div>
-                    <pre><code>! Afficher l'état STP pour tous les VLANs
+            <h3>Commandes de vérification STP</h3>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-lang">Cisco IOS - Vérification STP</span>
+                    <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
+                </div>
+                <pre><code>! Afficher l'état STP pour tous les VLANs
 show spanning-tree
 
 ! Afficher STP pour un VLAN spécifique
@@ -750,7 +824,7 @@ show spanning-tree root
 
 ! Voir les détails d'une interface
 show spanning-tree interface g0/1 detail</code></pre>
-                </div>
+            </div>
             </section>
 
             <!-- Section 6: Port Security -->
@@ -762,13 +836,50 @@ show spanning-tree interface g0/1 detail</code></pre>
                     flooding.</p>
 
                 <h3>Modes de violation</h3>
-                <ul>
-                    <li><strong>Protect</strong> : Ignore silencieusement les trames non autorisées</li>
-                    <li><strong>Restrict</strong> : Ignore les trames + incrémente le compteur de violations + génère un
-                        syslog</li>
-                    <li><strong>Shutdown</strong> (défaut) : Met le port en err-disabled (doit être réactivé
-                        manuellement)</li>
-                </ul>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--bg-secondary);">
+                            <th style="padding: 10px; text-align: left;">Mode</th>
+                            <th style="padding: 10px; text-align: left;">Bloque Trafic</th>
+                            <th style="padding: 10px; text-align: left;">Log Syslog</th>
+                            <th style="padding: 10px; text-align: left;">Coupe le Port</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Protect</strong></td>
+                            <td
+                                style="padding: 10px; border-bottom: 1px solid var(--border-color); color: var(--success);">
+                                Oui</td>
+                            <td
+                                style="padding: 10px; border-bottom: 1px solid var(--border-color); color: var(--danger);">
+                                Non</td>
+                            <td
+                                style="padding: 10px; border-bottom: 1px solid var(--border-color); color: var(--danger);">
+                                Non</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid var(--border-color);">
+                                <strong>Restrict</strong></td>
+                            <td
+                                style="padding: 10px; border-bottom: 1px solid var(--border-color); color: var(--success);">
+                                Oui</td>
+                            <td
+                                style="padding: 10px; border-bottom: 1px solid var(--border-color); color: var(--success);">
+                                Oui</td>
+                            <td
+                                style="padding: 10px; border-bottom: 1px solid var(--border-color); color: var(--danger);">
+                                Non</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px;"><strong>Shutdown</strong></td>
+                            <td style="padding: 10px; color: var(--success);">Oui</td>
+                            <td style="padding: 10px; color: var(--success);">Oui</td>
+                            <td style="padding: 10px; color: var(--success);">Oui</td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <h3>Configuration Port Security</h3>
                 <div class="code-block">

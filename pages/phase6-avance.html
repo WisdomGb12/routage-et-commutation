@@ -31,7 +31,22 @@
                 <a href="phase4-inter-vlan.html" class="nav-link">Inter-VLAN</a>
                 <a href="phase5-securite.html" class="nav-link">Sécurité</a>
                 <a href="phase6-avance.html" class="nav-link active">Avancé</a>
-                <a href="ressources.html" class="nav-link">Ressources</a>
+                <div class="nav-item">
+                    <a href="ressources.html" class="nav-link">
+                        Ressources <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="projets.html" class="dropdown-item">
+                            <i class="fas fa-project-diagram"></i> Projets
+                        </a>
+                        <a href="ccna.html" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i> CCNA
+                        </a>
+                        <a href="ressources.html" class="dropdown-item">
+                            <i class="fas fa-book"></i> Voir tout
+                        </a>
+                    </div>
+                </div>
             </nav>
             <div class="header-actions">
                 <button class="theme-toggle" aria-label="Changer le thème">
@@ -88,6 +103,7 @@
                     <li><a href="#ospf-multiarea">OSPF Multi-Areas</a></li>
                     <li><a href="#ipv6">IPv6 : Fondamentaux</a></li>
                     <li><a href="#ipv6-config">IPv6 : Configuration</a></li>
+                    <li><a href="#ipv6-eui64">IPv6 : EUI-64</a></li>
                     <li><a href="#nat">NAT et PAT</a></li>
                     <li><a href="#labs">Labs Pratiques</a></li>
                     <li><a href="#quiz">Quiz de vérification</a></li>
@@ -652,6 +668,16 @@ ipv6 route 2001:db8:acad:3::/64 2001:db8:feed::2
 ! Route par défaut
 ipv6 route ::/0 2001:db8:feed::2</code></pre>
                 </div>
+
+                <h3>Identifiant d'interface EUI-64</h3>
+                <p>La méthode <strong>EUI-64</strong> permet à un hôte de générer automatiquement son identifiant
+                    d'interface à partir de son adresse MAC.</p>
+                <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                    <p><strong>Exemple :</strong> MAC <code>0011:2233:4455</code> devient
+                        <code>0211:22FF:FE33:4455</code></p>
+                    <code
+                        style="display: block; background: var(--bg-body); padding: 0.5rem; border-radius: 4px;">R1(config-if)# ipv6 address 2001:DB8:ACAD:1::/64 eui-64</code>
+                </div>
             </section>
 
             <!-- Section 6: NAT -->
@@ -791,20 +817,11 @@ ip nat inside source static tcp 192.168.1.100 443 203.0.113.1 443</code></pre>
             <section class="section" id="quiz">
                 <h2><i class="fas fa-flask"></i> Quiz de vérification</h2>
 
-                <div class="card" style="margin-bottom: 1rem;">
-                    <h4>Question 1</h4>
-                    <p>Quelle combinaison LACP ne formera PAS un EtherChannel ?</p>
-                    <details>
-                        <summary style="cursor: pointer; color: var(--primary); font-weight: 500;">Voir la réponse
-                        </summary>
-                        <p
-                            style="margin-top: 0.5rem; padding: 1rem; background: var(--bg-primary); border-radius: 8px;">
-                            <strong>passive-passive</strong>. Au moins un côté doit être en mode <strong>active</strong>
-                        <div id="quiz-container" data-phase="phase6">
-                            <div style="text-align: center; padding: 2rem;">
-                                <p>Chargement du quiz...</p>
-                            </div>
-                        </div>
+                <div id="quiz-container" data-phase="phase6">
+                    <div style="text-align: center; padding: 2rem;">
+                        <p><i class="fas fa-spinner fa-spin"></i> Chargement du quiz...</p>
+                    </div>
+                </div>
             </section>
 
             <!-- Planning -->

@@ -31,7 +31,22 @@
                 <a href="phase4-inter-vlan.html" class="nav-link">Inter-VLAN</a>
                 <a href="phase5-securite.html" class="nav-link">Sécurité</a>
                 <a href="phase6-avance.html" class="nav-link">Avancé</a>
-                <a href="ressources.html" class="nav-link">Ressources</a>
+                <div class="nav-item">
+                    <a href="ressources.html" class="nav-link active">
+                        Ressources <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="projets.html" class="dropdown-item">
+                            <i class="fas fa-project-diagram"></i> Projets
+                        </a>
+                        <a href="ccna.html" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i> CCNA
+                        </a>
+                        <a href="ressources.html" class="dropdown-item">
+                            <i class="fas fa-book"></i> Voir tout
+                        </a>
+                    </div>
+                </div>
             </nav>
             <div class="header-actions">
                 <button class="theme-toggle" aria-label="Changer le thème">
@@ -120,6 +135,15 @@
                         statique pour ce projet.</li>
                     <li><strong>Test</strong> : PC Invité doit pouvoir pinguer PC Famille (pour l'instant).</li>
                 </ol>
+
+                <div class="card" style="border-left: 4px solid var(--accent); margin-top: 1rem;">
+                    <h4><i class="fas fa-tasks"></i> Mini-Lab de vérification</h4>
+                    <p>Configurez le routeur SOHO pour :</p>
+                    <ul style="margin: 0;">
+                        <li>Interdire l'accès Telnet (vty 0 4) mais autoriser SSH.</li>
+                        <li>Créer une exclusion DHCP pour les 10 premières adresses.</li>
+                    </ul>
+                </div>
             </section>
 
             <!-- Projet 2 -->
@@ -131,8 +155,7 @@
                 <p>Interconnexion de trois agences géographiquement séparées.</p>
 
                 <h3><i class="fas fa-building"></i> Topologie</h3>
-                <pre
-                    style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; overflow-x: auto; font-family: monospace;">
+                <pre>
       [R1-Siège]
       /        \
  10.1.1.0/30  10.1.1.4/30
@@ -156,9 +179,17 @@
                         gestion stable (Ex: 1.1.1.1/32 pour R1).</li>
                     <li><strong>Route par défaut</strong> : R1 est connecté à "Internet" (simulé par une Loopback
                         8.8.8.8) via une route par défaut.</li>
-                    <li><strong>Propagation</strong> : R1 doit propager sa route par défaut aux Agences A et B via OSPF
-                        (<code>default-information originate</code>).</li>
+                    (<code>default-information originate</code>).</li>
                 </ol>
+
+                <div class="card" style="border-left: 4px solid var(--accent); margin-top: 1rem;">
+                    <h4><i class="fas fa-tasks"></i> Mini-Lab de vérification</h4>
+                    <p>Dans ce réseau PME :</p>
+                    <ul style="margin: 0;">
+                        <li>Forcez le Switch Dist-1 à devenir Root Bridge pour le VLAN 10.</li>
+                        <li>Configurez une route par défaut flottante (AD 200) vers le FAI de backup.</li>
+                    </ul>
+                </div>
             </section>
 
             <!-- Projet 3 -->
@@ -194,9 +225,17 @@
                             <li>Le VLAN Famille a accès à tout.</li>
                         </ul>
                     </li>
-                    <li><strong>Management</strong> : Configurez <strong>SSH</strong> sur tous les équipements (pas de
-                        Telnet !) avec un compte utilisateur 'admin'.</li>
+                    Telnet !) avec un compte utilisateur 'admin'.</li>
                 </ol>
+
+                <div class="card" style="border-left: 4px solid var(--accent); margin-top: 1rem;">
+                    <h4><i class="fas fa-tasks"></i> Mini-Lab de vérification</h4>
+                    <p>Challenge Sécurité :</p>
+                    <ul style="margin: 0;">
+                        <li>Désactivez le "switchport trunk native vlan" d'un côté et observez les logs CDP.</li>
+                        <li>Configurez une ACL bloquant ICMP et vérifiez que le ping échoue mais que HTTP passe.</li>
+                    </ul>
+                </div>
             </section>
 
             <!-- Projet 4 -->
@@ -236,6 +275,16 @@
                     <li><strong>Documentation</strong> : Dessinez le schéma logique et la table d'adressage avant de
                         commencer.</li>
                 </ol>
+
+                <div class="card" style="border-left: 4px solid var(--accent); margin-top: 1rem;">
+                    <h4><i class="fas fa-tasks"></i> Mini-Lab de vérification</h4>
+                    <p>Sur le cœur de réseau :</p>
+                    <ul style="margin: 0;">
+                        <li>Configurez HSRP groupe 1 avec préemption pour la gateway VLAN 20.</li>
+                        <li>Injectez une route par défaut dans OSPF avec <code>default-information originate</code>.
+                        </li>
+                    </ul>
+                </div>
             </section>
 
             <nav class="page-nav">
