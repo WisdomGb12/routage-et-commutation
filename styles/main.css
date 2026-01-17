@@ -31,6 +31,9 @@
     --text-muted: #718096;
     --border-color: #cbd5e0;
     --border-light: #e2e8f0;
+    --bg-sidebar: #f8fafc;
+    /* Nouveau: Gris très clair pour le sidebar */
+
 
     /* Shadows */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -78,6 +81,8 @@
     --text-muted: #8a9ba8;
     --border-color: #2a3a4e;
     --border-light: #1e2e3e;
+    --bg-sidebar: #1a1a2e;
+    /* Nouveau: Bleu sombre profond pour le sidebar */
 }
 
 /* Auto Dark Mode (system preference) */
@@ -357,11 +362,13 @@ p {
         height: calc(100vh - var(--header-height));
         /* Force la hauteur pour éviter le collapse */
         width: 260px;
-        background: var(--bg-card);
-        /* Assure un fond solide/blanc en mode clair */
+        background: var(--bg-sidebar);
+        /* Assure un fond distinct */
         border-right: 1px solid var(--border-color);
-        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
         /* Ombre plus prononcée pour détacher du contenu */
+
         flex-direction: column;
         padding: 1rem 0;
         gap: 0;
@@ -1024,11 +1031,12 @@ li strong {
    Table of Contents
    ============================================ */
 .toc {
-    background: var(--bg-card);
+    background: var(--bg-sidebar);
     border-radius: var(--radius-md);
     padding: var(--space-lg);
     margin-bottom: var(--space-xl);
     border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
 
 .toc-title {
