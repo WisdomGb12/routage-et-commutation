@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 
@@ -19,7 +20,7 @@
     <header class="header">
         <div class="header-container">
             <a href="../index.html" class="logo">
-                <div class="logo-icon">🌐</div>
+                <div class="logo-icon"><i class="fas fa-network-wired"></i></div>
                 <span>Routage & Commutation</span>
             </a>
             <nav class="nav">
@@ -43,7 +44,9 @@
                             d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
                     </svg>
                 </button>
-                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -57,7 +60,7 @@
             </nav>
 
             <div class="section-header">
-                <div class="section-icon">📡</div>
+                <div class="section-icon"><i class="fas fa-satellite-dish"></i></div>
                 <div>
                     <span class="phase-badge" style="background: rgba(102, 126, 234, 0.15); color: #667eea;">Phase
                         1</span>
@@ -67,7 +70,7 @@
             </div>
 
             <div class="alert alert-info">
-                <div class="alert-icon">⏱️</div>
+                <div class="alert-icon"><i class="fas fa-clock"></i></div>
                 <div class="alert-content">
                     <div class="alert-title">Durée estimée : 3-4 semaines</div>
                     <p style="margin: 0;">Cette phase pose les bases essentielles. Maîtrisez parfaitement ces concepts
@@ -76,7 +79,7 @@
             </div>
 
             <div class="toc">
-                <div class="toc-title">📑 Sommaire</div>
+                <div class="toc-title"><i class="fas fa-list"></i> Sommaire</div>
                 <ul class="toc-list">
                     <li><a href="#introduction">Introduction aux Réseaux</a></li>
                     <li><a href="#modele-osi">Modèle OSI</a></li>
@@ -121,7 +124,9 @@
                             </td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Tous connectés à un
                                 switch central</td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Facile à gérer ❌
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><i
+                                    class="fas fa-check" style="color: var(--success);"></i> Facile à gérer <i
+                                    class="fas fa-times" style="color: var(--danger);"></i>
                                 Point unique de défaillance</td>
                         </tr>
                         <tr>
@@ -130,13 +135,16 @@
                             </td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Tous sur un même
                                 câble</td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Simple ❌
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><i
+                                    class="fas fa-check" style="color: var(--success);"></i> Simple <i
+                                    class="fas fa-times" style="color: var(--danger);"></i>
                                 Collisions, obsolète</td>
                         </tr>
                         <tr style="background: var(--bg-card);">
                             <td style="padding: 12px;"><strong>Maillée</strong></td>
                             <td style="padding: 12px;">Connexions multiples entre équipements</td>
-                            <td style="padding: 12px;">✅ Redondance ❌ Coût élevé</td>
+                            <td style="padding: 12px;"><i class="fas fa-check" style="color: var(--success);"></i>
+                                Redondance <i class="fas fa-times" style="color: var(--danger);"></i> Coût élevé</td>
                         </tr>
                     </tbody>
                 </table>
@@ -245,7 +253,7 @@
                 </table>
 
                 <div class="alert alert-warning">
-                    <div class="alert-icon">💡</div>
+                    <div class="alert-icon"><i class="fas fa-lightbulb"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Mnémotechnique</div>
                         <p style="margin: 0;"><strong>"All People Seem To Need Data Processing"</strong> (7→1)<br>
@@ -413,7 +421,7 @@ Masque /24 (255.255.255.0)
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Référence rapide</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>CIDR   Masque            Bloc   Hôtes
 /24    255.255.255.0     256    254
@@ -429,7 +437,7 @@ Masque /24 (255.255.255.0)
 
                 <h3>Exemple de calcul</h3>
                 <div class="alert alert-success">
-                    <div class="alert-icon">✅</div>
+                    <div class="alert-icon"><i class="fas fa-check-circle"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Exercice : Diviser 192.168.1.0/24 en 4 sous-réseaux</div>
                         <p style="margin: 0;">
@@ -502,7 +510,7 @@ Masque /24 (255.255.255.0)
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Ports à connaître</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>20, 21  - FTP (données, contrôle)
 22      - SSH
@@ -604,7 +612,7 @@ Masque /24 (255.255.255.0)
                 <h2>Labs Pratiques</h2>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 1 : Configuration IP</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 1 : Configuration IP</h3>
                     <p><strong>Objectif :</strong> Configurer des adresses IP statiques</p>
                     <ol>
                         <li>Configurer une IP statique sur votre PC</li>
@@ -614,7 +622,7 @@ Masque /24 (255.255.255.0)
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 2 : Analyse Wireshark</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 2 : Analyse Wireshark</h3>
                     <p><strong>Objectif :</strong> Observer l'encapsulation</p>
                     <ol>
                         <li>Installer Wireshark</li>
@@ -624,7 +632,7 @@ Masque /24 (255.255.255.0)
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 3 : Subnetting</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 3 : Subnetting</h3>
                     <p><strong>Objectif :</strong> Pratiquer le calcul de sous-réseaux</p>
                     <ol>
                         <li>Diviser 10.0.0.0/8 en 16 sous-réseaux</li>
@@ -636,7 +644,7 @@ Masque /24 (255.255.255.0)
 
             <!-- TP Pratique -->
             <section class="section" id="tp">
-                <h2>🛠️ TP Pratique : Fondamentaux & Packet Tracer</h2>
+                <h2><i class="fas fa-tools"></i> TP Pratique : Fondamentaux & Packet Tracer</h2>
                 <div class="tp-card"
                     style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; margin-top: 2rem;">
                     <h3 style="color: var(--primary); margin-bottom: 1rem;">Scénario 1 : Votre Premier Réseau Local</h3>
@@ -647,10 +655,12 @@ Masque /24 (255.255.255.0)
                         style="background: var(--bg-primary); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
                         <h4 style="margin-bottom: 0.5rem;">Topologie</h4>
                         <ul style="list-style-type: none; padding-left: 0;">
-                            <li>🖥️ <strong>PC1</strong> : 192.168.1.10 / 255.255.255.0</li>
-                            <li>🖥️ <strong>PC2</strong> : 192.168.1.20 / 255.255.255.0</li>
-                            <li>🔌 <strong>Switch</strong> : 2960 (Ports FastEthernet 0/1 et 0/2)</li>
-                            <li>📏 <strong>Câbles</strong> : Droits (Copper Straight-Through)</li>
+                            <li><i class="fas fa-desktop"></i> <strong>PC1</strong> : 192.168.1.10 / 255.255.255.0</li>
+                            <li><i class="fas fa-desktop"></i> <strong>PC2</strong> : 192.168.1.20 / 255.255.255.0</li>
+                            <li><i class="fas fa-plug"></i> <strong>Switch</strong> : 2960 (Ports FastEthernet 0/1 et
+                                0/2)</li>
+                            <li><i class="fas fa-ruler"></i> <strong>Câbles</strong> : Droits (Copper Straight-Through)
+                            </li>
                         </ul>
                     </div>
 
@@ -701,7 +711,7 @@ S1-Etage1# copy running-config startup-config</code></pre>
 
             <!-- Quiz -->
             <section class="section" id="quiz">
-                <h2>🧪 Quiz de vérification</h2>
+                <h2><i class="fas fa-flask"></i> Quiz de vérification</h2>
 
                 <div id="quiz-container" data-phase="phase1">
                     <div style="text-align: center; padding: 2rem;">

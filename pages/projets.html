@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 
@@ -19,7 +20,7 @@
     <header class="header">
         <div class="header-container">
             <a href="../index.html" class="logo">
-                <div class="logo-icon">🌐</div>
+                <div class="logo-icon"><i class="fas fa-network-wired"></i></div>
                 <span>Routage & Commutation</span>
             </a>
             <nav class="nav">
@@ -43,7 +44,9 @@
                             d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
                     </svg>
                 </button>
-                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -57,7 +60,7 @@
             </nav>
 
             <div class="section-header">
-                <div class="section-icon">🏗️</div>
+                <div class="section-icon"><i class="fas fa-project-diagram"></i></div>
                 <div>
                     <h1 style="margin-top: 0.5rem;">Projets Pratiques Progressifs</h1>
                     <p class="phase-description">Mettez en pratique vos connaissances avec ces 4 projets de complexité
@@ -66,16 +69,17 @@
             </div>
 
             <div class="alert alert-success">
-                <div class="alert-icon">💡</div>
+                <div class="alert-icon"><i class="fas fa-lightbulb"></i></div>
                 <div class="alert-content">
                     <div class="alert-title">Conseil</div>
                     <p style="margin: 0;">Réalisez ces projets dans <strong>Cisco Packet Tracer</strong> ou
-                        <strong>GNS3</strong>. Essayez d'abord de les faire sans regarder vos notes !</p>
+                        <strong>GNS3</strong>. Essayez d'abord de les faire sans regarder vos notes !
+                    </p>
                 </div>
             </div>
 
             <div class="toc">
-                <div class="toc-title">📑 Sommaire des Projets</div>
+                <div class="toc-title"><i class="fas fa-list"></i> Sommaire des Projets</div>
                 <ul class="toc-list">
                     <li><a href="#projet1">Projet 1 : Réseau SOHO (Small Office Home Office)</a></li>
                     <li><a href="#projet2">Projet 2 : Réseau PME avec Routage</a></li>
@@ -92,7 +96,7 @@
                 <h2>Projet 1 : Réseau SOHO Optimisé</h2>
                 <p>Création d'un réseau local simple mais segmenté pour une petite agence ou un domicile avancé.</p>
 
-                <h3>🏢 Topologie</h3>
+                <h3><i class="fas fa-building"></i> Topologie</h3>
                 <ul>
                     <li><strong>1 Routeur</strong> (Gateway vers Internet)</li>
                     <li><strong>1 Switch</strong> central</li>
@@ -100,7 +104,7 @@
                     <li><strong>1 Serveur</strong> (Web/HTTP local)</li>
                 </ul>
 
-                <h3>📋 Cahier des charges</h3>
+                <h3><i class="fas fa-clipboard-list"></i> Cahier des charges</h3>
                 <ol>
                     <li><strong>Adressage IP</strong> : Utilisez le réseau <code>192.168.1.0/24</code>.</li>
                     <li><strong>VLANs</strong> :
@@ -126,7 +130,7 @@
                 <h2>Projet 2 : Réseau Multi-Sites (OSPF)</h2>
                 <p>Interconnexion de trois agences géographiquement séparées.</p>
 
-                <h3>🏢 Topologie</h3>
+                <h3><i class="fas fa-building"></i> Topologie</h3>
                 <pre
                     style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; overflow-x: auto; font-family: monospace;">
       [R1-Siège]
@@ -137,7 +141,7 @@
        10.1.1.8/30
                 </pre>
 
-                <h3>📋 Cahier des charges</h3>
+                <h3><i class="fas fa-clipboard-list"></i> Cahier des charges</h3>
                 <ol>
                     <li><strong>Adressage LAN</strong> :
                         <ul>
@@ -165,13 +169,13 @@
                 <h2>Projet 3 : Sécurité et Services</h2>
                 <p>Sécurisation d'un réseau existant et ajout de services d'infrastructure.</p>
 
-                <h3>🏢 Topologie</h3>
+                <h3><i class="fas fa-building"></i> Topologie</h3>
                 <ul>
                     <li>Reprenez la topologie du Projet 1 ou créez-en une similaire.</li>
                     <li>Ajoutez un serveur DHCP séparé.</li>
                 </ul>
 
-                <h3>📋 Cahier des charges</h3>
+                <h3><i class="fas fa-clipboard-list"></i> Cahier des charges</h3>
                 <ol>
                     <li><strong>DHCP Server</strong> : Configurez un routeur ou serveur Cisco pour distribuer les IPs
                         aux VLANs 10 et 20.</li>
@@ -203,7 +207,7 @@
                 <h2>Projet 4 : Infrastructure d'Entreprise Complète</h2>
                 <p>Le projet final ultime. Il combine tout ce que vous avez appris.</p>
 
-                <h3>🏢 Topologie</h3>
+                <h3><i class="fas fa-building"></i> Topologie</h3>
                 <ul>
                     <li><strong>Core</strong> : 2 Switches Layer 3 (Distribution)</li>
                     <li><strong>Access</strong> : 2 Switches Layer 2 (Accès)</li>
@@ -211,7 +215,7 @@
                     <li><strong>Liens</strong> : Redondance complète entre les couches.</li>
                 </ul>
 
-                <h3>📋 Cahier des charges</h3>
+                <h3><i class="fas fa-clipboard-list"></i> Cahier des charges</h3>
                 <ol>
                     <li><strong>EtherChannel</strong> : Reliez les switches Access aux switches Core avec LACP (2
                         liens).</li>

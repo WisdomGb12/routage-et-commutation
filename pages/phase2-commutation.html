@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 
@@ -19,7 +20,7 @@
     <header class="header">
         <div class="header-container">
             <a href="../index.html" class="logo">
-                <div class="logo-icon">🌐</div>
+                <div class="logo-icon"><i class="fas fa-network-wired"></i></div>
                 <span>Routage & Commutation</span>
             </a>
             <nav class="nav">
@@ -43,7 +44,9 @@
                             d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
                     </svg>
                 </button>
-                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -57,7 +60,7 @@
             </nav>
 
             <div class="section-header">
-                <div class="section-icon">🔀</div>
+                <div class="section-icon"><i class="fas fa-exchange-alt"></i></div>
                 <div>
                     <span class="phase-badge" style="background: rgba(118, 75, 162, 0.15); color: #764ba2;">Phase
                         2</span>
@@ -67,7 +70,7 @@
             </div>
 
             <div class="alert alert-info">
-                <div class="alert-icon">⏱️</div>
+                <div class="alert-icon"><i class="fas fa-clock"></i></div>
                 <div class="alert-content">
                     <div class="alert-title">Durée : 3-4 semaines</div>
                     <p style="margin: 0;">Maîtrisez les VLANs, le trunking 802.1Q, VTP, STP et la sécurité des ports.
@@ -77,7 +80,7 @@
 
             <!-- Table of Contents -->
             <div class="toc">
-                <div class="toc-title">📑 Sommaire</div>
+                <div class="toc-title"><i class="fas fa-list"></i> Sommaire</div>
                 <ul class="toc-list">
                     <li><a href="#introduction-switch">Introduction au Switch</a></li>
                     <li><a href="#vlans">VLANs (Virtual LANs)</a></li>
@@ -117,7 +120,7 @@
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Commandes de diagnostic</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Afficher la table MAC
 show mac address-table
@@ -147,7 +150,7 @@ show interfaces status</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Configuration initiale</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Entrer en mode privilégié
 enable
@@ -202,7 +205,7 @@ copy running-config startup-config</code></pre>
                 </div>
 
                 <div class="alert alert-warning">
-                    <div class="alert-icon">⚠️</div>
+                    <div class="alert-icon"><i class="fas fa-triangle-exclamation"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Rappel important</div>
                         <p style="margin: 0;">N'oubliez jamais de sauvegarder avec <code>copy run start</code> ou
@@ -294,7 +297,7 @@ copy running-config startup-config</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Création et configuration VLANs</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Créer les VLANs
 vlan 10
@@ -339,7 +342,7 @@ interface range f0/20-24
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Vérification VLANs</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Afficher tous les VLANs
 show vlan brief
@@ -355,7 +358,7 @@ show vlan name COMPTABILITE</code></pre>
                 </div>
 
                 <div class="alert alert-success">
-                    <div class="alert-icon">✅</div>
+                    <div class="alert-icon"><i class="fas fa-check-circle"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Bonnes pratiques VLANs</div>
                         <ul style="margin: 0; padding-left: 1.5rem;">
@@ -391,7 +394,7 @@ show vlan name COMPTABILITE</code></pre>
                     sécurité.</p>
 
                 <div class="alert alert-danger">
-                    <div class="alert-icon">🚨</div>
+                    <div class="alert-icon"><i class="fas fa-triangle-exclamation"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Attention : VLAN Hopping</div>
                         <p style="margin: 0;">Si les VLANs natifs ne correspondent pas des deux côtés d'un trunk, cela
@@ -404,7 +407,7 @@ show vlan name COMPTABILITE</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Configuration Trunk</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Configurer un port en mode trunk
 interface g0/1
@@ -440,7 +443,7 @@ switchport trunk encapsulation dot1q</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Désactiver DTP (recommandé)</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>interface g0/1
   switchport mode trunk
@@ -451,7 +454,7 @@ switchport trunk encapsulation dot1q</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Commandes de vérification</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Afficher les interfaces trunk
 show interfaces trunk
@@ -490,29 +493,38 @@ show interfaces g0/1 switchport</code></pre>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
                                 <strong>Server</strong>
                             </td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Oui</td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Oui</td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Oui</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><i
+                                    class="fas fa-check" style="color: var(--success);"></i> Oui</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><i
+                                    class="fas fa-check" style="color: var(--success);"></i> Oui</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><i
+                                    class="fas fa-check" style="color: var(--success);"></i> Oui</td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
                                 <strong>Client</strong>
                             </td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">❌ Non</td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Oui</td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">✅ Oui</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><i
+                                    class="fas fa-times" style="color: var(--danger);"></i> Non</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><i
+                                    class="fas fa-check" style="color: var(--success);"></i> Oui</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><i
+                                    class="fas fa-check" style="color: var(--success);"></i> Oui</td>
                         </tr>
                         <tr style="background: var(--bg-card);">
                             <td style="padding: 12px;"><strong>Transparent</strong></td>
-                            <td style="padding: 12px;">✅ Oui (local)</td>
-                            <td style="padding: 12px;">✅ Transfère seulement</td>
-                            <td style="padding: 12px;">❌ Non</td>
+                            <td style="padding: 12px;"><i class="fas fa-check" style="color: var(--success);"></i> Oui
+                                (local)</td>
+                            <td style="padding: 12px;"><i class="fas fa-check" style="color: var(--success);"></i>
+                                Transfère seulement</td>
+                            <td style="padding: 12px;"><i class="fas fa-times" style="color: var(--danger);"></i> Non
+                            </td>
                         </tr>
                     </tbody>
                 </table>
 
                 <div class="alert alert-danger">
-                    <div class="alert-icon">🚨</div>
+                    <div class="alert-icon"><i class="fas fa-triangle-exclamation"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">DANGER : VTP peut supprimer tous vos VLANs !</div>
                         <p style="margin: 0;">Si vous connectez un switch avec un numéro de révision VTP plus élevé, il
@@ -526,7 +538,7 @@ show interfaces g0/1 switchport</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Reset VTP revision</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Méthode 1 : Changer le nom de domaine puis revenir
 vtp domain TEMP
@@ -544,7 +556,7 @@ reload</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Configuration VTP</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Configurer le domaine VTP
 vtp domain ENTREPRISE
@@ -564,7 +576,7 @@ show vtp password</code></pre>
                 </div>
 
                 <div class="alert alert-warning">
-                    <div class="alert-icon">💡</div>
+                    <div class="alert-icon"><i class="fas fa-lightbulb"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Recommandation production</div>
                         <p style="margin: 0;">En environnement de production, beaucoup d'administrateurs préfèrent
@@ -669,7 +681,7 @@ show vtp password</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Configuration STP</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Activer Rapid PVST+
 spanning-tree mode rapid-pvst
@@ -701,7 +713,7 @@ interface g0/1
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - PortFast et BPDU Guard</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Activer PortFast sur un port spécifique
 interface f0/1
@@ -722,7 +734,7 @@ spanning-tree portfast bpduguard default</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Vérification STP</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Afficher l'état STP pour tous les VLANs
 show spanning-tree
@@ -762,7 +774,7 @@ show spanning-tree interface g0/1 detail</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Port Security</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>interface f0/1
   ! Le port doit être en mode access
@@ -815,7 +827,7 @@ show port-security address</code></pre>
                 <h2>Labs Pratiques</h2>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 1 : Configuration VLANs de base</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 1 : Configuration VLANs de base</h3>
                     <p><strong>Objectif :</strong> Créer et configurer des VLANs sur un switch</p>
                     <p><strong>Topologie :</strong> 1 switch, 4 PCs</p>
                     <ol>
@@ -828,7 +840,7 @@ show port-security address</code></pre>
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 2 : Configuration Trunking</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 2 : Configuration Trunking</h3>
                     <p><strong>Objectif :</strong> Configurer un trunk entre deux switches</p>
                     <p><strong>Topologie :</strong> 2 switches, 4 PCs (2 par switch, 1 par VLAN)</p>
                     <ol>
@@ -842,7 +854,7 @@ show port-security address</code></pre>
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 3 : STP Root Bridge</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 3 : STP Root Bridge</h3>
                     <p><strong>Objectif :</strong> Influencer l'élection du Root Bridge</p>
                     <p><strong>Topologie :</strong> 3 switches en triangle (redondance)</p>
                     <ol>
@@ -856,7 +868,7 @@ show port-security address</code></pre>
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 4 : Port Security</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 4 : Port Security</h3>
                     <p><strong>Objectif :</strong> Sécuriser les ports d'accès</p>
                     <ol>
                         <li>Configurer port security sur le port F0/1</li>
@@ -868,7 +880,7 @@ show port-security address</code></pre>
                     </ol>
                 </div>
                 <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--danger);">
-                    <h3>🚫 Challenge Dépannage : Le Trunk Impossible</h3>
+                    <h3><i class="fas fa-ban"></i> Challenge Dépannage : Le Trunk Impossible</h3>
                     <p><strong>Scénario :</strong> Vous connectez deux switches via G0/1. Le lien monte (Link OK) mais
                         aucune trame VLAN 10 ne passe.</p>
                     <p><strong>Indices de commande <code>show interfaces trunk</code> :</strong></p>
@@ -877,13 +889,14 @@ Switch B: Native VLAN: 99</code></pre>
                     <p><strong>Question :</strong> Pourquoi le trunk pose problème et vous voyez des logs "Native VLAN
                         Mismatch" ?</p>
                     <p><strong>Solution attendue :</strong> Configurez le même VLAN natif des deux côtés ! (Ex:
-                        <code>switchport trunk native vlan 99</code> sur Switch A).</p>
+                        <code>switchport trunk native vlan 99</code> sur Switch A).
+                    </p>
                 </div>
             </section>
 
             <!-- Section 8: Quiz -->
             <section class="section" id="quiz">
-                <h2>🧪 Quiz de vérification</h2>
+                <h2><i class="fas fa-flask"></i> Quiz de vérification</h2>
                 <div id="quiz-container" data-phase="phase2">
                     <div style="text-align: center; padding: 2rem;">
                         <p>Chargement du quiz...</p>

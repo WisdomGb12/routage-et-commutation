@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 
@@ -19,7 +20,7 @@
     <header class="header">
         <div class="header-container">
             <a href="../index.html" class="logo">
-                <div class="logo-icon">🌐</div>
+                <div class="logo-icon"><i class="fas fa-network-wired"></i></div>
                 <span>Routage & Commutation</span>
             </a>
             <nav class="nav">
@@ -43,7 +44,9 @@
                             d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
                     </svg>
                 </button>
-                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -57,7 +60,7 @@
             </nav>
 
             <div class="section-header">
-                <div class="section-icon">🛤️</div>
+                <div class="section-icon"><i class="fas fa-route"></i></div>
                 <div>
                     <span class="phase-badge" style="background: rgba(0, 200, 83, 0.15); color: #00c853;">Phase 3</span>
                     <h1 style="margin-top: 0.5rem;">Routage Statique et Dynamique</h1>
@@ -66,7 +69,7 @@
             </div>
 
             <div class="alert alert-info">
-                <div class="alert-icon">⏱️</div>
+                <div class="alert-icon"><i class="fas fa-clock"></i></div>
                 <div class="alert-content">
                     <div class="alert-title">Durée : 4-5 semaines</div>
                     <p style="margin: 0;">Maîtrisez le routage statique et le protocole OSPF single-area. C'est l'une
@@ -76,7 +79,7 @@
 
             <!-- Table of Contents -->
             <div class="toc">
-                <div class="toc-title">📑 Sommaire</div>
+                <div class="toc-title"><i class="fas fa-list"></i> Sommaire</div>
                 <ul class="toc-list">
                     <li><a href="#introduction">Introduction au Routage</a></li>
                     <li><a href="#table-routage">Table de Routage</a></li>
@@ -113,7 +116,7 @@
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Configuration initiale routeur</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Configuration de base
 enable
@@ -198,7 +201,7 @@ copy running-config startup-config</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Exemple de table de routage</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>R1# show ip route
 
@@ -287,7 +290,7 @@ S*    0.0.0.0/0 [1/0] via 10.0.0.2</code></pre>
                 </table>
 
                 <div class="alert alert-warning">
-                    <div class="alert-icon">💡</div>
+                    <div class="alert-icon"><i class="fas fa-lightbulb"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Métrique vs Distance Administrative</div>
                         <p style="margin: 0;"><strong>AD</strong> = pour choisir entre protocoles différents (OSPF vs
@@ -309,7 +312,7 @@ S*    0.0.0.0/0 [1/0] via 10.0.0.2</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Routes statiques</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Syntaxe générale
 ip route [réseau-destination] [masque] [next-hop | interface-sortie] [AD]
@@ -346,7 +349,7 @@ ip route 192.168.2.0 255.255.255.0 10.0.0.2 150</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Route flottante</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Route principale via le lien principal (AD par défaut = 1)
 ip route 192.168.2.0 255.255.255.0 10.0.0.2
@@ -360,7 +363,7 @@ ip route 192.168.2.0 255.255.255.0 10.0.1.2 150</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Vérification</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Afficher la table de routage
 show ip route
@@ -463,7 +466,7 @@ show running-config | include ip route</code></pre>
                 </ul>
 
                 <div class="alert alert-warning">
-                    <div class="alert-icon">⚠️</div>
+                    <div class="alert-icon"><i class="fas fa-triangle-exclamation"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Augmenter la reference bandwidth !</div>
                         <p style="margin: 0;">Pour les réseaux modernes avec du Gigabit/10Gig, configurez une référence
@@ -500,7 +503,7 @@ show running-config | include ip route</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Configuration OSPF</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Activer OSPF avec un process ID (local au routeur)
 router ospf 1
@@ -538,7 +541,7 @@ interface loopback 0
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - OSPF par interface</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Activer OSPF sur une interface spécifique
 interface g0/0/0
@@ -573,7 +576,7 @@ interface g0/0/1
                 <p><strong>Priorité 0</strong> = ne peut pas devenir DR/BDR</p>
 
                 <div class="alert alert-info">
-                    <div class="alert-icon">💡</div>
+                    <div class="alert-icon"><i class="fas fa-lightbulb"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">L'élection DR n'est pas préemptive</div>
                         <p style="margin: 0;">Même si un routeur avec une meilleure priorité arrive, le DR actuel reste
@@ -591,7 +594,7 @@ interface g0/0/1
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Commandes de vérification OSPF</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Afficher les voisins OSPF
 show ip ospf neighbor
@@ -630,7 +633,7 @@ undebug all</code></pre>
                 </ul>
 
                 <div class="alert alert-success">
-                    <div class="alert-icon">✅</div>
+                    <div class="alert-icon"><i class="fas fa-check-circle"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Adjacence réussie</div>
                         <p style="margin: 0;">L'état <strong>FULL/DR</strong> ou <strong>FULL/BDR</strong> ou
@@ -719,7 +722,7 @@ undebug all</code></pre>
                 <h2>Labs Pratiques</h2>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 1 : Routes Statiques</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 1 : Routes Statiques</h3>
                     <p><strong>Objectif :</strong> Configurer un réseau avec routes statiques</p>
                     <p><strong>Topologie :</strong> 3 routeurs en ligne (R1 -- R2 -- R3)</p>
                     <ol>
@@ -731,7 +734,7 @@ undebug all</code></pre>
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 2 : OSPF Single-Area (Lab 2.7.2)</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 2 : OSPF Single-Area (Lab 2.7.2)</h3>
                     <p><strong>Objectif :</strong> Configurer OSPF single-area sur plusieurs routeurs</p>
                     <p><strong>Topologie :</strong> 3 routeurs en triangle + LANs</p>
                     <ol>
@@ -746,7 +749,7 @@ undebug all</code></pre>
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 3 : Route par défaut OSPF</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 3 : Route par défaut OSPF</h3>
                     <p><strong>Objectif :</strong> Propager une route par défaut via OSPF</p>
                     <ol>
                         <li>Configurer R1 comme routeur de bordure avec accès "Internet"</li>
@@ -757,7 +760,7 @@ undebug all</code></pre>
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 4 : Élection DR/BDR</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 4 : Élection DR/BDR</h3>
                     <p><strong>Objectif :</strong> Contrôler l'élection DR/BDR</p>
                     <ol>
                         <li>Connecter 3 routeurs sur un même segment Ethernet</li>
@@ -772,7 +775,7 @@ undebug all</code></pre>
 
             <!-- Section 9: Quiz -->
             <section class="section" id="quiz">
-                <h2>🧪 Quiz de vérification</h2>
+                <h2><i class="fas fa-flask"></i> Quiz de vérification</h2>
 
                 <div class="card" style="margin-bottom: 1rem;">
                     <h4>Question 1</h4>

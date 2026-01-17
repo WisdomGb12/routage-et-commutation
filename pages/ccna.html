@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 
@@ -17,7 +18,7 @@
     <header class="header">
         <div class="header-container">
             <a href="../index.html" class="logo">
-                <div class="logo-icon">🌐</div>
+                <div class="logo-icon"><i class="fas fa-network-wired"></i></div>
                 <span>Routage & Commutation</span>
             </a>
             <nav class="nav">
@@ -42,7 +43,9 @@
                             d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
                     </svg>
                 </button>
-                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -56,7 +59,7 @@
             </nav>
 
             <div class="section-header">
-                <div class="section-icon">🎯</div>
+                <div class="section-icon"><i class="fas fa-bullseye"></i></div>
                 <div>
                     <h1 style="margin-top: 0.5rem;">Préparation Certification CCNA</h1>
                 </div>
@@ -79,7 +82,8 @@
             <section class="section">
                 <h2>Validation des Compétences</h2>
 
-                <h3>✅ Niveau Débutant (Semaines 1-8)</h3>
+                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Niveau Débutant (Semaines 1-8)
+                </h3>
                 <ol>
                     <li>Calculer des sous-réseaux rapidement sans calculateur</li>
                     <li>Configurer un switch de base avec VLANs</li>
@@ -88,7 +92,8 @@
                     <li>Lire et comprendre une table de routage</li>
                 </ol>
 
-                <h3>✅ Niveau Intermédiaire (Semaines 9-16)</h3>
+                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Niveau Intermédiaire (Semaines
+                    9-16)</h3>
                 <ol>
                     <li>Configurer OSPF single-area sans documentation</li>
                     <li>Implémenter le routage inter-VLAN (Router-on-a-Stick)</li>
@@ -97,7 +102,8 @@
                     <li>Optimiser OSPF (timers, priorités, coûts)</li>
                 </ol>
 
-                <h3>✅ Niveau Avancé (Semaines 17-24)</h3>
+                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Niveau Avancé (Semaines 17-24)
+                </h3>
                 <ol>
                     <li>Concevoir une architecture réseau pour PME</li>
                     <li>Configurer OSPF multi-areas</li>
@@ -110,7 +116,7 @@
             <section class="section">
                 <h2>Conseils Dev → Réseau</h2>
 
-                <h3>✅ Similitudes à exploiter</h3>
+                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Similitudes à exploiter</h3>
                 <ul>
                     <li><strong>Debugging</strong> : Même méthodologie</li>
                     <li><strong>Algorithmes</strong> : OSPF = Dijkstra, RIP = Bellman-Ford</li>
@@ -118,7 +124,8 @@
                     <li><strong>Logs</strong> : commandes "show" = console.log()</li>
                 </ul>
 
-                <h3>⚠️ Différences à anticiper</h3>
+                <h3><i class="fas fa-triangle-exclamation" style="color: var(--warning);"></i> Différences à anticiper
+                </h3>
                 <ul>
                     <li><strong>Matériel</strong> : Câbles et équipements physiques comptent</li>
                     <li><strong>Propagation</strong> : Changements affectent tout le réseau</li>
@@ -126,7 +133,7 @@
                     <li><strong>Moins de "undo"</strong> : Prudence en production</li>
                 </ul>
 
-                <h3>💡 Astuces</h3>
+                <h3><i class="fas fa-lightbulb" style="color: var(--info);"></i> Astuces</h3>
                 <ul>
                     <li>Documentez tout (comme des commentaires)</li>
                     <li>Créez une bibliothèque de configurations</li>

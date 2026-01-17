@@ -77,13 +77,37 @@ function initMobileMenu() {
 
     if (!menuBtn || !nav) return;
 
+    // Helper to update icon
+    function updateMenuIcon(isOpen) {
+        const icon = menuBtn.querySelector('i');
+        if (!icon) return;
+
+        if (isOpen) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    }
+
     // Toggle menu
     menuBtn.addEventListener('click', function () {
         const isOpen = nav.classList.contains('open');
-        nav.classList.toggle('open');
-        menuBtn.classList.toggle('active');
-        document.body.style.overflow = isOpen ? '' : 'hidden'; // Prevent scrolling when menu is open
-        document.body.classList.toggle('nav-open');
+
+        if (isOpen) {
+            nav.classList.remove('open');
+            menuBtn.classList.remove('active');
+            document.body.style.overflow = '';
+            document.body.classList.remove('nav-open');
+            updateMenuIcon(false);
+        } else {
+            nav.classList.add('open');
+            menuBtn.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.body.classList.add('nav-open');
+            updateMenuIcon(true);
+        }
     });
 
     // Close menu when clicking on a link
@@ -93,29 +117,28 @@ function initMobileMenu() {
             menuBtn.classList.remove('active');
             document.body.style.overflow = '';
             document.body.classList.remove('nav-open');
+            updateMenuIcon(false);
         });
     });
 
     // Close menu when resizing beyond mobile breakpoint
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 1024 && nav.classList.contains('open')) {
+        if (window.innerWidth > 768 && nav.classList.contains('open')) {
             nav.classList.remove('open');
             menuBtn.classList.remove('active');
             document.body.style.overflow = '';
             document.body.classList.remove('nav-open');
+            updateMenuIcon(false);
         }
     });
-
     // Close menu when clicking outside (on the overlay mostly)
     document.addEventListener('click', function (e) {
         if (nav.classList.contains('open') && !nav.contains(e.target) && !menuBtn.contains(e.target)) {
-            // Check if click is actually outside (on the header backdrop for example) or barely outside
-            // With fullscreen nav, "outside" is only possible if nav padding allows, or header.
-            // Since nav covers screen, this is less critical but good safety.
             nav.classList.remove('open');
             menuBtn.classList.remove('active');
             document.body.style.overflow = '';
             document.body.classList.remove('nav-open');
+            updateMenuIcon(false);
         }
     });
 }

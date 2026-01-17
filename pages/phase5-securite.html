@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 
@@ -19,7 +20,7 @@
     <header class="header">
         <div class="header-container">
             <a href="../index.html" class="logo">
-                <div class="logo-icon">🌐</div>
+                <div class="logo-icon"><i class="fas fa-network-wired"></i></div>
                 <span>Routage & Commutation</span>
             </a>
             <nav class="nav">
@@ -43,7 +44,9 @@
                             d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
                     </svg>
                 </button>
-                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -57,7 +60,7 @@
             </nav>
 
             <div class="section-header">
-                <div class="section-icon">🔒</div>
+                <div class="section-icon"><i class="fas fa-lock"></i></div>
                 <div>
                     <span class="phase-badge" style="background: rgba(255, 82, 82, 0.15); color: #ff5252;">Phase
                         5</span>
@@ -67,7 +70,7 @@
             </div>
 
             <div class="alert alert-info">
-                <div class="alert-icon">⏱️</div>
+                <div class="alert-icon"><i class="fas fa-clock"></i></div>
                 <div class="alert-content">
                     <div class="alert-title">Durée : 3-4 semaines</div>
                     <p style="margin: 0;">Sécurisez votre infrastructure avec Port Security, DHCP Snooping, ACLs, et
@@ -77,7 +80,7 @@
 
             <!-- Table of Contents -->
             <div class="toc">
-                <div class="toc-title">📑 Sommaire</div>
+                <div class="toc-title"><i class="fas fa-list"></i> Sommaire</div>
                 <ul class="toc-list">
                     <li><a href="#port-security">Port Security (rappel approfondi)</a></li>
                     <li><a href="#dhcp-snooping">DHCP Snooping</a></li>
@@ -110,7 +113,7 @@
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Port Security complet</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Prérequis : le port doit être en mode access
 interface f0/1
@@ -261,7 +264,7 @@ show ip dhcp snooping binding</code></pre>
                 </div>
 
                 <div class="alert alert-warning">
-                    <div class="alert-icon">⚠️</div>
+                    <div class="alert-icon"><i class="fas fa-triangle-exclamation"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Option 82</div>
                         <p style="margin: 0;">Par défaut, DHCP Snooping insère l'Option 82 dans les paquets DHCP. Si
@@ -293,7 +296,7 @@ show ip dhcp snooping binding</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - DAI</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Prérequis : DHCP Snooping actif
 ip dhcp snooping
@@ -356,7 +359,7 @@ ip arp inspection validate src-mac dst-mac ip</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - ACL Standard numérotée</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Syntaxe : access-list [numéro] {permit|deny} [source] [wildcard]
 
@@ -458,7 +461,7 @@ interface g0/0/1
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Syntaxe ACL étendue</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Syntaxe générale
 access-list [100-199] {permit|deny} [protocol] [source] [wildcard] 
@@ -556,7 +559,7 @@ clear access-list counters</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Configuration SSH</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Prérequis 1 : Définir un hostname et un domain name
 hostname R1
@@ -616,7 +619,7 @@ ssh -l admin 192.168.1.1</code></pre>
                 </div>
 
                 <div class="alert alert-danger">
-                    <div class="alert-icon">🚨</div>
+                    <div class="alert-icon"><i class="fas fa-triangle-exclamation"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Désactiver Telnet !</div>
                         <p style="margin: 0;">Telnet transmet tout en clair. Utilisez toujours
@@ -639,7 +642,7 @@ ssh -l admin 192.168.1.1</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Interfaces passives</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>router ospf 1
   ! Méthode 1 : interface par interface
@@ -681,34 +684,45 @@ show ip ospf interface g0/0/1 | include authentication</code></pre>
 
                 <h3>Checklist sécurité switch</h3>
                 <ul>
-                    <li>✅ Port Security sur tous les ports access</li>
-                    <li>✅ DHCP Snooping activé</li>
-                    <li>✅ DAI activé</li>
-                    <li>✅ Ports non utilisés : shutdown + VLAN blackhole</li>
-                    <li>✅ PortFast + BPDU Guard sur les ports access</li>
-                    <li>✅ VTP mode transparent ou mot de passe</li>
-                    <li>✅ VLAN natif ≠ 1</li>
-                    <li>✅ Trunk : limiter les VLANs autorisés</li>
-                    <li>✅ DTP désactivé (<code>switchport nonegotiate</code>)</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Port Security sur tous les ports
+                        access</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> DHCP Snooping activé</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> DAI activé</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Ports non utilisés : shutdown + VLAN
+                        blackhole</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> PortFast + BPDU Guard sur les ports
+                        access</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> VTP mode transparent ou mot de passe
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> VLAN natif ≠ 1</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Trunk : limiter les VLANs autorisés
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> DTP désactivé
+                        (<code>switchport nonegotiate</code>)</li>
                 </ul>
 
                 <h3>Checklist sécurité routeur</h3>
                 <ul>
-                    <li>✅ SSH activé, Telnet désactivé</li>
-                    <li>✅ enable secret (pas enable password)</li>
-                    <li>✅ service password-encryption</li>
-                    <li>✅ banner motd avec avertissement légal</li>
-                    <li>✅ ACL sur les VTY pour limiter l'accès</li>
-                    <li>✅ OSPF : interfaces passives + authentification</li>
-                    <li>✅ Timeout sur console et VTY</li>
-                    <li>✅ Logging activé (syslog)</li>
-                    <li>✅ NTP configuré pour les horodatages</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> SSH activé, Telnet désactivé</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> enable secret (pas enable password)
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> service password-encryption</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> banner motd avec avertissement légal
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> ACL sur les VTY pour limiter l'accès
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> OSPF : interfaces passives +
+                        authentification</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Timeout sur console et VTY</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Logging activé (syslog)</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> NTP configuré pour les horodatages
+                    </li>
                 </ul>
 
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Template sécurité de base</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Template sécurité basique
 service password-encryption
@@ -744,7 +758,7 @@ line vty 0 15
                 <h2>Labs Pratiques</h2>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 1 : Protection complète du switch</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 1 : Protection complète du switch</h3>
                     <p><strong>Objectif :</strong> Implémenter toutes les protections Layer 2</p>
                     <ol>
                         <li>Activer Port Security sur tous les ports access</li>
@@ -756,7 +770,7 @@ line vty 0 15
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 2 : ACLs Standard et Étendues</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 2 : ACLs Standard et Étendues</h3>
                     <p><strong>Objectif :</strong> Filtrer le trafic entre VLANs</p>
                     <ol>
                         <li>Créer une topologie avec 3 VLANs</li>
@@ -767,7 +781,7 @@ line vty 0 15
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 3 : Configuration SSH</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 3 : Configuration SSH</h3>
                     <p><strong>Objectif :</strong> Sécuriser l'accès distant</p>
                     <ol>
                         <li>Configurer SSH sur un routeur</li>
@@ -778,7 +792,7 @@ line vty 0 15
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 4 : Sécurité OSPF</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 4 : Sécurité OSPF</h3>
                     <p><strong>Objectif :</strong> Sécuriser le protocole de routage</p>
                     <ol>
                         <li>Configurer les interfaces vers les LANs comme passives</li>
@@ -790,66 +804,74 @@ line vty 0 15
 
             <!-- Section 10: Quiz -->
             <section class="section" id="quiz">
-                <h2>🧪 Quiz de vérification</h2>
-                style="margin-top: 0.5rem; padding: 1rem; background: var(--bg-primary); border-radius: 8px;">
-                <strong>0.255.255.255</strong>. C'est l'inverse du masque 255.0.0.0 (/8).
-                </p>
-                </details>
-        </div>
-        </section>
+                <h2><i class="fas fa-flask"></i> Quiz de vérification</h2>
+                <div class="card">
+                    <p><strong>Question :</strong> Quel est le masque générique (wildcard mask) pour un masque de
+                        sous-réseau /8 (255.0.0.0) ?</p>
+                    <details>
+                        <summary class="btn btn-primary"
+                            style="display: inline-block; cursor: pointer; margin-bottom: 0.5rem;">Voir la réponse
+                        </summary>
+                        <p
+                            style="margin-top: 0.5rem; padding: 1rem; background: var(--bg-primary); border-radius: 8px;">
+                            <strong>0.255.255.255</strong>. C'est l'inverse du masque 255.0.0.0 (/8).
+                        </p>
+                    </details>
+                </div>
+            </section>
 
-        <!-- Planning -->
-        <section class="section">
-            <h2>Planning Suggéré</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-title">Semaine 1 : Sécurité Layer 2</div>
-                    <div class="timeline-content">Port Security + DHCP Snooping + DAI + Labs</div>
+            <!-- Planning -->
+            <section class="section">
+                <h2>Planning Suggéré</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 1 : Sécurité Layer 2</div>
+                        <div class="timeline-content">Port Security + DHCP Snooping + DAI + Labs</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 2 : ACLs</div>
+                        <div class="timeline-content">ACLs Standard + Étendues + Wildcards + Labs filtrage</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 3 : Accès distant et OSPF</div>
+                        <div class="timeline-content">SSH + Authentification OSPF + Best practices</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Semaine 4 : Lab intégré</div>
+                        <div class="timeline-content">Projet complet combinant toutes les sécurités</div>
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-title">Semaine 2 : ACLs</div>
-                    <div class="timeline-content">ACLs Standard + Étendues + Wildcards + Labs filtrage</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-title">Semaine 3 : Accès distant et OSPF</div>
-                    <div class="timeline-content">SSH + Authentification OSPF + Best practices</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-title">Semaine 4 : Lab intégré</div>
-                    <div class="timeline-content">Projet complet combinant toutes les sécurités</div>
-                </div>
+            </section>
+
+            <!-- Page Navigation -->
+
+            <!-- Completion Section -->
+            <div class="completion-section"
+                style="margin: 4rem 0; padding: 2rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color); text-align: center;">
+                <h3 style="margin-bottom: 1rem;">La phase est terminée ?</h3>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Marquez cette phase comme terminée pour
+                    suivre votre progression globale.</p>
+                <button class="mark-complete-btn" data-phase="phase5"
+                    style="margin: 0 auto; width: auto; font-size: 1.1rem; padding: 0.75rem 2rem;">Marquer la phase
+                    comme terminée</button>
             </div>
-        </section>
 
-        <!-- Page Navigation -->
-
-        <!-- Completion Section -->
-        <div class="completion-section"
-            style="margin: 4rem 0; padding: 2rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color); text-align: center;">
-            <h3 style="margin-bottom: 1rem;">La phase est terminée ?</h3>
-            <p style="margin-bottom: 2rem; color: var(--text-secondary);">Marquez cette phase comme terminée pour
-                suivre votre progression globale.</p>
-            <button class="mark-complete-btn" data-phase="phase5"
-                style="margin: 0 auto; width: auto; font-size: 1.1rem; padding: 0.75rem 2rem;">Marquer la phase
-                comme terminée</button>
-        </div>
-
-        <nav class="page-nav">
-            <a href="phase4-inter-vlan.html" class="page-nav-link prev">
-                <span>←</span>
-                <div>
-                    <div class="page-nav-label">Précédent</div>
-                    <div class="page-nav-title">Phase 4 : Inter-VLAN</div>
-                </div>
-            </a>
-            <a href="phase6-avance.html" class="page-nav-link">
-                <div>
-                    <div class="page-nav-label">Suivant</div>
-                    <div class="page-nav-title">Phase 6 : Avancé</div>
-                </div>
-                <span>→</span>
-            </a>
-        </nav>
+            <nav class="page-nav">
+                <a href="phase4-inter-vlan.html" class="page-nav-link prev">
+                    <span>←</span>
+                    <div>
+                        <div class="page-nav-label">Précédent</div>
+                        <div class="page-nav-title">Phase 4 : Inter-VLAN</div>
+                    </div>
+                </a>
+                <a href="phase6-avance.html" class="page-nav-link">
+                    <div>
+                        <div class="page-nav-label">Suivant</div>
+                        <div class="page-nav-title">Phase 6 : Avancé</div>
+                    </div>
+                    <span>→</span>
+                </a>
+            </nav>
         </div>
     </main>
 

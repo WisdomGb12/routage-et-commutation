@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 
@@ -19,7 +20,7 @@
     <header class="header">
         <div class="header-container">
             <a href="../index.html" class="logo">
-                <div class="logo-icon">🌐</div>
+                <div class="logo-icon"><i class="fas fa-network-wired"></i></div>
                 <span>Routage & Commutation</span>
             </a>
             <nav class="nav">
@@ -43,7 +44,9 @@
                             d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
                     </svg>
                 </button>
-                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -57,7 +60,7 @@
             </nav>
 
             <div class="section-header">
-                <div class="section-icon">🔄</div>
+                <div class="section-icon"><i class="fas fa-exchange-alt"></i></div>
                 <div>
                     <span class="phase-badge" style="background: rgba(255, 193, 7, 0.15); color: #ffc107;">Phase
                         4</span>
@@ -67,7 +70,7 @@
             </div>
 
             <div class="alert alert-info">
-                <div class="alert-icon">⏱️</div>
+                <div class="alert-icon"><i class="fas fa-clock"></i></div>
                 <div class="alert-content">
                     <div class="alert-title">Durée : 2-3 semaines</div>
                     <p style="margin: 0;">Apprenez à faire communiquer les VLANs entre eux avec Router-on-a-Stick et les
@@ -77,7 +80,7 @@
 
             <!-- Table of Contents -->
             <div class="toc">
-                <div class="toc-title">📑 Sommaire</div>
+                <div class="toc-title"><i class="fas fa-list"></i> Sommaire</div>
                 <ul class="toc-list">
                     <li><a href="#introduction">Pourquoi le routage Inter-VLAN ?</a></li>
                     <li><a href="#legacy">Méthode Legacy (ancienne)</a></li>
@@ -116,7 +119,7 @@
                 </ol>
 
                 <div class="alert alert-success">
-                    <div class="alert-icon">✅</div>
+                    <div class="alert-icon"><i class="fas fa-check-circle"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Prérequis</div>
                         <p style="margin: 0;">Avant d'aborder cette phase, assurez-vous de maîtriser les concepts de la
@@ -133,7 +136,7 @@
                     routeur. Chaque interface du routeur est dans un VLAN différent.</p>
 
                 <h3>Architecture</h3>
-                <pre style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; overflow-x: auto;">
+                <pre>
     [PC1 - VLAN 10]                    [Routeur]
           |                           /    |    \
           F0/1 (access VLAN 10)      G0/0  G0/1  G0/2
@@ -151,14 +154,17 @@
 
                 <h3>Inconvénients</h3>
                 <ul>
-                    <li>❌ Nécessite une interface physique par VLAN</li>
-                    <li>❌ Coût élevé (ports utilisés, câbles)</li>
-                    <li>❌ Ne scale pas (routeurs ont un nombre limité de ports)</li>
-                    <li>❌ Complexité de câblage</li>
+                    <li><i class="fas fa-times" style="color: var(--danger);"></i> Nécessite une interface physique par
+                        VLAN</li>
+                    <li><i class="fas fa-times" style="color: var(--danger);"></i> Coût élevé (ports utilisés, câbles)
+                    </li>
+                    <li><i class="fas fa-times" style="color: var(--danger);"></i> Ne scale pas (routeurs ont un nombre
+                        limité de ports)</li>
+                    <li><i class="fas fa-times" style="color: var(--danger);"></i> Complexité de câblage</li>
                 </ul>
 
                 <div class="alert alert-warning">
-                    <div class="alert-icon">⚠️</div>
+                    <div class="alert-icon"><i class="fas fa-triangle-exclamation"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Méthode obsolète</div>
                         <p style="margin: 0;">Cette méthode n'est plus utilisée en pratique. Elle est présentée
@@ -176,7 +182,7 @@
                     (subinterfaces), une par VLAN.</p>
 
                 <h3>Architecture</h3>
-                <pre style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; overflow-x: auto;">
+                <pre>
     [PC1 - VLAN 10] --\                [Routeur]
                       \                    |
     [PC2 - VLAN 20] ---[Switch]----Trunk---| G0/0
@@ -187,24 +193,29 @@
 
                 <h3>Avantages</h3>
                 <ul>
-                    <li>✅ Une seule interface physique utilisée</li>
-                    <li>✅ Scalable (ajoutez des VLANs = ajoutez des sous-interfaces)</li>
-                    <li>✅ Moins de câbles</li>
-                    <li>✅ Coût réduit</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Une seule interface physique
+                        utilisée</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Scalable (ajoutez des VLANs =
+                        ajoutez des sous-interfaces)</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Moins de câbles</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Coût réduit</li>
                 </ul>
 
                 <h3>Inconvénients</h3>
                 <ul>
-                    <li>❌ Point unique de défaillance (le lien trunk)</li>
-                    <li>❌ Bande passante partagée entre tous les VLANs</li>
-                    <li>❌ Latence potentielle si beaucoup de trafic inter-VLAN</li>
+                    <li><i class="fas fa-times" style="color: var(--danger);"></i> Point unique de défaillance (le lien
+                        trunk)</li>
+                    <li><i class="fas fa-times" style="color: var(--danger);"></i> Bande passante partagée entre tous
+                        les VLANs</li>
+                    <li><i class="fas fa-times" style="color: var(--danger);"></i> Latence potentielle si beaucoup de
+                        trafic inter-VLAN</li>
                 </ul>
 
                 <h3>Configuration du Switch</h3>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Configuration Switch</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Créer les VLANs
 vlan 10
@@ -248,7 +259,7 @@ ip default-gateway 192.168.99.1</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Configuration Routeur ROAS</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Activer l'interface physique (sans IP)
 interface g0/0/0
@@ -279,7 +290,7 @@ interface g0/0/0.99
                 </div>
 
                 <div class="alert alert-warning">
-                    <div class="alert-icon">⚠️</div>
+                    <div class="alert-icon"><i class="fas fa-triangle-exclamation"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Points importants</div>
                         <ul style="margin: 0; padding-left: 1.5rem;">
@@ -296,7 +307,7 @@ interface g0/0/0.99
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Commandes de vérification</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Sur le routeur
 show ip interface brief
@@ -326,11 +337,15 @@ show vlan brief</code></pre>
 
                 <h3>Avantages</h3>
                 <ul>
-                    <li>✅ Performance maximale (routage en hardware/ASIC)</li>
-                    <li>✅ Pas de goulot d'étranglement sur un lien trunk</li>
-                    <li>✅ Moins d'équipements (pas besoin de routeur pour inter-VLAN)</li>
-                    <li>✅ Latence très faible</li>
-                    <li>✅ Solution recommandée pour les réseaux modernes</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Performance maximale (routage en
+                        hardware/ASIC)</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Pas de goulot d'étranglement sur un
+                        lien trunk</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Moins d'équipements (pas besoin de
+                        routeur pour inter-VLAN)</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Latence très faible</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Solution recommandée pour les
+                        réseaux modernes</li>
                 </ul>
 
                 <h3>Concepts clés</h3>
@@ -346,7 +361,7 @@ show vlan brief</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Configuration Switch L3</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Activer le routage IP (très important!)
 ip routing
@@ -396,7 +411,7 @@ interface range g1/0/21-30
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Routed Port</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Convertir un port en routed port
 interface g1/0/24
@@ -413,7 +428,7 @@ ip route 0.0.0.0 0.0.0.0 10.0.0.1</code></pre>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Vérification L3 Switch</span>
-                        <button class="code-copy-btn">📋 Copier</button>
+                        <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Vérifier que le routage est activé
 show ip routing
@@ -433,7 +448,7 @@ show vlan brief</code></pre>
                 </div>
 
                 <div class="alert alert-danger">
-                    <div class="alert-icon">🚨</div>
+                    <div class="alert-icon"><i class="fas fa-triangle-exclamation"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Erreur courante</div>
                         <p style="margin: 0;">Si vous oubliez <code>ip routing</code>, les SVIs auront des adresses IP
@@ -503,7 +518,7 @@ show vlan brief</code></pre>
                 </table>
 
                 <div class="alert alert-success">
-                    <div class="alert-icon">💡</div>
+                    <div class="alert-icon"><i class="fas fa-lightbulb"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Recommandation</div>
                         <p style="margin: 0;"><strong>En production :</strong> Utilisez des switches Layer 3 pour le
@@ -533,7 +548,7 @@ show vlan brief</code></pre>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">PC ne peut pas
                                 pinguer sa gateway</td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Port dans mauvais
-                                VLAN, SVI down, mauvaise IP</td>
+                                VLAN, <code>SVI down</code>, mauvaise IP</td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
                                 <code>show vlan brief</code>, <code>show interfaces vlan X</code>
                             </td>
@@ -542,7 +557,7 @@ show vlan brief</code></pre>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Ping gateway OK,
                                 mais pas autres VLANs</td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">(ROAS) Trunk mal
-                                configuré, (L3) ip routing désactivé</td>
+                                configuré, (L3) <code>ip routing</code> désactivé</td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
                                 <code>show interfaces trunk</code>, <code>show ip routing</code>
                             </td>
@@ -566,25 +581,39 @@ show vlan brief</code></pre>
 
                 <h3>Checklist de vérification ROAS</h3>
                 <ol>
-                    <li>✓ L'interface physique du routeur est UP (<code>no shutdown</code>)</li>
-                    <li>✓ Les sous-interfaces ont <code>encapsulation dot1Q [VLAN]</code></li>
-                    <li>✓ Les sous-interfaces ont des IPs dans les bons sous-réseaux</li>
-                    <li>✓ Le port du switch est en mode trunk</li>
-                    <li>✓ Les VLANs sont autorisés sur le trunk</li>
-                    <li>✓ Les VLANs existent sur le switch</li>
-                    <li>✓ Le VLAN natif correspond des deux côtés</li>
-                    <li>✓ Les PCs ont la bonne passerelle par défaut</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> L'interface physique du routeur est
+                        UP (<code>no shutdown</code>)</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Les sous-interfaces ont
+                        <code>encapsulation dot1Q [VLAN]</code>
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Les sous-interfaces ont des IPs dans
+                        les bons sous-réseaux</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Le port du switch est en mode trunk
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Les VLANs sont autorisés sur le
+                        trunk</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Les VLANs existent sur le switch
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Le VLAN natif correspond des deux
+                        côtés</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Les PCs ont la bonne passerelle par
+                        défaut</li>
                 </ol>
 
                 <h3>Checklist de vérification Switch L3</h3>
                 <ol>
-                    <li>✓ <code>ip routing</code> est activé</li>
-                    <li>✓ Les VLANs existent</li>
-                    <li>✓ Les SVIs sont UP/UP (<code>no shutdown</code> + au moins un port actif dans le VLAN)</li>
-                    <li>✓ Les SVIs ont des IPs correctes</li>
-                    <li>✓ Les ports access sont dans les bons VLANs</li>
-                    <li>✓ La table de routage montre les réseaux directement connectés</li>
-                    <li>✓ Les PCs ont la bonne passerelle par défaut</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> <code>ip routing</code> est activé
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Les VLANs existent</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Les SVIs sont UP/UP
+                        (<code>no shutdown</code> + au moins un port actif dans le VLAN)</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Les SVIs ont des IPs correctes</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Les ports access sont dans les bons
+                        VLANs</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> La table de routage montre les
+                        réseaux directement connectés</li>
+                    <li><i class="fas fa-check" style="color: var(--success);"></i> Les PCs ont la bonne passerelle par
+                        défaut</li>
                 </ol>
             </section>
 
@@ -593,7 +622,7 @@ show vlan brief</code></pre>
                 <h2>Labs Pratiques</h2>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 1 : Router-on-a-Stick basique</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 1 : Router-on-a-Stick basique</h3>
                     <p><strong>Objectif :</strong> Configurer le routage inter-VLAN avec ROAS</p>
                     <p><strong>Topologie :</strong> 1 routeur, 1 switch, 4 PCs (2 VLANs)</p>
                     <ol>
@@ -607,7 +636,7 @@ show vlan brief</code></pre>
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 2 : Lab 4.2.8 - Router-on-a-Stick complet</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 2 : Lab 4.2.8 - Router-on-a-Stick complet</h3>
                     <p><strong>Objectif :</strong> Reproduire le lab officiel Cisco 4.2.8</p>
                     <p><strong>Topologie :</strong> Selon les spécifications du lab</p>
                     <ol>
@@ -621,7 +650,7 @@ show vlan brief</code></pre>
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 3 : Switch Layer 3</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 3 : Switch Layer 3</h3>
                     <p><strong>Objectif :</strong> Configurer le routage inter-VLAN sur un switch L3</p>
                     <p><strong>Topologie :</strong> 1 switch L3, 6 PCs (3 VLANs)</p>
                     <ol>
@@ -635,7 +664,7 @@ show vlan brief</code></pre>
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3>🔬 Lab 4 : Switch L3 avec Routed Port</h3>
+                    <h3><i class="fas fa-microscope"></i> Lab 4 : Switch L3 avec Routed Port</h3>
                     <p><strong>Objectif :</strong> Connecter un switch L3 à un routeur WAN</p>
                     <ol>
                         <li>Configurer le switch L3 pour le routage inter-VLAN (SVIs)</li>
@@ -649,7 +678,7 @@ show vlan brief</code></pre>
 
             <!-- Section 8: Quiz -->
             <section class="section" id="quiz">
-                <h2>🧪 Quiz de vérification</h2>
+                <h2><i class="fas fa-flask"></i> Quiz de vérification</h2>
                 <div id="quiz-container" data-phase="phase4">
                     <div style="text-align: center; padding: 2rem;">
                         <p>Chargement du quiz...</p>
