@@ -58,3 +58,20 @@ Ouvrez simplement `index.html` dans n'importe quel navigateur web moderne. Pour 
 
 ---
 *Projet développé pour faciliter l'accès aux connaissances réseau et la réussite de la certification CCNA.*
+
+## 📝 Changelog
+
+### 6e version - 2026-08-24
+
+Principales modifications récentes :
+
+- Intégration de la page `Programme.html` dans le site et harmonisation du style (liaison à `styles/main.css`).
+- Déplacement du lien **Programme** vers le menu déroulant *Ressources* pour réduire la distraction en haut de page.
+- Simplification du footer de la page d'accueil : navigation réduite, meilleure hiérarchie visuelle et disclaimer clarifié.
+- Harmonisation du style des pages de contenu (polices, couleurs, boutons, hover en mode sombre).
+- Correction des erreurs d'encodage/affichage et nettoyage du texte sur les pages (caractères spéciaux, orthographe).
+- Ajustements UX : CTA recentré, animations raccourcies et TOC comportant un comportement responsive plus simple.
+
+Si tu veux une entrée de changelog plus détaillée (par page modifiée), je peux générer une liste automatique des fichiers modifiés et l’ajouter ici.
+
+---
