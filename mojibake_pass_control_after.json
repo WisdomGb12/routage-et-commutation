@@ -1,0 +1,110 @@
+{
+    "generated":  "2026-08-24T14:46:14.5790603+00:00",
+    "results":  [
+                    {
+                        "applied":  true,
+                        "chosen_passes":  3,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\js\\main.js",
+                        "beforeScore":  23
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  3,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\js\\quiz.js",
+                        "beforeScore":  42
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  3,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\js\\quiz_data.js",
+                        "beforeScore":  1096
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  2,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\pages\\ccna.html",
+                        "beforeScore":  64
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  2,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\pages\\mentions-legales.html",
+                        "beforeScore":  70
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  2,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\pages\\phase1-fondamentaux.html",
+                        "beforeScore":  261
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  2,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\pages\\phase2-commutation.html",
+                        "beforeScore":  299
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  2,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\pages\\phase3-routage.html",
+                        "beforeScore":  235
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  2,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\pages\\phase4-inter-vlan.html",
+                        "beforeScore":  156
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  2,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\pages\\phase5-securite.html",
+                        "beforeScore":  276
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  2,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\pages\\phase6-avance.html",
+                        "beforeScore":  199
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  2,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\pages\\politique-confidentialite.html",
+                        "beforeScore":  68
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  2,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\pages\\projets.html",
+                        "beforeScore":  100
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  2,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\pages\\ressources.html",
+                        "beforeScore":  30
+                    },
+                    {
+                        "applied":  true,
+                        "chosen_passes":  2,
+                        "afterScore":  0,
+                        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\styles\\main.css",
+                        "beforeScore":  17
+                    }
+                ]
+}

@@ -32,7 +32,7 @@
     --border-color: #cbd5e0;
     --border-light: #e2e8f0;
     --bg-sidebar: #f8fafc;
-    /* Nouveau: Gris très clair pour le sidebar */
+    /* Nouveau: Gris tr?s clair pour le sidebar */
 
 
     /* Shadows */
@@ -337,7 +337,7 @@ p {
         min-width: 100%;
         margin-top: 0;
         display: block;
-        /* Toujours visible en mobile pour simplifier l'accès */
+        /* Toujours visible en mobile pour simplifier l'acc?s */
         background: transparent;
     }
 
@@ -447,14 +447,14 @@ p {
         left: 0;
         bottom: 0;
         height: calc(100vh - var(--header-height));
-        /* Force la hauteur pour éviter le collapse */
+        /* Force la hauteur pour ?viter le collapse */
         width: 260px;
         background: var(--bg-sidebar);
         /* Assure un fond distinct */
         border-right: 1px solid var(--border-color);
         box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
         backdrop-filter: blur(10px);
-        /* Ombre plus prononcée pour détacher du contenu */
+        /* Ombre plus prononc?e pour d?tacher du contenu */
 
         flex-direction: column;
         padding: 1rem 0;
@@ -476,10 +476,10 @@ p {
         text-align: left;
         padding: 1rem 1.5rem;
         font-size: 1rem;
-        /* Texte légèrement plus grand */
+        /* Texte l?g?rement plus grand */
         font-weight: 500;
         color: var(--text-primary);
-        /* Texte plus foncé pour meilleure lisibilité */
+        /* Texte plus fonc? pour meilleure lisibilit? */
         border-bottom: 1px solid var(--border-light);
         border-radius: 0;
     }
@@ -1060,7 +1060,7 @@ li strong {
 }
 
 .check-list li::before {
-    content: '�o"';
+    content: '?o"';
     position: absolute;
     left: 0;
     color: var(--success);
@@ -1708,7 +1708,7 @@ li strong {
 }
 
 .toc-list a.read::before {
-    content: '✓ ';
+    content: '? ';
     color: var(--success);
     margin-right: 4px;
     text-decoration: none;
@@ -2065,10 +2065,10 @@ table tr:hover {
     table td,
     table tr {
         display: table-cell;
-        /* Rétablir l'affichage normal des cellules */
+        /* R?tablir l'affichage normal des cellules */
     }
 
-    /* Rétablir l'affichage normal des rangées et header */
+    /* R?tablir l'affichage normal des rang?es et header */
     table thead {
         display: table-header-group;
         position: static;
@@ -2097,7 +2097,7 @@ table tr:hover {
         min-height: auto;
     }
 
-    /* Supprimer les labels générés */
+    /* Supprimer les labels g?n?r?s */
     table td::before {
         content: none;
     }

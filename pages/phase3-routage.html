@@ -29,8 +29,8 @@
                 <a href="phase2-commutation.html" class="nav-link">Commutation</a>
                 <a href="phase3-routage.html" class="nav-link active">Routage</a>
                 <a href="phase4-inter-vlan.html" class="nav-link">Inter-VLAN</a>
-                <a href="phase5-securite.html" class="nav-link">Sécurité</a>
-                <a href="phase6-avance.html" class="nav-link">Avancé</a>
+                <a href="phase5-securite.html" class="nav-link">S?curit?</a>
+                <a href="phase6-avance.html" class="nav-link">Avanc?</a>
                 <div class="nav-item">
                     <a href="ressources.html" class="nav-link">
                         Ressources <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
@@ -52,7 +52,7 @@
                 </div>
             </nav>
             <div class="header-actions">
-                <button class="theme-toggle" aria-label="Changer le thème">
+                <button class="theme-toggle" aria-label="Changer le th?me">
                     <svg class="sun-icon" viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
@@ -73,7 +73,7 @@
         <div class="container container-narrow">
             <nav class="breadcrumb">
                 <a href="../index.html">Accueil</a>
-                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-separator">?</span>
                 <span class="breadcrumb-current">Phase 3 : Routage</span>
             </nav>
 
@@ -89,9 +89,9 @@
             <div class="alert alert-info">
                 <div class="alert-icon"><i class="fas fa-clock"></i></div>
                 <div class="alert-content">
-                    <div class="alert-title">Durée : 4-5 semaines</div>
-                    <p style="margin: 0;">Maîtrisez le routage statique et le protocole OSPF single-area. C'est l'une
-                        des compétences les plus importantes pour le CCNA.</p>
+                    <div class="alert-title">Dur?e : 4-5 semaines</div>
+                    <p style="margin: 0;">Ma?trisez le routage statique et le protocole OSPF single-area. C'est l'une
+                        des comp?tences les plus importantes pour le CCNA.</p>
                 </div>
             </div>
 
@@ -104,10 +104,10 @@
                     <li><a href="#routage-statique">Routage Statique</a></li>
                     <li><a href="#ospf-concepts">OSPF : Concepts</a></li>
                     <li><a href="#ospf-config">OSPF : Configuration</a></li>
-                    <li><a href="#ospf-verification">OSPF : Vérification</a></li>
+                    <li><a href="#ospf-verification">OSPF : V?rification</a></li>
                     <li><a href="#troubleshooting">Troubleshooting</a></li>
                     <li><a href="#labs">Labs Pratiques</a></li>
-                    <li><a href="#quiz">Quiz de vérification</a></li>
+                    <li><a href="#quiz">Quiz de v?rification</a></li>
                 </ul>
             </div>
 
@@ -115,19 +115,19 @@
             <section class="section" id="introduction">
                 <h2>Introduction au Routage</h2>
 
-                <p>Le <strong>routage</strong> est le processus par lequel un routeur détermine le <strong>meilleur
+                <p>Le <strong>routage</strong> est le processus par lequel un routeur d?termine le <strong>meilleur
                         chemin</strong> pour acheminer un paquet de sa source vers sa destination. C'est une fonction de
-                    la <strong>couche 3</strong> (Réseau) du modèle OSI.</p>
+                    la <strong>couche 3</strong> (R?seau) du mod?le OSI.</p>
 
-                <h3>Rôle du Routeur</h3>
+                <h3>R?le du Routeur</h3>
                 <ul>
-                    <li><strong>Interconnecter les réseaux</strong> : Connecte des réseaux différents (ex: LAN ↔ WAN)
+                    <li><strong>Interconnecter les r?seaux</strong> : Connecte des r?seaux diff?rents (ex: LAN ? WAN)
                     </li>
-                    <li><strong>Prendre des décisions de routage</strong> : Utilise la table de routage pour déterminer
+                    <li><strong>Prendre des d?cisions de routage</strong> : Utilise la table de routage pour d?terminer
                         le next-hop</li>
                     <li><strong>Segmenter les domaines de broadcast</strong> : Chaque interface est un domaine de
-                        broadcast séparé</li>
-                    <li><strong>Filtrer le trafic</strong> : Peut appliquer des ACLs pour la sécurité</li>
+                        broadcast s?par?</li>
+                    <li><strong>Filtrer le trafic</strong> : Peut appliquer des ACLs pour la s?curit?</li>
                 </ul>
 
                 <h3>Configuration de Base du Routeur</h3>
@@ -157,7 +157,7 @@ line vty 0 4
 
 ! Chiffrement des mots de passe
 service password-encryption
-banner motd #Accès non autorisé interdit#
+banner motd #Acc?s non autoris? interdit#
 
 ! Configuration des interfaces
 interface g0/0/0
@@ -182,7 +182,7 @@ copy running-config startup-config</code></pre>
                             <th style="padding: 12px; text-align: left;">Type</th>
                             <th style="padding: 12px; text-align: left;">Description</th>
                             <th style="padding: 12px; text-align: left;">Avantages</th>
-                            <th style="padding: 12px; text-align: left;">Inconvénients</th>
+                            <th style="padding: 12px; text-align: left;">Inconv?nients</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -190,11 +190,11 @@ copy running-config startup-config</code></pre>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
                                 <strong>Statique</strong>
                             </td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Routes configurées
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Routes configur?es
                                 manuellement</td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Simple, sécurisé,
-                                pas de bande passante utilisée</td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Pas de mise à jour
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Simple, s?curis?,
+                                pas de bande passante utilis?e</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Pas de mise ? jour
                                 automatique, ne scale pas</td>
                         </tr>
                         <tr>
@@ -211,9 +211,9 @@ copy running-config startup-config</code></pre>
             <section class="section" id="table-routage">
                 <h2>Table de Routage</h2>
 
-                <p>La <strong>table de routage</strong> contient toutes les informations nécessaires pour prendre des
-                    décisions de routage. Chaque entrée contient le réseau de destination, le masque, le next-hop (ou
-                    l'interface de sortie) et la métrique.</p>
+                <p>La <strong>table de routage</strong> contient toutes les informations n?cessaires pour prendre des
+                    d?cisions de routage. Chaque entr?e contient le r?seau de destination, le masque, le next-hop (ou
+                    l'interface de sortie) et la m?trique.</p>
 
                 <h3>Lecture d'une Table de Routage</h3>
                 <div class="code-block">
@@ -245,17 +245,17 @@ S*    0.0.0.0/0 [1/0] via 10.0.0.2</code></pre>
 
                 <h3>Codes de la Table de Routage</h3>
                 <ul>
-                    <li><strong>C (Connected)</strong> : Réseau directement connecté à une interface</li>
-                    <li><strong>L (Local)</strong> : Adresse IP de l'interface elle-même (/32)</li>
-                    <li><strong>S (Static)</strong> : Route statique configurée manuellement</li>
-                    <li><strong>S* (Static Default)</strong> : Route par défaut statique</li>
+                    <li><strong>C (Connected)</strong> : R?seau directement connect? ? une interface</li>
+                    <li><strong>L (Local)</strong> : Adresse IP de l'interface elle-m?me (/32)</li>
+                    <li><strong>S (Static)</strong> : Route statique configur?e manuellement</li>
+                    <li><strong>S* (Static Default)</strong> : Route par d?faut statique</li>
                     <li><strong>O (OSPF)</strong> : Route apprise via OSPF</li>
                     <li><strong>D (EIGRP)</strong> : Route apprise via EIGRP</li>
                     <li><strong>R (RIP)</strong> : Route apprise via RIP</li>
                 </ul>
 
                 <h3>Distance Administrative (AD)</h3>
-                <p>Quand plusieurs sources proposent une route vers la même destination, le routeur choisit celle avec
+                <p>Quand plusieurs sources proposent une route vers la m?me destination, le routeur choisit celle avec
                     la <strong>distance administrative la plus basse</strong>.</p>
 
                 <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
@@ -310,10 +310,10 @@ S*    0.0.0.0/0 [1/0] via 10.0.0.2</code></pre>
                 <div class="alert alert-warning">
                     <div class="alert-icon"><i class="fas fa-lightbulb"></i></div>
                     <div class="alert-content">
-                        <div class="alert-title">Métrique vs Distance Administrative</div>
-                        <p style="margin: 0;"><strong>AD</strong> = pour choisir entre protocoles différents (OSPF vs
+                        <div class="alert-title">M?trique vs Distance Administrative</div>
+                        <p style="margin: 0;"><strong>AD</strong> = pour choisir entre protocoles diff?rents (OSPF vs
                             EIGRP).<br>
-                            <strong>Métrique</strong> = pour choisir entre routes d'un même protocole (OSPF cost).
+                            <strong>M?trique</strong> = pour choisir entre routes d'un m?me protocole (OSPF cost).
                         </p>
                     </div>
                 </div>
@@ -323,8 +323,8 @@ S*    0.0.0.0/0 [1/0] via 10.0.0.2</code></pre>
             <section class="section" id="routage-statique">
                 <h2>Routage Statique</h2>
 
-                <p>Les routes statiques sont configurées manuellement par l'administrateur. Elles sont idéales pour les
-                    petits réseaux, les routes stub, ou comme route par défaut.</p>
+                <p>Les routes statiques sont configur?es manuellement par l'administrateur. Elles sont id?ales pour les
+                    petits r?seaux, les routes stub, ou comme route par d?faut.</p>
 
                 <h3>Syntaxe des Routes Statiques</h3>
                 <div class="code-block">
@@ -332,10 +332,10 @@ S*    0.0.0.0/0 [1/0] via 10.0.0.2</code></pre>
                         <span class="code-lang">Cisco IOS - Routes statiques</span>
                         <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
-                    <pre><code>! Syntaxe générale
-ip route [réseau-destination] [masque] [next-hop | interface-sortie] [AD]
+                    <pre><code>! Syntaxe g?n?rale
+ip route [r?seau-destination] [masque] [next-hop | interface-sortie] [AD]
 
-! Route vers un réseau via next-hop IP
+! Route vers un r?seau via next-hop IP
 ip route 192.168.2.0 255.255.255.0 10.0.0.2
 
 ! Route via interface de sortie (point-to-point uniquement)
@@ -344,43 +344,43 @@ ip route 192.168.2.0 255.255.255.0 Serial0/0/0
 ! Route fully specified (next-hop + interface)
 ip route 192.168.2.0 255.255.255.0 GigabitEthernet0/0/1 10.0.0.2
 
-! Route par défaut (Gateway of Last Resort)
+! Route par d?faut (Gateway of Last Resort)
 ip route 0.0.0.0 0.0.0.0 10.0.0.2
 
-! Route avec AD modifiée (route flottante)
+! Route avec AD modifi?e (route flottante)
 ip route 192.168.2.0 255.255.255.0 10.0.0.2 150</code></pre>
                 </div>
 
                 <h3>Types de Routes Statiques</h3>
                 <ul>
-                    <li><strong>Route standard</strong> : Vers un réseau spécifique</li>
-                    <li><strong>Route par défaut</strong> : 0.0.0.0/0 - Route vers "tout le reste"</li>
-                    <li><strong>Route hôte</strong> : Vers une adresse IP unique (/32)</li>
-                    <li><strong>Route flottante</strong> : Backup avec AD plus élevée</li>
-                    <li><strong>Route récapitulative</strong> : Agrège plusieurs routes en une seule</li>
+                    <li><strong>Route standard</strong> : Vers un r?seau sp?cifique</li>
+                    <li><strong>Route par d?faut</strong> : 0.0.0.0/0 - Route vers "tout le reste"</li>
+                    <li><strong>Route h?te</strong> : Vers une adresse IP unique (/32)</li>
+                    <li><strong>Route flottante</strong> : Backup avec AD plus ?lev?e</li>
+                    <li><strong>Route r?capitulative</strong> : Agr?ge plusieurs routes en une seule</li>
                 </ul>
 
                 <h3>Route Flottante (Floating Static Route)</h3>
-                <p>Une route flottante sert de <strong>backup</strong>. Elle n'est utilisée que si la route principale
-                    disparaît.</p>
+                <p>Une route flottante sert de <strong>backup</strong>. Elle n'est utilis?e que si la route principale
+                    dispara?t.</p>
 
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - Route flottante</span>
                         <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
-                    <pre><code>! Route principale via le lien principal (AD par défaut = 1)
+                    <pre><code>! Route principale via le lien principal (AD par d?faut = 1)
 ip route 192.168.2.0 255.255.255.0 10.0.0.2
 
 ! Route flottante via lien de backup (AD = 150)
-! Cette route ne sera utilisée que si la première devient indisponible
+! Cette route ne sera utilis?e que si la premi?re devient indisponible
 ip route 192.168.2.0 255.255.255.0 10.0.1.2 150</code></pre>
                 </div>
 
-                <h3>Vérification des Routes Statiques</h3>
+                <h3>V?rification des Routes Statiques</h3>
                 <div class="code-block">
                     <div class="code-header">
-                        <span class="code-lang">Cisco IOS - Vérification</span>
+                        <span class="code-lang">Cisco IOS - V?rification</span>
                         <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Afficher la table de routage
@@ -389,10 +389,10 @@ show ip route
 ! Afficher uniquement les routes statiques
 show ip route static
 
-! Afficher une route spécifique
+! Afficher une route sp?cifique
 show ip route 192.168.2.0
 
-! Vérifier la configuration
+! V?rifier la configuration
 show running-config | include ip route</code></pre>
                 </div>
             </section>
@@ -401,17 +401,17 @@ show running-config | include ip route</code></pre>
             <section class="section" id="ospf-concepts">
                 <h2>OSPF : Concepts</h2>
 
-                <p><strong>OSPF</strong> (Open Shortest Path First) est un protocole de routage à <strong>état de
-                        lien</strong> (Link-State) standardisé (IEEE). C'est le protocole IGP le plus utilisé en
+                <p><strong>OSPF</strong> (Open Shortest Path First) est un protocole de routage ? <strong>?tat de
+                        lien</strong> (Link-State) standardis? (IEEE). C'est le protocole IGP le plus utilis? en
                     entreprise.</p>
 
-                <h3>Caractéristiques OSPF</h3>
+                <h3>Caract?ristiques OSPF</h3>
                 <ul>
                     <li><strong>Type</strong> : Link-State (vs Distance Vector comme RIP)</li>
                     <li><strong>Algorithme</strong> : Dijkstra (SPF - Shortest Path First)</li>
-                    <li><strong>Métrique</strong> : Cost (basé sur la bande passante)</li>
+                    <li><strong>M?trique</strong> : Cost (bas? sur la bande passante)</li>
                     <li><strong>Distance Administrative</strong> : 110</li>
-                    <li><strong>Mises à jour</strong> : Incrémentales (seulement les changements)</li>
+                    <li><strong>Mises ? jour</strong> : Incr?mentales (seulement les changements)</li>
                     <li><strong>Convergence</strong> : Rapide</li>
                     <li><strong>Support VLSM/CIDR</strong> : Oui (classless)</li>
                 </ul>
@@ -444,71 +444,71 @@ show running-config | include ip route</code></pre>
                                 <strong>LSA</strong>
                             </td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Link State
-                                Advertisement - Messages décrivant les liens</td>
+                                Advertisement - Messages d?crivant les liens</td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
                                 <strong>LSDB</strong>
                             </td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Link State Database
-                                - Base de données contenant tous les LSAs</td>
+                                - Base de donn?es contenant tous les LSAs</td>
                         </tr>
                         <tr style="background: var(--bg-card);">
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
                                 <strong>Neighbor</strong>
                             </td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Routeur OSPF
-                                adjacent avec qui on échange des informations</td>
+                                adjacent avec qui on ?change des informations</td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
                                 <strong>DR/BDR</strong>
                             </td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Designated Router /
-                                Backup DR - Élus sur les réseaux multi-accès</td>
+                                Backup DR - ?lus sur les r?seaux multi-acc?s</td>
                         </tr>
                         <tr style="background: var(--bg-card);">
                             <td style="padding: 12px;"><strong>Cost</strong></td>
-                            <td style="padding: 12px;">Métrique = Reference Bandwidth / Interface Bandwidth</td>
+                            <td style="padding: 12px;">M?trique = Reference Bandwidth / Interface Bandwidth</td>
                         </tr>
                     </tbody>
                 </table>
 
                 <h3>Calcul du Cost OSPF</h3>
-                <p>Par défaut, la référence est 100 Mbps. Donc :</p>
+                <p>Par d?faut, la r?f?rence est 100 Mbps. Donc :</p>
                 <ul>
                     <li><strong>10 Mbps</strong> : 100/10 = <strong>10</strong></li>
                     <li><strong>100 Mbps</strong> : 100/100 = <strong>1</strong></li>
-                    <li><strong>1 Gbps</strong> : 100/1000 = <strong>1</strong> (problème !)</li>
-                    <li><strong>10 Gbps</strong> : 100/10000 = <strong>1</strong> (problème !)</li>
+                    <li><strong>1 Gbps</strong> : 100/1000 = <strong>1</strong> (probl?me !)</li>
+                    <li><strong>10 Gbps</strong> : 100/10000 = <strong>1</strong> (probl?me !)</li>
                 </ul>
 
                 <div class="alert alert-warning">
                     <div class="alert-icon"><i class="fas fa-triangle-exclamation"></i></div>
                     <div class="alert-content">
                         <div class="alert-title">Augmenter la reference bandwidth !</div>
-                        <p style="margin: 0;">Pour les réseaux modernes avec du Gigabit/10Gig, configurez une référence
-                            plus élevée pour différencier les liens :<br>
+                        <p style="margin: 0;">Pour les r?seaux modernes avec du Gigabit/10Gig, configurez une r?f?rence
+                            plus ?lev?e pour diff?rencier les liens :<br>
                             <code>auto-cost reference-bandwidth 10000</code> (pour 10 Gbps)
                         </p>
                     </div>
                 </div>
 
-                <h3>États des Neighbors OSPF</h3>
+                <h3>?tats des Neighbors OSPF</h3>
                 <ol>
-                    <li><strong>Down</strong> : Pas de Hello reçu</li>
-                    <li><strong>Init</strong> : Hello reçu, mais pas bidirectionnel</li>
-                    <li><strong>2-Way</strong> : Communication bidirectionnelle établie (élection DR/BDR ici)</li>
-                    <li><strong>ExStart</strong> : Négociation du master/slave pour DBD</li>
-                    <li><strong>Exchange</strong> : Échange des DBD (Database Description)</li>
-                    <li><strong>Loading</strong> : Demande et réception des LSAs manquants</li>
-                    <li><strong>Full</strong> : Adjacence établie, LSDB synchronisée</li>
+                    <li><strong>Down</strong> : Pas de Hello re?u</li>
+                    <li><strong>Init</strong> : Hello re?u, mais pas bidirectionnel</li>
+                    <li><strong>2-Way</strong> : Communication bidirectionnelle ?tablie (?lection DR/BDR ici)</li>
+                    <li><strong>ExStart</strong> : N?gociation du master/slave pour DBD</li>
+                    <li><strong>Exchange</strong> : ?change des DBD (Database Description)</li>
+                    <li><strong>Loading</strong> : Demande et r?ception des LSAs manquants</li>
+                    <li><strong>Full</strong> : Adjacence ?tablie, LSDB synchronis?e</li>
                 </ol>
 
                 <h3>Hello et Dead Timers</h3>
                 <ul>
-                    <li><strong>Réseau broadcast/point-to-point</strong> : Hello = 10s, Dead = 40s</li>
-                    <li><strong>Réseau NBMA</strong> : Hello = 30s, Dead = 120s</li>
+                    <li><strong>R?seau broadcast/point-to-point</strong> : Hello = 10s, Dead = 40s</li>
+                    <li><strong>R?seau NBMA</strong> : Hello = 30s, Dead = 120s</li>
                 </ul>
                 <p>Les timers doivent correspondre entre neighbors pour former une adjacence !</p>
             </section>
@@ -526,25 +526,25 @@ show running-config | include ip route</code></pre>
                     <pre><code>! Activer OSPF avec un process ID (local au routeur)
 router ospf 1
 
-! Configurer le Router ID (recommandé)
+! Configurer le Router ID (recommand?)
 router-id 1.1.1.1
 
-! Annoncer les réseaux (avec wildcard mask)
-! Wildcard = inverse du subnet mask (255.255.255.0 → 0.0.0.255)
+! Annoncer les r?seaux (avec wildcard mask)
+! Wildcard = inverse du subnet mask (255.255.255.0 ? 0.0.0.255)
 network 192.168.1.0 0.0.0.255 area 0
 network 10.0.0.0 0.0.0.3 area 0
 
-! Alternative : annoncer une interface spécifique
+! Alternative : annoncer une interface sp?cifique
 network 192.168.1.1 0.0.0.0 area 0
 
-! Définir les interfaces passives (pas d'envoi/réception OSPF)
+! D?finir les interfaces passives (pas d'envoi/r?ception OSPF)
 passive-interface g0/0/0
 
-! Définir toutes les interfaces passives par défaut
+! D?finir toutes les interfaces passives par d?faut
 passive-interface default
 no passive-interface g0/0/1
 
-! Propager la route par défaut
+! Propager la route par d?faut
 default-information originate
 
 ! Modifier la reference bandwidth (pour Gigabit+)
@@ -555,13 +555,13 @@ interface loopback 0
   ip address 1.1.1.1 255.255.255.255</code></pre>
                 </div>
 
-                <h3>Configuration par Interface (Méthode moderne)</h3>
+                <h3>Configuration par Interface (M?thode moderne)</h3>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="code-lang">Cisco IOS - OSPF par interface</span>
                         <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
-                    <pre><code>! Activer OSPF sur une interface spécifique
+                    <pre><code>! Activer OSPF sur une interface sp?cifique
 interface g0/0/0
   ip ospf 1 area 0
   
@@ -572,46 +572,46 @@ interface g0/0/1
 interface g0/0/1
   ip ospf cost 100
 
-! Configurer la priorité DR/BDR (défaut: 1)
+! Configurer la priorit? DR/BDR (d?faut: 1)
 interface g0/0/1
   ip ospf priority 100
 
-! Modifier les timers (attention: doit correspondre des 2 côtés!)
+! Modifier les timers (attention: doit correspondre des 2 c?t?s!)
 interface g0/0/1
   ip ospf hello-interval 5
   ip ospf dead-interval 20</code></pre>
                 </div>
 
-                <h3>Élection DR/BDR</h3>
-                <p>Sur les réseaux multi-accès (Ethernet), un <strong>DR</strong> (Designated Router) et un
-                    <strong>BDR</strong> (Backup DR) sont élus pour réduire le nombre d'adjacences.
+                <h3>?lection DR/BDR</h3>
+                <p>Sur les r?seaux multi-acc?s (Ethernet), un <strong>DR</strong> (Designated Router) et un
+                    <strong>BDR</strong> (Backup DR) sont ?lus pour r?duire le nombre d'adjacences.
                 </p>
-                <p>L'élection se base sur :</p>
+                <p>L'?lection se base sur :</p>
                 <ol>
-                    <li><strong>Priorité OSPF</strong> la plus haute (défaut: 1, range: 0-255)</li>
-                    <li><strong>Router ID</strong> le plus haut (en cas d'égalité)</li>
+                    <li><strong>Priorit? OSPF</strong> la plus haute (d?faut: 1, range: 0-255)</li>
+                    <li><strong>Router ID</strong> le plus haut (en cas d'?galit?)</li>
                 </ol>
-                <p><strong>Priorité 0</strong> = ne peut pas devenir DR/BDR</p>
+                <p><strong>Priorit? 0</strong> = ne peut pas devenir DR/BDR</p>
 
                 <div class="alert alert-info">
                     <div class="alert-icon"><i class="fas fa-lightbulb"></i></div>
                     <div class="alert-content">
-                        <div class="alert-title">L'élection DR n'est pas préemptive</div>
-                        <p style="margin: 0;">Même si un routeur avec une meilleure priorité arrive, le DR actuel reste
-                            en place. Pour forcer une nouvelle élection, redémarrez le processus OSPF :
+                        <div class="alert-title">L'?lection DR n'est pas pr?emptive</div>
+                        <p style="margin: 0;">M?me si un routeur avec une meilleure priorit? arrive, le DR actuel reste
+                            en place. Pour forcer une nouvelle ?lection, red?marrez le processus OSPF :
                             <code>clear ip ospf process</code>
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Section 6: OSPF Vérification -->
+            <!-- Section 6: OSPF V?rification -->
             <section class="section" id="ospf-verification">
-                <h2>OSPF : Vérification</h2>
+                <h2>OSPF : V?rification</h2>
 
                 <div class="code-block">
                     <div class="code-header">
-                        <span class="code-lang">Cisco IOS - Commandes de vérification OSPF</span>
+                        <span class="code-lang">Cisco IOS - Commandes de v?rification OSPF</span>
                         <button class="code-copy-btn"><i class="fas fa-copy"></i> Copier</button>
                     </div>
                     <pre><code>! Afficher les voisins OSPF
@@ -628,7 +628,7 @@ show ip protocols
 show ip ospf interface
 show ip ospf interface brief
 
-! Afficher la base de données OSPF
+! Afficher la base de donn?es OSPF
 show ip ospf database
 
 ! Afficher les routes OSPF dans la table de routage
@@ -640,12 +640,12 @@ debug ip ospf adj
 undebug all</code></pre>
                 </div>
 
-                <h3>Interpréter show ip ospf neighbor</h3>
+                <h3>Interpr?ter show ip ospf neighbor</h3>
                 <ul>
                     <li><strong>Neighbor ID</strong> : Router ID du voisin</li>
-                    <li><strong>Pri</strong> : Priorité DR du voisin</li>
-                    <li><strong>State</strong> : État de l'adjacence (FULL = OK)</li>
-                    <li><strong>Dead Time</strong> : Temps restant avant de déclarer le voisin mort</li>
+                    <li><strong>Pri</strong> : Priorit? DR du voisin</li>
+                    <li><strong>State</strong> : ?tat de l'adjacence (FULL = OK)</li>
+                    <li><strong>Dead Time</strong> : Temps restant avant de d?clarer le voisin mort</li>
                     <li><strong>Address</strong> : Adresse IP de l'interface du voisin</li>
                     <li><strong>Interface</strong> : Interface locale vers ce voisin</li>
                 </ul>
@@ -653,11 +653,11 @@ undebug all</code></pre>
                 <div class="alert alert-success">
                     <div class="alert-icon"><i class="fas fa-check-circle"></i></div>
                     <div class="alert-content">
-                        <div class="alert-title">Adjacence réussie</div>
-                        <p style="margin: 0;">L'état <strong>FULL/DR</strong> ou <strong>FULL/BDR</strong> ou
-                            <strong>FULL/-</strong> indique une adjacence pleinement établie.
-                            <strong>2WAY/DROTHER</strong> est normal entre deux routeurs non-DR sur un réseau
-                            multi-accès.
+                        <div class="alert-title">Adjacence r?ussie</div>
+                        <p style="margin: 0;">L'?tat <strong>FULL/DR</strong> ou <strong>FULL/BDR</strong> ou
+                            <strong>FULL/-</strong> indique une adjacence pleinement ?tablie.
+                            <strong>2WAY/DROTHER</strong> est normal entre deux routeurs non-DR sur un r?seau
+                            multi-acc?s.
                         </p>
                     </div>
                 </div>
@@ -667,13 +667,13 @@ undebug all</code></pre>
             <section class="section" id="troubleshooting">
                 <h2>Troubleshooting Routage</h2>
 
-                <h3>Problèmes courants OSPF</h3>
+                <h3>Probl?mes courants OSPF</h3>
                 <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
                     <thead>
                         <tr style="background: var(--gradient-primary); color: white;">
-                            <th style="padding: 12px; text-align: left;">Symptôme</th>
+                            <th style="padding: 12px; text-align: left;">Sympt?me</th>
                             <th style="padding: 12px; text-align: left;">Causes possibles</th>
-                            <th style="padding: 12px; text-align: left;">Vérification</th>
+                            <th style="padding: 12px; text-align: left;">V?rification</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -681,16 +681,16 @@ undebug all</code></pre>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Pas de neighbor
                             </td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Interface down, ACL
-                                bloquant, mauvais réseau</td>
+                                bloquant, mauvais r?seau</td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
                                 <code>show ip ospf interface</code>
                             </td>
                         </tr>
                         <tr>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Neighbor bloqué
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Neighbor bloqu?
                                 Init</td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Hello non reçu en
-                                retour (ACL, problème L2)</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Hello non re?u en
+                                retour (ACL, probl?me L2)</td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
                                 <code>debug ip ospf hello</code>
                             </td>
@@ -699,39 +699,39 @@ undebug all</code></pre>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Timers mismatch
                             </td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Hello/Dead
-                                intervals différents</td>
+                                intervals diff?rents</td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
                                 <code>show ip ospf interface</code>
                             </td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Area mismatch</td>
-                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Areas différentes
-                                configurées</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Areas diff?rentes
+                                configur?es</td>
                             <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
                                 <code>show ip protocols</code>
                             </td>
                         </tr>
                         <tr style="background: var(--bg-card);">
                             <td style="padding: 12px;">Subnet mask mismatch</td>
-                            <td style="padding: 12px;">Masques différents sur le même lien</td>
+                            <td style="padding: 12px;">Masques diff?rents sur le m?me lien</td>
                             <td style="padding: 12px;"><code>show ip interface brief</code></td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h3>Méthodologie de Troubleshooting</h3>
+                <h3>M?thodologie de Troubleshooting</h3>
                 <ol>
-                    <li><strong>Vérifier la connectivité L1/L2</strong> : <code>show interfaces status</code>,
+                    <li><strong>V?rifier la connectivit? L1/L2</strong> : <code>show interfaces status</code>,
                         <code>show ip interface brief</code>
                     </li>
-                    <li><strong>Vérifier les adresses IP</strong> : Sont-elles dans le même sous-réseau ?</li>
-                    <li><strong>Vérifier OSPF actif</strong> : <code>show ip protocols</code>,
+                    <li><strong>V?rifier les adresses IP</strong> : Sont-elles dans le m?me sous-r?seau ?</li>
+                    <li><strong>V?rifier OSPF actif</strong> : <code>show ip protocols</code>,
                         <code>show ip ospf interface</code>
                     </li>
-                    <li><strong>Vérifier les neighbors</strong> : <code>show ip ospf neighbor</code></li>
-                    <li><strong>Vérifier la table de routage</strong> : <code>show ip route</code></li>
-                    <li><strong>Tester la connectivité</strong> : <code>ping</code>, <code>traceroute</code></li>
+                    <li><strong>V?rifier les neighbors</strong> : <code>show ip ospf neighbor</code></li>
+                    <li><strong>V?rifier la table de routage</strong> : <code>show ip route</code></li>
+                    <li><strong>Tester la connectivit?</strong> : <code>ping</code>, <code>traceroute</code></li>
                 </ol>
             </section>
 
@@ -741,13 +741,13 @@ undebug all</code></pre>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
                     <h3><i class="fas fa-microscope"></i> Lab 1 : Routes Statiques</h3>
-                    <p><strong>Objectif :</strong> Configurer un réseau avec routes statiques</p>
+                    <p><strong>Objectif :</strong> Configurer un r?seau avec routes statiques</p>
                     <p><strong>Topologie :</strong> 3 routeurs en ligne (R1 -- R2 -- R3)</p>
                     <ol>
                         <li>Configurer les interfaces de chaque routeur</li>
                         <li>Sur R1 : route statique vers le LAN de R3 via R2</li>
-                        <li>Sur R3 : route par défaut vers R2</li>
-                        <li>Vérifier avec ping et traceroute</li>
+                        <li>Sur R3 : route par d?faut vers R2</li>
+                        <li>V?rifier avec ping et traceroute</li>
                     </ol>
                 </div>
 
@@ -757,43 +757,43 @@ undebug all</code></pre>
                     <p><strong>Topologie :</strong> 3 routeurs en triangle + LANs</p>
                     <ol>
                         <li>Configurer les Router IDs avec loopbacks</li>
-                        <li>Activer OSPF et annoncer tous les réseaux dans Area 0</li>
+                        <li>Activer OSPF et annoncer tous les r?seaux dans Area 0</li>
                         <li>Configurer les interfaces LAN comme passives</li>
                         <li>Modifier la reference bandwidth pour 10 Gbps</li>
-                        <li>Vérifier les adjacences avec <code>show ip ospf neighbor</code></li>
-                        <li>Vérifier la table de routage</li>
-                        <li>Tester la redondance : débrancher un lien et observer la reconvergence</li>
+                        <li>V?rifier les adjacences avec <code>show ip ospf neighbor</code></li>
+                        <li>V?rifier la table de routage</li>
+                        <li>Tester la redondance : d?brancher un lien et observer la reconvergence</li>
                     </ol>
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3><i class="fas fa-microscope"></i> Lab 3 : Route par défaut OSPF</h3>
-                    <p><strong>Objectif :</strong> Propager une route par défaut via OSPF</p>
+                    <h3><i class="fas fa-microscope"></i> Lab 3 : Route par d?faut OSPF</h3>
+                    <p><strong>Objectif :</strong> Propager une route par d?faut via OSPF</p>
                     <ol>
-                        <li>Configurer R1 comme routeur de bordure avec accès "Internet"</li>
-                        <li>Créer une route statique par défaut sur R1</li>
-                        <li>Propager la route par défaut avec <code>default-information originate</code></li>
-                        <li>Vérifier que tous les routeurs ont reçu la route par défaut</li>
+                        <li>Configurer R1 comme routeur de bordure avec acc?s "Internet"</li>
+                        <li>Cr?er une route statique par d?faut sur R1</li>
+                        <li>Propager la route par d?faut avec <code>default-information originate</code></li>
+                        <li>V?rifier que tous les routeurs ont re?u la route par d?faut</li>
                     </ol>
                 </div>
 
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <h3><i class="fas fa-microscope"></i> Lab 4 : Élection DR/BDR</h3>
-                    <p><strong>Objectif :</strong> Contrôler l'élection DR/BDR</p>
+                    <h3><i class="fas fa-microscope"></i> Lab 4 : ?lection DR/BDR</h3>
+                    <p><strong>Objectif :</strong> Contr?ler l'?lection DR/BDR</p>
                     <ol>
-                        <li>Connecter 3 routeurs sur un même segment Ethernet</li>
-                        <li>Observer l'élection par défaut (basée sur Router ID)</li>
-                        <li>Configurer R1 avec priorité 100 pour devenir DR</li>
-                        <li>Configurer R2 avec priorité 50 pour devenir BDR</li>
-                        <li>Configurer R3 avec priorité 0 (jamais DR)</li>
-                        <li>Redémarrer OSPF et vérifier l'élection</li>
+                        <li>Connecter 3 routeurs sur un m?me segment Ethernet</li>
+                        <li>Observer l'?lection par d?faut (bas?e sur Router ID)</li>
+                        <li>Configurer R1 avec priorit? 100 pour devenir DR</li>
+                        <li>Configurer R2 avec priorit? 50 pour devenir BDR</li>
+                        <li>Configurer R3 avec priorit? 0 (jamais DR)</li>
+                        <li>Red?marrer OSPF et v?rifier l'?lection</li>
                     </ol>
                 </div>
             </section>
 
             <!-- Section 9: Quiz -->
             <section class="section" id="quiz">
-                <h2><i class="fas fa-flask"></i> Quiz de vérification</h2>
+                <h2><i class="fas fa-flask"></i> Quiz de v?rification</h2>
 
                 <div id="quiz-container" data-phase="phase3">
                     <div style="text-align: center; padding: 2rem;">
@@ -804,29 +804,29 @@ undebug all</code></pre>
 
             <!-- Planning -->
             <section class="section">
-                <h2>Planning Suggéré</h2>
+                <h2>Planning Sugg?r?</h2>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-title">Semaine 1 : Routage Statique</div>
                         <div class="timeline-content">Comprendre la table de routage + Configurer routes statiques et
-                            par défaut</div>
+                            par d?faut</div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Semaine 2 : Théorie OSPF</div>
-                        <div class="timeline-content">Concepts OSPF: areas, LSA, DR/BDR, états des neighbors, calcul du
+                        <div class="timeline-title">Semaine 2 : Th?orie OSPF</div>
+                        <div class="timeline-content">Concepts OSPF: areas, LSA, DR/BDR, ?tats des neighbors, calcul du
                             cost</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-title">Semaine 3 : Configuration OSPF</div>
-                        <div class="timeline-content">Labs OSPF single-area + Commandes de vérification</div>
+                        <div class="timeline-content">Labs OSPF single-area + Commandes de v?rification</div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Semaine 4 : OSPF Avancé</div>
-                        <div class="timeline-content">Optimisation OSPF, route par défaut, référence bandwidth</div>
+                        <div class="timeline-title">Semaine 4 : OSPF Avanc?</div>
+                        <div class="timeline-content">Optimisation OSPF, route par d?faut, r?f?rence bandwidth</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-title">Semaine 5 : Troubleshooting</div>
-                        <div class="timeline-content">Diagnostic et résolution de problèmes + Lab 2.7.2 complet</div>
+                        <div class="timeline-content">Diagnostic et r?solution de probl?mes + Lab 2.7.2 complet</div>
                     </div>
                 </div>
             </section>
@@ -836,19 +836,19 @@ undebug all</code></pre>
             <!-- Completion Section -->
             <div class="completion-section"
                 style="margin: 4rem 0; padding: 2rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color); text-align: center;">
-                <h3 style="margin-bottom: 1rem;">La phase est terminée ?</h3>
-                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Marquez cette phase comme terminée pour
+                <h3 style="margin-bottom: 1rem;">La phase est termin?e ?</h3>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Marquez cette phase comme termin?e pour
                     suivre votre progression globale.</p>
                 <button class="mark-complete-btn" data-phase="phase3"
                     style="margin: 0 auto; width: auto; font-size: 1.1rem; padding: 0.75rem 2rem;">Marquer la phase
-                    comme terminée</button>
+                    comme termin?e</button>
             </div>
 
             <nav class="page-nav">
                 <a href="phase2-commutation.html" class="page-nav-link prev">
-                    <span>←</span>
+                    <span>?</span>
                     <div>
-                        <div class="page-nav-label">Précédent</div>
+                        <div class="page-nav-label">Pr?c?dent</div>
                         <div class="page-nav-title">Phase 2 : Commutation</div>
                     </div>
                 </a>
@@ -857,7 +857,7 @@ undebug all</code></pre>
                         <div class="page-nav-label">Suivant</div>
                         <div class="page-nav-title">Phase 4 : Inter-VLAN</div>
                     </div>
-                    <span>→</span>
+                    <span>?</span>
                 </a>
             </nav>
         </div>
@@ -867,7 +867,7 @@ undebug all</code></pre>
         <div class="footer-content">
             <div class="footer-site-name">Routage &amp; Commutation</div>
             <p class="footer-disclaimer">
-                Ce site est un projet personnel et gratuit d'auto-formation, non affilié, non sponsorisé et non approuvé par Cisco Systems Inc. CCNA, Cisco Packet Tracer et IOS sont des marques déposées de Cisco Systems Inc.
+                Ce site est un projet personnel et gratuit d'auto-formation, non affili?, non sponsoris? et non approuv? par Cisco Systems Inc. CCNA, Cisco Packet Tracer et IOS sont des marques d?pos?es de Cisco Systems Inc.
             </p>
         </div>
     </footer>
