@@ -27,7 +27,7 @@
 
             <nav class="nav">
                 <a href="index.html" class="nav-link active">Accueil</a>
-                <a href="pages/phase1-fondamentaux.html" class="nav-link">Fondamentaux</a>
+                            <a href="pages/phase1-fondamentaux.html" class="nav-link">Fondamentaux</a>
                 <a href="pages/phase2-commutation.html" class="nav-link">Commutation</a>
                 <a href="pages/phase3-routage.html" class="nav-link">Routage</a>
                 <a href="pages/phase4-inter-vlan.html" class="nav-link">Inter-VLAN</a>
@@ -40,6 +40,9 @@
                     <div class="dropdown-menu">
                         <a href="pages/projets.html" class="dropdown-item">
                             <i class="fas fa-project-diagram"></i> Projets
+                        </a>
+                        <a href="Programme.html" class="dropdown-item">
+                            <i class="fas fa-calendar-alt"></i> Programme
                         </a>
                         <a href="pages/ccna.html" class="dropdown-item">
                             <i class="fas fa-graduation-cap"></i> CCNA
@@ -305,7 +308,7 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 2rem;">
+            <div class="cta-center">
                 <a href="pages/phase1-fondamentaux.html" class="btn btn-primary">
                     Commencer la Phase 1 →
                 </a>
@@ -314,10 +317,30 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer footer--minimal">
         <div class="footer-content">
-            <p class="footer-text">
-                Programme de Formation en Routage et Commutation • Préparation CCNA 200-301
+            <div class="footer-brand">
+                <div class="footer-brand-mark">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="footer-brand-copy">
+                    <div class="footer-title">Routage &amp; Commutation</div>
+                    <p class="footer-text">Programme de formation • CCNA 200-301</p>
+                </div>
+            </div>
+
+            <nav class="footer-meta" aria-label="Liens utiles">
+                            <a href="Programme.html">Programme</a>
+                            <a href="pages/ressources.html">Ressources</a>
+                            <a href="pages/ccna.html">CCNA</a>
+                            <a href="pages/mentions-legales.html">Mentions</a>
+                            <a href="pages/politique_confidentialite.html">Confidentialité</a>
+                        </nav>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-disclaimer">
+                Ce site est un projet personnel et gratuit d'auto-formation, non affilié, non sponsorisé et non approuvé par Cisco Systems Inc. CCNA, Cisco Packet Tracer et IOS sont des marques déposées de Cisco Systems Inc.
             </p>
         </div>
     </footer>
