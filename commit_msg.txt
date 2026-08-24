@@ -1,7 +1,0 @@
-﻿Refactor: integrate Programme page & move Programme link
-
-- Integrate Programme.html into site header/footer and link main stylesheet.
-- Move 'Programme' from top navbar into the 'Ressources' dropdown across pages.
-- Simplify homepage footer and adjust footer links & CSS.
-
-Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
