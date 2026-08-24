@@ -1,4 +1,4 @@
-﻿?// ============================================
+// ============================================
 // ROUTAGE ET COMMUTATION - Interactive Features
 // ============================================
 
@@ -159,7 +159,7 @@ function initCodeCopy() {
 
                 // Visual feedback
                 const originalText = copyBtn.innerHTML;
-                copyBtn.innerHTML = '??? Copi�!';
+                copyBtn.innerHTML = 'âœ“ CopiÃ©!';
                 copyBtn.classList.add('copied');
 
                 setTimeout(() => {
@@ -170,7 +170,7 @@ function initCodeCopy() {
                 console.error('Failed to copy:', err);
                 copyBtn.textContent = 'Erreur';
                 setTimeout(() => {
-                    copyBtn.textContent = '?? Copier';
+                    copyBtn.textContent = 'ðŸ“‹ Copier';
                 }, 2000);
             }
         });
@@ -260,7 +260,7 @@ function initProgressTracking() {
         }
 
         if (progressText) {
-            progressText.textContent = `${completedPhases}/${totalPhases} phases compl�t�es (${percentage}%)`;
+            progressText.textContent = `${completedPhases}/${totalPhases} phases complÃ©tÃ©es (${percentage}%)`;
         }
 
         // Update phase checkmarks and buttons
@@ -270,10 +270,10 @@ function initProgressTracking() {
             if (el.classList.contains('mark-complete-btn')) {
                 if (progress[phaseId]) {
                     el.classList.add('completed');
-                    el.textContent = '??? Phase termin�e';
+                    el.textContent = 'âœ“ Phase terminÃ©e';
                 } else {
                     el.classList.remove('completed');
-                    el.textContent = 'Marquer la phase comme termin�e';
+                    el.textContent = 'Marquer la phase comme terminÃ©e';
                 }
             } else if (el.classList.contains('card')) {
                 if (progress[phaseId]) {
@@ -298,7 +298,7 @@ function initProgressTracking() {
             if (sections.includes(fullId)) {
                 btn.classList.add('completed');
                 btn.setAttribute('aria-pressed', 'true');
-                btn.innerHTML = '??? Lu';
+                btn.innerHTML = 'âœ“ Lu';
             } else {
                 btn.classList.remove('completed');
                 btn.setAttribute('aria-pressed', 'false');
@@ -460,7 +460,3 @@ function initCollapsible() {
         });
     });
 }
-
-
-
-
