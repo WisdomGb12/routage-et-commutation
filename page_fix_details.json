@@ -1,0 +1,16 @@
+[
+    {
+        "passes":  3,
+        "before":  525,
+        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\Programme.html",
+        "applied":  true,
+        "after":  0
+    },
+    {
+        "passes":  2,
+        "before":  156,
+        "file":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\index.html",
+        "applied":  true,
+        "after":  0
+    }
+]
