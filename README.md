@@ -1,78 +1,79 @@
 ﻿# Routage et Commutation - Formation Interactive
 
-Ce projet est une plateforme d'apprentissage interactive dÃƒÂ©diÃƒÂ©e aux fondamentaux du rÃƒÂ©seau, ciblant spÃƒÂ©cifiquement le programme **Cisco CCNA 200-301**. Elle combine thÃƒÂ©orie, travaux pratiques (Labs) et quiz de vÃƒÂ©rification pour une prÃƒÂ©paration complÃƒÂ¨te.
+Ce projet est une plateforme d'apprentissage interactive d�di�e aux fondamentaux du r�seau, ciblant sp�cifiquement le programme **Cisco CCNA 200-301**. Elle combine th�orie, travaux pratiques (Labs) et quiz de v�rification pour une pr�paration compl�te.
 
-## Ã°Å¸Å¡â‚¬ FonctionnalitÃƒÂ©s ClÃƒÂ©s
+## ?? Fonctionnalit�s Cl�s
 
--   **Apprentissage par Phases** : 6 phases structurÃƒÂ©es allant des fondamentaux aux technologies avancÃƒÂ©es (VLANs, OSPF, IPv6, NAT, ACLs).
--   **Navigation Intuitive** : Menu "Ressources" regroupant les Projets et la prÃƒÂ©paration CCNA, avec une expÃƒÂ©rience fluide sur bureau et mobile.
--   **Quiz Interactifs** : Moteur de quiz en JavaScript avec feedback immÃƒÂ©diat, explications dÃƒÂ©taillÃƒÂ©es et options repliables pour optimiser l'espace.
--   **Suivi de Progression** : Marquage des chapitres lus et des phases terminÃƒÂ©es.
--   **Design Moderne** : ThÃƒÂ¨mes Clair/Sombre, blocs de code avec fonction de copie, et diagrammes de topologie standardisÃƒÂ©s.
+-   **Apprentissage par Phases** : 6 phases structur�es allant des fondamentaux aux technologies avanc�es (VLANs, OSPF, IPv6, NAT, ACLs).
+-   **Navigation Intuitive** : Menu "Ressources" regroupant les Projets et la pr�paration CCNA, avec une exp�rience fluide sur bureau et mobile.
+-   **Quiz Interactifs** : Moteur de quiz en JavaScript avec feedback imm�diat, explications d�taill�es et options repliables pour optimiser l'espace.
+-   **Suivi de Progression** : Marquage des chapitres lus et des phases termin�es.
+-   **Design Moderne** : Th�mes Clair/Sombre, blocs de code avec fonction de copie, et diagrammes de topologie standardis�s.
 
-## Ã°Å¸Ââ€”Ã¯Â¸Â Architecture et Persistance des DonnÃƒÂ©es
+## ??? Architecture et Persistance des Donn�es
 
-Ce projet est conÃƒÂ§u comme une **Single Page Application (SPA) multi-fichiers** entiÃƒÂ¨rement statique.
+Ce projet est con�u comme une **Single Page Application (SPA) multi-fichiers** enti�rement statique.
 
 ### Sans Backend (Serverless)
-L'application ne nÃƒÂ©cessite aucun serveur backend, aucune base de donnÃƒÂ©es (SQL/NoSQL) ni API externe pour fonctionner. L'intÃƒÂ©gralitÃƒÂ© de la logique de traitement (calcul des scores de quiz, gestion du thÃƒÂ¨me, suivi de progression) est exÃƒÂ©cutÃƒÂ©e cÃƒÂ´tÃƒÂ© client (dans le navigateur de l'utilisateur).
+L'application ne n�cessite aucun serveur backend, aucune base de donn�es (SQL/NoSQL) ni API externe pour fonctionner. L'int�gralit� de la logique de traitement (calcul des scores de quiz, gestion du th�me, suivi de progression) est ex�cut�e c�t� client (dans le navigateur de l'utilisateur).
 
 ### Gestion de la Progression (Local Storage)
-Pour offrir une expÃƒÂ©rience persistante sans base de donnÃƒÂ©es, l'application utilise l'API **`localStorage`** du navigateur :
--   **ClÃƒÂ©s de stockage** :
-    -   `routage-theme` : Enregistre le choix du thÃƒÂ¨me (clair ou sombre).
-    -   `routage-commutation-progress` : Stocke l'ÃƒÂ©tat d'achÃƒÂ¨vement des phases (ex: Phase 1 terminÃƒÂ©e).
-    -   `routage-commutation-sections` : Suit les chapitres spÃƒÂ©cifiques marquÃƒÂ©s comme "Lus" ÃƒÂ  l'intÃƒÂ©rieur de chaque phase.
-    -   `quiz_state_{phaseId}` : Sauvegarde les rÃƒÂ©ponses, le score et l'ÃƒÂ©tat de soumission des quiz.
--   **Avantages** : Les donnÃƒÂ©es sont sauvegardÃƒÂ©es automatiquement et restent disponibles indÃƒÂ©finiment (mÃƒÂªme aprÃƒÂ¨s redÃƒÂ©marrage), **tant que vous ne videz pas le cache ou les donnÃƒÂ©es de site** de votre navigateur.
--   **ConfidentialitÃƒÂ©** : Aucune donnÃƒÂ©e n'est envoyÃƒÂ©e ÃƒÂ  un serveur tiers ; votre progression reste localement sur votre machine.
+Pour offrir une exp�rience persistante sans base de donn�es, l'application utilise l'API **`localStorage`** du navigateur :
+-   **Cl�s de stockage** :
+    -   `routage-theme` : Enregistre le choix du th�me (clair ou sombre).
+    -   `routage-commutation-progress` : Stocke l'�tat d'ach�vement des phases (ex: Phase 1 termin�e).
+    -   `routage-commutation-sections` : Suit les chapitres sp�cifiques marqu�s comme "Lus" � l'int�rieur de chaque phase.
+    -   `quiz_state_{phaseId}` : Sauvegarde les r�ponses, le score et l'�tat de soumission des quiz.
+-   **Avantages** : Les donn�es sont sauvegard�es automatiquement et restent disponibles ind�finiment (m�me apr�s red�marrage), **tant que vous ne videz pas le cache ou les donn�es de site** de votre navigateur.
+-   **Confidentialit�** : Aucune donn�e n'est envoy�e � un serveur tiers ; votre progression reste localement sur votre machine.
 
-## Ã°Å¸â€œâ€š Structure du Projet
+## ?? Structure du Projet
 
 -   `/` : Fichiers HTML principaux (`index.html`).
--   `/pages/` : Contenu dÃƒÂ©taillÃƒÂ© des phases (Phase 1 ÃƒÂ  6), projets et CCNA.
--   `/styles/` : Fichiers CSS (`main.css`) gÃƒÂ©rant le design system, le responsive et les animations.
+-   `/pages/` : Contenu d�taill� des phases (Phase 1 � 6), projets et CCNA.
+-   `/styles/` : Fichiers CSS (`main.css`) g�rant le design system, le responsive et les animations.
 -   `/js/` : 
-    -   `main.js` : Initialisation globale, gestion du thÃƒÂ¨me, du menu mobile et de la progression.
+    -   `main.js` : Initialisation globale, gestion du th�me, du menu mobile et de la progression.
     -   `quiz.js` : Moteur de gestion des quiz (rendu, validation, toggle).
-    -   `quiz_data.js` : Banque de questions organisÃƒÂ©e par phase.
--   `/assets/` : Images et schÃƒÂ©mas d'architecture.
+    -   `quiz_data.js` : Banque de questions organis�e par phase.
+-   `/assets/` : Images et sch�mas d'architecture.
 
-## Ã°Å¸â€ºÂ Ã¯Â¸Â Stack Technique
+## ??? Stack Technique
 
--   **Vanilla Web Stack** : HTML5, CSS3 et JavaScript pur. Aucun framework (React, Vue, etc.) n'est utilisÃƒÂ© pour garantir une lÃƒÂ©gÃƒÂ¨retÃƒÂ© extrÃƒÂªme.
--   **Font Awesome** : BibliothÃƒÂ¨que d'icÃƒÂ´nes vectorielles.
--   **Google Fonts** : Utilisation de polices modernes pour une lisibilitÃƒÂ© accrue des termes techniques.
+-   **Vanilla Web Stack** : HTML5, CSS3 et JavaScript pur. Aucun framework (React, Vue, etc.) n'est utilis� pour garantir une l�g�ret� extr�me.
+-   **Font Awesome** : Biblioth�que d'ic�nes vectorielles.
+-   **Google Fonts** : Utilisation de polices modernes pour une lisibilit� accrue des termes techniques.
 
-## Ã°Å¸Å’Â HÃƒÂ©bergement
+## ?? H�bergement
 
 Ce site est actuellement mis en ligne via **GitHub Pages**.
 
--   **Type** : HÃƒÂ©bergement Statique
--   **CI/CD** : DÃƒÂ©ploiement automatique depuis la branche `main`.
--   **Avantage** : Gratuit, rapide et intÃƒÂ©grÃƒÂ© ÃƒÂ  l'ÃƒÂ©cosystÃƒÂ¨me GitHub.
+-   **Type** : H�bergement Statique
+-   **CI/CD** : D�ploiement automatique depuis la branche `main`.
+-   **Avantage** : Gratuit, rapide et int�gr� � l'�cosyst�me GitHub.
 
-## Ã°Å¸â€œâ€“ Utilisation
+## ?? Utilisation
 
-Ouvrez simplement `index.html` dans n'importe quel navigateur web moderne. Pour rÃƒÂ©initialiser votre progression, vous pouvez vider le cache/stockage local du navigateur via les outils de dÃƒÂ©veloppement (F12 > Application > Local Storage).
+Ouvrez simplement `index.html` dans n'importe quel navigateur web moderne. Pour r�initialiser votre progression, vous pouvez vider le cache/stockage local du navigateur via les outils de d�veloppement (F12 > Application > Local Storage).
 
 ---
-*Projet dÃƒÂ©veloppÃƒÂ© pour faciliter l'accÃƒÂ¨s aux connaissances rÃƒÂ©seau et la rÃƒÂ©ussite de la certification CCNA.*
+*Projet d�velopp� pour faciliter l'acc�s aux connaissances r�seau et la r�ussite de la certification CCNA.*
 
-## Ã°Å¸â€œÂ Changelog
+## ?? Changelog
 
 ### 6e version - 2026-08-24
 
-Principales modifications rÃƒÂ©centes :
+Principales modifications r�centes :
 
-- IntÃƒÂ©gration de la page `Programme.html` dans le site et harmonisation du style (liaison ÃƒÂ  `styles/main.css`).
-- DÃƒÂ©placement du lien **Programme** vers le menu dÃƒÂ©roulant *Ressources* pour rÃƒÂ©duire la distraction en haut de page.
-- Simplification du footer de la page d'accueil : navigation rÃƒÂ©duite, meilleure hiÃƒÂ©rarchie visuelle et disclaimer clarifiÃƒÂ©.
+- Int�gration de la page `Programme.html` dans le site et harmonisation du style (liaison � `styles/main.css`).
+- D�placement du lien **Programme** vers le menu d�roulant *Ressources* pour r�duire la distraction en haut de page.
+- Simplification du footer de la page d'accueil : navigation r�duite, meilleure hi�rarchie visuelle et disclaimer clarifi�.
 - Harmonisation du style des pages de contenu (polices, couleurs, boutons, hover en mode sombre).
-- Correction des erreurs d'encodage/affichage et nettoyage du texte sur les pages (caractÃƒÂ¨res spÃƒÂ©ciaux, orthographe).
-- Ajustements UX : CTA recentrÃƒÂ©, animations raccourcies et TOC comportant un comportement responsive plus simple.
+- Correction des erreurs d'encodage/affichage et nettoyage du texte sur les pages (caract�res sp�ciaux, orthographe).
+- Ajustements UX : CTA recentr�, animations raccourcies et TOC comportant un comportement responsive plus simple.
 
-Si tu veux une entrÃƒÂ©e de changelog plus dÃƒÂ©taillÃƒÂ©e (par page modifiÃƒÂ©e), je peux gÃƒÂ©nÃƒÂ©rer une liste automatique des fichiers modifiÃƒÂ©s et lÃ¢â‚¬â„¢ajouter ici.
+Si tu veux une entr�e de changelog plus d�taill�e (par page modifi�e), je peux g�n�rer une liste automatique des fichiers modifi�s et l�ajouter ici.
 
 ---
+
 
