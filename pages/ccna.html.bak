@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrÃ©paration CCNA - Routage et Commutation</title>
+    <title>Préparation CCNA - Routage et Commutation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -27,8 +27,8 @@
                 <a href="phase2-commutation.html" class="nav-link">Commutation</a>
                 <a href="phase3-routage.html" class="nav-link">Routage</a>
                 <a href="phase4-inter-vlan.html" class="nav-link">Inter-VLAN</a>
-                <a href="phase5-securite.html" class="nav-link">SÃ©curitÃ©</a>
-                <a href="phase6-avance.html" class="nav-link">AvancÃ©</a>
+                <a href="phase5-securite.html" class="nav-link">Sécurité</a>
+                <a href="phase6-avance.html" class="nav-link">Avancé</a>
                 <div class="nav-item">
                     <a href="ressources.html" class="nav-link active">
                         Ressources <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
@@ -50,7 +50,7 @@
                 </div>
             </nav>
             <div class="header-actions">
-                <button class="theme-toggle" aria-label="Changer le thÃ¨me">
+                <button class="theme-toggle" aria-label="Changer le thème">
                     <svg class="sun-icon" viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
@@ -71,14 +71,14 @@
         <div class="container container-narrow">
             <nav class="breadcrumb">
                 <a href="../index.html">Accueil</a>
-                <span class="breadcrumb-separator">â€º</span>
-                <span class="breadcrumb-current">PrÃ©paration CCNA</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Préparation CCNA</span>
             </nav>
 
             <div class="section-header">
                 <div class="section-icon"><i class="fas fa-bullseye"></i></div>
                 <div>
-                    <h1 style="margin-top: 0.5rem;">PrÃ©paration Certification CCNA</h1>
+                    <h1 style="margin-top: 0.5rem;">Préparation Certification CCNA</h1>
                 </div>
             </div>
 
@@ -87,63 +87,63 @@
                 <div class="card">
                     <h3>Informations de l'examen</h3>
                     <ul>
-                        <li><strong>DurÃ©e prÃ©pa supplÃ©mentaire</strong> : 3-6 mois aprÃ¨s ce programme</li>
-                        <li><strong>CoÃ»t</strong> : ~300 USD</li>
+                        <li><strong>Durée prépa supplémentaire</strong> : 3-6 mois après ce programme</li>
+                        <li><strong>Coût</strong> : ~300 USD</li>
                         <li><strong>Format</strong> : QCM, simulations, drag-and-drop (90-120 min)</li>
                         <li><strong>Score requis</strong> : 825/1000</li>
-                        <li><strong>ValiditÃ©</strong> : 3 ans</li>
+                        <li><strong>Validité</strong> : 3 ans</li>
                     </ul>
                 </div>
             </section>
 
             <section class="section">
-                <h2>Validation des CompÃ©tences</h2>
+                <h2>Validation des Compétences</h2>
 
-                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Niveau DÃ©butant (Semaines 1-8)
+                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Niveau Débutant (Semaines 1-8)
                 </h3>
                 <ol>
-                    <li>Calculer des sous-rÃ©seaux rapidement sans calculateur</li>
+                    <li>Calculer des sous-réseaux rapidement sans calculateur</li>
                     <li>Configurer un switch de base avec VLANs</li>
-                    <li>CrÃ©er un trunk entre deux switches</li>
+                    <li>Créer un trunk entre deux switches</li>
                     <li>Configurer une route statique</li>
                     <li>Lire et comprendre une table de routage</li>
                 </ol>
 
-                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Niveau IntermÃ©diaire (Semaines
+                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Niveau Intermédiaire (Semaines
                     9-16)</h3>
                 <ol>
                     <li>Configurer OSPF single-area sans documentation</li>
-                    <li>ImplÃ©menter le routage inter-VLAN (Router-on-a-Stick)</li>
-                    <li>Diagnostiquer un problÃ¨me en moins de 15 minutes</li>
-                    <li>CrÃ©er et appliquer des ACLs</li>
-                    <li>Optimiser OSPF (timers, prioritÃ©s, coÃ»ts)</li>
+                    <li>Implémenter le routage inter-VLAN (Router-on-a-Stick)</li>
+                    <li>Diagnostiquer un problème en moins de 15 minutes</li>
+                    <li>Créer et appliquer des ACLs</li>
+                    <li>Optimiser OSPF (timers, priorités, coûts)</li>
                 </ol>
 
-                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Niveau AvancÃ© (Semaines 17-24)
+                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Niveau Avancé (Semaines 17-24)
                 </h3>
                 <ol>
-                    <li>Concevoir une architecture rÃ©seau pour PME</li>
+                    <li>Concevoir une architecture réseau pour PME</li>
                     <li>Configurer OSPF multi-areas</li>
-                    <li>ImplÃ©menter la redondance (HSRP, EtherChannel)</li>
-                    <li>SÃ©curiser un rÃ©seau selon les best practices</li>
-                    <li>Troubleshooter des problÃ¨mes complexes</li>
+                    <li>Implémenter la redondance (HSRP, EtherChannel)</li>
+                    <li>Sécuriser un réseau selon les best practices</li>
+                    <li>Troubleshooter des problèmes complexes</li>
                 </ol>
             </section>
 
             <section class="section">
-                <h2>Conseils StratÃ©giques pour l'Examen</h2>
+                <h2>Conseils Stratégiques pour l'Examen</h2>
                 <div class="card" style="border-left: 4px solid var(--warning);">
                     <h3><i class="fas fa-lightbulb"></i> Tips du Jour J</h3>
                     <ul style="margin: 0;">
-                        <li><strong>Pas de retour arriÃ¨re</strong> : Une fois que vous cliquez sur "Suivant", c'est
+                        <li><strong>Pas de retour arrière</strong> : Une fois que vous cliquez sur "Suivant", c'est
                             fini. Validez bien avant d'avancer.</li>
-                        <li><strong>GÃ©rez votre temps</strong> : Ne passez pas plus de 10 min sur un lab. Si vous
+                        <li><strong>Gérez votre temps</strong> : Ne passez pas plus de 10 min sur un lab. Si vous
                             bloquez, configurez ce que vous savez et avancez.</li>
-                        <li><strong>Lisez la question Ã€ FOND</strong> : Cisco aime les piÃ¨ges (ex: "choose TWO" ou
+                        <li><strong>Lisez la question À FOND</strong> : Cisco aime les pièges (ex: "choose TWO" ou
                             "except").</li>
-                        <li><strong>Subnetting mental</strong> : Vous devez pouvoir faire du subnetting /24 Ã  /30 de
-                            tÃªte rapidement.</li>
-                        <li><strong>Commandes vitales</strong> : Connaissez par cÅ“ur
+                        <li><strong>Subnetting mental</strong> : Vous devez pouvoir faire du subnetting /24 à /30 de
+                            tête rapidement.</li>
+                        <li><strong>Commandes vitales</strong> : Connaissez par cœur
                             <code>show ip interface brief</code>, <code>show ip route</code>, et <code>show run</code>.
                         </li>
                     </ul>
@@ -151,29 +151,29 @@
             </section>
 
             <section class="section">
-                <h2>Conseils Dev â†’ RÃ©seau</h2>
+                <h2>Conseils Dev → Réseau</h2>
 
-                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Similitudes Ã  exploiter</h3>
+                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Similitudes à exploiter</h3>
                 <ul>
-                    <li><strong>Debugging</strong> : MÃªme mÃ©thodologie</li>
+                    <li><strong>Debugging</strong> : Même méthodologie</li>
                     <li><strong>Algorithmes</strong> : OSPF = Dijkstra, RIP = Bellman-Ford</li>
-                    <li><strong>Architecture</strong> : VLANs â‰ˆ microservices</li>
+                    <li><strong>Architecture</strong> : VLANs ≈ microservices</li>
                     <li><strong>Logs</strong> : commandes "show" = console.log()</li>
                 </ul>
 
-                <h3><i class="fas fa-triangle-exclamation" style="color: var(--warning);"></i> DiffÃ©rences Ã  anticiper
+                <h3><i class="fas fa-triangle-exclamation" style="color: var(--warning);"></i> Différences à anticiper
                 </h3>
                 <ul>
-                    <li><strong>MatÃ©riel</strong> : CÃ¢bles et Ã©quipements physiques comptent</li>
-                    <li><strong>Propagation</strong> : Changements affectent tout le rÃ©seau</li>
-                    <li><strong>Temps rÃ©el</strong> : RÃ©solution immÃ©diate requise</li>
+                    <li><strong>Matériel</strong> : Câbles et équipements physiques comptent</li>
+                    <li><strong>Propagation</strong> : Changements affectent tout le réseau</li>
+                    <li><strong>Temps réel</strong> : Résolution immédiate requise</li>
                     <li><strong>Moins de "undo"</strong> : Prudence en production</li>
                 </ul>
 
                 <h3><i class="fas fa-lightbulb" style="color: var(--info);"></i> Astuces</h3>
                 <ul>
                     <li>Documentez tout (comme des commentaires)</li>
-                    <li>CrÃ©ez une bibliothÃ¨que de configurations</li>
+                    <li>Créez une bibliothèque de configurations</li>
                     <li>Testez toujours dans un lab avant prod</li>
                     <li>Comprenez le "pourquoi" avant le "comment"</li>
                 </ul>
@@ -181,9 +181,9 @@
 
             <nav class="page-nav">
                 <a href="projets.html" class="page-nav-link prev">
-                    <span>â†</span>
+                    <span>←</span>
                     <div>
-                        <div class="page-nav-label">PrÃ©cÃ©dent</div>
+                        <div class="page-nav-label">Précédent</div>
                         <div class="page-nav-title">Projets Pratiques</div>
                     </div>
                 </a>
@@ -192,7 +192,7 @@
                         <div class="page-nav-label">Retour</div>
                         <div class="page-nav-title">Accueil</div>
                     </div>
-                    <span>â†’</span>
+                    <span>→</span>
                 </a>
             </nav>
         </div>
@@ -202,7 +202,7 @@
         <div class="footer-content">
             <div class="footer-site-name">Routage &amp; Commutation</div>
             <p class="footer-disclaimer">
-                Ce site est un projet personnel et gratuit d'auto-formation, non affiliÃ©, non sponsorisÃ© et non approuvÃ© par Cisco Systems Inc. CCNA, Cisco Packet Tracer et IOS sont des marques dÃ©posÃ©es de Cisco Systems Inc.
+                Ce site est un projet personnel et gratuit d'auto-formation, non affilié, non sponsorisé et non approuvé par Cisco Systems Inc. CCNA, Cisco Packet Tracer et IOS sont des marques déposées de Cisco Systems Inc.
             </p>
         </div>
     </footer>
