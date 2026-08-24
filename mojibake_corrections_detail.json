@@ -1,8 +1,8 @@
 {
     "README.md":  {
-                      "before":  "## ?? Fonctionnalit�s Cl�s",
+                      "before":  "## ?? Fonctionnalitï¿½s Clï¿½s",
                       "after":  {
-                                    "value":  "## Ã°Å¸Å¡â‚¬ FonctionnalitÃƒÂ©s ClÃƒÂ©s",
+                                    "value":  "## ÃƒÂ°Ã…Â¸Ã…Â¡Ã¢â€šÂ¬ FonctionnalitÃƒÆ’Ã‚Â©s ClÃƒÆ’Ã‚Â©s",
                                     "PSPath":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\README.md",
                                     "PSParentPath":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation",
                                     "PSChildName":  "README.md",
@@ -96,7 +96,7 @@
                                                                                       "Version":  "3.0.0.0",
                                                                                       "Types":  "types.ps1xml typesv3.ps1xml",
                                                                                       "Formats":  "Certificate.format.ps1xml DotNetTypes.format.ps1xml FileSystem.format.ps1xml Help.format.ps1xml HelpV3.format.ps1xml PowerShellCore.format.ps1xml PowerShellTrace.format.ps1xml Registry.format.ps1xml",
-                                                                                      "Description":  "Ce composant logiciel enfichable Windows PowerShell contient des applets de commande utilisées pour gérer les composants de Windows PowerShell.",
+                                                                                      "Description":  "Ce composant logiciel enfichable Windows PowerShell contient des applets de commande utilisÃ©es pour gÃ©rer les composants de Windows PowerShell.",
                                                                                       "Vendor":  "Microsoft Corporation",
                                                                                       "LogPipelineExecutionDetails":  false
                                                                                   },
@@ -728,7 +728,7 @@
                                                                                         "PowerShellTrace.format.ps1xml",
                                                                                         "Registry.format.ps1xml"
                                                                                     ],
-                                                                        "Description":  "Ce composant logiciel enfichable Windows PowerShell contient des applets de commande utilisées pour gérer les composants de Windows PowerShell.",
+                                                                        "Description":  "Ce composant logiciel enfichable Windows PowerShell contient des applets de commande utilisÃ©es pour gÃ©rer les composants de Windows PowerShell.",
                                                                         "Vendor":  "Microsoft Corporation",
                                                                         "LogPipelineExecutionDetails":  false
                                                                     },
@@ -764,7 +764,7 @@
                                 }
                   },
     "js/main.js":  {
-                       "before":  "                copyBtn.innerHTML = \u0027âœ“ CopiÃ©!\u0027;\r",
+                       "before":  "                copyBtn.innerHTML = \u0027Ã¢Å“â€œ CopiÃƒÂ©!\u0027;\r",
                        "after":  {
                                      "value":  "                copyBtn.innerHTML = \u0027? Copi?!\u0027;",
                                      "PSPath":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\js\\main.js",
@@ -860,7 +860,7 @@
                                                                                        "Version":  "3.0.0.0",
                                                                                        "Types":  "types.ps1xml typesv3.ps1xml",
                                                                                        "Formats":  "Certificate.format.ps1xml DotNetTypes.format.ps1xml FileSystem.format.ps1xml Help.format.ps1xml HelpV3.format.ps1xml PowerShellCore.format.ps1xml PowerShellTrace.format.ps1xml Registry.format.ps1xml",
-                                                                                       "Description":  "Ce composant logiciel enfichable Windows PowerShell contient des applets de commande utilisées pour gérer les composants de Windows PowerShell.",
+                                                                                       "Description":  "Ce composant logiciel enfichable Windows PowerShell contient des applets de commande utilisÃ©es pour gÃ©rer les composants de Windows PowerShell.",
                                                                                        "Vendor":  "Microsoft Corporation",
                                                                                        "LogPipelineExecutionDetails":  false
                                                                                    },
@@ -1492,7 +1492,7 @@
                                                                                          "PowerShellTrace.format.ps1xml",
                                                                                          "Registry.format.ps1xml"
                                                                                      ],
-                                                                         "Description":  "Ce composant logiciel enfichable Windows PowerShell contient des applets de commande utilisées pour gérer les composants de Windows PowerShell.",
+                                                                         "Description":  "Ce composant logiciel enfichable Windows PowerShell contient des applets de commande utilisÃ©es pour gÃ©rer les composants de Windows PowerShell.",
                                                                          "Vendor":  "Microsoft Corporation",
                                                                          "LogPipelineExecutionDetails":  false
                                                                      },
@@ -1528,9 +1528,9 @@
                                  }
                    },
     "index.html":  {
-                       "before":  "                    MaÃƒÂ®trisez les rÃƒÂ©seaux informatiques, des fondamentaux ÃƒÂ  l\u0027expertise CCNA.",
+                       "before":  "                    MaÃƒÆ’Ã‚Â®trisez les rÃƒÆ’Ã‚Â©seaux informatiques, des fondamentaux ÃƒÆ’Ã‚Â  l\u0027expertise CCNA.",
                        "after":  {
-                                     "value":  "                    MaÃƒÂ®trisez les rÃƒÂ©seaux informatiques, des fondamentaux ÃƒÂ  l\u0027expertise CCNA.",
+                                     "value":  "                    MaÃƒÆ’Ã‚Â®trisez les rÃƒÆ’Ã‚Â©seaux informatiques, des fondamentaux ÃƒÆ’Ã‚Â  l\u0027expertise CCNA.",
                                      "PSPath":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation\\index.html",
                                      "PSParentPath":  "C:\\Users\\Wisdom\\Documents\\GitHub\\routage-et-commutation",
                                      "PSChildName":  "index.html",
@@ -1624,7 +1624,7 @@
                                                                                        "Version":  "3.0.0.0",
                                                                                        "Types":  "types.ps1xml typesv3.ps1xml",
                                                                                        "Formats":  "Certificate.format.ps1xml DotNetTypes.format.ps1xml FileSystem.format.ps1xml Help.format.ps1xml HelpV3.format.ps1xml PowerShellCore.format.ps1xml PowerShellTrace.format.ps1xml Registry.format.ps1xml",
-                                                                                       "Description":  "Ce composant logiciel enfichable Windows PowerShell contient des applets de commande utilisées pour gérer les composants de Windows PowerShell.",
+                                                                                       "Description":  "Ce composant logiciel enfichable Windows PowerShell contient des applets de commande utilisÃ©es pour gÃ©rer les composants de Windows PowerShell.",
                                                                                        "Vendor":  "Microsoft Corporation",
                                                                                        "LogPipelineExecutionDetails":  false
                                                                                    },
@@ -2256,7 +2256,7 @@
                                                                                          "PowerShellTrace.format.ps1xml",
                                                                                          "Registry.format.ps1xml"
                                                                                      ],
-                                                                         "Description":  "Ce composant logiciel enfichable Windows PowerShell contient des applets de commande utilisées pour gérer les composants de Windows PowerShell.",
+                                                                         "Description":  "Ce composant logiciel enfichable Windows PowerShell contient des applets de commande utilisÃ©es pour gÃ©rer les composants de Windows PowerShell.",
                                                                          "Vendor":  "Microsoft Corporation",
                                                                          "LogPipelineExecutionDetails":  false
                                                                      },
