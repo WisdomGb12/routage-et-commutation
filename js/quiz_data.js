@@ -9,31 +9,31 @@ const quizData = {
         questions: [
             {
                 id: 1,
-                question: "Vous devez connecter le port console d'un routeur au port USB de votre PC portable. Quel cÃƒÂ¢ble utilisez-vous ?",
+                question: "Vous devez connecter le port console d'un routeur au port USB de votre PC portable. Quel c?ble utilisez-vous ?",
                 options: [
-                    "CÃƒÂ¢ble Ethernet Droit (Straight-Through)",
-                    "CÃƒÂ¢ble Ethernet CroisÃƒÂ© (Crossover)",
-                    "CÃƒÂ¢ble Console (Rollover)",
-                    "CÃƒÂ¢ble Coaxial"
+                    "C?ble Ethernet Droit (Straight-Through)",
+                    "C?ble Ethernet Crois? (Crossover)",
+                    "C?ble Console (Rollover)",
+                    "C?ble Coaxial"
                 ],
                 correct: [2],
-                explanation: "Pour la configuration initiale via le port console, on utilise un cÃƒÂ¢ble Console (souvent bleu plat) ou un adaptateur USB-SÃƒÂ©rie."
+                explanation: "Pour la configuration initiale via le port console, on utilise un c?ble Console (souvent bleu plat) ou un adaptateur USB-S?rie."
             },
             {
                 id: 2,
-                question: "Un PC (192.168.1.10) veut envoyer un paquet ÃƒÂ  un serveur (8.8.8.8). Quelle sera l'adresse MAC de destination de la trame Ethernet quittant le PC ?",
+                question: "Un PC (192.168.1.10) veut envoyer un paquet ? un serveur (8.8.8.8). Quelle sera l'adresse MAC de destination de la trame Ethernet quittant le PC ?",
                 options: [
                     "L'adresse MAC du serveur 8.8.8.8",
                     "L'adresse MAC de Broadcast (FF:FF:FF:FF:FF:FF)",
-                    "L'adresse MAC de sa passerelle par dÃƒÂ©faut (Routeur)",
+                    "L'adresse MAC de sa passerelle par d?faut (Routeur)",
                     "L'adresse MAC du switch"
                 ],
                 correct: [2],
-                explanation: "L'IP destination est hors du rÃƒÂ©seau local. Le PC encapsule le paquet dans une trame dirigÃƒÂ©e vers l'adresse MAC de sa passerelle par dÃƒÂ©faut (Gateway)."
+                explanation: "L'IP destination est hors du r?seau local. Le PC encapsule le paquet dans une trame dirig?e vers l'adresse MAC de sa passerelle par d?faut (Gateway)."
             },
             {
                 id: 3,
-                question: "Quel sous-rÃƒÂ©seau permet d'avoir exactement 60 hÃƒÂ´tes utilisables avec le moins d'adresses perdues ?",
+                question: "Quel sous-r?seau permet d'avoir exactement 60 h?tes utilisables avec le moins d'adresses perdues ?",
                 options: [
                     "/25",
                     "/26",
@@ -41,11 +41,11 @@ const quizData = {
                     "/28"
                 ],
                 correct: [1],
-                explanation: "/26 = 64 adresses totales - 2 (rÃƒÂ©seau/broadcast) = 62 hÃƒÂ´tes utilisables. C'est parfait pour 60 hÃƒÂ´tes. /27 ne donne que 30 hÃƒÂ´tes."
+                explanation: "/26 = 64 adresses totales - 2 (r?seau/broadcast) = 62 h?tes utilisables. C'est parfait pour 60 h?tes. /27 ne donne que 30 h?tes."
             },
             {
                 id: 4,
-                question: "Dans le modÃƒÂ¨le OSI, ÃƒÂ  quel niveau opÃƒÂ¨re une adresse IP et ÃƒÂ  quel niveau opÃƒÂ¨re une adresse MAC ?",
+                question: "Dans le mod?le OSI, ? quel niveau op?re une adresse IP et ? quel niveau op?re une adresse MAC ?",
                 options: [
                     "IP = Couche 2, MAC = Couche 3",
                     "IP = Couche 4, MAC = Couche 2",
@@ -53,11 +53,11 @@ const quizData = {
                     "IP = Couche 7, MAC = Couche 1"
                 ],
                 correct: [2],
-                explanation: "IP est une adresse logique de Niveau 3 (RÃƒÂ©seau). MAC est une adresse physique de Niveau 2 (Liaison de donnÃƒÂ©es)."
+                explanation: "IP est une adresse logique de Niveau 3 (R?seau). MAC est une adresse physique de Niveau 2 (Liaison de donn?es)."
             },
             {
                 id: 5,
-                question: "Quelle commande permet de vÃƒÂ©rifier la connectivitÃƒÂ© de bout en bout ET le chemin empruntÃƒÂ© ?",
+                question: "Quelle commande permet de v?rifier la connectivit? de bout en bout ET le chemin emprunt? ?",
                 options: [
                     "ping",
                     "traceroute (ou tracert)",
@@ -65,11 +65,11 @@ const quizData = {
                     "netstat"
                 ],
                 correct: [1],
-                explanation: "Ping teste la connectivitÃƒÂ©. Traceroute teste la connectivitÃƒÂ© ET affiche chaque saut (routeur) traversÃƒÂ©."
+                explanation: "Ping teste la connectivit?. Traceroute teste la connectivit? ET affiche chaque saut (routeur) travers?."
             },
             {
                 id: 6,
-                question: "Convertissez l'adresse binaire 11000000.10101000.00001010.00000001 en dÃƒÂ©cimal.",
+                question: "Convertissez l'adresse binaire 11000000.10101000.00001010.00000001 en d?cimal.",
                 options: [
                     "192.168.10.1",
                     "192.168.1.10",
@@ -93,7 +93,7 @@ const quizData = {
             },
             {
                 id: 8,
-                question: "Quelle plage d'adresses IP est privÃƒÂ©e (RFC 1918) ?",
+                question: "Quelle plage d'adresses IP est priv?e (RFC 1918) ?",
                 options: [
                     "11.0.0.0/8",
                     "172.32.0.0/12",
@@ -101,11 +101,11 @@ const quizData = {
                     "100.64.0.0/10"
                 ],
                 correct: [2],
-                explanation: "Les plages privÃƒÂ©es sont 10.0.0.0/8, 172.16.0.0/12 et 192.168.0.0/16."
+                explanation: "Les plages priv?es sont 10.0.0.0/8, 172.16.0.0/12 et 192.168.0.0/16."
             },
             {
                 id: 9,
-                question: "Quel est le masque de sous-rÃƒÂ©seau par dÃƒÂ©faut pour une adresse de Classe B ?",
+                question: "Quel est le masque de sous-r?seau par d?faut pour une adresse de Classe B ?",
                 options: [
                     "255.0.0.0",
                     "255.255.0.0",
@@ -113,11 +113,11 @@ const quizData = {
                     "255.255.255.252"
                 ],
                 correct: [1],
-                explanation: "La Classe B (128.0.0.0 ÃƒÂ  191.255.255.255) utilise par dÃƒÂ©faut un masque /16 (255.255.0.0)."
+                explanation: "La Classe B (128.0.0.0 ? 191.255.255.255) utilise par d?faut un masque /16 (255.255.0.0)."
             },
             {
                 id: 10,
-                question: "Combien de bits d'hÃƒÂ´te sont nÃƒÂ©cessaires pour supporter 50 hÃƒÂ´tes utilisables ?",
+                question: "Combien de bits d'h?te sont n?cessaires pour supporter 50 h?tes utilisables ?",
                 options: [
                     "5 bits",
                     "6 bits",
@@ -125,23 +125,23 @@ const quizData = {
                     "8 bits"
                 ],
                 correct: [1],
-                explanation: "2^6 = 64. 64 - 2 = 62 hÃƒÂ´tes utilisables. 5 bits ne donneraient que 30 hÃƒÂ´tes."
+                explanation: "2^6 = 64. 64 - 2 = 62 h?tes utilisables. 5 bits ne donneraient que 30 h?tes."
             },
             {
                 id: 11,
-                question: "Quelle couche du modÃƒÂ¨le OSI est responsable du chiffrement et de la compression des donnÃƒÂ©es ?",
+                question: "Quelle couche du mod?le OSI est responsable du chiffrement et de la compression des donn?es ?",
                 options: [
                     "Application",
-                    "PrÃƒÂ©sentation",
+                    "Pr?sentation",
                     "Session",
                     "Transport"
                 ],
                 correct: [1],
-                explanation: "La couche PrÃƒÂ©sentation (6) gÃƒÂ¨re l'aspect visuel, le formatage (JPEG, ASCII) et la sÃƒÂ©curitÃƒÂ© (SSL/TLS)."
+                explanation: "La couche Pr?sentation (6) g?re l'aspect visuel, le formatage (JPEG, ASCII) et la s?curit? (SSL/TLS)."
             },
             {
                 id: 12,
-                question: "Quel port utilise le protocole HTTPS par dÃƒÂ©faut ?",
+                question: "Quel port utilise le protocole HTTPS par d?faut ?",
                 options: [
                     "80",
                     "22",
@@ -149,23 +149,23 @@ const quizData = {
                     "53"
                 ],
                 correct: [2],
-                explanation: "HTTPS utilise le port 443 (TCP). Le port 80 est pour le HTTP non sÃƒÂ©curisÃƒÂ©."
+                explanation: "HTTPS utilise le port 443 (TCP). Le port 80 est pour le HTTP non s?curis?."
             },
             {
                 id: 13,
-                question: "Un switch opÃƒÂ¨re principalement ÃƒÂ  quelle couche du modÃƒÂ¨le OSI ?",
+                question: "Un switch op?re principalement ? quelle couche du mod?le OSI ?",
                 options: [
                     "Couche 1 (Physique)",
                     "Couche 2 (Liaison)",
-                    "Couche 3 (RÃƒÂ©seau)",
+                    "Couche 3 (R?seau)",
                     "Couche 4 (Transport)"
                 ],
                 correct: [1],
-                explanation: "Un switch classique utilise les adresses MAC pour commuter les trames, ce qui correspond ÃƒÂ  la Couche 2."
+                explanation: "Un switch classique utilise les adresses MAC pour commuter les trames, ce qui correspond ? la Couche 2."
             },
             {
                 id: 14,
-                question: "Quelle mÃƒÂ©thode de transmission permet d'envoyer et de recevoir des donnÃƒÂ©es SIMULTANÃƒâ€°MENT ?",
+                question: "Quelle m?thode de transmission permet d'envoyer et de recevoir des donn?es SIMULTAN?MENT ?",
                 options: [
                     "Simplex",
                     "Half-Duplex",
@@ -173,7 +173,7 @@ const quizData = {
                     "Auto-MDIX"
                 ],
                 correct: [2],
-                explanation: "Le Full-Duplex permet la communication bidirectionnelle simultanÃƒÂ©e. Le Half-Duplex (comme les vieux hubs) ne permet qu'un sens ÃƒÂ  la fois."
+                explanation: "Le Full-Duplex permet la communication bidirectionnelle simultan?e. Le Half-Duplex (comme les vieux hubs) ne permet qu'un sens ? la fois."
             },
             {
                 id: 15,
@@ -185,19 +185,19 @@ const quizData = {
                     "127.0.0.1"
                 ],
                 correct: [2],
-                explanation: "Les adresses de Classe D (224.0.0.0 ÃƒÂ  239.255.255.255) sont rÃƒÂ©servÃƒÂ©es au Multicast. 224.0.0.5 est utilisÃƒÂ© par OSPF."
+                explanation: "Les adresses de Classe D (224.0.0.0 ? 239.255.255.255) sont r?serv?es au Multicast. 224.0.0.5 est utilis? par OSPF."
             },
             {
                 id: 16,
-                question: "Le protocole UDP est considÃƒÂ©rÃƒÂ© comme :",
+                question: "Le protocole UDP est consid?r? comme :",
                 options: [
-                    "OrientÃƒÂ© connexion et fiable",
+                    "Orient? connexion et fiable",
                     "Sans connexion et peu fiable",
                     "Utilisant le 3-way handshake",
-                    "GÃƒÂ©rant les accusÃƒÂ©s de rÃƒÂ©ception (ACK)"
+                    "G?rant les accus?s de r?ception (ACK)"
                 ],
                 correct: [1],
-                explanation: "UDP est 'Best-effort'. Il n'ÃƒÂ©tablit pas de session et ne vÃƒÂ©rifie pas si les paquets arrivent (contrairement ÃƒÂ  TCP)."
+                explanation: "UDP est 'Best-effort'. Il n'?tablit pas de session et ne v?rifie pas si les paquets arrivent (contrairement ? TCP)."
             },
             {
                 id: 17,
@@ -209,11 +209,11 @@ const quizData = {
                     "192.168.0.1"
                 ],
                 correct: [0],
-                explanation: "L'adresse 127.0.0.1 (localhost) permet de tester si les protocoles rÃƒÂ©seau sont bien installÃƒÂ©s sur la machine."
+                explanation: "L'adresse 127.0.0.1 (localhost) permet de tester si les protocoles r?seau sont bien install?s sur la machine."
             },
             {
                 id: 18,
-                question: "Dans une trame Ethernet, quel champ est utilisÃƒÂ© pour la dÃƒÂ©tection d'erreurs ?",
+                question: "Dans une trame Ethernet, quel champ est utilis? pour la d?tection d'erreurs ?",
                 options: [
                     "Preamble",
                     "Type/Length",
@@ -221,7 +221,7 @@ const quizData = {
                     "Source Address"
                 ],
                 correct: [2],
-                explanation: "Le FCS utilise un calcul CRC pour vÃƒÂ©rifier que la trame n'a pas ÃƒÂ©tÃƒÂ© corrompue pendant le transport."
+                explanation: "Le FCS utilise un calcul CRC pour v?rifier que la trame n'a pas ?t? corrompue pendant le transport."
             },
             {
                 id: 19,
@@ -230,10 +230,10 @@ const quizData = {
                     "Attribuer des adresses IP dynamiquement",
                     "Traduire des noms de domaine en adresses IP",
                     "Filtrer le trafic entrant",
-                    "Router les paquets entre rÃƒÂ©seaux"
+                    "Router les paquets entre r?seaux"
                 ],
                 correct: [1],
-                explanation: "Le DNS permet aux utilisateurs d'utiliser des noms (google.com) au lieu d'adresses IP difficiles ÃƒÂ  retenir."
+                explanation: "Le DNS permet aux utilisateurs d'utiliser des noms (google.com) au lieu d'adresses IP difficiles ? retenir."
             },
             {
                 id: 20,
@@ -245,7 +245,7 @@ const quizData = {
                     "Advanced Routing Path"
                 ],
                 correct: [1],
-                explanation: "ARP est utilisÃƒÂ© pour trouver l'adresse MAC correspondant ÃƒÂ  une adresse IP connue sur un rÃƒÂ©seau local."
+                explanation: "ARP est utilis? pour trouver l'adresse MAC correspondant ? une adresse IP connue sur un r?seau local."
             }
         ]
     },
@@ -254,19 +254,19 @@ const quizData = {
         questions: [
             {
                 id: 1,
-                question: "Un switch reÃƒÂ§oit une trame unicast. L'adresse MAC de destination n'est PAS dans sa table MAC. Que fait-il ?",
+                question: "Un switch re?oit une trame unicast. L'adresse MAC de destination n'est PAS dans sa table MAC. Que fait-il ?",
                 options: [
                     "Il jette la trame",
-                    "Il envoie la trame ÃƒÂ  sa passerelle par dÃƒÂ©faut",
-                    "Il inonde (Flood) la trame sur tous les ports sauf celui de rÃƒÂ©ception",
-                    "Il envoie une requÃƒÂªte ARP"
+                    "Il envoie la trame ? sa passerelle par d?faut",
+                    "Il inonde (Flood) la trame sur tous les ports sauf celui de r?ception",
+                    "Il envoie une requ?te ARP"
                 ],
                 correct: [2],
                 explanation: "C'est le comportement 'Unknown Unicast Flooding'. Le switch diffuse pour trouver le destinataire."
             },
             {
                 id: 2,
-                question: "Vous branchez un tÃƒÂ©lÃƒÂ©phone IP Cisco et un PC sur le mÃƒÂªme port de switch. Quelle fonctionnalitÃƒÂ© permet de sÃƒÂ©parer leur trafic ?",
+                question: "Vous branchez un t?l?phone IP Cisco et un PC sur le m?me port de switch. Quelle fonctionnalit? permet de s?parer leur trafic ?",
                 options: [
                     "VLAN Natif",
                     "Voice VLAN",
@@ -274,11 +274,11 @@ const quizData = {
                     "LACP"
                 ],
                 correct: [1],
-                explanation: "Le Voice VLAN permet de taguer le trafic voix (souvent avec une prioritÃƒÂ© QoS) tout en laissant passer les donnÃƒÂ©es PC sur le VLAN d'accÃƒÂ¨s."
+                explanation: "Le Voice VLAN permet de taguer le trafic voix (souvent avec une priorit? QoS) tout en laissant passer les donn?es PC sur le VLAN d'acc?s."
             },
             {
                 id: 3,
-                question: "Quelle commande configure un port pour qu'il ne puisse JAMAIS nÃƒÂ©gocier un trunk (DTP off) ?",
+                question: "Quelle commande configure un port pour qu'il ne puisse JAMAIS n?gocier un trunk (DTP off) ?",
                 options: [
                     "switchport mode trunk",
                     "switchport nonegotiate",
@@ -287,12 +287,12 @@ const quizData = {
                 ],
                 correct: [1, 3], // Allows multiple correct if setup, but usually single choice in simple JS engines. Let's assume standard choice. 'switchport nonegotiate' forces it off. 'mode access' stops trunking. The BEST answer for "DTP OFF" specifically is nonegotiate but context matters. Let's simplify and make 'switchport mode access' + 'nonegotiate' implies trunk context. Let's ask "Quelle commande DESACTIVE le protocole DTP ?" -> switchport nonegotiate.
                 // Let's stick to simple clear questions.
-                explanation: "La commande 'switchport nonegotiate' dÃƒÂ©sactive l'envoi de trames DTP. 'switchport mode access' force le mode accÃƒÂ¨s."
+                explanation: "La commande 'switchport nonegotiate' d?sactive l'envoi de trames DTP. 'switchport mode access' force le mode acc?s."
             },
             // Let's replace Q3 with a clearer one
             {
                 id: 3,
-                question: "Quelle commande dÃƒÂ©sactive l'envoi de trames de nÃƒÂ©gociation DTP sur une interface ?",
+                question: "Quelle commande d?sactive l'envoi de trames de n?gociation DTP sur une interface ?",
                 options: [
                     "no switchport dtp",
                     "switchport nonegotiate",
@@ -300,23 +300,23 @@ const quizData = {
                     "switchport trunk encapsulation dot1q"
                 ],
                 correct: [1],
-                explanation: "Pour sÃƒÂ©curiser un port, on utilise 'switchport nonegotiate' pour empÃƒÂªcher la nÃƒÂ©gociation automatique."
+                explanation: "Pour s?curiser un port, on utilise 'switchport nonegotiate' pour emp?cher la n?gociation automatique."
             },
             {
                 id: 4,
-                question: "Vous configurez Port Security avec 'maximum 1'. Vous connectez un hub avec 2 PC. Que se passe-t-il quand le 2ÃƒÂ¨me PC parle ?",
+                question: "Vous configurez Port Security avec 'maximum 1'. Vous connectez un hub avec 2 PC. Que se passe-t-il quand le 2?me PC parle ?",
                 options: [
-                    "Le deuxiÃƒÂ¨me PC est bloquÃƒÂ©, le premier continue",
+                    "Le deuxi?me PC est bloqu?, le premier continue",
                     "Les deux PC fonctionnent",
-                    "Le port passe en ÃƒÂ©tat err-disabled (si mode violation = shutdown)",
-                    "Le switch redÃƒÂ©marre"
+                    "Le port passe en ?tat err-disabled (si mode violation = shutdown)",
+                    "Le switch red?marre"
                 ],
                 correct: [2],
-                explanation: "DÃƒÂ¨s que le switch voit une 2ÃƒÂ¨me adresse MAC source diffÃƒÂ©rente, il dÃƒÂ©tecte une violation. Si le mode est shutdown (dÃƒÂ©faut), le port entier se coupe."
+                explanation: "D?s que le switch voit une 2?me adresse MAC source diff?rente, il d?tecte une violation. Si le mode est shutdown (d?faut), le port entier se coupe."
             },
             {
                 id: 5,
-                question: "Quelle paire de modes DTP va crÃƒÂ©er un Trunk ?",
+                question: "Quelle paire de modes DTP va cr?er un Trunk ?",
                 options: [
                     "Dynamic Auto + Dynamic Auto",
                     "Dynamic Auto + Dynamic Desirable",
@@ -328,7 +328,7 @@ const quizData = {
             },
             {
                 id: 6,
-                question: "Dans STP (802.1D), quel ÃƒÂ©tat permet d'apprendre les MACs sans transfÃƒÂ©rer de donnÃƒÂ©es ?",
+                question: "Dans STP (802.1D), quel ?tat permet d'apprendre les MACs sans transf?rer de donn?es ?",
                 options: [
                     "Blocking",
                     "Listening",
@@ -336,11 +336,11 @@ const quizData = {
                     "Forwarding"
                 ],
                 correct: [2],
-                explanation: "Learning : le port peuple sa table MAC mais ne forwarde pas encore les trames pour ÃƒÂ©viter les boucles temporaires."
+                explanation: "Learning : le port peuple sa table MAC mais ne forwarde pas encore les trames pour ?viter les boucles temporaires."
             },
             {
                 id: 7,
-                question: "Quelle est la prioritÃƒÂ© STP par dÃƒÂ©faut d'un switch Cisco ?",
+                question: "Quelle est la priorit? STP par d?faut d'un switch Cisco ?",
                 options: [
                     "1",
                     "32768",
@@ -348,23 +348,23 @@ const quizData = {
                     "65535"
                 ],
                 correct: [1],
-                explanation: "La prioritÃƒÂ© par dÃƒÂ©faut est 32768. Avec l'extension System ID (VLAN ID), elle apparaÃƒÂ®t souvent comme 32768 + VLAN_ID."
+                explanation: "La priorit? par d?faut est 32768. Avec l'extension System ID (VLAN ID), elle appara?t souvent comme 32768 + VLAN_ID."
             },
             {
                 id: 8,
-                question: "Deux switches sont connectÃƒÂ©s via deux liens. Ils utilisent STP. Quel port sera choisi comme 'Root Port' ?",
+                question: "Deux switches sont connect?s via deux liens. Ils utilisent STP. Quel port sera choisi comme 'Root Port' ?",
                 options: [
-                    "Le port avec l'adresse MAC la plus ÃƒÂ©levÃƒÂ©e",
-                    "Le port avec le coÃƒÂ»t vers le Root Bridge le plus bas",
-                    "Le port avec le numÃƒÂ©ro d'interface le plus bas",
-                    "Le port configurÃƒÂ© en mode trunk"
+                    "Le port avec l'adresse MAC la plus ?lev?e",
+                    "Le port avec le co?t vers le Root Bridge le plus bas",
+                    "Le port avec le num?ro d'interface le plus bas",
+                    "Le port configur? en mode trunk"
                 ],
                 correct: [1],
-                explanation: "Le Root Port est toujours celui qui offre le chemin le plus court (coÃƒÂ»t le plus bas) vers le Root Bridge."
+                explanation: "Le Root Port est toujours celui qui offre le chemin le plus court (co?t le plus bas) vers le Root Bridge."
             },
             {
                 id: 9,
-                question: "Quel protocole est propriÃƒÂ©taire Cisco pour la nÃƒÂ©gociation d'EtherChannel ?",
+                question: "Quel protocole est propri?taire Cisco pour la n?gociation d'EtherChannel ?",
                 options: [
                     "LACP (802.3ad)",
                     "PAgP",
@@ -372,11 +372,11 @@ const quizData = {
                     "VTP"
                 ],
                 correct: [1],
-                explanation: "PAgP (Port Aggregation Protocol) est spÃƒÂ©cifique ÃƒÂ  Cisco. LACP est le standard international."
+                explanation: "PAgP (Port Aggregation Protocol) est sp?cifique ? Cisco. LACP est le standard international."
             },
             {
                 id: 10,
-                question: "En RSTP (802.1w), quel ÃƒÂ©tat remplace les ÃƒÂ©tats Blocking et Listening du STP classique ?",
+                question: "En RSTP (802.1w), quel ?tat remplace les ?tats Blocking et Listening du STP classique ?",
                 options: [
                     "Discarding",
                     "Learning",
@@ -384,23 +384,23 @@ const quizData = {
                     "Disabled"
                 ],
                 correct: [0],
-                explanation: "RSTP fusionne les ÃƒÂ©tats inactifs en un seul ÃƒÂ©tat : Discarding."
+                explanation: "RSTP fusionne les ?tats inactifs en un seul ?tat : Discarding."
             },
             {
                 id: 11,
-                question: "Que se passe-t-il si une Native VLAN mismatch est dÃƒÂ©tectÃƒÂ©e entre deux switches ?",
+                question: "Que se passe-t-il si une Native VLAN mismatch est d?tect?e entre deux switches ?",
                 options: [
-                    "Le lien trunk se coupe immÃƒÂ©diatement",
-                    "Le trafic des VLANs concernÃƒÂ©s peut fuir ou ÃƒÂªtre bloquÃƒÂ© par STP",
-                    "Le switch redÃƒÂ©marre",
+                    "Le lien trunk se coupe imm?diatement",
+                    "Le trafic des VLANs concern?s peut fuir ou ?tre bloqu? par STP",
+                    "Le switch red?marre",
                     "Rien, c'est une configuration valide"
                 ],
                 correct: [1],
-                explanation: "Une erreur de native VLAN mismatch gÃƒÂ©nÃƒÂ¨re des logs CDP et peut causer des boucles ou des problÃƒÂ¨mes de sÃƒÂ©curitÃƒÂ© (VLAN leaking)."
+                explanation: "Une erreur de native VLAN mismatch g?n?re des logs CDP et peut causer des boucles ou des probl?mes de s?curit? (VLAN leaking)."
             },
             {
                 id: 12,
-                question: "Quel mode de violation Port-Security incrÃƒÂ©mente le compteur de violations sans couper le port ?",
+                question: "Quel mode de violation Port-Security incr?mente le compteur de violations sans couper le port ?",
                 options: [
                     "Shutdown",
                     "Protect",
@@ -408,11 +408,11 @@ const quizData = {
                     "Disabled"
                 ],
                 correct: [2],
-                explanation: "Le mode Restrict bloque le trafic non autorisÃƒÂ© et incrÃƒÂ©mente le compteur de violations. Protect bloque mais n'incrÃƒÂ©mente rien."
+                explanation: "Le mode Restrict bloque le trafic non autoris? et incr?mente le compteur de violations. Protect bloque mais n'incr?mente rien."
             },
             {
                 id: 13,
-                question: "Quelle est l'adresse MAC de destination utilisÃƒÂ©e par les BPDU STP ?",
+                question: "Quelle est l'adresse MAC de destination utilis?e par les BPDU STP ?",
                 options: [
                     "FF:FF:FF:FF:FF:FF",
                     "01:80:C2:00:00:00",
@@ -420,19 +420,19 @@ const quizData = {
                     "00:00:0C:07:AC:01"
                 ],
                 correct: [1],
-                explanation: "STP utilise l'adresse multicast de couche 2 01:80:C2:00:00:00 pour ses trames de contrÃƒÂ´le."
+                explanation: "STP utilise l'adresse multicast de couche 2 01:80:C2:00:00:00 pour ses trames de contr?le."
             },
             {
                 id: 14,
                 question: "Pour devenir Root Bridge, un switch doit avoir :",
                 options: [
-                    "L'ID de Bridge (BID) le plus ÃƒÂ©levÃƒÂ©",
+                    "L'ID de Bridge (BID) le plus ?lev?",
                     "L'ID de Bridge (BID) le plus bas",
                     "Le plus grand nombre de ports",
-                    "La version d'IOS la plus rÃƒÂ©cente"
+                    "La version d'IOS la plus r?cente"
                 ],
                 correct: [1],
-                explanation: "Le BID se compose de la prioritÃƒÂ© + l'adresse MAC. Le switch avec le plus petit BID gagne l'ÃƒÂ©lection."
+                explanation: "Le BID se compose de la priorit? + l'adresse MAC. Le switch avec le plus petit BID gagne l'?lection."
             },
             {
                 id: 15,
@@ -444,11 +444,11 @@ const quizData = {
                     "channel-group 1 mode auto"
                 ],
                 correct: [1],
-                explanation: "'active' dÃƒÂ©clenche la nÃƒÂ©gociation LACP. 'desirable' est pour PAgP."
+                explanation: "'active' d?clenche la n?gociation LACP. 'desirable' est pour PAgP."
             },
             {
                 id: 16,
-                question: "Quel est l'ID de VLAN par dÃƒÂ©faut pour le VLAN Natif sur un switch Cisco ?",
+                question: "Quel est l'ID de VLAN par d?faut pour le VLAN Natif sur un switch Cisco ?",
                 options: [
                     "VLAN 0",
                     "VLAN 1",
@@ -456,7 +456,7 @@ const quizData = {
                     "VLAN 999"
                 ],
                 correct: [1],
-                explanation: "Par dÃƒÂ©faut, tout le trafic non taguÃƒÂ© est associÃƒÂ© au VLAN 1."
+                explanation: "Par d?faut, tout le trafic non tagu? est associ? au VLAN 1."
             },
             {
                 id: 17,
@@ -468,11 +468,11 @@ const quizData = {
                     "show vlan brief"
                 ],
                 correct: [1],
-                explanation: "'show mac address-table' permet de voir oÃƒÂ¹ sont branchÃƒÂ©s les ÃƒÂ©quipements sur le rÃƒÂ©seau local."
+                explanation: "'show mac address-table' permet de voir o? sont branch?s les ?quipements sur le r?seau local."
             },
             {
                 id: 18,
-                question: "En STP, quel rÃƒÂ´le de port est assignÃƒÂ© sur le switch qui n'est pas le Root Bridge pour pointer vers celui-ci ?",
+                question: "En STP, quel r?le de port est assign? sur le switch qui n'est pas le Root Bridge pour pointer vers celui-ci ?",
                 options: [
                     "Designated Port",
                     "Root Port",
@@ -480,11 +480,11 @@ const quizData = {
                     "Backup Port"
                 ],
                 correct: [1],
-                explanation: "Chaque switch non-Root possÃƒÂ¨de un seul Root Port pointant vers le Root Bridge."
+                explanation: "Chaque switch non-Root poss?de un seul Root Port pointant vers le Root Bridge."
             },
             {
                 id: 19,
-                question: "Quel protocole est utilisÃƒÂ© pour rÃƒÂ©duire la taille de la base de donnÃƒÂ©es VLAN en ne propageant que les VLANs nÃƒÂ©cessaires (VLAN Pruning) ?",
+                question: "Quel protocole est utilis? pour r?duire la taille de la base de donn?es VLAN en ne propageant que les VLANs n?cessaires (VLAN Pruning) ?",
                 options: [
                     "STP",
                     "VTP",
@@ -492,19 +492,19 @@ const quizData = {
                     "LACP"
                 ],
                 correct: [1],
-                explanation: "VTP (VLAN Trunking Protocol) dispose d'une fonctionnalitÃƒÂ© de 'pruning' pour ÃƒÂ©conomiser de la bande passante sur les trunks."
+                explanation: "VTP (VLAN Trunking Protocol) dispose d'une fonctionnalit? de 'pruning' pour ?conomiser de la bande passante sur les trunks."
             },
             {
                 id: 20,
                 question: "Que se passe-t-il si vous tapez 'switchport port-security' sans options sur un port ?",
                 options: [
-                    "Rien, la commande est incomplÃƒÂ¨te",
-                    "Le port est sÃƒÂ©curisÃƒÂ© avec les valeurs par dÃƒÂ©faut (max 1 MAC, mode shutdown)",
-                    "Le port se coupe immÃƒÂ©diatement",
+                    "Rien, la commande est incompl?te",
+                    "Le port est s?curis? avec les valeurs par d?faut (max 1 MAC, mode shutdown)",
+                    "Le port se coupe imm?diatement",
                     "Toutes les adresses MAC sont apprises en 'sticky'"
                 ],
                 correct: [1],
-                explanation: "Cette commande active la fonctionnalitÃƒÂ© avec ses paramÃƒÂ¨tres par dÃƒÂ©faut."
+                explanation: "Cette commande active la fonctionnalit? avec ses param?tres par d?faut."
             }
         ]
     },
@@ -515,41 +515,41 @@ const quizData = {
                 id: 1,
                 question: "Vous ajoutez la commande 'ip route 0.0.0.0 0.0.0.0 192.168.1.1'. Quel est ce type de route ?",
                 options: [
-                    "Route HÃƒÂ´te",
-                    "Gateway of Last Resort (Route par dÃƒÂ©faut)",
+                    "Route H?te",
+                    "Gateway of Last Resort (Route par d?faut)",
                     "Route Flottante",
                     "Route Dynamique"
                 ],
                 correct: [1],
-                explanation: "C'est une route statique par dÃƒÂ©faut. Elle permet de router tout le trafic vers une destination inconnue (Internet) via 192.168.1.1."
+                explanation: "C'est une route statique par d?faut. Elle permet de router tout le trafic vers une destination inconnue (Internet) via 192.168.1.1."
             },
             {
                 id: 2,
-                question: "Deux routeurs OSPF sont connectÃƒÂ©s. Ils restent bloquÃƒÂ©s en ÃƒÂ©tat '2-WAY'. Quelle est la cause probable ?",
+                question: "Deux routeurs OSPF sont connect?s. Ils restent bloqu?s en ?tat '2-WAY'. Quelle est la cause probable ?",
                 options: [
                     "Mauvais mot de passe",
                     "MTU mismatch",
-                    "Les deux routeurs sont configurÃƒÂ©s avec 'priority 0' (DROTHER)",
+                    "Les deux routeurs sont configur?s avec 'priority 0' (DROTHER)",
                     "C'est un comportement normal sur un lien Point-to-Point"
                 ],
                 correct: [2],
-                explanation: "Sur un rÃƒÂ©seau multi-accÃƒÂ¨s (Ethernet), si tous les routeurs ont une prioritÃƒÂ© de 0, aucun ne devient DR/BDR. Ils restent voisins mais ne s'ÃƒÂ©changent pas de routes (2-WAY)."
+                explanation: "Sur un r?seau multi-acc?s (Ethernet), si tous les routeurs ont une priorit? de 0, aucun ne devient DR/BDR. Ils restent voisins mais ne s'?changent pas de routes (2-WAY)."
             },
             {
                 id: 3,
-                question: "Quelle est la mÃƒÂ©trique utilisÃƒÂ©e par OSPF pour choisir le meilleur chemin ?",
+                question: "Quelle est la m?trique utilis?e par OSPF pour choisir le meilleur chemin ?",
                 options: [
                     "Nombre de sauts (Hop Count)",
-                    "Bande passante (CalculÃƒÂ©e via le CoÃƒÂ»t)",
-                    "DÃƒÂ©lai et Charge",
-                    "FiabilitÃƒÂ©"
+                    "Bande passante (Calcul?e via le Co?t)",
+                    "D?lai et Charge",
+                    "Fiabilit?"
                 ],
                 correct: [1],
-                explanation: "OSPF utilise le CoÃƒÂ»t = H / Bandwidth. Les liens rapides (Fibre, Gibabit) ont un coÃƒÂ»t plus faible et sont prÃƒÂ©fÃƒÂ©rÃƒÂ©s."
+                explanation: "OSPF utilise le Co?t = H / Bandwidth. Les liens rapides (Fibre, Gibabit) ont un co?t plus faible et sont pr?f?r?s."
             },
             {
                 id: 4,
-                question: "Quelle commande affiche les voisins OSPF et leur ÃƒÂ©tat ?",
+                question: "Quelle commande affiche les voisins OSPF et leur ?tat ?",
                 options: [
                     "show ip route ospf",
                     "show ip ospf neighbors",
@@ -557,7 +557,7 @@ const quizData = {
                     "show ip protocols"
                 ],
                 correct: [1],
-                explanation: "'show ip ospf neighbor' est LA commande essentielle pour le dÃƒÂ©pannage de l'adjacence OSPF."
+                explanation: "'show ip ospf neighbor' est LA commande essentielle pour le d?pannage de l'adjacence OSPF."
             },
             {
                 id: 5,
@@ -569,11 +569,11 @@ const quizData = {
                     "120"
                 ],
                 correct: [3],
-                explanation: "OSPF est 110. Pour qu'une route statique ne soit utilisÃƒÂ©e QUE si OSPF tombe, elle doit avoir une AD supÃƒÂ©rieure (ex: 120)."
+                explanation: "OSPF est 110. Pour qu'une route statique ne soit utilis?e QUE si OSPF tombe, elle doit avoir une AD sup?rieure (ex: 120)."
             },
             {
                 id: 6,
-                question: "Dans une table de routage, quelle entrÃƒÂ©e sera choisie pour le paquet destination 10.1.1.1 ?",
+                question: "Dans une table de routage, quelle entr?e sera choisie pour le paquet destination 10.1.1.1 ?",
                 options: [
                     "10.0.0.0/8",
                     "10.1.0.0/16",
@@ -581,23 +581,23 @@ const quizData = {
                     "0.0.0.0/0"
                 ],
                 correct: [2],
-                explanation: "La rÃƒÂ¨gle du 'Longest Prefix Match' (Masque le plus long) s'applique toujours. /24 est plus prÃƒÂ©cis que /16 ou /8."
+                explanation: "La r?gle du 'Longest Prefix Match' (Masque le plus long) s'applique toujours. /24 est plus pr?cis que /16 ou /8."
             },
             {
                 id: 7,
-                question: "Dans OSPF, quel est le rÃƒÂ´le de l'Area 0 ?",
+                question: "Dans OSPF, quel est le r?le de l'Area 0 ?",
                 options: [
                     "C'est une zone de test uniquement",
-                    "C'est l'aire de Backbone ÃƒÂ  laquelle toutes les autres zones doivent se connecter",
-                    "C'est la zone rÃƒÂ©servÃƒÂ©e aux routeurs de marque Cisco",
-                    "C'est la zone oÃƒÂ¹ le routage est dÃƒÂ©sactivÃƒÂ©"
+                    "C'est l'aire de Backbone ? laquelle toutes les autres zones doivent se connecter",
+                    "C'est la zone r?serv?e aux routeurs de marque Cisco",
+                    "C'est la zone o? le routage est d?sactiv?"
                 ],
                 correct: [1],
                 explanation: "L'Area 0 est le coeur du domaine OSPF. Toutes les communications inter-aires passent par elle."
             },
             {
                 id: 8,
-                question: "Quel est le masque gÃƒÂ©nÃƒÂ©rique (Wildcard Mask) utilisÃƒÂ© pour inclure exactement le rÃƒÂ©seau 192.168.1.0/24 dans OSPF ?",
+                question: "Quel est le masque g?n?rique (Wildcard Mask) utilis? pour inclure exactement le r?seau 192.168.1.0/24 dans OSPF ?",
                 options: [
                     "255.255.255.0",
                     "0.0.0.255",
@@ -605,11 +605,11 @@ const quizData = {
                     "255.0.0.0"
                 ],
                 correct: [1],
-                explanation: "Un Wildcard Mask est l'inverse d'un masque de sous-rÃƒÂ©seau. Pour un /24 (255.255.255.0), le Wildcard est 0.0.0.255."
+                explanation: "Un Wildcard Mask est l'inverse d'un masque de sous-r?seau. Pour un /24 (255.255.255.0), le Wildcard est 0.0.0.255."
             },
             {
                 id: 9,
-                question: "Quelle commande OSPF permet d'empÃƒÂªcher l'envoi de Hello packets sur une interface LAN ?",
+                question: "Quelle commande OSPF permet d'emp?cher l'envoi de Hello packets sur une interface LAN ?",
                 options: [
                     "no network",
                     "passive-interface",
@@ -617,11 +617,11 @@ const quizData = {
                     "ospf disable"
                 ],
                 correct: [1],
-                explanation: "'passive-interface' permet d'inclure le rÃƒÂ©seau dans OSPF sans envoyer de trafic de voisinage inutile sur un rÃƒÂ©seau local d'utilisateurs."
+                explanation: "'passive-interface' permet d'inclure le r?seau dans OSPF sans envoyer de trafic de voisinage inutile sur un r?seau local d'utilisateurs."
             },
             {
                 id: 10,
-                question: "Quelle est l'adresse multicast utilisÃƒÂ©e par les routeurs OSPF 'DR' et 'BDR' pour ÃƒÂ©couter les mises ÃƒÂ  jour ?",
+                question: "Quelle est l'adresse multicast utilis?e par les routeurs OSPF 'DR' et 'BDR' pour ?couter les mises ? jour ?",
                 options: [
                     "224.0.0.1",
                     "224.0.0.5",
@@ -629,11 +629,11 @@ const quizData = {
                     "224.0.0.10"
                 ],
                 correct: [2],
-                explanation: "Les DR et BDR ÃƒÂ©coutent sur 224.0.0.6. Tous les autres routeurs (DROTHERs) ÃƒÂ©coutent sur 224.0.0.5."
+                explanation: "Les DR et BDR ?coutent sur 224.0.0.6. Tous les autres routeurs (DROTHERs) ?coutent sur 224.0.0.5."
             },
             {
                 id: 11,
-                question: "Dans quel ÃƒÂ©tat OSPF les routeurs dÃƒÂ©cident-ils qui sera le DR (Designated Router) ?",
+                question: "Dans quel ?tat OSPF les routeurs d?cident-ils qui sera le DR (Designated Router) ?",
                 options: [
                     "Down",
                     "Init",
@@ -641,7 +641,7 @@ const quizData = {
                     "Full"
                 ],
                 correct: [2],
-                explanation: "L'ÃƒÂ©lection du DR/BDR a lieu pendant l'ÃƒÂ©tat 2-Way."
+                explanation: "L'?lection du DR/BDR a lieu pendant l'?tat 2-Way."
             },
             {
                 id: 12,
@@ -653,11 +653,11 @@ const quizData = {
                     "Root Router"
                 ],
                 correct: [2],
-                explanation: "Un ABR relie une aire normale ÃƒÂ  l'aire de Backbone Area 0."
+                explanation: "Un ABR relie une aire normale ? l'aire de Backbone Area 0."
             },
             {
                 id: 13,
-                question: "Quelle commande permet de dÃƒÂ©finir MANUELLEMENT l'ID d'un routeur OSPF ?",
+                question: "Quelle commande permet de d?finir MANUELLEMENT l'ID d'un routeur OSPF ?",
                 options: [
                     "ip ospf id 1.1.1.1",
                     "router-id 1.1.1.1",
@@ -669,7 +669,7 @@ const quizData = {
             },
             {
                 id: 14,
-                question: "Quelle est l'Administrative Distance (AD) d'une route statique par dÃƒÂ©faut ?",
+                question: "Quelle est l'Administrative Distance (AD) d'une route statique par d?faut ?",
                 options: [
                     "1",
                     "90",
@@ -677,11 +677,11 @@ const quizData = {
                     "120"
                 ],
                 correct: [0],
-                explanation: "Une route statique a une AD de 1. Elle est prÃƒÂ©fÃƒÂ©rÃƒÂ©e ÃƒÂ  OSPF (110) ou EIGRP (90)."
+                explanation: "Une route statique a une AD de 1. Elle est pr?f?r?e ? OSPF (110) ou EIGRP (90)."
             },
             {
                 id: 15,
-                question: "Si un routeur OSPF possÃƒÂ¨de une interface Loopback 2.2.2.2 et une interface physique 10.0.0.1, quel sera son Router ID par dÃƒÂ©faut ?",
+                question: "Si un routeur OSPF poss?de une interface Loopback 2.2.2.2 et une interface physique 10.0.0.1, quel sera son Router ID par d?faut ?",
                 options: [
                     "10.0.0.1",
                     "2.2.2.2",
@@ -705,7 +705,7 @@ const quizData = {
             },
             {
                 id: 17,
-                question: "Dans OSPF, quel type de paquet est utilisÃƒÂ© pour envoyer des mises ÃƒÂ  jour spÃƒÂ©cifiques sur la topologie ?",
+                question: "Dans OSPF, quel type de paquet est utilis? pour envoyer des mises ? jour sp?cifiques sur la topologie ?",
                 options: [
                     "Hello",
                     "DBD (Database Description)",
@@ -713,14 +713,14 @@ const quizData = {
                     "LSU (Link State Update)"
                 ],
                 correct: [3],
-                explanation: "Les LSU contiennent les LSA (Link State Advertisements) qui dÃƒÂ©crivent l'ÃƒÂ©tat des liens."
+                explanation: "Les LSU contiennent les LSA (Link State Advertisements) qui d?crivent l'?tat des liens."
             },
             {
                 id: 18,
                 question: "Que signifie une AD (Administrative Distance) de 255 ?",
                 options: [
                     "La route est ultra-prioritaire",
-                    "La route est inconnue ou non fiable (ne sera jamais installÃƒÂ©e dans la table de routage)",
+                    "La route est inconnue ou non fiable (ne sera jamais install?e dans la table de routage)",
                     "C'est une route directe",
                     "C'est une route vers Internet"
                 ],
@@ -729,7 +729,7 @@ const quizData = {
             },
             {
                 id: 19,
-                question: "Quelle commande permet de redistribuer une route par dÃƒÂ©faut dans OSPF ?",
+                question: "Quelle commande permet de redistribuer une route par d?faut dans OSPF ?",
                 options: [
                     "ip route 0.0.0.0 0.0.0.0 loopback0",
                     "default-information originate",
@@ -737,11 +737,11 @@ const quizData = {
                     "ospf default route"
                 ],
                 correct: [1],
-                explanation: "Cette commande est nÃƒÂ©cessaire pour annoncer aux autres routeurs OSPF la sortie vers Internet."
+                explanation: "Cette commande est n?cessaire pour annoncer aux autres routeurs OSPF la sortie vers Internet."
             },
             {
                 id: 20,
-                question: "Quel est l'ID de zone (Area ID) rÃƒÂ©servÃƒÂ© pour le Backbone OSPF ?",
+                question: "Quel est l'ID de zone (Area ID) r?serv? pour le Backbone OSPF ?",
                 options: [
                     "Area 0",
                     "Area 1",
@@ -749,7 +749,7 @@ const quizData = {
                     "Area 255"
                 ],
                 correct: [0],
-                explanation: "Toute architecture OSPF multi-aire doit possÃƒÂ©der une Area 0 centrale."
+                explanation: "Toute architecture OSPF multi-aire doit poss?der une Area 0 centrale."
             }
         ]
     },
@@ -760,17 +760,17 @@ const quizData = {
                 id: 1,
                 question: "Vous configurez 'Router-on-a-Stick'. Les PCs ne peuvent pas pinger leur passerelle. Vous voyez 'Encapsulation dot1Q 10' sur l'interface physique du routeur au lieu de la sous-interface. Est-ce correct ?",
                 options: [
-                    "Oui, c'est la nouvelle mÃƒÂ©thode",
+                    "Oui, c'est la nouvelle m?thode",
                     "Non, l'interface physique ne doit pas avoir d'IP ni d'encapsulation, tout se fait sur les sous-interfaces",
                     "Peu importe tant que l'IP est bonne",
                     "Il faut activer 'ip routing' sur le routeur"
                 ],
                 correct: [1],
-                explanation: "Sur un routeur, l'interface physique doit ÃƒÂªtre 'no shutdown' mais nue. L'encapsulation et l'IP se mettent sur les sous-interfaces (g0/0.10)."
+                explanation: "Sur un routeur, l'interface physique doit ?tre 'no shutdown' mais nue. L'encapsulation et l'IP se mettent sur les sous-interfaces (g0/0.10)."
             },
             {
                 id: 2,
-                question: "Sur un switch L3, vous voulez utiliser un port pour le connecter directement ÃƒÂ  un routeur FAI (IP publique). Quelle commande utilisez-vous ?",
+                question: "Sur un switch L3, vous voulez utiliser un port pour le connecter directement ? un routeur FAI (IP publique). Quelle commande utilisez-vous ?",
                 options: [
                     "interface vlan 1",
                     "switchport mode trunk",
@@ -778,31 +778,31 @@ const quizData = {
                     "spanning-tree portfast"
                 ],
                 correct: [2],
-                explanation: "'no switchport' transforme le port du switch en port routÃƒÂ© pur, capable de recevoir une adresse IP sans passer par une interface VLAN (SVI)."
+                explanation: "'no switchport' transforme le port du switch en port rout? pur, capable de recevoir une adresse IP sans passer par une interface VLAN (SVI)."
             },
             {
                 id: 3,
-                question: "Un PC dans le VLAN 10 veut contacter un PC dans le VLAN 20. Ãƒâ‚¬ qui envoie-t-il sa trame ?",
+                question: "Un PC dans le VLAN 10 veut contacter un PC dans le VLAN 20. ? qui envoie-t-il sa trame ?",
                 options: [
                     "Directement au PC du VLAN 20 (ARP Broadcast)",
                     "Au Switch",
-                    "Ãƒâ‚¬ sa passerelle par dÃƒÂ©faut (Gateway)",
+                    "? sa passerelle par d?faut (Gateway)",
                     "Au serveur DNS"
                 ],
                 correct: [2],
-                explanation: "Pour communiquer entre diffÃƒÂ©rents rÃƒÂ©seaux (VLANs), on doit passer par un routeur (Gateway). Le PC vise la MAC de sa Gateway."
+                explanation: "Pour communiquer entre diff?rents r?seaux (VLANs), on doit passer par un routeur (Gateway). Le PC vise la MAC de sa Gateway."
             },
             {
                 id: 5,
-                question: "Si le VLAN 10 n'existe pas dans la base de donnÃƒÂ©es VLAN du switch, que se passe-t-il pour l'interface SVI VLAN 10 ?",
+                question: "Si le VLAN 10 n'existe pas dans la base de donn?es VLAN du switch, que se passe-t-il pour l'interface SVI VLAN 10 ?",
                 options: [
-                    "Elle reste UP si une IP est configurÃƒÂ©e",
-                    "Elle passe en ÃƒÂ©tat DOWN/DOWN",
+                    "Elle reste UP si une IP est configur?e",
+                    "Elle passe en ?tat DOWN/DOWN",
                     "Elle fonctionne mais lentement",
                     "Elle passe en mode transparent"
                 ],
                 correct: [1],
-                explanation: "L'interface VLAN (SVI) est une interface logique dÃƒÂ©pendante de l'existence du VLAN. Si le VLAN 10 n'existe pas ou est shutdown, la SVI tombe."
+                explanation: "L'interface VLAN (SVI) est une interface logique d?pendante de l'existence du VLAN. Si le VLAN 10 n'existe pas ou est shutdown, la SVI tombe."
             },
             {
                 id: 6,
@@ -826,11 +826,11 @@ const quizData = {
                     "Lien USB"
                 ],
                 correct: [1],
-                explanation: "Le lien doit ÃƒÂªtre un Trunk pour pouvoir transporter les trames taguÃƒÂ©es de plusieurs VLANs vers le routeur."
+                explanation: "Le lien doit ?tre un Trunk pour pouvoir transporter les trames tagu?es de plusieurs VLANs vers le routeur."
             },
             {
                 id: 8,
-                question: "Comment appelle-t-on l'interface virtuelle crÃƒÂ©ÃƒÂ©e sur un switch pour servir de passerelle ÃƒÂ  un VLAN ?",
+                question: "Comment appelle-t-on l'interface virtuelle cr??e sur un switch pour servir de passerelle ? un VLAN ?",
                 options: [
                     "Sub-interface",
                     "SVI (Switch Virtual Interface)",
@@ -838,23 +838,23 @@ const quizData = {
                     "Tunnel Interface"
                 ],
                 correct: [1],
-                explanation: "Une SVI (ex: interface vlan 10) est l'IP de passerelle configurÃƒÂ©e directement sur le switch L3."
+                explanation: "Une SVI (ex: interface vlan 10) est l'IP de passerelle configur?e directement sur le switch L3."
             },
             {
                 id: 9,
                 question: "Quel est l'avantage principal des SVIs par rapport au Router-on-a-Stick ?",
                 options: [
                     "C'est moins cher",
-                    "Performance beaucoup plus ÃƒÂ©levÃƒÂ©e (routage matÃƒÂ©riel/ASIC)",
-                    "Plus facile ÃƒÂ  configurer sur un routeur",
-                    "Plus sÃƒÂ©curisÃƒÂ©"
+                    "Performance beaucoup plus ?lev?e (routage mat?riel/ASIC)",
+                    "Plus facile ? configurer sur un routeur",
+                    "Plus s?curis?"
                 ],
                 correct: [1],
-                explanation: "Le routage Inter-VLAN sur un switch L3 est effectuÃƒÂ© au niveau du matÃƒÂ©riel, ce qui est beaucoup plus rapide que de faire des allers-retours vers un routeur externe ('One-armed router')."
+                explanation: "Le routage Inter-VLAN sur un switch L3 est effectu? au niveau du mat?riel, ce qui est beaucoup plus rapide que de faire des allers-retours vers un routeur externe ('One-armed router')."
             },
             {
                 id: 10,
-                question: "Quelle commande est nÃƒÂ©cessaire sur une sous-interface de routeur pour spÃƒÂ©cifier le VLAN ÃƒÂ  router ?",
+                question: "Quelle commande est n?cessaire sur une sous-interface de routeur pour sp?cifier le VLAN ? router ?",
                 options: [
                     "encapsulation dot1q [vlan_id]",
                     "vlan [vlan_id]",
@@ -862,11 +862,11 @@ const quizData = {
                     "ip vlan [vlan_id]"
                 ],
                 correct: [0],
-                explanation: "Exemple : 'encapsulation dot1q 10' indique que la sous-interface gÃƒÂ¨re le trafic taguÃƒÂ© pour le VLAN 10."
+                explanation: "Exemple : 'encapsulation dot1q 10' indique que la sous-interface g?re le trafic tagu? pour le VLAN 10."
             },
             {
                 id: 11,
-                question: "Si un hÃƒÂ´te dans le VLAN 10 ne reÃƒÂ§oit pas d'adresse du serveur DHCP situÃƒÂ© dans le VLAN 20, quelle commande manque probablement sur sa passerelle ?",
+                question: "Si un h?te dans le VLAN 10 ne re?oit pas d'adresse du serveur DHCP situ? dans le VLAN 20, quelle commande manque probablement sur sa passerelle ?",
                 options: [
                     "ip dhcp pool",
                     "ip helper-address [IP_DHCP]",
@@ -874,35 +874,35 @@ const quizData = {
                     "service dhcp"
                 ],
                 correct: [1],
-                explanation: "Comme les requÃƒÂªtes DHCP sont des broadcasts (qui ne traversent pas les routeurs/VLANs), il faut un agent de relais (helper-address) pour les transformer en unicast vers le serveur."
+                explanation: "Comme les requ?tes DHCP sont des broadcasts (qui ne traversent pas les routeurs/VLANs), il faut un agent de relais (helper-address) pour les transformer en unicast vers le serveur."
             },
             {
                 id: 12,
-                question: "Combien de sous-interfaces peut-on thÃƒÂ©oriquement crÃƒÂ©er sur une interface physique de routeur ?",
+                question: "Combien de sous-interfaces peut-on th?oriquement cr?er sur une interface physique de routeur ?",
                 options: [
                     "2",
                     "10",
-                    "Des milliers (limitÃƒÂ© par les ressources CPU/RAM)",
+                    "Des milliers (limit? par les ressources CPU/RAM)",
                     "Aucune"
                 ],
                 correct: [2],
-                explanation: "On peut en crÃƒÂ©er ÃƒÂ©normÃƒÂ©ment, mÃƒÂªme si en pratique on se limite pour ÃƒÂ©viter de saturer la bande passante du lien physique unique."
+                explanation: "On peut en cr?er ?norm?ment, m?me si en pratique on se limite pour ?viter de saturer la bande passante du lien physique unique."
             },
             {
                 id: 13,
                 question: "Que signifie 'Native VLAN Mismatch' dans un environnement Router-on-a-Stick ?",
                 options: [
-                    "Le routeur et le switch ne parlent pas le mÃƒÂªme langage",
-                    "Le VLAN natif configurÃƒÂ© sur le Trunk n'est pas le mÃƒÂªme des deux cÃƒÂ´tÃƒÂ©s",
-                    "Le routeur est ÃƒÂ©teint",
+                    "Le routeur et le switch ne parlent pas le m?me langage",
+                    "Le VLAN natif configur? sur le Trunk n'est pas le m?me des deux c?t?s",
+                    "Le routeur est ?teint",
                     "Le switch n'a pas de licence"
                 ],
                 correct: [1],
-                explanation: "Si le switch envoie du trafic non taguÃƒÂ© (Native VLAN) et que le routeur attend du taguÃƒÂ© (ou vice-versa), le trafic sera perdu ou mal routÃƒÂ©."
+                explanation: "Si le switch envoie du trafic non tagu? (Native VLAN) et que le routeur attend du tagu? (ou vice-versa), le trafic sera perdu ou mal rout?."
             },
             {
                 id: 14,
-                question: "Sur un switch L3, quelle commande permet de transformer un port physique en port routÃƒÂ© ?",
+                question: "Sur un switch L3, quelle commande permet de transformer un port physique en port rout? ?",
                 options: [
                     "ip address",
                     "no switchport",
@@ -910,23 +910,23 @@ const quizData = {
                     "interface route"
                 ],
                 correct: [1],
-                explanation: "La commande 'no switchport' dÃƒÂ©sactive les fonctions L2 sur le port, permettant d'y assigner directement une adresse IP."
+                explanation: "La commande 'no switchport' d?sactive les fonctions L2 sur le port, permettant d'y assigner directement une adresse IP."
             },
             {
                 id: 15,
-                question: "Quelle est la mÃƒÂ©trique par dÃƒÂ©faut d'une route statique pointant vers une interface VLAN (SVI) ?",
+                question: "Quelle est la m?trique par d?faut d'une route statique pointant vers une interface VLAN (SVI) ?",
                 options: [
                     "0",
                     "1",
                     "110",
-                    "Elle n'a pas de mÃƒÂ©trique"
+                    "Elle n'a pas de m?trique"
                 ],
                 correct: [1],
                 explanation: "Toute route statique a une Distance Administrative de 1."
             },
             {
                 id: 16,
-                question: "Dans une topologie avec un switch L3, oÃƒÂ¹ configure-t-on gÃƒÂ©nÃƒÂ©ralement les adresses de passerelle (Gateways) ?",
+                question: "Dans une topologie avec un switch L3, o? configure-t-on g?n?ralement les adresses de passerelle (Gateways) ?",
                 options: [
                     "Sur chaque port du switch",
                     "Sur les interfaces SVI (interface vlan X)",
@@ -934,11 +934,11 @@ const quizData = {
                     "Sur l'interface de management"
                 ],
                 correct: [1],
-                explanation: "Le switch L3 possÃƒÂ¨de une SVI pour chaque VLAN, qui sert d'IP de sortie pour tous les hÃƒÂ´tes de ce VLAN."
+                explanation: "Le switch L3 poss?de une SVI pour chaque VLAN, qui sert d'IP de sortie pour tous les h?tes de ce VLAN."
             },
             {
                 id: 17,
-                question: "Quel protocole est utilisÃƒÂ© pour automatiser la redondance de passerelle par dÃƒÂ©faut (First Hop Redundancy) ?",
+                question: "Quel protocole est utilis? pour automatiser la redondance de passerelle par d?faut (First Hop Redundancy) ?",
                 options: [
                     "STP",
                     "HSRP / VRRP",
@@ -946,11 +946,11 @@ const quizData = {
                     "OSPF"
                 ],
                 correct: [1],
-                explanation: "HSRP (propriÃƒÂ©taire Cisco) ou VRRP (standard) permettent ÃƒÂ  deux routeurs/switches de partager une IP virtuelle de passerelle."
+                explanation: "HSRP (propri?taire Cisco) ou VRRP (standard) permettent ? deux routeurs/switches de partager une IP virtuelle de passerelle."
             },
             {
                 id: 18,
-                question: "Vous avez configurÃƒÂ© 'interface g0/0.10' et 'encapsulation dot1q 10'. Le ping vers la gateway ÃƒÂ©choue. Quelle commande avez-vous peut-ÃƒÂªtre oubliÃƒÂ© sur l'interface physique g0/0 ?",
+                question: "Vous avez configur? 'interface g0/0.10' et 'encapsulation dot1q 10'. Le ping vers la gateway ?choue. Quelle commande avez-vous peut-?tre oubli? sur l'interface physique g0/0 ?",
                 options: [
                     "ip address",
                     "no shutdown",
@@ -958,23 +958,23 @@ const quizData = {
                     "ip routing"
                 ],
                 correct: [1],
-                explanation: "L'interface physique doit ÃƒÂªtre ALLUMÃƒâ€°E (no shutdown) pour que ses sous-interfaces fonctionnent."
+                explanation: "L'interface physique doit ?tre ALLUM?E (no shutdown) pour que ses sous-interfaces fonctionnent."
             },
             {
                 id: 19,
-                question: "Pourquoi est-il risquÃƒÂ© de laisser 'VLAN 1' comme VLAN natif sur un lien Trunk ?",
+                question: "Pourquoi est-il risqu? de laisser 'VLAN 1' comme VLAN natif sur un lien Trunk ?",
                 options: [
                     "Parce que c'est trop lent",
-                    "Pour ÃƒÂ©viter les attaques 'VLAN Hopping'",
+                    "Pour ?viter les attaques 'VLAN Hopping'",
                     "Parce que le routeur ne supporte pas le VLAN 1",
                     "C'est une recommandation de Microsoft"
                 ],
                 correct: [1],
-                explanation: "Changer le VLAN natif (ex: vers VLAN 99) est une mesure de sÃƒÂ©curitÃƒÂ© standard contre les injections de trames malveillantes."
+                explanation: "Changer le VLAN natif (ex: vers VLAN 99) est une mesure de s?curit? standard contre les injections de trames malveillantes."
             },
             {
                 id: 20,
-                question: "Quelle commande permet de vÃƒÂ©rifier toutes les routes connues par un switch multicouche ?",
+                question: "Quelle commande permet de v?rifier toutes les routes connues par un switch multicouche ?",
                 options: [
                     "show vlan",
                     "show ip route",
@@ -982,28 +982,28 @@ const quizData = {
                     "show running-config"
                 ],
                 correct: [1],
-                explanation: "Si le routage est activÃƒÂ© ('ip routing'), 'show ip route' montre la table de routage du switch."
+                explanation: "Si le routage est activ? ('ip routing'), 'show ip route' montre la table de routage du switch."
             }
         ]
     },
     "phase5": {
-        title: "Quiz Phase 5 : SÃƒÂ©curitÃƒÂ© & ACLs (Niveau CCNA)",
+        title: "Quiz Phase 5 : S?curit? & ACLs (Niveau CCNA)",
         questions: [
             {
                 id: 1,
-                question: "Quelle entrÃƒÂ©e ACL autorise UNIQUEMENT l'hÃƒÂ´te 192.168.1.5 ?",
+                question: "Quelle entr?e ACL autorise UNIQUEMENT l'h?te 192.168.1.5 ?",
                 options: [
                     "permitip 192.168.1.5 0.0.0.0",
                     "permit ip 192.168.1.5 0.0.0.255",
                     "permit ip host 192.168.1.5",
-                    "Les rÃƒÂ©ponses A et C sont correctes"
+                    "Les r?ponses A et C sont correctes"
                 ],
                 correct: [3],
                 explanation: "'host 192.168.1.5' est un raccourci syntaxique pour '192.168.1.5 0.0.0.0' (Wildcard 0)."
             },
             {
                 id: 2,
-                question: "Quelle est la rÃƒÂ¨gle implicite ÃƒÂ  la fin de TOUTE Access List (ACL) ?",
+                question: "Quelle est la r?gle implicite ? la fin de TOUTE Access List (ACL) ?",
                 options: [
                     "permit ip any any",
                     "deny ip any any",
@@ -1011,11 +1011,11 @@ const quizData = {
                     "log all"
                 ],
                 correct: [1],
-                explanation: "Il y a toujours un 'Implicit Deny' (Tout interdire) cachÃƒÂ© ÃƒÂ  la fin. Si un paquet ne matche aucune ligne, il est jetÃƒÂ©."
+                explanation: "Il y a toujours un 'Implicit Deny' (Tout interdire) cach? ? la fin. Si un paquet ne matche aucune ligne, il est jet?."
             },
             {
                 id: 3,
-                question: "Attaque DHCP Starvation : Un attaquant inonde le serveur DHCP de requÃƒÂªtes. Quelle solution attÃƒÂ©nue cela ?",
+                question: "Attaque DHCP Starvation : Un attaquant inonde le serveur DHCP de requ?tes. Quelle solution att?nue cela ?",
                 options: [
                     "Port Security avec mac-limit",
                     "DHCP Snooping avec rate-limit",
@@ -1029,11 +1029,11 @@ const quizData = {
                 // Let's stick to simple "Port Security". 
                 // Wait, DHCP Snooping "limit rate" is for DoS on the CPU, Port Security is for Starvation of the Scope.
                 correct: [0],
-                explanation: "Port Security limite le nombre d'adresses MAC autorisÃƒÂ©es sur un port. Cela empÃƒÂªche un attaquant de simuler des milliers de clients DHCP diffÃƒÂ©rents (MAC spoofing)."
+                explanation: "Port Security limite le nombre d'adresses MAC autoris?es sur un port. Cela emp?che un attaquant de simuler des milliers de clients DHCP diff?rents (MAC spoofing)."
             },
             {
                 id: 4,
-                question: "Vous configurez SSH. Quelle commande oblige les utilisateurs ÃƒÂ  se loguer avec un compte local (login/password) ?",
+                question: "Vous configurez SSH. Quelle commande oblige les utilisateurs ? se loguer avec un compte local (login/password) ?",
                 options: [
                     "login",
                     "login local",
@@ -1041,11 +1041,11 @@ const quizData = {
                     "service password-encryption"
                 ],
                 correct: [1],
-                explanation: "'login' utilise juste le mot de passe de la ligne VTY. 'login local' demande au routeur de vÃƒÂ©rifier la base de donnÃƒÂ©es d'utilisateurs locaux (username/secret)."
+                explanation: "'login' utilise juste le mot de passe de la ligne VTY. 'login local' demande au routeur de v?rifier la base de donn?es d'utilisateurs locaux (username/secret)."
             },
             {
                 id: 5,
-                question: "Quel message indique qu'un port a ÃƒÂ©tÃƒÂ© dÃƒÂ©sactivÃƒÂ© par BPDU Guard ?",
+                question: "Quel message indique qu'un port a ?t? d?sactiv? par BPDU Guard ?",
                 options: [
                     "Line protocol is down",
                     "Err-disabled state (bpduguard)",
@@ -1053,19 +1053,19 @@ const quizData = {
                     "Request timed out"
                 ],
                 correct: [1],
-                explanation: "BPDU Guard (activÃƒÂ© sur les ports PortFast) place le port en err-disabled s'il reÃƒÂ§oit une BPDU (ce qui signifie qu'un switch a ÃƒÂ©tÃƒÂ© branchÃƒÂ©)."
+                explanation: "BPDU Guard (activ? sur les ports PortFast) place le port en err-disabled s'il re?oit une BPDU (ce qui signifie qu'un switch a ?t? branch?)."
             },
             {
                 id: 6,
-                question: "OÃƒÂ¹ doit-on placer une ACL Standard pour un filtrage optimal ?",
+                question: "O? doit-on placer une ACL Standard pour un filtrage optimal ?",
                 options: [
-                    "Au plus prÃƒÂ¨s de la source du trafic",
-                    "Au plus prÃƒÂ¨s de la destination",
+                    "Au plus pr?s de la source du trafic",
+                    "Au plus pr?s de la destination",
                     "Sur tous les ports du switch",
                     "Uniquement sur l'interface loopback"
                 ],
                 correct: [1],
-                explanation: "Les ACL standards (1-99) ne filtrent que sur l'IP source. Pour ÃƒÂ©viter de bloquer du trafic lÃƒÂ©gitime vers d'autres destinations, on les place au plus prÃƒÂ¨s de la destination."
+                explanation: "Les ACL standards (1-99) ne filtrent que sur l'IP source. Pour ?viter de bloquer du trafic l?gitime vers d'autres destinations, on les place au plus pr?s de la destination."
             },
             {
                 id: 7,
@@ -1077,11 +1077,11 @@ const quizData = {
                     "ip vlan 10 dhcp trust"
                 ],
                 correct: [0],
-                explanation: "Il faut d'abord activer le snooping globalement (`ip dhcp snooping`), puis spÃƒÂ©cifier les VLANs concernÃƒÂ©s avec `ip dhcp snooping vlan [ID]`."
+                explanation: "Il faut d'abord activer le snooping globalement (`ip dhcp snooping`), puis sp?cifier les VLANs concern?s avec `ip dhcp snooping vlan [ID]`."
             },
             {
                 id: 8,
-                question: "Quel protocole permet de sÃƒÂ©curiser les ÃƒÂ©changes de gestion (management) entre un PC et un commutateur ?",
+                question: "Quel protocole permet de s?curiser les ?changes de gestion (management) entre un PC et un commutateur ?",
                 options: [
                     "Telnet",
                     "HTTP",
@@ -1089,23 +1089,23 @@ const quizData = {
                     "SNMP v1"
                 ],
                 correct: [2],
-                explanation: "SSH (Secure Shell) crypte le trafic, contrairement ÃƒÂ  Telnet qui envoie tout en clair (y compris les mots de passe)."
+                explanation: "SSH (Secure Shell) crypte le trafic, contrairement ? Telnet qui envoie tout en clair (y compris les mots de passe)."
             },
             {
                 id: 9,
-                question: "Que signifie l'ÃƒÂ©tat 'Sticky' dans la configuration Port-Security ?",
+                question: "Que signifie l'?tat 'Sticky' dans la configuration Port-Security ?",
                 options: [
-                    "Les adresses MAC sont apprises dynamiquement et enregistrÃƒÂ©es dans la configuration",
-                    "Le port est bloquÃƒÂ© de maniÃƒÂ¨re permanente",
+                    "Les adresses MAC sont apprises dynamiquement et enregistr?es dans la configuration",
+                    "Le port est bloqu? de mani?re permanente",
                     "Le port accepte n'importe quelle adresse MAC sans limite",
-                    "L'adresse MAC expire aprÃƒÂ¨s 5 minutes"
+                    "L'adresse MAC expire apr?s 5 minutes"
                 ],
                 correct: [0],
-                explanation: "L'option 'sticky' permet au switch d'apprendre les MACs dynamiquement et de les ajouter ÃƒÂ  la configuration (running-config) pour qu'elles survivent ÃƒÂ  un redÃƒÂ©marrage si on sauvegarde."
+                explanation: "L'option 'sticky' permet au switch d'apprendre les MACs dynamiquement et de les ajouter ? la configuration (running-config) pour qu'elles survivent ? un red?marrage si on sauvegarde."
             },
             {
                 id: 10,
-                question: "Quel type de NAT permet ÃƒÂ  plusieurs hÃƒÂ´tes internes d'utiliser UNE SEULE adresse IP publique ?",
+                question: "Quel type de NAT permet ? plusieurs h?tes internes d'utiliser UNE SEULE adresse IP publique ?",
                 options: [
                     "Static NAT",
                     "Dynamic NAT",
@@ -1113,11 +1113,11 @@ const quizData = {
                     "NAT Pooling"
                 ],
                 correct: [2],
-                explanation: "PAT utilise les numÃƒÂ©ros de ports TCP/UDP pour distinguer les sessions des diffÃƒÂ©rents hÃƒÂ´tes internes sur une seule IP publique."
+                explanation: "PAT utilise les num?ros de ports TCP/UDP pour distinguer les sessions des diff?rents h?tes internes sur une seule IP publique."
             },
             {
                 id: 11,
-                question: "Dans NAT, quelle adresse dÃƒÂ©signe l'hÃƒÂ´te sur le rÃƒÂ©seau interne tel qu'il est vu depuis l'extÃƒÂ©rieur ?",
+                question: "Dans NAT, quelle adresse d?signe l'h?te sur le r?seau interne tel qu'il est vu depuis l'ext?rieur ?",
                 options: [
                     "Inside Local",
                     "Inside Global",
@@ -1125,7 +1125,7 @@ const quizData = {
                     "Outside Global"
                 ],
                 correct: [1],
-                explanation: "Inside Global est l'adresse (souvent publique) qui reprÃƒÂ©sente votre machine interne sur Internet."
+                explanation: "Inside Global est l'adresse (souvent publique) qui repr?sente votre machine interne sur Internet."
             },
             {
                 id: 12,
@@ -1141,7 +1141,7 @@ const quizData = {
             },
             {
                 id: 13,
-                question: "Quelle technologie empÃƒÂªche les attaques de type 'ARP Poisoning' ou 'Man-in-the-Middle' au niveau L2 ?",
+                question: "Quelle technologie emp?che les attaques de type 'ARP Poisoning' ou 'Man-in-the-Middle' au niveau L2 ?",
                 options: [
                     "Port Security",
                     "DHCP Snooping",
@@ -1149,11 +1149,11 @@ const quizData = {
                     "BPDU Guard"
                 ],
                 correct: [2],
-                explanation: "DAI vÃƒÂ©rifie les paquets ARP par rapport ÃƒÂ  une base de donnÃƒÂ©es de confiance (souvent issue du DHCP Snooping) pour rejeter les faux ARPs."
+                explanation: "DAI v?rifie les paquets ARP par rapport ? une base de donn?es de confiance (souvent issue du DHCP Snooping) pour rejeter les faux ARPs."
             },
             {
                 id: 14,
-                question: "Une ACL ÃƒÂ©tendue permet de filtrer sur quels critÃƒÂ¨res (par rapport ÃƒÂ  la standard) ?",
+                question: "Une ACL ?tendue permet de filtrer sur quels crit?res (par rapport ? la standard) ?",
                 options: [
                     "Source uniquement",
                     "Source, Destination, Protocole (TCP/UDP) et Port",
@@ -1161,11 +1161,11 @@ const quizData = {
                     "VLAN d'origine"
                 ],
                 correct: [1],
-                explanation: "Les ACLs ÃƒÂ©tendues sont beaucoup de plus prÃƒÂ©cises et permettent de bloquer par exemple uniquement le trafic Web (Port 80) tout en laissant passer le Ping."
+                explanation: "Les ACLs ?tendues sont beaucoup de plus pr?cises et permettent de bloquer par exemple uniquement le trafic Web (Port 80) tout en laissant passer le Ping."
             },
             {
                 id: 15,
-                question: "Quel protocole remplace Telnet pour une administration sÃƒÂ©curisÃƒÂ©e car il chiffre les donnÃƒÂ©es ?",
+                question: "Quel protocole remplace Telnet pour une administration s?curis?e car il chiffre les donn?es ?",
                 options: [
                     "HTTPs",
                     "FTP",
@@ -1173,23 +1173,23 @@ const quizData = {
                     "SNMPv1"
                 ],
                 correct: [2],
-                explanation: "SSH (Secure Shell) utilise la cryptographie pour protÃƒÂ©ger les mots de passe et les commandes envoyÃƒÂ©es sur le rÃƒÂ©seau."
+                explanation: "SSH (Secure Shell) utilise la cryptographie pour prot?ger les mots de passe et les commandes envoy?es sur le r?seau."
             },
             {
                 id: 16,
                 question: "Que se passe-t-it si vous tapez 'transport input none' sur les lignes VTY d'un routeur ?",
                 options: [
-                    "Trafic illimitÃƒÂ©",
-                    "Le routeur redÃƒÂ©marre",
-                    "Plus aucun accÃƒÂ¨s distant (SSH/Telnet) n'est possible",
-                    "Le routeur passe en mode sÃƒÂ©curisÃƒÂ©"
+                    "Trafic illimit?",
+                    "Le routeur red?marre",
+                    "Plus aucun acc?s distant (SSH/Telnet) n'est possible",
+                    "Le routeur passe en mode s?curis?"
                 ],
                 correct: [2],
                 explanation: "Cette commande bloque toutes les connexions entrantes sur les lignes virtuelles."
             },
             {
                 id: 17,
-                question: "Quelle commande permet de gÃƒÂ©nÃƒÂ©rer les clÃƒÂ©s RSA nÃƒÂ©cessaires pour activer SSH sur Cisco ?",
+                question: "Quelle commande permet de g?n?rer les cl?s RSA n?cessaires pour activer SSH sur Cisco ?",
                 options: [
                     "crypto key generate rsa",
                     "ssh key generate",
@@ -1197,23 +1197,23 @@ const quizData = {
                     "ip ssh version 2"
                 ],
                 correct: [0],
-                explanation: "Sans les clÃƒÂ©s RSA, le service SSH ne peut pas dÃƒÂ©marrer car il ne peut pas chiffrer la session."
+                explanation: "Sans les cl?s RSA, le service SSH ne peut pas d?marrer car il ne peut pas chiffrer la session."
             },
             {
                 id: 18,
-                question: "Un Wildcard Mask de 0.0.0.3 correspond ÃƒÂ  :",
+                question: "Un Wildcard Mask de 0.0.0.3 correspond ? :",
                 options: [
-                    "Un hÃƒÂ´te unique",
+                    "Un h?te unique",
                     "Un bloc de 4 adresses IP",
-                    "Un rÃƒÂ©seau /24",
+                    "Un r?seau /24",
                     "Toutes les adresses"
                 ],
                 correct: [1],
-                explanation: "0.0.0.3 signifie que les 2 derniers bits sont ignorÃƒÂ©s (matchent n'importe quoi). 2^2 = 4 adresses."
+                explanation: "0.0.0.3 signifie que les 2 derniers bits sont ignor?s (matchent n'importe quoi). 2^2 = 4 adresses."
             },
             {
                 id: 19,
-                question: "Comment dÃƒÂ©finit-on un port 'de confiance' pour le DHCP Snooping (vers le serveur) ?",
+                question: "Comment d?finit-on un port 'de confiance' pour le DHCP Snooping (vers le serveur) ?",
                 options: [
                     "ip dhcp snooping trust",
                     "interface trusted",
@@ -1221,14 +1221,14 @@ const quizData = {
                     "dhcp-server allow"
                 ],
                 correct: [0],
-                explanation: "On utilise 'ip dhcp snooping trust' sur l'interface branchÃƒÂ©e vers le serveur DHCP lÃƒÂ©gitime ou vers un autre switch."
+                explanation: "On utilise 'ip dhcp snooping trust' sur l'interface branch?e vers le serveur DHCP l?gitime ou vers un autre switch."
             },
             {
                 id: 20,
-                question: "Quelle est la meilleure pratique pour sÃƒÂ©curiser les ports non utilisÃƒÂ©s d'un switch ?",
+                question: "Quelle est la meilleure pratique pour s?curiser les ports non utilis?s d'un switch ?",
                 options: [
                     "Les laisser tels quels",
-                    "Les mettre en 'shutdown' et les assigner ÃƒÂ  un VLAN mort (blackhole)",
+                    "Les mettre en 'shutdown' et les assigner ? un VLAN mort (blackhole)",
                     "Activer OSPF dessus",
                     "Mettre un mot de passe sur le port"
                 ],
@@ -1238,7 +1238,7 @@ const quizData = {
         ]
     },
     "phase6": {
-        title: "Quiz Phase 6 : Technologies AvancÃƒÂ©es & SynthÃƒÂ¨se",
+        title: "Quiz Phase 6 : Technologies Avanc?es & Synth?se",
         questions: [
             {
                 id: 1,
@@ -1250,11 +1250,11 @@ const quizData = {
                     "STP"
                 ],
                 correct: [1],
-                explanation: "LACP (802.3ad) est le standard ouvert. PAgP est propriÃƒÂ©taire Cisco."
+                explanation: "LACP (802.3ad) est le standard ouvert. PAgP est propri?taire Cisco."
             },
             {
                 id: 2,
-                question: "Quelle adresse IPv6 correspond ÃƒÂ  l'adresse de lien local (Link-Local) gÃƒÂ©nÃƒÂ©rÃƒÂ©e automatiquement ?",
+                question: "Quelle adresse IPv6 correspond ? l'adresse de lien local (Link-Local) g?n?r?e automatiquement ?",
                 options: [
                     "2001::/16",
                     "AE80::/10",
@@ -1262,31 +1262,31 @@ const quizData = {
                     "FC00::/7"
                 ],
                 correct: [2],
-                explanation: "FE80::... est le prÃƒÂ©fixe des adresses Link-Local, utilisÃƒÂ©es pour la communication sur le mÃƒÂªme segment (comme ARP en IPv4)."
+                explanation: "FE80::... est le pr?fixe des adresses Link-Local, utilis?es pour la communication sur le m?me segment (comme ARP en IPv4)."
             },
             {
                 id: 3,
-                question: "NAT Overload (PAT) utilise quel ÃƒÂ©lÃƒÂ©ment pour distinguer les sessions de plusieurs utilisateurs partageant une seule IP publique ?",
+                question: "NAT Overload (PAT) utilise quel ?l?ment pour distinguer les sessions de plusieurs utilisateurs partageant une seule IP publique ?",
                 options: [
                     "L'adresse MAC",
-                    "Le numÃƒÂ©ro de sÃƒÂ©quence TCP",
-                    "Le numÃƒÂ©ro de Port Source",
+                    "Le num?ro de s?quence TCP",
+                    "Le num?ro de Port Source",
                     "L'adresse IP de destination"
                 ],
                 correct: [2],
-                explanation: "PAT (Port Address Translation) mappe chaque IP privÃƒÂ©e interne + Port Source vers l'IP Publique + Port Unique."
+                explanation: "PAT (Port Address Translation) mappe chaque IP priv?e interne + Port Source vers l'IP Publique + Port Unique."
             },
             {
                 id: 4,
-                question: "HSRP : Le routeur Actif tombe. Le routeur Standby prend la relÃƒÂ¨ve. Que se passe-t-il quand le routeur Actif revient (dÃƒÂ©lai de prÃƒÂ©emption activÃƒÂ©) ?",
+                question: "HSRP : Le routeur Actif tombe. Le routeur Standby prend la rel?ve. Que se passe-t-il quand le routeur Actif revient (d?lai de pr?emption activ?) ?",
                 options: [
                     "Il reste en Standby",
-                    "Il reprend son rÃƒÂ´le de routeur Actif immÃƒÂ©diatement (si sa prioritÃƒÂ© est supÃƒÂ©rieure)",
-                    "Il redÃƒÂ©marre",
+                    "Il reprend son r?le de routeur Actif imm?diatement (si sa priorit? est sup?rieure)",
+                    "Il red?marre",
                     "Il partage la charge"
                 ],
                 correct: [1],
-                explanation: "Si 'preempt' est configurÃƒÂ©, le routeur avec la plus haute prioritÃƒÂ© reprendra le rÃƒÂ´le Actif dÃƒÂ¨s qu'il sera disponible."
+                explanation: "Si 'preempt' est configur?, le routeur avec la plus haute priorit? reprendra le r?le Actif d?s qu'il sera disponible."
             },
             {
                 id: 5,
@@ -1298,11 +1298,11 @@ const quizData = {
                     "ipv6 enable"
                 ],
                 correct: [1],
-                explanation: "'ipv6 address autoconfig' dit au routeur de s'auto-configurer en ÃƒÂ©coutant les Router Advertisements (RA) sur le lien."
+                explanation: "'ipv6 address autoconfig' dit au routeur de s'auto-configurer en ?coutant les Router Advertisements (RA) sur le lien."
             },
             {
                 id: 6,
-                question: "Quel protocole de dÃƒÂ©couverte est propriÃƒÂ©taire Cisco et activÃƒÂ© par dÃƒÂ©faut sur presque tous les ÃƒÂ©quipements Cisco ?",
+                question: "Quel protocole de d?couverte est propri?taire Cisco et activ? par d?faut sur presque tous les ?quipements Cisco ?",
                 options: [
                     "LLDP (Link Layer Discovery Protocol)",
                     "CDP (Cisco Discovery Protocol)",
@@ -1310,11 +1310,11 @@ const quizData = {
                     "STP"
                 ],
                 correct: [1],
-                explanation: "CDP est utilisÃƒÂ© par Cisco pour partager des informations avec ses voisins directs. LLDP est l'ÃƒÂ©quivalent standard ouvert."
+                explanation: "CDP est utilis? par Cisco pour partager des informations avec ses voisins directs. LLDP est l'?quivalent standard ouvert."
             },
             {
                 id: 7,
-                question: "Dans Syslog, quel niveau de sÃƒÂ©vÃƒÂ©ritÃƒÂ© (Severity Level) correspond ÃƒÂ  une erreur 'Critical' ?",
+                question: "Dans Syslog, quel niveau de s?v?rit? (Severity Level) correspond ? une erreur 'Critical' ?",
                 options: [
                     "0",
                     "2",
@@ -1322,23 +1322,23 @@ const quizData = {
                     "7"
                 ],
                 correct: [1],
-                explanation: "L'ÃƒÂ©chelle va de 0 (Emergency) ÃƒÂ  7 (Debug). Critical est le niveau 2."
+                explanation: "L'?chelle va de 0 (Emergency) ? 7 (Debug). Critical est le niveau 2."
             },
             {
                 id: 8,
-                question: "Quel est l'objectif du protocole NTP (Network Time Protocol) dans un rÃƒÂ©seau ?",
+                question: "Quel est l'objectif du protocole NTP (Network Time Protocol) dans un r?seau ?",
                 options: [
-                    "AccÃƒÂ©lÃƒÂ©rer le routage",
-                    "Synchroniser l'heure de tous les ÃƒÂ©quipements",
+                    "Acc?l?rer le routage",
+                    "Synchroniser l'heure de tous les ?quipements",
                     "Surveiller la bande passante",
-                    "GÃƒÂ©nÃƒÂ©rer des logs"
+                    "G?n?rer des logs"
                 ],
                 correct: [1],
-                explanation: "NTP assure que tous les logs et ÃƒÂ©vÃƒÂ©nements ont un horodatage cohÃƒÂ©rent, ce qui est crucial pour le troubleshooting et la sÃƒÂ©curitÃƒÂ©."
+                explanation: "NTP assure que tous les logs et ?v?nements ont un horodatage coh?rent, ce qui est crucial pour le troubleshooting et la s?curit?."
             },
             {
                 id: 9,
-                question: "IPv6 EUI-64 : Quelle valeur est insÃƒÂ©rÃƒÂ©e au milieu de l'adresse MAC pour crÃƒÂ©er l'identifiant d'interface ?",
+                question: "IPv6 EUI-64 : Quelle valeur est ins?r?e au milieu de l'adresse MAC pour cr?er l'identifiant d'interface ?",
                 options: [
                     "FFFF",
                     "FFFE",
@@ -1346,11 +1346,11 @@ const quizData = {
                     "C000"
                 ],
                 correct: [1],
-                explanation: "EUI-64 prend l'adresse MAC (48 bits), l'ÃƒÂ©carte au milieu et insÃƒÂ¨re FFFE (16 bits) pour obtenir un ID d'interface de 64 bits."
+                explanation: "EUI-64 prend l'adresse MAC (48 bits), l'?carte au milieu et ins?re FFFE (16 bits) pour obtenir un ID d'interface de 64 bits."
             },
             {
                 id: 10,
-                question: "Quel service Cloud correspond ÃƒÂ  une application accessible directement via un navigateur (ex: Office 365, Gmail) ?",
+                question: "Quel service Cloud correspond ? une application accessible directement via un navigateur (ex: Office 365, Gmail) ?",
                 options: [
                     "IaaS (Infrastructure as a Service)",
                     "PaaS (Platform as a Service)",
@@ -1358,11 +1358,11 @@ const quizData = {
                     "SDN"
                 ],
                 correct: [2],
-                explanation: "SaaS est le modÃƒÂ¨le oÃƒÂ¹ l'utilisateur consomme directement le logiciel sans gÃƒÂ©rer d'infrastructure."
+                explanation: "SaaS est le mod?le o? l'utilisateur consomme directement le logiciel sans g?rer d'infrastructure."
             },
             {
                 id: 11,
-                question: "Quelle est l'adresse multicast IPv6 sollicitÃƒÂ©e pour atteindre 'Tous les Routeurs' (All Routers) ?",
+                question: "Quelle est l'adresse multicast IPv6 sollicit?e pour atteindre 'Tous les Routeurs' (All Routers) ?",
                 options: [
                     "FF02::1",
                     "FF02::2",
@@ -1370,11 +1370,11 @@ const quizData = {
                     "FF02::1:FF00:0"
                 ],
                 correct: [1],
-                explanation: "FF02::1 est pour 'tous les noeuds', FF02::2 est rÃƒÂ©servÃƒÂ©e aux routeurs."
+                explanation: "FF02::1 est pour 'tous les noeuds', FF02::2 est r?serv?e aux routeurs."
             },
             {
                 id: 12,
-                question: "HSRP : Quelle est la prioritÃƒÂ© par dÃƒÂ©faut d'un routeur dans un groupe ?",
+                question: "HSRP : Quelle est la priorit? par d?faut d'un routeur dans un groupe ?",
                 options: [
                     "1",
                     "10",
@@ -1382,11 +1382,11 @@ const quizData = {
                     "255"
                 ],
                 correct: [2],
-                explanation: "La prioritÃƒÂ© par dÃƒÂ©faut est 100. On l'augmente pour forcer un routeur ÃƒÂ  devenir Actif."
+                explanation: "La priorit? par d?faut est 100. On l'augmente pour forcer un routeur ? devenir Actif."
             },
             {
                 id: 13,
-                question: "Quel protocole est l'ÃƒÂ©quivalent standard (non-propriÃƒÂ©taire) de HSRP ?",
+                question: "Quel protocole est l'?quivalent standard (non-propri?taire) de HSRP ?",
                 options: [
                     "GLBP",
                     "VRRP (Virtual Router Redundancy Protocol)",
@@ -1398,7 +1398,7 @@ const quizData = {
             },
             {
                 id: 14,
-                question: "SNMP : Quel message est envoyÃƒÂ© par un agent SNMP ÃƒÂ  un manager de maniÃƒÂ¨re proactive (sans ÃƒÂªtre sollicitÃƒÂ©) pour signaler un problÃƒÂ¨me ?",
+                question: "SNMP : Quel message est envoy? par un agent SNMP ? un manager de mani?re proactive (sans ?tre sollicit?) pour signaler un probl?me ?",
                 options: [
                     "Get-Request",
                     "Set-Request",
@@ -1406,11 +1406,11 @@ const quizData = {
                     "Inform"
                 ],
                 correct: [2],
-                explanation: "Une 'Trap' SNMP est une notification spontanÃƒÂ©e envoyÃƒÂ©e lors d'un ÃƒÂ©vÃƒÂ©nement (ex: lien qui tombe)."
+                explanation: "Une 'Trap' SNMP est une notification spontan?e envoy?e lors d'un ?v?nement (ex: lien qui tombe)."
             },
             {
                 id: 15,
-                question: "Quelle commande permet de vÃƒÂ©rifier le statut HSRP d'un routeur ?",
+                question: "Quelle commande permet de v?rifier le statut HSRP d'un routeur ?",
                 options: [
                     "show hsrp",
                     "show standby",
@@ -1422,7 +1422,7 @@ const quizData = {
             },
             {
                 id: 16,
-                question: "IPv6 : Quel prÃƒÂ©fixe est utilisÃƒÂ© pour les adresses de Multicast ?",
+                question: "IPv6 : Quel pr?fixe est utilis? pour les adresses de Multicast ?",
                 options: [
                     "FE80::/10",
                     "FF00::/8",
@@ -1430,23 +1430,23 @@ const quizData = {
                     "::1/128"
                 ],
                 correct: [1],
-                explanation: "Toutes les adresses commenÃƒÂ§ant par FF sont des adresses de Multicast en IPv6."
+                explanation: "Toutes les adresses commen?ant par FF sont des adresses de Multicast en IPv6."
             },
             {
                 id: 17,
-                question: "Que se passe-t-il si un routeur reÃƒÂ§oit un paquet IPv6 dÃƒÂ©passant le MTU du lien, s'il n'y a pas de fragmentation ?",
+                question: "Que se passe-t-il si un routeur re?oit un paquet IPv6 d?passant le MTU du lien, s'il n'y a pas de fragmentation ?",
                 options: [
-                    "Il le fragmente lui-mÃƒÂªme",
-                    "Il le jette et envoie un ICMPv6 'Packet Too Big' ÃƒÂ  l'expÃƒÂ©diteur",
+                    "Il le fragmente lui-m?me",
+                    "Il le jette et envoie un ICMPv6 'Packet Too Big' ? l'exp?diteur",
                     "Il le compresse",
-                    "Il le transfÃƒÂ¨re par petits morceaux"
+                    "Il le transf?re par petits morceaux"
                 ],
                 correct: [1],
-                explanation: "En IPv6, les routeurs ne fragmentent plus les paquets. C'est l'hÃƒÂ´te source qui doit s'adapter (Path MTU Discovery)."
+                explanation: "En IPv6, les routeurs ne fragmentent plus les paquets. C'est l'h?te source qui doit s'adapter (Path MTU Discovery)."
             },
             {
                 id: 18,
-                question: "Dans le modÃƒÂ¨le SDN (Software Defined Networking), quel plan de contrÃƒÂ´le est centralisÃƒÂ© sur un Controller ?",
+                question: "Dans le mod?le SDN (Software Defined Networking), quel plan de contr?le est centralis? sur un Controller ?",
                 options: [
                     "Data Plane",
                     "Control Plane",
@@ -1454,11 +1454,11 @@ const quizData = {
                     "User Plane"
                 ],
                 correct: [1],
-                explanation: "Le SDN sÃƒÂ©pare le Control Plane (dÃƒÂ©cision) du Data Plane (transfert) et centralise le Control Plane sur un contrÃƒÂ´leur logiciel."
+                explanation: "Le SDN s?pare le Control Plane (d?cision) du Data Plane (transfert) et centralise le Control Plane sur un contr?leur logiciel."
             },
             {
                 id: 19,
-                question: "Quel protocole est utilisÃƒÂ© par les contrÃƒÂ´leurs SDN pour communiquer 'vers le bas' avec les ÃƒÂ©quipements rÃƒÂ©seau ?",
+                question: "Quel protocole est utilis? par les contr?leurs SDN pour communiquer 'vers le bas' avec les ?quipements r?seau ?",
                 options: [
                     "Restful API",
                     "Northbound API",
@@ -1466,11 +1466,11 @@ const quizData = {
                     "Eastbound API"
                 ],
                 correct: [2],
-                explanation: "Les protocoles 'Southbound' relient le contrÃƒÂ´leur aux switches/routeurs."
+                explanation: "Les protocoles 'Southbound' relient le contr?leur aux switches/routeurs."
             },
             {
                 id: 20,
-                question: "Quelle mÃƒÂ©thode permet de sauvegarder la configuration d'un routeur Cisco sur un serveur distant ?",
+                question: "Quelle m?thode permet de sauvegarder la configuration d'un routeur Cisco sur un serveur distant ?",
                 options: [
                     "copy running-config startup-config",
                     "copy running-config tftp:",
@@ -1478,11 +1478,12 @@ const quizData = {
                     "export config"
                 ],
                 correct: [1],
-                explanation: "On utilise gÃƒÂ©nÃƒÂ©ralement TFTP, FTP ou SCP pour exporter les fichiers de configuration hors de l'ÃƒÂ©quipement."
+                explanation: "On utilise g?n?ralement TFTP, FTP ou SCP pour exporter les fichiers de configuration hors de l'?quipement."
             }
         ]
     }
 };
 
 window.quizData = quizData;
+
 

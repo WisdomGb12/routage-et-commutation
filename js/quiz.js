@@ -1,4 +1,4 @@
-﻿ï»¿
+﻿?
 // ============================================
 // QUIZ ENGINE
 // ============================================
@@ -61,11 +61,11 @@ function initQuiz() {
             <div class="quiz-header">
                 <div class="quiz-title-row">
                     <h3>${data.title}</h3>
-                    <button class="quiz-toggle-btn" onclick="toggleQuizContent(this)" aria-label="RÃƒÆ’Ã‚Â©duire/Agrandir le quiz">
+                    <button class="quiz-toggle-btn" onclick="toggleQuizContent(this)" aria-label="R�duire/Agrandir le quiz">
                         <i class="fas ${chevronClass}"></i>
                     </button>
                 </div>
-                <p class="quiz-subtitle">Testez vos connaissances ! SÃƒÆ’Ã‚Â©lectionnez la ou les bonnes rÃƒÆ’Ã‚Â©ponses.</p>
+                <p class="quiz-subtitle">Testez vos connaissances ! S�lectionnez la ou les bonnes r�ponses.</p>
             </div>
             <div class="quiz-content-wrapper ${expandedClass}">
                 <div class="quiz-questions">
@@ -104,8 +104,8 @@ function initQuiz() {
                                ${isSubmitted ? 'disabled' : ''}
                                onchange="handleOptionChange(${q.id}, ${optIndex}, '${inputType}')">
                         <span class="option-text">${opt}</span>
-                        ${isSubmitted && q.correct.includes(optIndex) ? '<span class="result-icon">Ã¢Ã…â€œÃ¢â‚¬Å“</span>' : ''}
-                        ${isSubmitted && isSelected && !q.correct.includes(optIndex) ? '<span class="result-icon">Ã¢Ã…â€œÃ¢â‚¬â€</span>' : ''}
+                        ${isSubmitted && q.correct.includes(optIndex) ? '<span class="result-icon">???</span>' : ''}
+                        ${isSubmitted && isSelected && !q.correct.includes(optIndex) ? '<span class="result-icon">???</span>' : ''}
                     </label>
                 `;
             });
@@ -130,7 +130,7 @@ function initQuiz() {
         html += `
                 <div class="quiz-actions">
                     ${!isSubmitted ?
-                `<button class="btn-primary" onclick="submitQuiz()">Valider mes rÃƒÆ’Ã‚Â©ponses</button>` :
+                `<button class="btn-primary" onclick="submitQuiz()">Valider mes r�ponses</button>` :
                 `<div class="result-summary">
                             <span class="score-display">Score : ${score}%</span>
                             <p>${getFeedbackMessage(score)}</p>
@@ -229,7 +229,7 @@ function initQuiz() {
     };
 
     window.resetQuiz = () => {
-        if (confirm("Voulez-vous vraiment effacer vos rÃƒÆ’Ã‚Â©ponses et recommencer ?")) {
+        if (confirm("Voulez-vous vraiment effacer vos r�ponses et recommencer ?")) {
             userAnswers = {};
             isSubmitted = false;
             score = 0;
@@ -241,14 +241,15 @@ function initQuiz() {
     };
 
     function getFeedbackMessage(score) {
-        if (score === 100) return "Excellent ! Vous maÃƒÆ’Ã‚Â®trisez parfaitement ce chapitre ! ÃƒÂ°Ã…Â¸Ã‚ÂÃ¢â‚¬Â ";
-        if (score >= 80) return "TrÃƒÆ’Ã‚Â¨s bon travail ! Quelques petits dÃƒÆ’Ã‚Â©tails ÃƒÆ’Ã‚Â  revoir. ÃƒÂ°Ã…Â¸Ã¢â‚¬ËœÃ‚Â";
-        if (score >= 50) return "Pas mal, mais vous pouvez faire mieux. Relisez le cours ! ÃƒÂ°Ã…Â¸Ã¢â‚¬ËœÃ‚Â";
-        return "Oula... Il faut revoir le cours avant de passer ÃƒÆ’Ã‚Â  la suite. ÃƒÂ°Ã…Â¸Ã¢â‚¬Å“Ã…Â¡";
+        if (score === 100) return "Excellent ! Vous ma�trisez parfaitement ce chapitre ! ??";
+        if (score >= 80) return "Tr�s bon travail ! Quelques petits d�tails � revoir. ??";
+        if (score >= 50) return "Pas mal, mais vous pouvez faire mieux. Relisez le cours ! ??";
+        return "Oula... Il faut revoir le cours avant de passer � la suite. ??";
     }
 
     // Initial render
     renderQuiz();
 }
+
 
 
