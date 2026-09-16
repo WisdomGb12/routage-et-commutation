@@ -2,7 +2,43 @@
 // ROUTAGE ET COMMUTATION - Interactive Features
 // ============================================
 
-document.addEventListener('DOMContentLoaded', function () {
+// Shared header include loader: fetch includes/header.html and inject into <header class="header">.
+// The include uses data-href attributes so links are normalized depending on current page depth.
+async function loadHeaderInclude() {
+    try {
+        const headerEl = document.querySelector('header.header');
+        if (!headerEl || headerEl.children.length > 0) return; // Header already rendered in HTML
+        const path = window.location.pathname;
+        const isInPages = path.includes('/pages/');
+        const prefix = isInPages ? '../' : '';
+        const response = await fetch(prefix + 'includes/header.html');
+        if (!response.ok) return;
+        const html = await response.text();
+        headerEl.innerHTML = html;
+        // Normalize data-href -> href
+        headerEl.querySelectorAll('[data-href]').forEach(el => {
+            const target = el.getAttribute('data-href');
+            // If we are inside pages/ folder, adjust paths:
+            // - links to pages/* should become relative to pages (remove the pages/ prefix)
+            // - links to root-level files (no pages/ prefix) should be prefixed with ../
+            if (isInPages) {
+                if (target.startsWith('pages/')) {
+                    el.setAttribute('href', target.replace(/^pages\//, ''));
+                } else {
+                    el.setAttribute('href', '../' + target);
+                }
+            } else {
+                el.setAttribute('href', target);
+            }
+        });
+    } catch (err) {
+        console.error('Failed to load header include:', err);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+    // Load shared header include before initializing features so listeners attach correctly
+    await loadHeaderInclude();
     // Initialize all features
     initThemeToggle();
     initMobileMenu();
@@ -59,8 +95,8 @@ function initThemeToggle() {
         applyTheme(savedTheme);
     }
 
-    // Add click handler to all theme toggle buttons
-    document.querySelectorAll('.theme-toggle').forEach(btn => {
+    // Add click handler to all theme toggle buttons (both floating FAB and legacy)
+    document.querySelectorAll('.theme-toggle, .theme-toggle-floating').forEach(btn => {
         btn.addEventListener('click', toggleTheme);
     });
 
@@ -110,8 +146,21 @@ function initMobileMenu() {
         }
     });
 
-    // Close menu when clicking on a link
-    nav.querySelectorAll('.nav-link').forEach(link => {
+    // Handle accordion toggle for submenus on mobile screens
+    nav.querySelectorAll('.has-mega-menu > .nav-link, .has-dropdown > .nav-link').forEach(toggleLink => {
+        toggleLink.addEventListener('click', function (e) {
+            if (window.innerWidth <= 1024) {
+                e.preventDefault();
+                const parent = this.closest('.nav-item');
+                if (parent) {
+                    parent.classList.toggle('mobile-open');
+                }
+            }
+        });
+    });
+
+    // Close menu when clicking on an actual destination link
+    nav.querySelectorAll('.mega-menu-item, .dropdown-item, .nav-link:not(.has-mega-menu > .nav-link):not(.has-dropdown > .nav-link)').forEach(link => {
         link.addEventListener('click', () => {
             nav.classList.remove('open');
             menuBtn.classList.remove('active');
@@ -123,7 +172,7 @@ function initMobileMenu() {
 
     // Close menu when resizing beyond mobile breakpoint
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && nav.classList.contains('open')) {
+        if (window.innerWidth > 1024 && nav.classList.contains('open')) {
             nav.classList.remove('open');
             menuBtn.classList.remove('active');
             document.body.style.overflow = '';
@@ -131,7 +180,8 @@ function initMobileMenu() {
             updateMenuIcon(false);
         }
     });
-    // Close menu when clicking outside (on the overlay mostly)
+
+    // Close menu when clicking outside (on the overlay)
     document.addEventListener('click', function (e) {
         if (nav.classList.contains('open') && !nav.contains(e.target) && !menuBtn.contains(e.target)) {
             nav.classList.remove('open');
@@ -246,7 +296,7 @@ function initProgressTracking() {
     // Update progress UI (Main phases)
     function updateProgressUI() {
         const progress = getProgress();
-        const totalPhases = 6;
+        const totalPhases = 10;
         // Count only keys that start with "phase" and are true
         const completedPhases = Object.keys(progress).filter(k => k.startsWith('phase') && progress[k]).length;
         const percentage = Math.round((completedPhases / totalPhases) * 100);
@@ -260,7 +310,7 @@ function initProgressTracking() {
         }
 
         if (progressText) {
-            progressText.textContent = `${completedPhases}/${totalPhases} phases compl?t?es (${percentage}%)`;
+            progressText.textContent = `${completedPhases}/${totalPhases} phases complétées (${percentage}%)`;
         }
 
         // Update phase checkmarks and buttons
@@ -270,10 +320,10 @@ function initProgressTracking() {
             if (el.classList.contains('mark-complete-btn')) {
                 if (progress[phaseId]) {
                     el.classList.add('completed');
-                    el.textContent = '? Phase termin?e';
+                    el.textContent = '✓ Phase terminée';
                 } else {
                     el.classList.remove('completed');
-                    el.textContent = 'Marquer la phase comme termin?e';
+                    el.textContent = 'Marquer la phase comme terminée';
                 }
             } else if (el.classList.contains('card')) {
                 if (progress[phaseId]) {

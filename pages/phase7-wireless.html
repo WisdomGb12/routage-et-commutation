@@ -1,0 +1,674 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 7 : Réseaux Sans Fil (Wireless) - Routage et Commutation</title>
+    <meta name="description"
+        content="Fondamentaux des réseaux sans fil (Wireless) : RF, normes 802.11, WLC, sécurité Wi-Fi et WPA.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Ubuntu+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+                <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-network-wired"></i></div>
+                <span>Routage &amp; Commutation</span>
+            </a>
+
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">Accueil</a>
+                <a href="../Programme.html" class="nav-link">Programme</a>
+
+                <!-- Mega Menu: 10 Phases -->
+                <div class="nav-item has-mega-menu">
+                    <a href="#" class="nav-link active">
+                        <span>Modules de Cours</span>
+                        <i class="fas fa-chevron-down nav-chevron"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-col">
+                            <span class="mega-menu-title"><i class="fas fa-layer-group"></i> 01 à 05 — Fondamentaux & Infra</span>
+                            <a href="phase1-fondamentaux.html" class="mega-menu-item ">
+                                <span class="phase-badge">01</span>
+                                <div class="mega-menu-text">
+                                    <strong>Phase 1 : Fondamentaux</strong>
+                                    <span>Modèle OSI, IPv4/IPv6 & Câblage</span>
+                                </div>
+                            </a>
+                            <a href="phase2-commutation.html" class="mega-menu-item ">
+                                <span class="phase-badge">02</span>
+                                <div class="mega-menu-text">
+                                    <strong>Phase 2 : Commutation</strong>
+                                    <span>VLANs, Trunks 802.1Q, STP & RSTP</span>
+                                </div>
+                            </a>
+                            <a href="phase3-routage.html" class="mega-menu-item ">
+                                <span class="phase-badge">03</span>
+                                <div class="mega-menu-text">
+                                    <strong>Phase 3 : Routage IP</strong>
+                                    <span>Statique, OSPFv2 & Adjacences</span>
+                                </div>
+                            </a>
+                            <a href="phase4-inter-vlan.html" class="mega-menu-item ">
+                                <span class="phase-badge">04</span>
+                                <div class="mega-menu-text">
+                                    <strong>Phase 4 : Routage Inter-VLAN</strong>
+                                    <span>Router-on-a-Stick, SVIs & Switch L3</span>
+                                </div>
+                            </a>
+                            <a href="phase5-securite.html" class="mega-menu-item ">
+                                <span class="phase-badge">05</span>
+                                <div class="mega-menu-text">
+                                    <strong>Phase 5 : Sécurité Réseau</strong>
+                                    <span>ACLs, Port Security & DHCP Snooping</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mega-menu-col">
+                            <span class="mega-menu-title"><i class="fas fa-rocket"></i> 06 à 10 — Avancé, Cloud & Auto</span>
+                            <a href="phase6-avance.html" class="mega-menu-item ">
+                                <span class="phase-badge">06</span>
+                                <div class="mega-menu-text">
+                                    <strong>Phase 6 : Technologies Avancées</strong>
+                                    <span>EtherChannel, HSRP, NAT & QoS</span>
+                                </div>
+                            </a>
+                            <a href="phase7-wireless.html" class="mega-menu-item active">
+                                <span class="phase-badge">07</span>
+                                <div class="mega-menu-text">
+                                    <strong>Phase 7 : Réseaux Sans Fil</strong>
+                                    <span>Wi-Fi 6, WLC, CAPWAP & WPA3</span>
+                                </div>
+                            </a>
+                            <a href="phase8-automatisation.html" class="mega-menu-item ">
+                                <span class="phase-badge">08</span>
+                                <div class="mega-menu-text">
+                                    <strong>Phase 8 : Automatisation & SDN</strong>
+                                    <span>Python, REST APIs, JSON & Ansible</span>
+                                </div>
+                            </a>
+                            <a href="phase9-cloud.html" class="mega-menu-item ">
+                                <span class="phase-badge">09</span>
+                                <div class="mega-menu-text">
+                                    <strong>Phase 9 : Réseaux Cloud</strong>
+                                    <span>VPC AWS, Subnets & Transit Gateway</span>
+                                </div>
+                            </a>
+                            <a href="phase10-monitoring.html" class="mega-menu-item ">
+                                <span class="phase-badge">10</span>
+                                <div class="mega-menu-text">
+                                    <strong>Phase 10 : Supervision Réseau</strong>
+                                    <span>SNMPv3, Syslog, NetFlow & SLA</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dropdown: Ressources & Pratique -->
+                <div class="nav-item has-dropdown">
+                    <a href="ressources.html" class="nav-link ">
+                        <span>Ressources</span>
+                        <i class="fas fa-chevron-down nav-chevron"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="examen-blanc.html" class="dropdown-item ">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <strong>Examen Blanc (100 QCM)</strong>
+                                <span>Ã‰preuve finale & Diagnostic CCNA</span>
+                            </div>
+                        </a>
+                        <a href="projets.html" class="dropdown-item ">
+                            <i class="fas fa-laptop-code"></i>
+                            <div>
+                                <strong>Projets Pratiques</strong>
+                                <span>Labs & Topologies Packet Tracer</span>
+                            </div>
+                        </a>
+                        <a href="ccna.html" class="dropdown-item ">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <strong>Certification CCNA</strong>
+                                <span>Guide complet & Objectifs 200-301</span>
+                            </div>
+                        </a>
+                        <a href="ressources.html" class="dropdown-item ">
+                            <i class="fas fa-book-open"></i>
+                            <div>
+                                <strong>Bibliothèque de Liens</strong>
+                                <span>Cheat sheets, RFCs & Utilitaires</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header-actions">
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container container-narrow">
+            <nav class="breadcrumb">
+                <a href="../index.html">Accueil</a>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Phase 7 : Wireless</span>
+            </nav>
+
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-wifi"></i></div>
+                <div>
+                    <span class="phase-badge" style="background: rgba(13, 148, 136, 0.15); color: #0d9488;">Phase 7</span>
+                    <h1 style="margin-top: 0.5rem;">Réseaux Sans Fil (Wireless)</h1>
+                </div>
+
+            </div>
+
+            <div class="alert alert-info">
+                <div class="alert-icon"><i class="fas fa-clock"></i></div>
+                <div class="alert-content">
+                    <div class="alert-title">Durée : 2 semaines</div>
+                    <p style="margin: 0;">Découvrez les principes de la communication par radiofréquence, les
+                        architectures WLAN d'entreprise et les mécanismes de sécurité Wi-Fi modernes exigés par le CCNA.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="toc">
+                <div class="toc-title"><i class="fas fa-list"></i> Sommaire</div>
+                <ul class="toc-list">
+                    <li><a href="#rf-fundamentals">1. Fondamentaux Radiofréquence (RF)</a></li>
+                    <li><a href="#standards">2. Normes IEEE 802.11</a></li>
+                    <li><a href="#architecture">3. Architecture WLAN</a></li>
+                    <li><a href="#wlan-concepts">4. Notions Clés WLAN</a></li>
+                    <li><a href="#security">5. Sécurité Wi-Fi</a></li>
+                    <li><a href="#labs">6. Lab Packet Tracer</a></li>
+                    <li><a href="#quiz">7. Quiz de vérification</a></li>
+                </ul>
+            </div>
+
+            <!-- Section 1 -->
+            <section class="section" id="rf-fundamentals">
+                <h2>1. Fondamentaux Radiofréquence (RF)</h2>
+
+                <p>Contrairement aux réseaux filaires (câble cuivre ou fibre), les réseaux sans fil transmettent
+                    l'information via des ondes électromagnétiques dans l'air. L'air est un <strong>médium partagé
+                        (half-duplex)</strong> sujet aux interférences.</p>
+
+                <h3>Bandes de Fréquences</h3>
+                <p>Le Wi-Fi utilise principalement des bandes de fréquences "libres" (ISM) qui ne nécessitent pas de
+                    licence :</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px; text-align: left;">Bande</th>
+                            <th style="padding: 12px; text-align: left;">Caractéristiques</th>
+                            <th style="padding: 12px; text-align: left;">Inconvénients</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><strong>2,4
+                                    GHz</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Grande portée,
+                                bonne pénétration des murs.</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Très saturée
+                                (Bluetooth, micro-ondes, autres réseaux), peu de canaux non-superposés. Débit plus
+                                faible.</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><strong>5
+                                    GHz</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Débits élevés,
+                                bande large, beaucoup de canaux disponibles (moins d'interférences).</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Portée plus courte,
+                                traverse mal les obstacles physiques.</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><strong>6
+                                    GHz</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Introduite avec le
+                                Wi-Fi 6E. Énormément d'espace, très hauts débits.</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Portée encore plus
+                                réduite. Nécessite des équipements très récents.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-warning">
+                    <div class="alert-icon"><i class="fas fa-triangle-exclamation"></i></div>
+                    <div class="alert-content">
+                        <div class="alert-title">Règle d'or en RF</div>
+                        <p style="margin: 0;">Plus la fréquence est haute (ex: 5 GHz ou 6 GHz), <strong>plus le débit
+                                est potentiellement élevé, mais plus la portée est faible</strong> car l'onde est plus
+                            vite atténuée par l'air et les obstacles.</p>
+                    </div>
+                </div>
+
+                <h3>Canaux et Chevauchement (Overlap)</h3>
+                <p>La bande est divisée en <strong>canaux</strong>. Les canaux ont une certaine <strong>largeur</strong>
+                    (20 MHz, 40 MHz, 80 MHz, etc.). Un canal plus large offre plus de débit mais prend plus de place,
+                    augmentant les risques d'interférences.</p>
+                <ul>
+                    <li><strong>En 2,4 GHz :</strong> Seuls les canaux <strong>1, 6 et 11</strong> (en largeur 20 MHz)
+                        ne se chevauchent pas. Il faut toujours utiliser ces 3 canaux dans une architecture multi-points
+                        d'accès pour éviter que les AP interfèrent entre eux (Co-Channel Interference).</li>
+                    <li><strong>En 5 GHz :</strong> Il y a beaucoup plus de canaux (ex: 36, 40, 44, 48, etc.) qui ne se
+                        chevauchent pas par défaut à 20 MHz.</li>
+                </ul>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="section" id="standards">
+                <h2>2. Normes IEEE 802.11</h2>
+
+                <p>L'IEEE normalise le Wi-Fi sous le standard <strong>802.11</strong>. Récemment, la Wi-Fi Alliance a
+                    introduit des noms commerciaux (Wi-Fi 4, 5, 6) beaucoup plus simples à mémoriser.</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <thead>
+                        <tr style="background: var(--gradient-primary); color: white;">
+                            <th style="padding: 12px; text-align: left;">Norme IEEE</th>
+                            <th style="padding: 12px; text-align: left;">Nom Wi-Fi</th>
+                            <th style="padding: 12px; text-align: left;">Bande(s)</th>
+                            <th style="padding: 12px; text-align: left;">Débit Max Théorique</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">802.11a</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">-</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">5 GHz</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">54 Mbps</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">802.11b</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">-</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">2,4 GHz</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">11 Mbps</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">802.11g</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">-</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">2,4 GHz</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">54 Mbps</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>802.11n</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><strong>Wi-Fi
+                                    4</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">2,4 et 5 GHz</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">600 Mbps</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>802.11ac</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><strong>Wi-Fi
+                                    5</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">5 GHz uniquement
+                            </td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">~ 6.9 Gbps</td>
+                        </tr>
+                        <tr style="background: var(--bg-card);">
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">
+                                <strong>802.11ax</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);"><strong>Wi-Fi 6 /
+                                    6E</strong></td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">2,4 / 5 / 6 GHz
+                                (6E)</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">~ 9.6 Gbps</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="section" id="architecture">
+                <h2>3. Architecture WLAN d'Entreprise</h2>
+
+                <p>Dans un réseau domestique, vous avez une seule box qui fait tout. En entreprise, il faut des dizaines
+                    voire des centaines de points d'accès (AP).</p>
+
+                <h3>Autonomous AP (Fat AP)</h3>
+                <p>Chaque AP est indépendant. Il contient toute l'intelligence, la configuration et gère lui-même la
+                    sécurité et le routage/pontage. </p>
+                <ul>
+                    <li><i class="fa-solid fa-square-check" style="color: var(--success);"></i> Facile à mettre en place
+                        pour 1 ou 2 bornes.</li>
+                    <li><i class="fa-solid fa-square-xmark" style="color: var(--danger);"></i> Ingérable à grande
+                        échelle : il faut configurer 50 bornes une par une. Le roaming est souvent lent.</li>
+                </ul>
+
+                <h3>Lightweight AP (LAP) et Wireless LAN Controller (WLC)</h3>
+                <p>C'est l'architecture standard en entreprise. On sépare l'intelligence (Control Plane) du matériel de
+                    transmission (Data Plane).</p>
+                <ul>
+                    <li><strong>WLC (Wireless LAN Controller) :</strong> Le "cerveau" central. Il stocke les
+                        configurations, gère l'authentification globale, optimise les canaux radio dynamiquement, et
+                        gère le roaming.</li>
+                    <li><strong>Lightweight AP (LAP) :</strong> Une borne "stupide". Elle ne fait qu'émettre le signal
+                        radio. Elle télécharge sa configuration depuis le WLC au démarrage.</li>
+                </ul>
+                <p><strong>CAPWAP (Control and Provisioning of Wireless Access Points) :</strong> C'est le protocole de
+                    tunnel utilisé entre le LAP et le WLC. Tout le trafic des clients Wi-Fi est encapsulé dans un tunnel
+                    CAPWAP jusqu'au contrôleur, qui le déverse ensuite sur le réseau filaire (VLANs).</p>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="section" id="wlan-concepts">
+                <h2>4. Notions Clés WLAN</h2>
+
+                <ul>
+                    <li><strong>SSID (Service Set Identifier) :</strong> Le nom du réseau Wi-Fi affiché aux utilisateurs
+                        (ex: "Entreprise-Guest").</li>
+                    <li><strong>BSSID (Basic Service Set Identifier) :</strong> L'adresse MAC de l'interface radio du
+                        point d'accès. Si un grand réseau a 50 APs diffusant le même SSID, il y aura 50 BSSID
+                        différents.</li>
+                    <li><strong>Association et Authentification :</strong> Un client doit d'abord s'authentifier, puis
+                        s'associer à l'AP avant de pouvoir envoyer des données. En 802.11, "Open Authentication"
+                        signifie absence d'authentification réelle avant association (la sécurité vient après, ex: avec
+                        WPA).</li>
+                    <li><strong>Roaming :</strong> Capacité d'un client à passer d'un point d'accès à un autre sans
+                        perdre sa connexion (ex: lors d'un appel vocal) de manière transparente. Géré efficacement par
+                        le WLC.</li>
+                    <li><strong>Couverture (Cellule RF) :</strong> La zone dans laquelle le signal de l'AP est
+                        utilisable. Pour un bon roaming, les cellules adjacentes doivent se chevaucher de 10 à 15%, mais
+                        sur des canaux différents.</li>
+                </ul>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="section" id="security">
+                <h2>5. Sécurité Wi-Fi</h2>
+
+                <p>Par nature, n'importe qui à portée peut écouter une transmission radio. Le chiffrement est donc
+                    vital.</p>
+
+                <h3>Évolution du chiffrement</h3>
+                <ul>
+                    <li><strong>WEP (Wired Equivalent Privacy) :</strong> Le premier standard. Cassable en quelques
+                        minutes aujourd'hui (RC4 statique). À ne <strong>jamais</strong> utiliser.</li>
+                    <li><strong>WPA (Wi-Fi Protected Access) :</strong> Amélioration urgente après la chute du WEP
+                        (utilise TKIP). Vulnérable.</li>
+                    <li><strong>WPA2 :</strong> Le standard robuste actuel. Utilise l'algorithme <strong>AES</strong>
+                        (Advanced Encryption Standard) et le protocole CCMP.</li>
+                    <li><strong>WPA3 :</strong> Le nouveau standard. Remplace le PSK (clé partagée) par SAE
+                        (Simultaneous Authentication of Equals) qui immunise contre les attaques par dictionnaire hors
+                        ligne, même avec un mot de passe faible.</li>
+                </ul>
+
+                <h3>Modes d'authentification (Personal vs Enterprise)</h3>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <div class="card" style="margin:0;">
+                        <h4 style="margin-top:0;">WPA2-Personal (PSK)</h4>
+                        <p>Pre-Shared Key. Un seul mot de passe pour tout le monde (comme à la maison).</p>
+                        <ul>
+                            <li>Facile à configurer.</li>
+                            <li>Si un employé part, il faut changer le mot de passe pour tous les autres pour rester
+                                sécurisé.</li>
+                        </ul>
+                    </div>
+                    <div class="card" style="margin:0;">
+                        <h4 style="margin-top:0;">WPA2-Enterprise (802.1X)</h4>
+                        <p>Utilise la norme <strong>802.1X / RADIUS</strong>. Chaque utilisateur a ses propres
+                            identifiants (ex: login/mot de passe Active Directory).</p>
+                        <ul>
+                            <li>Si un employé part, on désactive son compte, sans impacter les autres.</li>
+                            <li>Génère des clés de chiffrement dynamiques par utilisateur. Obligatoire en grande
+                                entreprise.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6 -->
+            <section class="section" id="labs">
+                <h2>6. Labs Packet Tracer & Exercices</h2>
+
+                <p>Cette série de labs couvre les aspects essentiels exploitables dans Cisco Packet Tracer ou en
+                    exercice conceptuel lorsque Packet Tracer ne reproduit pas fidèlement la radiofréquence réelle (ex:
+                    planification RF avancée, RADIUS complet).</p>
+
+                <!-- Lab A: RF & Channel Planning (Conceptuel + Packet Tracer validation) -->
+                <div class="card" style="margin-bottom:1rem;">
+                    <h3>Lab A — Planification RF et sélection de canaux</h3>
+                    <p><strong>Objectif :</strong> Comprendre l'impact du choix de bande, de canal et de largeur de
+                        canal sur la couverture et les performances.</p>
+
+                    <h4>Matériel / Outils :</h4>
+                    <ul>
+                        <li>Packet Tracer pour topologie logique (APs et clients)</li>
+                        <li>Un crayon / feuille ou un outil de dessin pour simuler la couverture (heatmap conceptuelle)
+                        </li>
+                    </ul>
+
+                    <h4>Étapes :</h4>
+                    <ol>
+                        <li>Placer 3 APs dans un plan de bureau simple (salon, couloir, open-space) — noter leurs
+                            positions.</li>
+                        <li>Choisir la bande 2,4 GHz et attribuer les canaux 1 / 6 / 11 aux APs respectifs. Documenter
+                            pourquoi ces canaux.</li>
+                        <li>Répéter l'exercice en 5 GHz : choisir des canaux non chevauchants (ex: 36 / 40 / 44 selon
+                            disponibilité) et observer les différences théoriques de portée.</li>
+                        <li>Simuler changement de largeur de canal (20 MHz vs 40/80 MHz) et noter l'impact attendu en
+                            débit et en interférence.</li>
+                        <li>Réaliser une carte conceptuelle de couverture : indiquer zones fortes / faibles. Discuter
+                            optimisation (puissance, placement, chevauchement 10–15%).</li>
+                    </ol>
+
+                    <h4>Vérifications :</h4>
+                    <ul>
+                        <li>Les APs adjacents en 2,4 GHz ne doivent pas utiliser de canaux chevauchants.</li>
+                        <li>Explication claire du compromis portée vs débit pour chaque bande.</li>
+                    </ul>
+
+                    <h4>Questions de contrôle :</h4>
+                    <ol>
+                        <li>Pourquoi choisir 1/6/11 en 2,4 GHz plutôt que 2/5/8 ?</li>
+                        <li>Que se passe-t-il si deux APs proches utilisent 40 MHz dans la même bande ?</li>
+                    </ol>
+                </div>
+
+                <!-- Lab B: WLC + LAP basic deployment (Packet Tracer) -->
+                <div class="card" style="margin-bottom:1rem;">
+                    <h3>Lab B — Déploiement WLC & LAP (Packet Tracer)</h3>
+                    <p><strong>Objectif :</strong> Configurer un WLC 3504 basique, joindre un LAP et déployer un SSID
+                        WPA2-Personal.</p>
+
+                    <h4>Topologie / Matériel :</h4>
+                    <ul>
+                        <li>1x WLC (WLC-PT ou 3504 si disponible)</li>
+                        <li>1x Switch (2960/3560)</li>
+                        <li>1x Lightweight AP</li>
+                        <li>1x PC Admin (navigateur) + 1x Laptop sans fil</li>
+                        <li>Routeur/switch fournissant DHCP si nécessaire</li>
+                    </ul>
+
+                    <h4>Étapes détaillées :</h4>
+                    <ol>
+                        <li>Connexion physique : câbler WLC, switch, LAP et PC admin selon la topologie.</li>
+                        <li>Configurer l'adresse de management du WLC et vérifier accessibilité depuis le PC (ping).
+                        </li>
+                        <li>Sur le WLC, créer un WLAN/SSID (ex: <code>Corp-WiFi</code>) et définir la sécurité en
+                            <code>WPA2-PSK</code> avec une clé d'exemple.</li>
+                        <li>Vérifier que le LAP s'enregistre automatiquement auprès du WLC (CAPWAP) et qu'il diffuse le
+                            SSID.</li>
+                        <li>Se connecter depuis le Laptop au SSID et tester la connectivité (ping vers le PC admin ou
+                            une IP publique simulée).</li>
+                    </ol>
+
+                    <h4>Vérifications :</h4>
+                    <ul>
+                        <li>Le LAP apparait dans l'inventaire du WLC et son statut est "Registered".</li>
+                        <li>Le SSID est visible et le Laptop se connecte en WPA2-PSK.</li>
+                        <li>Le ping depuis le client fonctionne (ou la connectivité simulée est établie).</li>
+                    </ul>
+
+                    <h4>Questions :</h4>
+                    <ol>
+                        <li>Qu'est-ce que CAPWAP et quel est son rôle dans cette architecture ?</li>
+                        <li>Que se passe-t-il si le WLC devient indisponible ? (Conséquences sur le roaming et la
+                            gestion)</li>
+                    </ol>
+                </div>
+
+                <!-- Lab C: Sécurité Wi-Fi - comparatif Personal vs Enterprise (conceptuel + config) -->
+                <div class="card" style="margin-bottom:1rem;">
+                    <h3>Lab C — Sécurité Wi-Fi : WPA2-Personal vs WPA2-Enterprise</h3>
+                    <p><strong>Objectif :</strong> Comparer les modes Personal et Enterprise, et configurer
+                        (conceptuellement) une authentification 802.1X avec RADIUS.</p>
+
+                    <h4>Matériel / Outils :</h4>
+                    <ul>
+                        <li>Packet Tracer (pour simuler le SSID WPA2-PSK)</li>
+                        <li>Documentation sur 802.1X et RADIUS (ex: FreeRADIUS pour lab réel)</li>
+                    </ul>
+
+                    <h4>Étapes :</h4>
+                    <ol>
+                        <li>Configurer un SSID en WPA2-Personal (PSK) et observer la simplicité et les limites (partage
+                            de clé).</li>
+                        <li>Documenter l'architecture nécessaire pour WPA2-Enterprise : WLC, RADIUS (serveur d'auth),
+                            certificats, 802.1X.</li>
+                        <li>Rédiger les paramètres que le WLC doit connaître pour communiquer avec le serveur RADIUS
+                            (IP, secret partagé, ports, méthodes EAP).</li>
+                        <li>Expliquer la gestion des comptes utilisateurs (ex: intégration Active Directory) et la
+                            rotation des clés.</li>
+                    </ol>
+
+                    <h4>Vérifications / Points à valider :</h4>
+                    <ul>
+                        <li>Compréhension des avantages (contrôle par utilisateur, révocation facile) et inconvénients
+                            (complexité initiale) d'Enterprise.</li>
+                        <li>Liste des éléments nécessaires pour mettre en production WPA2-Enterprise.</li>
+                    </ul>
+
+                    <h4>Questions :</h4>
+                    <ol>
+                        <li>Pourquoi WPA2-Enterprise est préféré en entreprise malgré sa complexité ?</li>
+                        <li>Que protège SAE dans WPA3 par rapport à WPA2-PSK ?</li>
+                    </ol>
+                </div>
+
+                <!-- Lab D: Roaming simple (Packet Tracer) -->
+                <div class="card" style="margin-bottom:1rem;">
+                    <h3>Lab D — Tester le roaming</h3>
+                    <p><strong>Objectif :</strong> Vérifier le passage d'un client d'un AP à un autre sans rupture
+                        notable (voix/stream). Note : Packet Tracer simule partiellement le roaming ; adapter les tests
+                        en conséquence.</p>
+
+                    <h4>Topologie :</h4>
+                    <ul>
+                        <li>2 APs gérés par le même WLC, couvrant des zones adjacentes</li>
+                        <li>1 client sans fil effectuant un ping continu vers un serveur</li>
+                    </ul>
+
+                    <h4>Étapes :</h4>
+                    <ol>
+                        <li>Lancer un ping continu depuis le client vers le serveur.</li>
+                        <li>Déplacer le client (simulé) de l'AP1 vers l'AP2 et observer les logs WLC et la continuité du
+                            ping.</li>
+                        <li>Analyser les temps de latence et les éventuelles pertes de paquets durant le handover.</li>
+                    </ol>
+
+                    <h4>Vérifications :</h4>
+                    <ul>
+                        <li>Le handover se produit avec un minimum de perte (idéalement aucune interruption longue).
+                        </li>
+                        <li>Les logs du WLC montrent l'événement de roaming et l'authentification sur le nouvel AP.</li>
+                    </ul>
+
+                    <h4>Questions :</h4>
+                    <ol>
+                        <li>Quelles conditions favorisent un roaming fluide ? (ex: puissance, chevauchement,
+                            configuration du WLC)</li>
+                        <li>Qu'est-ce qu'un 802.11r et dans quel cas il est utile ?</li>
+                    </ol>
+                </div>
+
+            </section>
+
+            <!-- Quiz -->
+            <section class="section" id="quiz">
+                <h2><i class="fas fa-flask"></i> Quiz de vérification</h2>
+                <div id="quiz-container" data-phase="phase7">
+                    <div style="text-align: center; padding: 2rem;">
+                        <p><i class="fas fa-spinner fa-spin"></i> Chargement du quiz...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Completion Section -->
+            <div class="completion-section"
+                style="margin: 4rem 0; padding: 2rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color); text-align: center;">
+                <h3 style="margin-bottom: 1rem;">La phase est terminée ?</h3>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Marquez cette phase comme terminée pour
+                    suivre votre progression globale.</p>
+                <button class="mark-complete-btn" data-phase="phase7"
+                    style="margin: 0 auto; width: auto; font-size: 1.1rem; padding: 0.75rem 2rem;">Marquer la phase
+                    comme terminée</button>
+            </div>
+
+            <nav class="page-nav">
+                <a href="phase6-avance.html" class="page-nav-link prev">
+                    <span>←</span>
+                    <div>
+                        <div class="page-nav-label">Précédent</div>
+                        <div class="page-nav-title">Phase 6 : Technologies Avancées</div>
+                    </div>
+                </a>
+                <a href="phase8-automatisation.html" class="page-nav-link">
+                    <div>
+                        <div class="page-nav-label">Suivant</div>
+                        <div class="page-nav-title">Phase 8 : Automatisation</div>
+                    </div>
+                    <span>→</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer footer--simple">
+        <div class="footer-content">
+            <div class="footer-site-name">Routage &amp; Commutation</div>
+            <p class="footer-disclaimer">
+                Ce site est un projet personnel et gratuit d'auto-formation, non affilié, non sponsorisé et non approuvé par Cisco Systems Inc. CCNA, Cisco Packet Tracer et IOS sont des marques déposées de Cisco Systems Inc.
+            </p>
+        </div>
+    </footer>
+
+        <!-- Bouton Thème Flottant -->
+    <button class="theme-toggle-floating" id="theme-toggle" aria-label="Changer le thème" title="Changer le thème (Clair / Sombre)">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+        </svg>
+    </button>
+
+    <script src="../js/quiz_data.js"></script>
+    <script src="../js/quiz.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

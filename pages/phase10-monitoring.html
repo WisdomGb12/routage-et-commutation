@@ -4,18 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Préparation CCNA - Routage et Commutation</title>
+    <title>Phase 10 : Supervision &amp; Monitoring - Routage et Commutation</title>
+    <meta name="description" content="Supervision réseau avancée : SNMP, NetFlow, Syslog, Prometheus, Grafana, Zabbix et alerting.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 
 <body>
-            <!-- Header -->
+                <!-- Header -->
     <header class="header">
         <div class="header-container">
             <a href="../index.html" class="logo">
@@ -29,7 +28,7 @@
 
                 <!-- Mega Menu: 10 Phases -->
                 <div class="nav-item has-mega-menu">
-                    <a href="#" class="nav-link ">
+                    <a href="#" class="nav-link active">
                         <span>Modules de Cours</span>
                         <i class="fas fa-chevron-down nav-chevron"></i>
                     </a>
@@ -102,7 +101,7 @@
                                     <span>VPC AWS, Subnets & Transit Gateway</span>
                                 </div>
                             </a>
-                            <a href="phase10-monitoring.html" class="mega-menu-item ">
+                            <a href="phase10-monitoring.html" class="mega-menu-item active">
                                 <span class="phase-badge">10</span>
                                 <div class="mega-menu-text">
                                     <strong>Phase 10 : Supervision Réseau</strong>
@@ -115,7 +114,7 @@
 
                 <!-- Dropdown: Ressources & Pratique -->
                 <div class="nav-item has-dropdown">
-                    <a href="ressources.html" class="nav-link active">
+                    <a href="ressources.html" class="nav-link ">
                         <span>Ressources</span>
                         <i class="fas fa-chevron-down nav-chevron"></i>
                     </a>
@@ -134,7 +133,7 @@
                                 <span>Labs & Topologies Packet Tracer</span>
                             </div>
                         </a>
-                        <a href="ccna.html" class="dropdown-item active">
+                        <a href="ccna.html" class="dropdown-item ">
                             <i class="fas fa-award"></i>
                             <div>
                                 <strong>Certification CCNA</strong>
@@ -159,131 +158,105 @@
             </div>
         </div>
     </header>
-
     <main class="main">
         <div class="container container-narrow">
             <nav class="breadcrumb">
                 <a href="../index.html">Accueil</a>
                 <span class="breadcrumb-separator">›</span>
-                <span class="breadcrumb-current">Préparation CCNA</span>
+                <span class="breadcrumb-current">Phase 10 : Monitoring Avancé</span>
             </nav>
 
             <div class="section-header">
-                <div class="section-icon"><i class="fas fa-bullseye"></i></div>
+                <div class="section-icon"><i class="fas fa-chart-line"></i></div>
                 <div>
-                    <h1 style="margin-top: 0.5rem;">Préparation Certification CCNA</h1>
+                    <span class="phase-badge" style="background: rgba(234, 88, 12, 0.15); color: #ea580c;">Phase 10</span>
+                    <h1 style="margin-top: 0.5rem;">Supervision & Monitoring avancé</h1>
                 </div>
             </div>
 
-            <section class="section">
-                <h2>CCNA 200-301</h2>
-                <div class="card">
-                    <h3>Informations de l'examen</h3>
-                    <ul>
-                        <li><strong>Durée prépa supplémentaire</strong> : 3-6 mois après ce programme</li>
-                        <li><strong>Coût</strong> : ~300 USD</li>
-                        <li><strong>Format</strong> : QCM, simulations, drag-and-drop (90-120 min)</li>
-                        <li><strong>Score requis</strong> : 825/1000</li>
-                        <li><strong>Validité</strong> : 3 ans</li>
-                    </ul>
+            <div class="alert alert-info">
+                <div class="alert-icon"><i class="fas fa-info"></i></div>
+                <div class="alert-content">
+                    <div class="alert-title">Durée : 1–2 semaines</div>
+                    <p style="margin:0;">Notions pratiques sur les outils de monitoring réseau et leur intégration (SNMP, Syslog, exporters, dashboards).</p>
+                </div>
+            </div>
+
+            <div class="toc"><div class="toc-title"><i class="fas fa-list"></i> Sommaire</div>
+            <ul class="toc-list"><li><a href="#tools">1. Outils : Zabbix / Prometheus / Grafana</a></li><li><a href="#metrics">2. Métriques réseau & exporters</a></li><li><a href="#collection">3. Collection : SNMP & Syslog</a></li><li><a href="#dashboards">4. Dashboards & Alerting</a></li><li><a href="#labs">5. Labs</a></li><li><a href="#quiz">6. Quiz</a></li></ul></div>
+
+            <section class="section" id="tools">
+                <h2>1. Outils : Zabbix / Prometheus / Grafana</h2>
+                <p>Brève description :</p>
+                <ul>
+                    <li><strong>Zabbix</strong> : solution tout-en-un (collecte, alerting, visualisation) souvent utilisée en entreprise.</li>
+                    <li><strong>Prometheus</strong> : système de collecte temporelle (time-series) pull-based, excellent pour métriques d'applications et d'exporters.</li>
+                    <li><strong>Grafana</strong> : visualisation et dashboards multi-source (Prometheus, InfluxDB, Elastic, etc.).</li>
+                </ul>
+            </section>
+
+            <section class="section" id="metrics">
+                <h2>2. Métriques réseau & exporters</h2>
+                <p>Exemples de métriques : utilisation interface (ifInOctets/ifOutOctets), erreurs, latence, disponibilité. Prometheus utilise des exporters (node_exporter, snmp_exporter) pour exposer ces métriques.</p>
+            </section>
+
+            <section class="section" id="collection">
+                <h2>3. Collection : SNMP & Syslog</h2>
+                <p>SNMP (v2c, v3) pour métriques et traps; Syslog pour logs textuels centralisés. Points clés :</p>
+                <ul>
+                    <li>SNMPv3 = authentification + chiffrement (préférer en production).</li>
+                    <li>Traps vs polling : traps = notifications push, polling = interrogation périodique.</li>
+                    <li>Syslog centralisé facilite corrélation d'événements et troubleshooting.</li>
+                </ul>
+            </section>
+
+            <section class="section" id="dashboards">
+                <h2>4. Dashboards & Alerting</h2>
+                <p>Construire des dashboards pertinents (interfaces critiques, erreurs, latence). Configurer alerting (thresholds, notifications) et éviter les alertes bruit (tuning).</p>
+            </section>
+
+            <section class="section" id="labs">
+                <h2>5. Labs recommandés</h2>
+                <div class="card" style="margin-bottom:1rem;"><h4>Lab A — SNMP polling avec snmp_exporter (conceptuel)</h4>
+                <ol><li>Identifier OIDs pertinents (ifInOctets, ifOutOctets, ifOperStatus).</li><li>Configurer snmp_exporter pour interroger un switch et vérifier la métrique dans Prometheus.</li></ol></div>
+
+                <div class="card" style="margin-bottom:1rem;"><h4>Lab B — Dashboard Grafana</h4>
+                <ol><li>Ajouter Prometheus comme source de données dans Grafana.</li><li>Créer un dashboard montrant utilisation des interfaces et erreurs.</li></ol></div>
+            </section>
+
+            <!-- Quiz -->
+            <section class="section" id="quiz">
+                <h2><i class="fas fa-flask"></i> Quiz de vérification</h2>
+                <div id="quiz-container" data-phase="phase10">
+                    <div style="text-align: center; padding: 2rem;">
+                        <p><i class="fas fa-spinner fa-spin"></i> Chargement du quiz...</p>
+                    </div>
                 </div>
             </section>
 
-            <section class="section">
-                <h2>Validation des Compétences</h2>
-
-                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Niveau Débutant (Semaines 1-8)
-                </h3>
-                <ol>
-                    <li>Calculer des sous-réseaux rapidement sans calculateur</li>
-                    <li>Configurer un switch de base avec VLANs</li>
-                    <li>Créer un trunk entre deux switches</li>
-                    <li>Configurer une route statique</li>
-                    <li>Lire et comprendre une table de routage</li>
-                </ol>
-
-                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Niveau Intermédiaire (Semaines
-                    9-16)</h3>
-                <ol>
-                    <li>Configurer OSPF single-area sans documentation</li>
-                    <li>Implémenter le routage inter-VLAN (Router-on-a-Stick)</li>
-                    <li>Diagnostiquer un problème en moins de 15 minutes</li>
-                    <li>Créer et appliquer des ACLs</li>
-                    <li>Optimiser OSPF (timers, priorités, coûts)</li>
-                </ol>
-
-                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Niveau Avancé (Semaines 17-24)
-                </h3>
-                <ol>
-                    <li>Concevoir une architecture réseau pour PME</li>
-                    <li>Configurer OSPF multi-areas</li>
-                    <li>Implémenter la redondance (HSRP, EtherChannel)</li>
-                    <li>Sécuriser un réseau selon les best practices</li>
-                    <li>Troubleshooter des problèmes complexes</li>
-                </ol>
-            </section>
-
-            <section class="section">
-                <h2>Conseils Stratégiques pour l'Examen</h2>
-                <div class="card" style="border-left: 4px solid var(--warning);">
-                    <h3><i class="fas fa-lightbulb"></i> Tips du Jour J</h3>
-                    <ul style="margin: 0;">
-                        <li><strong>Pas de retour arrière</strong> : Une fois que vous cliquez sur "Suivant", c'est
-                            fini. Validez bien avant d'avancer.</li>
-                        <li><strong>Gérez votre temps</strong> : Ne passez pas plus de 10 min sur un lab. Si vous
-                            bloquez, configurez ce que vous savez et avancez.</li>
-                        <li><strong>Lisez la question À FOND</strong> : Cisco aime les pièges (ex: "choose TWO" ou
-                            "except").</li>
-                        <li><strong>Subnetting mental</strong> : Vous devez pouvoir faire du subnetting /24 à /30 de
-                            tête rapidement.</li>
-                        <li><strong>Commandes vitales</strong> : Connaissez par cœur
-                            <code>show ip interface brief</code>, <code>show ip route</code>, et <code>show run</code>.
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Conseils Dev → Réseau</h2>
-
-                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Similitudes à exploiter</h3>
-                <ul>
-                    <li><strong>Debugging</strong> : Même méthodologie</li>
-                    <li><strong>Algorithmes</strong> : OSPF = Dijkstra, RIP = Bellman-Ford</li>
-                    <li><strong>Architecture</strong> : VLANs ≈ microservices</li>
-                    <li><strong>Logs</strong> : commandes "show" = console.log()</li>
-                </ul>
-
-                <h3><i class="fas fa-triangle-exclamation" style="color: var(--warning);"></i> Différences à anticiper
-                </h3>
-                <ul>
-                    <li><strong>Matériel</strong> : Câbles et équipements physiques comptent</li>
-                    <li><strong>Propagation</strong> : Changements affectent tout le réseau</li>
-                    <li><strong>Temps réel</strong> : Résolution immédiate requise</li>
-                    <li><strong>Moins de "undo"</strong> : Prudence en production</li>
-                </ul>
-
-                <h3><i class="fas fa-lightbulb" style="color: var(--info);"></i> Astuces</h3>
-                <ul>
-                    <li>Documentez tout (comme des commentaires)</li>
-                    <li>Créez une bibliothèque de configurations</li>
-                    <li>Testez toujours dans un lab avant prod</li>
-                    <li>Comprenez le "pourquoi" avant le "comment"</li>
-                </ul>
-            </section>
+            <!-- Completion Section -->
+            <div class="completion-section"
+                style="margin: 4rem 0; padding: 2rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color); text-align: center;">
+                <h3 style="margin-bottom: 1rem;">La phase est terminée ?</h3>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Marquez cette phase comme terminée pour
+                    suivre votre progression globale.</p>
+                <button class="mark-complete-btn" data-phase="phase10"
+                    style="margin: 0 auto; width: auto; font-size: 1.1rem; padding: 0.75rem 2rem;">Marquer la phase
+                    comme terminée</button>
+            </div>
 
             <nav class="page-nav">
-                <a href="projets.html" class="page-nav-link prev">
+                <a href="phase9-cloud.html" class="page-nav-link prev">
                     <span>←</span>
                     <div>
                         <div class="page-nav-label">Précédent</div>
-                        <div class="page-nav-title">Projets Pratiques</div>
+                        <div class="page-nav-title">Phase 9 : Réseaux et Cloud</div>
                     </div>
                 </a>
-                <a href="../index.html" class="page-nav-link">
+                <a href="projets.html" class="page-nav-link">
                     <div>
-                        <div class="page-nav-label">Retour</div>
-                        <div class="page-nav-title">Accueil</div>
+                        <div class="page-nav-label">Suivant</div>
+                        <div class="page-nav-title">Projets Pratiques</div>
                     </div>
                     <span>→</span>
                 </a>
@@ -310,6 +283,8 @@
         </svg>
     </button>
 
+    <script src="../js/quiz_data.js"></script>
+    <script src="../js/quiz.js"></script>
     <script src="../js/main.js"></script>
 </body>
 

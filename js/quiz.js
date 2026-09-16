@@ -61,11 +61,11 @@ function initQuiz() {
             <div class="quiz-header">
                 <div class="quiz-title-row">
                     <h3>${data.title}</h3>
-                    <button class="quiz-toggle-btn" onclick="toggleQuizContent(this)" aria-label="R?duire/Agrandir le quiz">
+                    <button class="quiz-toggle-btn" onclick="toggleQuizContent(this)" aria-label="Réduire/Agrandir le quiz">
                         <i class="fas ${chevronClass}"></i>
                     </button>
                 </div>
-                <p class="quiz-subtitle">Testez vos connaissances ! S?lectionnez la ou les bonnes r?ponses.</p>
+                <p class="quiz-subtitle">Testez vos connaissances ! Sélectionnez la ou les bonnes réponses.</p>
             </div>
             <div class="quiz-content-wrapper ${expandedClass}">
                 <div class="quiz-questions">
@@ -104,8 +104,8 @@ function initQuiz() {
                                ${isSubmitted ? 'disabled' : ''}
                                onchange="handleOptionChange(${q.id}, ${optIndex}, '${inputType}')">
                         <span class="option-text">${opt}</span>
-                        ${isSubmitted && q.correct.includes(optIndex) ? '<span class="result-icon">?</span>' : ''}
-                        ${isSubmitted && isSelected && !q.correct.includes(optIndex) ? '<span class="result-icon">?</span>' : ''}
+                        ${isSubmitted && q.correct.includes(optIndex) ? '<span class="result-icon">✓</span>' : ''}
+                        ${isSubmitted && isSelected && !q.correct.includes(optIndex) ? '<span class="result-icon">✗</span>' : ''}
                     </label>
                 `;
             });
@@ -130,7 +130,7 @@ function initQuiz() {
         html += `
                 <div class="quiz-actions">
                     ${!isSubmitted ?
-                `<button class="btn-primary" onclick="submitQuiz()">Valider mes r?ponses</button>` :
+                `<button class="btn-primary" onclick="submitQuiz()">Valider mes réponses</button>` :
                 `<div class="result-summary">
                             <span class="score-display">Score : ${score}%</span>
                             <p>${getFeedbackMessage(score)}</p>
@@ -229,7 +229,7 @@ function initQuiz() {
     };
 
     window.resetQuiz = () => {
-        if (confirm("Voulez-vous vraiment effacer vos r?ponses et recommencer ?")) {
+        if (confirm("Voulez-vous vraiment effacer vos réponses et recommencer ?")) {
             userAnswers = {};
             isSubmitted = false;
             score = 0;
@@ -241,10 +241,10 @@ function initQuiz() {
     };
 
     function getFeedbackMessage(score) {
-        if (score === 100) return "Excellent ! Vous ma?trisez parfaitement ce chapitre ! ??";
-        if (score >= 80) return "Tr?s bon travail ! Quelques petits d?tails ? revoir. ??";
-        if (score >= 50) return "Pas mal, mais vous pouvez faire mieux. Relisez le cours ! ??";
-        return "Oula... Il faut revoir le cours avant de passer ? la suite. ??";
+        if (score === 100) return "<i class='fas fa-trophy' style='color: #fbbf24;'></i> Excellent ! Vous maîtrisez parfaitement ce chapitre !";
+        if (score >= 80) return "<i class='fas fa-thumbs-up' style='color: var(--primary);'></i> Très bon travail ! Quelques petits détails à revoir.";
+        if (score >= 50) return "<i class='fas fa-book-open' style='color: var(--warning);'></i> Pas mal, mais vous pouvez faire mieux. Relisez le cours !";
+        return "<i class='fas fa-exclamation-circle' style='color: var(--danger);'></i> Il faut revoir le cours avant de passer à la suite.";
     }
 
     // Initial render
