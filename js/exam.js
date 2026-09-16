@@ -12,8 +12,8 @@
     let userAnswers = {};   // { questionId: [selectedIndices] }
     let flaggedQuestions = new Set(); // Set des questionId marquées pour relecture
     let examMode = 'full';  // 'full' (100), 'express' (30), 'half' (50)
-    let timerDuration = 120 * 60; // en secondes (120 min par défaut)
-    let timerRemaining = 120 * 60;
+    let timerDuration = 180 * 60; // en secondes (180 min = 3h par défaut)
+    let timerRemaining = 180 * 60;
     let timerInterval = null;
     let timerPaused = false;
     let examStartTime = null;
@@ -169,7 +169,7 @@
                             <div class="mode-badge-rec">Recommandé</div>
                             <div class="mode-icon"><i class="fas fa-certificate"></i></div>
                             <div class="mode-title">Examen Blanc Complet</div>
-                            <div class="mode-details">100 Questions • 10 par phase • 120 min</div>
+                            <div class="mode-details">100 Questions • 10 par phase • 180 min</div>
                             <p>Simulation intégrale du CCNA. Évalue avec précision votre préparation finale.</p>
                         </div>
                     </label>
@@ -199,7 +199,7 @@
                     <div class="option-group">
                         <label for="timer-select"><i class="fas fa-stopwatch"></i> Minuteur :</label>
                         <select id="timer-select" class="exam-select">
-                            <option value="120" selected>120 minutes (Chrono officiel CCNA)</option>
+                            <option value="180" selected>180 minutes (3h — Chrono officiel CCNA)</option>
                             <option value="90">90 minutes (Mode intensif)</option>
                             <option value="60">60 minutes</option>
                             <option value="0">Chronomètre libre (Sans limite de temps)</option>
@@ -284,7 +284,7 @@
 
         // Récupérer le réglage du minuteur
         const timerSelect = document.getElementById('timer-select');
-        const minutes = timerSelect ? parseInt(timerSelect.value, 10) : 120;
+        const minutes = timerSelect ? parseInt(timerSelect.value, 10) : 180;
         timerDuration = minutes > 0 ? minutes * 60 : 0;
         timerRemaining = timerDuration;
 
@@ -936,10 +936,24 @@
 
     function exportStorageData() {
         const dump = {};
+
+        // 1. Progression des quiz de modules (fonctionnalité existante)
         for (let i = 1; i <= 10; i++) {
             const k = `quiz_state_phase${i}`;
             const v = localStorage.getItem(k);
             if (v) dump[k] = JSON.parse(v);
+        }
+
+        // 2. Session d'examen en cours (si une session est active)
+        if (examQuestions.length > 0 && !isExamFinished) {
+            dump['exam_session'] = {
+                examQuestions: examQuestions,      // Questions tirées (ordre + options mélangées)
+                userAnswers: userAnswers,           // Réponses données { questionId: [indices] }
+                flaggedQuestions: [...flaggedQuestions], // Flags (Set → Array)
+                timerRemaining: timerRemaining,    // Temps restant en secondes
+                examMode: examMode,                // Mode ('full', 'half', 'express')
+                currentIndex: currentIndex         // Question active
+            };
         }
 
         const blob = new Blob([JSON.stringify(dump, null, 2)], { type: 'application/json' });
@@ -961,11 +975,45 @@
         reader.onload = function (event) {
             try {
                 const parsed = JSON.parse(event.target.result);
+
+                // 1. Restaurer la progression des quiz de modules
                 Object.keys(parsed).forEach(k => {
-                    localStorage.setItem(k, JSON.stringify(parsed[k]));
+                    if (k !== 'exam_session') {
+                        localStorage.setItem(k, JSON.stringify(parsed[k]));
+                    }
                 });
-                alert('Progression restaurée avec succès !');
-                renderPreparationDashboard();
+
+                // 2. Restaurer la session d'examen si présente
+                if (parsed.exam_session) {
+                    const s = parsed.exam_session;
+                    examQuestions = s.examQuestions || [];
+                    userAnswers   = s.userAnswers || {};
+                    flaggedQuestions = new Set(s.flaggedQuestions || []);
+                    timerRemaining  = s.timerRemaining != null ? s.timerRemaining : timerDuration;
+                    examMode        = s.examMode || 'full';
+                    currentIndex    = s.currentIndex || 0;
+                    isExamFinished  = false;
+
+                    // Basculer vers l'arène d'examen
+                    const dashboard   = document.getElementById('exam-dashboard');
+                    const examArea    = document.getElementById('exam-active-area');
+                    const resultsArea = document.getElementById('exam-results-area');
+                    if (dashboard)   dashboard.style.display = 'none';
+                    if (resultsArea) resultsArea.style.display = 'none';
+                    if (examArea)    examArea.style.display = 'block';
+
+                    // Reprendre le timer là où il était
+                    timerDuration = timerRemaining; // évite un reset involontaire
+                    startTimer();
+                    renderActiveQuestion();
+                    renderDrawerGrid();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                    alert(`Session restaurée ! Reprise à la question ${currentIndex + 1}, temps restant : ${formatTime(timerRemaining)}.`);
+                } else {
+                    alert('Progression des modules restaurée avec succès !');
+                    renderPreparationDashboard();
+                }
             } catch (err) {
                 alert('Erreur lors de la lecture du fichier de sauvegarde : ' + err.message);
             }

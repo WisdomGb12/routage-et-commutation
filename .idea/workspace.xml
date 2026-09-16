@@ -8,32 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24168711-3901-4174-9e5a-68d401a89d1e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Programme.html" beforeDir="false" afterPath="$PROJECT_DIR$/Programme.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/quiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/quiz_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/quiz_data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mojibake_corrections_detail.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mojibake_pass_control_after.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mojibake_pass_control_before.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_fix_details.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_verification_after.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_verification_before.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_verification_remaining.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_verification_remaining2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ccna.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ccna.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/mentions-legales.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mentions-legales.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/phase1-fondamentaux.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/phase1-fondamentaux.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/phase2-commutation.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/phase2-commutation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/phase3-routage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/phase3-routage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/phase4-inter-vlan.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/phase4-inter-vlan.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/phase5-securite.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/phase5-securite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/exam.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/exam.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/phase6-avance.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/phase6-avance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/politique-confidentialite.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/politique-confidentialite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/projets.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ressources.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ressources.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

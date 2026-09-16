@@ -171,6 +171,21 @@ Ou simplement ouvrir `index.html` depuis l'explorateur de fichiers dans n'import
 
 ## 📝 Changelog
 
+### v7.1 — 2026-09-16
+
+**Corrections post-audit (examen blanc) :**
+- Correction du minuteur de l'examen blanc : la valeur codée en dur (120 min)
+  ne correspondait pas aux 3h annoncées — corrigée sur les 5 occurrences
+  concernées (état, label, option par défaut, fallback)
+- Ajout de la persistance réelle de la session d'examen dans l'export/import
+  JSON : réponses, flags, temps restant et questions tirées sont désormais
+  sauvegardés et restaurés (auparavant, seule la complétion des quiz de
+  modules était exportée)
+- Correction d'un bug de détection de doublons dans les scripts d'audit
+  (troncature de regex sur apostrophe) ayant généré 20 faux positifs entre
+  `exam_data.js` et `quiz_data.js` — confirmé : aucune question n'est
+  dupliquée entre les deux banques
+
 ### v7.0 — 2026-09-16
 
 **Refonte dark mode (ardoise moderne) :**
